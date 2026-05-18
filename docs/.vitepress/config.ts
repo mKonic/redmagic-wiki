@@ -4,6 +4,7 @@ export default defineConfig({
   title: 'Red Magic Wiki',
   description: 'Community knowledge base for Red Magic / Nubia (ZTE) device modding: bootloader unlock, root, EDL recovery, kernel work',
   lang: 'en-US',
+  base: '/redmagic-wiki/',
   cleanUrls: true,
   lastUpdated: true,
   ignoreDeadLinks: 'localhostLinks',
