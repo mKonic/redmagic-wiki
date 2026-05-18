@@ -22,8 +22,10 @@ SYXZ is also the in-thread maintainer who patches bugs based on user reports.
 | 1.2.1-beta3 | Integrated "No-BL Root" (KernelSU path). Added retroactive **fingerprint recovery** — initially required data wipe but later tests said no wipe needed. |
 | 1.2.2 | **Z80 Ultra support** added. Experimental — RM11 owners advised to stay on 1.2.1. |
 | **1.2.3** | **First RM10 Pro / Pro+ support** (also Z70 Ultra, Pad 3 Pro, RM11 Air). |
-| 1.2.4-beta1 | Bug fixes over 1.2.3. Recommended for RM10 owners. |
-| 1.2.6-beta1 | Latest as of May 2026 (in `~/Downloads/中兴家族工具箱1.2.6-beta1.7z`). |
+| **1.2.4 Beta** ⭐ | Bug fixes over 1.2.3. Recommended for RM10 owners. |
+| 1.2.6-beta1 | Circulates on Coolapk (CN community forum) as of mid-2026; not consistently mirrored to Google Drive. |
+
+Direct downloads for the linkable versions are on the [ZTE Family Toolbox page](/rm10pro/zte-family-toolbox#download).
 
 ## Companion exploits referenced from RM11 OP
 

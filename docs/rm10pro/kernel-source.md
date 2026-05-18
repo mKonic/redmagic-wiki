@@ -1,50 +1,67 @@
 # Kernel source — NX789J / NX789S
 
-## Where it lives
+## Where to get it
 
-**Official ZTE open-source release:** https://opensource.ztedevices.com/ — search for **`NX789S`**.
+**Official ZTE open-source release:** [opensource.ztedevices.com](https://opensource.ztedevices.com/) — search for code **`NX789S`**.
 
-The release is named for the China/overclocked variant (S), but the tree contains build configurations for both **NX789J** (Global) and **NX789S** (China). They share the same kernel; differences are config-flag-driven [#672 p34 MrKonic].
+The release is named for the Chinese (NX789S) variant, but the tree ships build configurations for **both NX789J (Global) and NX789S (China)**. They share the same kernel — variant selection is config-flag-driven [#672 p34 MrKonic]. Available as a tarball; ~2 GB compressed.
 
-## Local layout in this workspace
+## What's in the tree
 
-User's prior kernel work lives under `~/dev/root/`:
-- `~/dev/root/nx789j-build-ws/` — active Kleaf workspace [from memory `project_nx789j_kernel_build`]
-- `~/dev/root/nx789j-kernel/` — earlier source clone
-- `~/dev/root/nx789j-stock-backup/` — stock partition dumps (boot, init_boot, vbmeta, vendor_boot, dtbo, etc.)
-- `~/Downloads/NX789S_Android15_kernel(6.6.30).tar.gz` (~2 GB) — source tarball from opensource.ztedevices.com
+- **Linux 6.6.30** base (Android 15 era)
+- **GKI 2.0** compatible — boot image is the Google-signed generic kernel; vendor / OEM bits live in `vendor_boot` and `init_boot`
+- Build system: **[Kleaf](https://android.googlesource.com/kernel/build/+/refs/heads/main/kleaf/)** (Bazel-based, the path Google standardized for Android 13+)
 
-Memory note: the Kleaf workspace already has the required patches applied; build command and partition map are documented in `[[project_nx789j_kernel_build]]`. Re-applying patches after pacman/system upgrades may be necessary.
+## What you need to build
 
-## Build context
+| Requirement | Notes |
+|-------------|-------|
+| Linux host | Any modern distro. |
+| Bazel (vendored by Kleaf) | Comes with the source tree — don't install separately. |
+| Python 3, `repo`, standard build deps | `pacman -S python git base-devel` on Arch or distro equivalent. |
+| Disk space | 30 GB+ for objects, 50 GB+ with kernel images. |
+| RAM | 16 GB workable; 32 GB recommended for parallel builds. |
 
-- Linux 6.6.30 base (Android 15 era)
-- GKI 2.0 compatible — boot image is the GKI generic kernel; vendor/oem bits live in `vendor_boot` and `init_boot`
-- Build system: **Kleaf** (Bazel-based, what Google's mainlined for Android 13+)
+The tarball is self-contained — no `repo sync` needed.
 
-## Source vs binary split
+## What's *not* in the tree
 
-What ZTE actually shipped on the device differs from the public source tree in ways that matter for rooting:
+ZTE's public release covers the kernel proper, but some on-device binaries are not source-released:
 
-| Component | Source available | Notes |
-|-----------|------------------|-------|
-| Kernel (defconfig + drivers) | Yes (`NX789S` tarball) | Buildable as-is for GKI |
-| `init_boot` ramdisk | No (only stock images) | Magisk patching path applies |
-| `vendor_boot` ramdisk | Partial | Some vendor blobs only in stock |
-| `abl_eng` (engineering bootloader) | No | RSA-signed; reverse-engineered, not source-released — see [10-reverse-engineering.md](/rm10pro/reverse-engineering) |
-| `ztecfg` | No | Per-device, signed blob |
+| Component | Source available | Workaround |
+|-----------|------------------|------------|
+| Kernel proper (defconfig, drivers) | ✅ Yes | Build directly. |
+| `init_boot` ramdisk | ❌ Stock images only | Magisk-patch the stock image — see [Root with Magisk / KernelSU](/rm10pro/root-magisk). |
+| `vendor_boot` ramdisk | ⚠️ Partial | Extract vendor blobs from stock dumps. |
+| `abl_eng` (engineering bootloader) | ❌ Closed, RSA-signed | See [Reverse engineering](/rm10pro/reverse-engineering). |
+| `ztecfg` | ❌ Per-device blob | See [Reverse engineering](/rm10pro/reverse-engineering). |
 
-## Why we have the source now
+For a kernel-only project (custom kernel for an unlocked or EDL-rooted device), the open source is enough. For anything that touches `abl` or `ztecfg`, you're on the reverse-engineering path.
 
-Public release was relatively recent — MrKonic's post on May 17, 2026 [#672 p34] is the in-thread announcement. Before that, kernel custom-builds for the RM10 Pro relied on pulling the GKI generic kernel and bolting on the vendor modules from stock dumps. With NX789S sources public, a fully self-built kernel is feasible.
+## Why this matters
 
-## Related local projects
+Public release of the kernel source happened relatively recently — announced in the RM10 Pro XDA thread on May 17, 2026 [#672 p34 MrKonic]. Before that, custom kernel work for the RM10 Pro relied on:
 
-- `Redmagic-Control-Center` fork (user's repo, mkonic/Redmagic-Control-Center) — hardware controls (logo, fan, etc.) reverse-engineered from OEM APK. See `[[project_redmagic_control_center]]`.
-- `redmagic-autofan` — slim sh-daemon replacement for Control Center auto-fan via KSU module. IPC at `/data/local/tmp/fanctl/{status,control}`. See `[[project_redmagic_autofan]]`.
+1. Pulling the **GKI generic kernel** from Google's AOSP mirror.
+2. Bolting on vendor modules extracted from stock partition dumps.
+3. Patching anything that needed to differ for the Snapdragon 8 Elite + Nubia hardware.
 
-## Useful for kernel work from this thread
+With NX789S sources public, a fully self-built kernel is feasible without that scaffolding.
 
-- BD_Security's partition layout [05-bd-security-edl-root.md](/rm10pro/bd-security-edl-root) — exact LUN 4 sector addresses for `boot_b`, `init_boot_b`, `vbmeta_b`. Useful when flashing a self-built kernel via EDL.
-- Reminon's TWRP device tree [08-recovery-twrp.md](/rm10pro/recovery-twrp) — for testing custom kernels without committing to a full Magisk init_boot flow.
-- AVB rules [07-partitions-avb.md](/rm10pro/partitions-avb) — modifying `boot` is what triggers AVB; for a custom kernel you must also patch vbmeta to flags=0x02 or sign the new boot image with a key the bootloader trusts (only possible with `eng_abl` which itself needs unlock).
+## Flashing a self-built kernel
+
+You'll need either:
+
+- **An unlocked bootloader** → `fastboot flash boot_a custom-boot.img` to the inactive slot, then `fastboot --set-active=a` and reboot. See [Bootloader unlock](/rm10pro/bootloader-unlock-status) if you haven't unlocked.
+- **EDL / 9008** → firehose-program the new boot image to the inactive slot's start sector. Partition addresses in [Partitions, AVB, vbmeta](/rm10pro/partitions-avb#lun-4-gpt--known-sectors-sector-size-4096).
+
+:::warning AVB will reject a modified boot
+Modifying `boot` triggers AVB, which forces a factory reset on a locked device and "device is corrupt" on an unlocked one without disabled verification. You must also patch vbmeta (set `vbmeta.flags` to `0x02` at offset `0x0C`) before flashing — see [Partitions, AVB, vbmeta — vbmeta header / flag byte](/rm10pro/partitions-avb#vbmeta-header--flag-byte).
+:::
+
+## Related projects in the ecosystem
+
+- **[KernelSU](https://github.com/tiann/KernelSU)** — kernel-side root, alternative to Magisk. Can be merged into a custom kernel during build, eliminating the init_boot-patching step. The toolbox's "no-BL root" feature uses KernelSU pre-patched into init_boot.
+- **[gbl_root_canoe](https://github.com/superturtlee/gbl_root_canoe)** — RM11 Pro "no-BL root" reference codebase. Same logical approach as kernel + EDL flashing for keeping the bootloader locked.
+- **[Reminon's TWRP device tree](https://github.com/reminon/twrp_device_nubia_nx789j)** — useful when iterating on kernel changes; lets you boot a test boot.img without committing it via fastboot.
+- **[Redmagic-Control-Center fork (mKonic)](https://github.com/mKonic/Redmagic-Control-Center)** — userspace hardware-control app for RM10 Pro (logo, fan, etc.). Calls into the kernel's `aw22xxx` driver via sysfs; relevant when porting effects across firmware versions.

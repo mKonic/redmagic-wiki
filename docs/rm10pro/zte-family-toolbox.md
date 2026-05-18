@@ -1,18 +1,28 @@
 # ZTE Family Toolbox (中兴家族工具箱)
 
-Chinese-language toolbox by **SYXZ** (XDA user, Coolapk author). Single-binary Windows tool that handles bootloader unlock, partition backup/restore, EDL operations, and no-BL root via KernelSU for the ZTE/Nubia family: Red Magic 10/10 Pro/10 Pro+, Red Magic 11 Pro, Nubia Z70U/Z80U, Pad 3 Pro.
+Chinese-language toolbox by **[SYXZ](https://xdaforums.com/m/12774241/)** on XDA (handle **某贼** on Coolapk). Single-binary Windows tool that handles bootloader unlock, partition backup/restore, EDL operations, and no-BL root via KernelSU for the ZTE / Nubia family: Red Magic 10 Pro / 10 Pro+, Red Magic 11 Pro, Red Magic 11 Air, Nubia Z70 Ultra, Nubia Z80 Ultra, Red Magic Pad 3 Pro.
 
-## Versions
+The toolbox is **free**. Anyone charging for it is scamming you.
 
-| Version | Notes |
-|---------|-------|
-| ≤ 1.2.1 | RM11 Pro only. Will reject RM10 Pro at "device not supported" step [#660 p33 Enddo]. |
-| **1.2.3** | First version with RM10 Pro unlock support [#664 p34 hoahenry]. |
-| **1.2.4-beta1** | Bug fixes over 1.2.3 — **recommended** [#665 p34 n00b-xda-disciple]. |
-| 1.2.6-beta1 | Latest as of May 2026 (in user's local Downloads). |
-| English translation (community) | Enddo's partial translation: https://dl.surf/f/c9a51290 [#661 p34]. |
+## Download
 
-Distribution: Google Drive links shared in the thread (look for `中兴家族工具箱X.Y.Z.7z`). Treat each new link with caution — verify the SHA against community-reported hashes when possible.
+These are the canonical Google Drive links curated by the RM11 thread OP. Mirror locally on first download — Google Drive links occasionally rotate.
+
+| Version | What's in it | Link |
+|---------|--------------|------|
+| **v1.2.4 Beta** ⭐ | Bug-fix release over 1.2.3. **Recommended for RM10 Pro / Pro+, Z70 Ultra, Pad 3 Pro, RM11 Air.** | [Download](https://drive.google.com/file/d/1DfpTdhVx4uGPiFJQh0Xw9wKP5BGwbpBP/view?usp=sharing) |
+| **v1.2.3** | First public release with RM10 Pro / Pro+, Nubia Z70 Ultra, Pad 3 Pro, RM11 Air support. Stable. | [Download](https://drive.google.com/file/d/1Al5P6cKVnfX3p02v8_-6ZLgxspdev-bN/view?usp=sharing) |
+| v1.2.2 | RM11 Pro + Z80 Ultra. Some experimental code — RM11 owners were advised to stay on 1.2.1. **Does not support RM10 Pro.** | [Download](https://drive.google.com/file/d/16ZGMlXs_ii9sJa7GweGnjeTcXspnj8Ud/view?usp=sharing) |
+| v1.2.0 (legacy) | First public RM11 Pro unlock. Breaks fingerprint calibration; superseded by 1.2.1+. | [Download](https://drive.google.com/file/d/1-QFxPHLRS0bvNg0-Go7V9ePVfqSR28Wr/view?usp=sharing) · [Spare (password 123456)](https://drive.google.com/file/d/1SPwHjzyxrNxgmVhrKEyi1i9mD-eaLdvR/view?usp=sharing) |
+| English UI (community) | Partial English translation of v1.2.1 by Enddo. Not the latest version. | [dl.surf](https://dl.surf/f/c9a51290) |
+
+:::tip Pick the right version
+**For Red Magic 10 Pro / Pro+ owners:** use **v1.2.4 Beta**. Versions ≤ 1.2.2 will reject your device at "device not supported" [#660 p33 Enddo]. Versions 1.2.3 and 1.2.4 are the first to enable RM10-series unlock, and 1.2.4 ships bug fixes [#664–#665 p34].
+:::
+
+:::warning Watch for new mirrors
+The original CN community post for this tool was deleted within an hour of publication (per the author's reports). Newer toolbox releases (v1.2.5+, v1.2.6) circulate primarily on Chinese-language community forums (Coolapk) and are not always mirrored to Google Drive. Verify SHA256 against community-reported hashes when downloading from third-party mirrors.
+:::
 
 ## Prerequisites
 

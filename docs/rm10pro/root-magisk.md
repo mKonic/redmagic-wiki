@@ -29,11 +29,11 @@ fastboot reboot
 
 KernelSU patches init_boot too (it loads as a kernel module / ramdisk overlay). Same procedure as Magisk but use the KernelSU Manager app's "Install to a file" option [#561 p29 pipegrep — used the toolbox path and ended up with Magisk regardless of starting with KSU].
 
-The user's `KernelSU` source clone is at `~/dev/root/KernelSU`; see [09-kernel-source.md](/rm10pro/kernel-source) for the NX789S kernel tree.
+If you'd rather merge KernelSU directly into a custom kernel build instead of patching init_boot, see [Kernel source](/rm10pro/kernel-source) for the public NX789S kernel tree.
 
 ## Path C — locked bootloader, root via EDL
 
-See [05-bd-security-edl-root.md](/rm10pro/bd-security-edl-root) for the full procedure. Summary:
+See [BD_Security's EDL root guide](/rm10pro/bd-security-edl-root) for the full procedure. Summary:
 1. Enter clean 9008 (Vol+ + Vol− while plugging USB).
 2. Sahara-upload `devprg.melf` as firehose programmer.
 3. Firehose-program both `vbmeta_b` (patched with flags=0x02) **and** Magisk-patched `init_boot_b`.

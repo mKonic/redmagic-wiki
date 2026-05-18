@@ -2,7 +2,7 @@
 
 ## The device
 
-**Nubia Red Magic 10 Pro** — Qualcomm Snapdragon 8 Elite (SM8750) gaming phone. The codename used in firmware and the bootloader is **NX789J** (Global) or **NX789S** (China/overclocked variant). Both variants share the same kernel source tree with config selecting J vs S [#672 p34 MrKonic].
+**Nubia Red Magic 10 Pro** — Qualcomm Snapdragon 8 Elite (SM8750) gaming phone. The codename used in firmware and the bootloader is **NX789J** (Global) or **NX789S** (China). Both variants share the same kernel source tree, with build configuration selecting between J and S targets [#672 p34 MrKonic]. (Community speculation that the S variant is "overclocked" is widespread but not authoritatively confirmed.)
 
 Sibling devices that share the unlock toolchain and exploit surface:
 - Red Magic 10 Air — different unlock path (treated like RM9s by ROM2BOX) [#255 p13 Reminon]
