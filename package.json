@@ -1,0 +1,15 @@
+{
+  "name": "redmagic-wiki",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Community wiki for Red Magic / Nubia (ZTE) device modding — bootloader unlock, root, EDL recovery, kernel work",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "vitepress": "^1.5.0"
+  }
+}
