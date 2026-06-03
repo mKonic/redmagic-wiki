@@ -16,13 +16,15 @@ Key points:
 
 **Mitigation:** uninstall the Android updater app (`adb shell pm uninstall --user 0 <updater pkg>`). Freeze any "system update" notifier. Stay on the version that works for you.
 
+**Status as of May 31, 2026:** despite the relentless warnings, **no one has yet reported a confirmed real-world fuse blowout / permanent lockout** on any of these devices [RM11 #2347 p118 dev-reverse]. The expectation in-thread is that the first hard fuse-lock arrives with the new **RM11s "overclock"** variant's unlock. Practical canary (SnowFuhrer's reasoning, not a confirmed test): a fused device would *fail* to make a toolbox backup — so if your **Option 4 (Back All)** backup succeeds, you're probably not fused [RM11 #2226 p112]. The "don't update" rule still stands; the downside of being wrong is permanent and there's no recovery from a blown fuse.
+
 ## Brick recovery cheatsheet
 
 ### Soft brick — boot loop or "device is corrupt"
 
 | Symptom | Likely cause | Recovery |
 |---------|--------------|----------|
-| "Your device is corrupt and will not boot" stuck screen | AVB rejected an image you flashed | Re-flash patched `vbmeta` (flags=0x02) via EDL; re-flash stock `init_boot` if needed. See [05-bd-security-edl-root.md](/rm10pro/bd-security-edl-root). |
+| "Your device is corrupt and will not boot" stuck screen | AVB rejected an image you flashed | Re-flash patched `vbmeta` (flags=0x02) via EDL; re-flash stock `init_boot` if needed. See [BD_Security's EDL root guide](/rm10pro/bd-security-edl-root). |
 | Bootloader-mode loop (keeps returning to bootloader) | Tried `fastboot flash vbmeta --disable-verity` etc. | EDL restore — only path back is flashing stock `vbmeta` via firehose [#315 p16 Reminon] |
 | Boot loop after Android 16 GSI/DSU on A15 stock | `/metadata/aconfig/maps/system.flag.map` left over | `adb shell su -c 'rm /metadata/aconfig/maps/system.flag.map'` [#279 p14 Reminon] |
 | Permission controller crashes after dual-booting A16 ROM | Same A16 leftover | Same fix as above |
@@ -31,7 +33,7 @@ Key points:
 
 | Symptom | Recovery |
 |---------|----------|
-| ZTE MemoryDump mode (VID `19D2`/PID `0112`) | Volume-button method [04-edl-9008.md](/rm10pro/edl-9008) — bypass crash handler, get to clean 9008, flash via firehose |
+| ZTE MemoryDump mode (VID `19D2`/PID `0112`) | Volume-button method ([EDL / 9008 mode](/rm10pro/edl-9008)) — bypass crash handler, get to clean 9008, flash via firehose |
 | Device doesn't appear in any USB mode | Drain battery fully, retry. Last resort: EDL test point on PCB (requires opening) |
 | Bricked during paid-service unlock | ROM2BOX (R2B) sells "EDL ROMs" + unbrick — used to be the standard fallback. Less needed now that toolbox + BD_Security's procedure both work for free. |
 
@@ -46,6 +48,18 @@ joao_lisa [#562 p29] hit a state where:
 Suggests **partition-state desync** between what was backed up and what the unlocked bootloader expects. No clean fix in-thread; treat as: don't restore your own EDL backup blindly after unlocking — restore specific partitions (vbmeta, init_boot) only, leave bootloader/abl/ztecfg alone.
 
 joao_lisa's later question [#670 p34]: *"Have they managed to resolve the bootloop issue by unlocking the bootloader?"* — no public resolution as of mid-May 2026.
+
+### No backup = unrecoverable (until custom recovery exists)
+
+The most-repeated lesson in the newer RM11 posts: **make a full EDL backup (toolbox Option 4 / "Back All") before unlocking or rooting** — and ideally a second one right after unlocking. Several users hard-bricked with no backup and there is currently **no recovery path**: restoring needs either *your own* EDL dump or someone else's *matching-firmware* dump, and a working custom recovery for these devices doesn't exist yet [RM11 #2226 p112 SnowFuhrer — *"You should be fine as long as you make a backup. DO NOT SKIP."*]. Don't unlock on a phone you can't afford to lose without that backup in hand.
+
+## Google Wallet / Play Integrity / banking apps after root
+
+Banking apps and Google Wallet check **bootloader state**, not just the presence of root — so a normally-unlocked + rooted phone fails them even with good root hiding [RM11 #177 p9 elrey120]. What the RM11 community settled on:
+
+- Use **KernelSU**, not Magisk, for Wallet/banking — Magisk is far easier for these checks to detect; the toolbox's no-BL-root path ships a KSU build for exactly this [RM11 #117 p6 elrey120].
+- Stronger hiding comes from **KernelSU + SUSFS**, but that reportedly needs a **compilable kernel** to inject the patches cleanly — the current blocker, see [Kernel source → GPLv2 dispute](/rm10pro/kernel-source#gplv2-kernel).
+- The cleanest answer is the **`efisp` "mode 2"** approach (keep stock attestation while booting unlocked) — see [Reverse engineering → efisp modes](/rm10pro/reverse-engineering#efisp-modes).
 
 ## OTA / update gotchas
 
@@ -68,7 +82,7 @@ GigaWrathWave [#668 p34]: rooted RM10 successfully, but `rpv` (presumably **Remo
 
 ## EDL "Non-ZTE tool" error
 
-`Non-ZTE tool` returned from `firehose <configure>` → you're using a generic edl client without the ZTE OEM string. Fix in [04-edl-9008.md](/rm10pro/edl-9008) (patch bkerler/edl `firehose.py`) or [#514 p26 GigaWrathWave] (workaround attempts).
+`Non-ZTE tool` returned from `firehose <configure>` → you're using a generic edl client without the ZTE OEM string. Fix in [EDL / 9008 mode](/rm10pro/edl-9008) (patch bkerler/edl `firehose.py`) or [#514 p26 GigaWrathWave] (workaround attempts).
 
 ## FRP (Factory Reset Protection)
 

@@ -43,7 +43,7 @@ This works without ever touching the bootloader. Trade-off: every kernel/init_bo
 
 ## Path D — toolbox-driven KernelSU (no-BL root)
 
-The ZTE Family Toolbox 1.2.3+ offers a "no-BL root via KernelSU" feature for users who want root without unlocking. Internally this is the same EDL/firehose flow as Path C, automated. Use this if you want the bootloader locked for SafetyNet / banking-app reasons. See [02-zte-family-toolbox.md](/rm10pro/zte-family-toolbox).
+The ZTE Family Toolbox 1.2.3+ offers a "no-BL root via KernelSU" feature for users who want root without unlocking. Internally this is the same EDL/firehose flow as Path C, automated. Use this if you want the bootloader locked for SafetyNet / banking-app reasons. See [ZTE Family Toolbox](/rm10pro/zte-family-toolbox).
 
 ## Slot handling
 

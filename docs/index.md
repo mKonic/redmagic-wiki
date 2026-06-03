@@ -19,7 +19,7 @@ hero:
 features:
   - icon: 🔓
     title: Bootloader unlock — finally free
-    details: ZTE Family Toolbox 1.2.3+ unlocks the RM10 Pro for free as of May 2026. Status, history, and the full step-by-step.
+    details: ZTE Family Toolbox unlocks the RM10 Pro for free — confirmed in the wild since May 2026 (1.2.7.7 stable, 1.2.6 English). Status, history, and the full step-by-step.
     link: /rm10pro/bootloader-unlock-status
     linkText: Read the unlock guide
   - icon: 🛟
@@ -34,7 +34,7 @@ features:
     linkText: Crypto & signing
   - icon: 🧠
     title: Kernel source
-    details: NX789S/NX789J Linux 6.6.30 kernel sources are public. GKI 2.0 build with Kleaf.
+    details: NX789S/NX789J Linux 6.6.30 sources are public. The sibling RM11 Pro turned into a GPLv2 fight over incomplete sources — community RE'd a bootable kernel anyway.
     link: /rm10pro/kernel-source
     linkText: Kernel notes
 ---
@@ -55,12 +55,12 @@ Everything documented here is **at your own risk**. Bootloader unlocking, rootin
 
 ## How this wiki was assembled
 
-This wiki was bootstrapped in May 2026 by **scraping two XDA forum threads** with a Claude Code agent — 137 pages and 2,731 posts — extracting per-post markdown, then synthesizing the high-signal content into topical pages.
+This wiki was bootstrapped in May 2026 by **scraping two XDA forum threads** with a Claude Code agent — extracting per-post markdown, then synthesizing the high-signal content into topical pages. Last re-scraped **June 2026**: 153 pages, 3,040 posts.
 
 **Source threads:**
 
-- [Red Magic 10 Pro general thread](https://xdaforums.com/t/redmagic-10-pro.4711211/) (34 pages, 673 posts)
-- [Red Magic 11 Pro — Bootloader Unlock (FREE) — ZTE Family Toolbox guide](https://xdaforums.com/t/red-magic-11-pro-guide-bootloader-unlock-free-also-support-rm10-pad3pro-z70u-z80u-unlock-zte-family-toolbox.4780930/) (103 pages, 2,058 posts)
+- [Red Magic 10 Pro general thread](https://xdaforums.com/t/redmagic-10-pro.4711211/) (34 pages, 678 posts)
+- [Red Magic 11 Pro — Bootloader Unlock (FREE) — ZTE Family Toolbox guide](https://xdaforums.com/t/red-magic-11-pro-guide-bootloader-unlock-free-also-support-rm10-pad3pro-z70u-z80u-unlock-zte-family-toolbox.4780930/) (119 pages, 2,362 posts)
 
 The raw extracts live in [`data/`](https://github.com/mKonic/redmagic-wiki/tree/main/data) inside this repo. Every fact in the wiki is cited back to the post it came from in the form `[#N pP]` (post number, page number) so you can verify any claim in the originals.
 
@@ -81,11 +81,16 @@ This wiki is a synthesis, not original research. **Every breakthrough documented
 | RM11 Pro free-unlock thread, RM11 mega-guide curation | **AdaUnlocked**, **EliteBlackKaiser** |
 | Stock `init_boot` extraction via `dd` workflow | **HammadYasin** |
 | De-Googling-without-root walkthrough | **zcink** |
-| Toolbox version tracking, English translation work | **n00b-xda-disciple**, **Enddo** |
+| Toolbox version tracking, English translation work | **n00b-xda-disciple**, **Enddo**, **elrey120**, **jolly_roger_hook** |
 | RM9 Pro device tree (the base Reminon adapted) | **DarkestSpawn** |
 | Universal No-BL Root research | The CN modding community |
-| RM10 Pro fork of Redmagic-Control-Center | **MrKonic** |
+| RM10 Pro fork of Redmagic-Control-Center; GPLv2-obligation advocacy | **MrKonic** |
 | ZTE NX789S kernel open-source release | **ZTE Devices** ([opensource.ztedevices.com](https://opensource.ztedevices.com/)) |
+| Reverse-engineered bootable RM11/RM10 kernel; GPLv2 escalation | **dev-reverse** |
+| Touchscreen driver fix on the RE'd kernel | **n00b-xda-disciple** |
+| `efisp` "mode" bootloader-state work; `edl-ng` EDL tool | **SnowFuhrer** |
+| `gbl_root_canoe` no-BL-root reference codebase | **superturtlee** |
+| WIP native-Linux (`bkerler/edl`) NX789J unlock writeup | **Grimish2280** |
 
 Every author named above retains credit for their original posts. If you contributed and aren't listed, or if you'd rather not be named, **open an issue or PR** — see [Contributing](/contributing).
 

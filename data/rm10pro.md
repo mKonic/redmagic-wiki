@@ -21903,3 +21903,408 @@ For those who were looking for NX789J kernel source, its already released on htt
 ### #673 — **n00b-xda-disciple** · May 17, 2026 at 11:57 PM · page 34
 
 S = Overclocked ![;)](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+
+---
+
+### #674 — **dev-reverse** · May 20, 2026 at 1:29 PM · page 34
+
+I sent another kernel request again, what do you think about it?
+
+---
+
+### #675 — **HammadYasin** · May 27, 2026 at 12:11 PM · page 34
+
+> **HyoudoIsse said:**
+> File without password. Just extract it. Yes, I'm looking for a flash tool that works for the 10 Pro/S Pro.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+.
+
+---
+
+### #676 — **Grimish2280** · May 30, 2026 at 10:53 AM · page 34
+
+**[REQUEST] vm-bootsys_a partition dump for NX789J of GB or EEA**
+
+Hi, I'm recovering from a brick on my RedMagic 10 Pro (NX789J, NEEA/Global firmware). My vm-bootsys partition got zeroed during a factory reset and without it the device won't boot past XBL.
+
+I just need someone with a working NX789J (*~10-0-17) to dump this one partition via EDL:
+
+I was able to flash to a CN version that had a super.img but of course its trash anyway. Probably don't actually need it because it appears like its cleared during the recovery process anyway. Been looking at this for awhile and any help will be appreciated.
+
+What I did is below. Was working and functional until magisk then AVB broke.
+
+bash
+
+python edl.py rs 144170 137500 vm-bootsys_a.img --memory=ufs --lun=4 --loader=devprg.melf
+
+The file will be ~563MB. No personal data is stored in this partition — it's just the Android Virtualization Framework boot image.
+
+Please share via Google Drive, Mega, or any file host. Thank you!
+
+Do NOT use this method yet until its HASHED out. It had all the information that was in the ZTE tool but I missed some things. I know what they are but I have to get fixed before I can finish this up.
+
+**Performed this method. Looking for additional Pointers and Feedback. I am using *Linux* - I do not have windows.
+
+Do NOT use this method yet as there are things that have to be worked out. I'm in great need of a **
+
+I am on NX789J - SM8750. This was all going so well until Magisk. Was still stock everything, no fingerprint problems no nothing and when I hit Magisk and scrwed up things took a turn for the worst. Stuck in EDL.
+
+**Anyone have a 10.0.17 GB version of vm-bootsys_a and/or vm-bootsys_b?
+
+I have done this FULLY. Documenting the process and where things changed from the ZTE Toolbox. But looking for feedback.**
+
+## RedMagic 10 Pro (NX789J) Bootloader Unlock Guide — Linux/bkerler Method​
+
+### Prerequisites​
+
+- Arch Linux (or any Linux distro)
+- bkerler EDL tool cloned from github.com/bkerler/edl
+- devprg.melf and abl_eng.img from the NX789J archive at yhcres.top
+- uefi_unlock.img extracted from ZTE Family Toolbox v1.2.4 (bin/res/NX789J/uefi_unlock.img)
+- gpt_rmpar.py script (provided separately)
+
+### Critical Patch — MUST DO BEFORE ANYTHING ELSE​
+Edit edlclient/Library/firehose.py around line 905. Add Oem="ZTE" to the configure command:
+
+python
+
+f"SkipWrite=\"{str(int(self.cfg.SkipWrite))}\" " + \
+
+f"Oem=\"ZTE\""
+
+Verify:
+
+bash
+
+grep -n "SkipWrite\|Oem" edlclient/Library/firehose.py
+
+Expected output:
+
+905: f"SkipWrite=\"{str(int(self.cfg.SkipWrite))}\" " + \
+
+906: f"Oem=\"ZTE\""
+
+### STEP 0 — Disable OTA Services​
+
+bash
+
+adb shell pm disable-user --user 0 com.zte.zdm
+
+adb shell pm disable-user --user 0 com.zte.zdmdaemon
+
+adb shell pm disable-user --user 0 com.zte.zdmdaemon.install
+
+Expected output for each:
+
+Package com.zte.xxx new state: disabled-user
+
+### STEP 1 — Verify EDL Comms​
+Power off → hold Vol Up + Vol Down → plug USB
+
+bash
+
+python edl.py printgpt --memory=ufs --lun=4 --loader=devprg.melf
+
+Expected: Full partition table prints. **If this fails stop completely.**
+
+### STEP 2 — Full Pre-Unlock Backup​
+
+#### LUN 0​
+
+bash
+
+python edl.py r persist persist_stock.bin --memory=ufs --lun=0 --loader=devprg.melf
+
+python edl.py r vbmeta_system_a vbmeta_system_a_stock.bin --memory=ufs --lun=0 --loader=devprg.melf
+
+python edl.py r vbmeta_system_b vbmeta_system_b_stock.bin --memory=ufs --lun=0 --loader=devprg.melf
+
+python edl.py r keystore keystore_stock.bin --memory=ufs --lun=0 --loader=devprg.melf
+
+python edl.py r frp frp_stock.bin --memory=ufs --lun=0 --loader=devprg.melf
+
+#### LUN 1​
+
+bash
+
+python edl.py r xbl_a xbl_a_stock.bin --memory=ufs --lun=1 --loader=devprg.melf
+
+python edl.py r xbl_config_a xbl_config_a_stock.bin --memory=ufs --lun=1 --loader=devprg.melf
+
+#### LUN 2​
+
+bash
+
+python edl.py r xbl_b xbl_b_stock.bin --memory=ufs --lun=2 --loader=devprg.melf
+
+python edl.py r xbl_config_b xbl_config_b_stock.bin --memory=ufs --lun=2 --loader=devprg.melf
+
+#### LUN 4​
+
+bash
+
+python edl.py r abl_a abl_a_stock.bin --memory=ufs --lun=4 --loader=devprg.melf
+
+python edl.py r abl_b abl_b_stock.bin --memory=ufs --lun=4 --loader=devprg.melf
+
+python edl.py r init_boot_a init_boot_a_stock.bin --memory=ufs --lun=4 --loader=devprg.melf
+
+python edl.py r init_boot_b init_boot_b_stock.bin --memory=ufs --lun=4 --loader=devprg.melf
+
+python edl.py r vbmeta_a vbmeta_a_stock.bin --memory=ufs --lun=4 --loader=devprg.melf
+
+python edl.py r vbmeta_b vbmeta_b_stock.bin --memory=ufs --lun=4 --loader=devprg.melf
+
+python edl.py r vendor_boot_a vendor_boot_a_stock.bin --memory=ufs --lun=4 --loader=devprg.melf
+
+python edl.py r vendor_boot_b vendor_boot_b_stock.bin --memory=ufs --lun=4 --loader=devprg.melf
+
+python edl.py r boot_a boot_a_stock.bin --memory=ufs --lun=4 --loader=devprg.melf
+
+python edl.py r boot_b boot_b_stock.bin --memory=ufs --lun=4 --loader=devprg.melf
+
+python edl.py r uefi_a uefi_a_stock.bin --memory=ufs --lun=4 --loader=devprg.melf
+
+python edl.py r uefi_b uefi_b_stock.bin --memory=ufs --lun=4 --loader=devprg.melf
+
+#### LUN 5​
+
+bash
+
+python edl.py r modemst1 modemst1_stock.bin --memory=ufs --lun=5 --loader=devprg.melf
+
+python edl.py r modemst2 modemst2_stock.bin --memory=ufs --lun=5 --loader=devprg.melf
+
+python edl.py r fsg fsg_stock.bin --memory=ufs --lun=5 --loader=devprg.melf
+
+python edl.py r fsc fsc_stock.bin --memory=ufs --lun=5 --loader=devprg.melf
+
+python edl.py r ztecfg ztecfg_stock.bin --memory=ufs --lun=5 --loader=devprg.melf
+
+**Confirm all non-zero:**
+
+bash
+
+ls -lh *_stock.bin
+
+Expected sizes:
+
+- abl_a/b_stock.bin — 1.0M
+- boot_a/b_stock.bin — 96M
+- init_boot_a/b_stock.bin — 8.0M
+- vbmeta_a/b_stock.bin — 64K
+- vendor_boot_a/b_stock.bin — 96M
+- uefi_a/b_stock.bin — 5.0M
+- persist_stock.bin — 32M
+- modemst1/2_stock.bin — 4.0M
+- fsg_stock.bin — 4.0M
+- ztecfg_stock.bin — 512K
+**Copy off device immediately.**
+
+### STEP 3 — Dump and Modify GPT (NX789J SPECIFIC — NOT IN ORIGINAL GUIDE)​
+The NX789J uses the avb unlock plan which requires temporarily removing vbmeta_a and pvmfw_a from the GPT before flashing the unlock UEFI. This is what the ZTE Family Toolbox does internally.
+
+bash
+
+# Dump raw GPT sectors
+
+python edl.py rs 0 34 gpt_raw_lun4.bin --memory=ufs --lun=4 --loader=devprg.melf
+
+Expected: gpt_raw_lun4.bin — 136K
+
+bash
+
+# Remove vbmeta_a and pvmfw_a from GPT
+
+python gpt_rmpar.py gpt_raw_lun4.bin gpt_modified_lun4.bin vbmeta_a pvmfw_a
+
+Expected output:
+
+GPT header found at offset 0x1000 (4096-byte sectors)
+
+Found 'vbmeta_a' at entry 14 (offset 0x2700)
+
+Zeroed 'vbmeta_a'
+
+Found 'pvmfw_a' at entry 29 (offset 0x2e80)
+
+Zeroed 'pvmfw_a'
+
+Done. Removed: ['vbmeta_a', 'pvmfw_a']
+
+### STEP 4 — Flash Modified GPT + Unlock UEFI to boot_a​
+
+bash
+
+# Flash modified GPT
+
+python edl.py ws 0 gpt_modified_lun4.bin --memory=ufs --lun=4 --loader=devprg.melf
+
+Expected: Wrote gpt_modified_lun4.bin to sector 0
+
+bash
+
+# Flash unlock UEFI to boot_a
+
+python edl.py w boot_a uefi_unlock.img --memory=ufs --lun=4 --loader=devprg.melf
+
+Expected: Wrote uefi_unlock.img to sector 113318
+
+bash
+
+# Reset
+
+python edl.py reset --loader=devprg.melf
+
+### STEP 5 — Confirm Fastboot and Run Unlock​
+Device boots showing fastboot screen with:
+
+Product name: Andromeda
+
+Device State: Locked
+
+bash
+
+fastboot flashing unlock
+
+Expected: OKAY
+
+Phone screen shows unlock confirmation — use volume keys to select **UNLOCK THE BOOTLOADER**, power button to confirm. Device factory resets.
+
+### STEP 6 — IMMEDIATELY Enter EDL and Restore Everything​
+Do NOT let device boot into Android. Force EDL: power off → hold Vol Up + Vol Down → plug USB.
+
+bash
+
+# Restore original GPT
+
+python edl.py ws 0 gpt_raw_lun4.bin --memory=ufs --lun=4 --loader=devprg.melf
+
+Expected: Wrote gpt_raw_lun4.bin to sector 0
+
+bash
+
+# Restore stock boot_a
+
+python edl.py w boot_a boot_a_stock.bin --memory=ufs --lun=4 --loader=devprg.melf
+
+Expected: Wrote boot_a_stock.bin to sector 113318
+
+bash
+
+# Restore stock abl both slots
+
+python edl.py w abl_a abl_a_stock.bin --memory=ufs --lun=4 --loader=devprg.melf
+
+python edl.py w abl_b abl_b_stock.bin --memory=ufs --lun=4 --loader=devprg.melf
+
+bash
+
+# Restore stock uefi_a
+
+python edl.py w uefi_a uefi_a_stock.bin --memory=ufs --lun=4 --loader=devprg.melf
+
+Expected: Wrote uefi_a_stock.bin to sector 6
+
+bash
+
+python edl.py reset --loader=devprg.melf
+
+### STEP 7 — Confirm Unlock Survived​
+Device boots with **yellow warning screen** — this confirms unlock is active.
+
+bash
+
+adb reboot bootloader
+
+fastboot getvar unlocked
+
+Expected: unlocked: yes
+
+### STEP 8 — Resurrection Scroll Backup​
+Power off → hold Vol Up + Vol Down → plug USB
+
+bash
+
+python edl.py r abl_a abl_a_unlocked.bin --memory=ufs --lun=4 --loader=devprg.melf
+
+python edl.py r abl_b abl_b_unlocked.bin --memory=ufs --lun=4 --loader=devprg.melf
+
+python edl.py r boot_a boot_a_unlocked.bin --memory=ufs --lun=4 --loader=devprg.melf
+
+python edl.py r boot_b boot_b_unlocked.bin --memory=ufs --lun=4 --loader=devprg.melf
+
+python edl.py r init_boot_a init_boot_a_unlocked.bin --memory=ufs --lun=4 --loader=devprg.melf
+
+python edl.py r init_boot_b init_boot_b_unlocked.bin --memory=ufs --lun=4 --loader=devprg.melf
+
+python edl.py r vbmeta_a vbmeta_a_unlocked.bin --memory=ufs --lun=4 --loader=devprg.melf
+
+python edl.py r vbmeta_b vbmeta_b_unlocked.bin --memory=ufs --lun=4 --loader=devprg.melf
+
+python edl.py r vbmeta_system_a vbmeta_system_a_unlocked.bin --memory=ufs --lun=0 --loader=devprg.melf
+
+python edl.py r vbmeta_system_b vbmeta_system_b_unlocked.bin --memory=ufs --lun=0 --loader=devprg.melf
+
+python edl.py r vendor_boot_a vendor_boot_a_unlocked.bin --memory=ufs --lun=4 --loader=devprg.melf
+
+python edl.py r vendor_boot_b vendor_boot_b_unlocked.bin --memory=ufs --lun=4 --loader=devprg.melf
+
+python edl.py r persist persist_unlocked.bin --memory=ufs --lun=0 --loader=devprg.melf
+
+python edl.py r modemst1 modemst1_unlocked.bin --memory=ufs --lun=5 --loader=devprg.melf
+
+python edl.py r modemst2 modemst2_unlocked.bin --memory=ufs --lun=5 --loader=devprg.melf
+
+python edl.py r fsg fsg_unlocked.bin --memory=ufs --lun=5 --loader=devprg.melf
+
+python edl.py r ztecfg ztecfg_unlocked.bin --memory=ufs --lun=5 --loader=devprg.melf
+
+**Confirm all non-zero:**
+
+bash
+
+ls -lh *_unlocked.bin
+
+**Copy off device. This is your resurrection scroll.**
+
+### Key Differences From Original Guide​
+
+Original PlanWhat Actually Happenedfastboot flashing unlock directly after eng ABLFailed — Flashing Unlock is associated with qrcodeNo GPT modification neededGPT must have vbmeta_a and pvmfw_a removed firstuefi_unlock.img flashes to uefi_aFlashes to boot_a — targetbootpar=boot_a for A/B UFSZTE Toolbox handles everythingLinux needs gpt_rmpar.py to replicate gpttool.exeeng ABL needed for unlockeng ABL not needed — AVB method uses uefi_unlock.img insteadRestore stock ABL after unlock via fastbootRestore via EDL immediately after unlock before bootingcom.redmagic.ota existsPackage not present on this firmware — DNS blocking sufficient
+
+Currently stuck in fastboot doing some testing. I can flash some roms and not others. IE CN version was flashed a couple times. Unable to flash back to GB or EE. Help would be appreciated. I don't have Windows so stuck with bkerly.
+
+---
+
+### #677 — **hyty** · Jun 2, 2026 at 1:04 AM · page 34
+
+> **Enddo said:**
+> I've been working on an English translation of the ZTE Family Tool project (for the version I have on-hand)
+>
+> in case anyone wants to help me test it - https://dl.surf/f/c9a51290
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+hows the translating going?
+
+---
+
+### #678 — **dev-reverse** · Jun 2, 2026 at 1:17 AM · page 34
+
+> **hyty said:**
+> hows the translating going?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Post in thread '[Red Magic 11 Pro] [GUIDE] Bootloader Unlock (FREE) - Also Support RM10, Pad3Pro, Z70U, Z80U Unlock - ZTE Family Toolbox' [https://xdaforums.com/t/red-magic-1...lock-zte-family-toolbox.4780930/post-90613814](https://xdaforums.com/t/red-magic-11-pro-guide-bootloader-unlock-free-also-support-rm10-pad3pro-z70u-z80u-unlock-zte-family-toolbox.4780930/post-90613814)

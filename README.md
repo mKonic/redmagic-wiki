@@ -42,4 +42,4 @@ See [docs/contributing.md](docs/contributing.md). PRs welcome for everything fro
 
 ## Provenance
 
-Bootstrapped May 2026 by scraping two XDA forum threads with a Claude Code agent — 137 pages, 2,731 posts — then synthesizing high-signal content into topical pages. Every fact is cited back to the original post. Full credits in [docs/index.md](docs/index.md). Not affiliated with ZTE / Nubia / RedMagic.
+Bootstrapped May 2026 by scraping two XDA forum threads with a Claude Code agent, then synthesizing high-signal content into topical pages. Re-scraped June 2026 — 153 pages, 3,040 posts (RM10 Pro: 34 pages / 678 posts; RM11 Pro: 119 pages / 2,362 posts). Every fact is cited back to the original post. Full credits in [docs/index.md](docs/index.md). Not affiliated with ZTE / Nubia / RedMagic.

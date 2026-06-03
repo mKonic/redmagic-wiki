@@ -38,5 +38,5 @@ From [#5 p1 Ssmiles] — note: `transfert.free.fr` links are temporary; mirror l
 
 ## Region notes
 
-- "Global" / "EEA" / "Asia" / "EU&Asia" all share the NX789J codename. CN-variant ROMs target NX789S (overclocked). Some kernel/firmware features differ — but the kernel source tree (now public, see [09-kernel-source.md](/rm10pro/kernel-source)) has config selecting between J and S [#672 p34 MrKonic].
+- "Global" / "EEA" / "Asia" / "EU&Asia" all share the NX789J codename. CN-variant ROMs target NX789S (overclocked). Some kernel/firmware features differ — but the kernel source tree (public, see [Kernel source](/rm10pro/kernel-source)) has config selecting between J and S [#672 p34 MrKonic].
 - **CN ROMs are subject to silent forced updates** even with auto-update disabled. Watch the system updater app aggressively if running CN [#545 p28 AdaUnlocked].

@@ -99,6 +99,18 @@ SYXZ's ZTE Family Toolbox **did** find a bypass that doesn't require the RSA pri
 - Building tooling that interacts with `ztecfg` (e.g. moving between devices, fixing post-unlock state)
 - Tracking new ZTE OTAs for fuse-related abl changes
 
+## `efisp` bootloader-state spoofing — the "modes" {#efisp-modes}
+
+A separate line of work centred on the **RM11 Pro (NX809J)** — conceptually portable to the RM10 Pro since both share the `efisp` partition and ABL behavior. This sidesteps the `ztecfg`/RSA signing problem entirely: instead of forging a signature, it makes a *genuinely* unlocked device *present* as locked.
+
+- The ZTE toolbox's unlock already works by **writing a modified `efisp`** partition, then restoring the original after [RM11 #398 p20, around the OP's method notes]. The same lever can be pointed the other way — write a custom `efisp` so the ABL reports "locked" while booting unsigned images. The modded `efisp` is open-sourced via **[superturtlee/gbl_root_canoe](https://github.com/superturtlee/gbl_root_canoe)**.
+- **SnowFuhrer** drives much of this: he maintains **[`SnowFuhrer/edl-ng`](https://github.com/SnowFuhrer/edl-ng)** (a modern, ZTE-patched EDL client) [RM11 #1954 p98] and develops the `efisp`/`GblPayloadLib` payloads, which he shares in-thread [RM11 #2202 p111].
+- The community settled on **"modes"** for different use cases (the exact internal semantics are described inconsistently in-thread, so treat these as the working summary):
+  - **mode 2** — stock ROM with unlocked-boot capability while keeping attestation, so **Google Wallet / Play Integrity still pass**; described as a TA-payload spoof at the QSEE/SPSS boundary with the ABL kept "honest" [RM11 #2150 p108, #2151 p108 EliteBlackKaiser]. Switching to it from the old fingerprint patches requires a reset (phone is now seen as unlocked) [RM11 #2202 p111 SnowFuhrer].
+  - **mode 3** — full custom ROMs, which *will* fail attestation [RM11 #2199 p110 n00b-xda-disciple].
+
+This is bootloader-state spoofing at the `efisp`/ABL layer rather than the `ztecfg`/RSA layer the rest of this chapter covers. It's also why a compilable kernel matters — see [Kernel source → GPLv2 dispute](/rm10pro/kernel-source#gplv2-kernel).
+
 ## See also
 
 - [Aleph Security: Exploiting Qualcomm EDL Programmers (1)](https://alephsecurity.com/2018/01/22/qualcomm-edl-1/) — background on PBL/firehose architecture [linked in #419 by c3c3]

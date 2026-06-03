@@ -1,6 +1,6 @@
 # rm11pro-unlock
 
-_Extracted from 103 pages_
+_Extracted from 119 pages_
 
 
 ---
@@ -45450,3 +45450,5524 @@ I tried to use another slot with old firmware but got "your device is corrupt it
 > Click to collapse
 
 can you explain how to run in ram? what command should i use?
+
+---
+
+### #2,059 — **dev-reverse** · May 19, 2026 at 5:02 AM · page 103
+
+[tech.sp@zte.com.cn](mailto:tech.sp@zte.com.cn)
+
+Guys, take a look at the text below. I might be translating it wrong, but it literally says that they themselves must provide the complete code. Start sending them emails.
+
+---
+
+### #2,060 — **5t0l3n** · May 19, 2026 at 2:52 PM · page 103
+
+Updated to .20 from .16 then rolledback to .08 then updated again to .16
+
+I'm able to unlock bootloader and root on latest version but i'm not able to fix fingerprint. Yellow warning then red warning. The system boots fine tho...
+
+Done with ZTEToolBox 1.2.6 beta1
+
+---
+
+### #2,061 — **dev-reverse** · May 19, 2026 at 3:06 PM · page 104
+
+> **5t0l3n said:**
+> Updated to .20 from .16 then rolledback to .08 then updated again to .16
+>
+>
+>
+> I'm able to unlock bootloader and root on latest version but i'm not able to fix fingerprint. Yellow warning then red warning. The system boots fine tho...
+>
+>
+>
+> Done with ZTEToolBox 1.2.6 beta1
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Which device could you tell me? Which device did you unlock? I have a suggestion that might work: you could take only the firmware part of the ROM and restore it again. Since it's already unlocked, after uploading only the firmware to the device, it should be able to fix the TEE, removing the red warning problem and leaving only the yellow one. But that's just my theory. The reason is that after breaking my TEE on a Redmagic 11 Pro, I created a file that only sends the firmware to the smartphone. It fixed my TEE, but of course I was messing with other things. But what I want to say is that the result was the repair of the TEE.
+
+---
+
+### #2,062 — **5t0l3n** · May 19, 2026 at 3:09 PM · page 104
+
+> **dev-reverse said:**
+> Which device could you tell me? Which device did you unlock? I have a suggestion that might work: you could take only the firmware part of the ROM and restore it again. Since it's already unlocked, after uploading only the firmware to the device, it should be able to fix the TEE, removing the red warning problem and leaving only the yellow one. But that's just my theory. The reason is that after breaking my TEE on a Redmagic 11 Pro, I created a file that only sends the firmware to the smartphone. It fixed my TEE, but of course I was messing with other things. But what I want to say is that the result was the repair of the TEE.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Z80 ultra. I was thinkin on similar approach but reflashing old .imgs to retain .20 fw and full unlocked bootloader. Not tested
+
+About your theory... Wich .img i should flash?
+
+---
+
+### #2,063 — **Devola-Sun** · May 19, 2026 at 3:16 PM · page 104
+
+Could you please send me the APK file for Game Space on the Red Magic 11 Pro? I’d like to replace the one on my Z80 Ultra.
+
+---
+
+### #2,064 — **dev-reverse** · May 19, 2026 at 3:23 PM · page 104
+
+> **5t0l3n said:**
+> Z80 ultra. I was thinkin on similar approach but reflashing old .imgs to retain .20 fw and full unlocked bootloader. Not tested
+>
+>
+>
+> About your theory... Wich .img i should flash?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+You only need to restore your firmware, or you can restore your full backup. It should get rid of that red screen. The difference between preparing the firmware and not loading the ROM image along with it is that a full backup takes longer, and you would be doing a new installation. It would boot as if it were a device that has never been used, which is why I separated the firmware from the ROM. In any case, you will use the ZTE Toolbox to load this new image as a backup restoration, option 2 if I'm not mistaken.
+
+---
+
+### #2,065 — **dev-reverse** · May 19, 2026 at 3:24 PM · page 104
+
+> **Devola-Sun said:**
+> Could you please send me the APK file for Game Space on the Red Magic 11 Pro? I’d like to replace the one on my Z80 Ultra.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+The Game Space application isn't just a regular application; it communicates with the kernel, and each device has its own API communication. If I use the Game Space app from the Z80, it won't work on the Redmagic 11 Pro, and vice versa. It's a waste of time.
+
+---
+
+### #2,066 — **MrKonic** · May 19, 2026 at 5:22 PM · page 104
+
+> **dev-reverse said:**
+> [tech.sp@zte.com.cn](mailto:tech.sp@zte.com.cn)
+>
+>
+>
+> Guys, take a look at the text below. I might be translating it wrong, but it literally says that they themselves must provide the complete code. Start sending them emails.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+yeah they're required by law since they're using the linux kernel which is under gpl  2 license.
+
+---
+
+### #2,067 — **dev-reverse** · May 19, 2026 at 6:23 PM · page 104
+
+Redmagic 11 pro   GKI pure not implemented    DTB working  ram
+
+INSTRUCTION_MANUAL.md      (  Antigravity  IDE  )
+
+adb reboot bootloader
+
+----------------------------------------------------------------
+
+fastboot boot dev_reverse_no_dtb.img
+
+wait for to upload all files in zip again to google driver
+
+---
+
+### #2,068 — **5t0l3n** · May 19, 2026 at 8:44 PM · page 104
+
+> **dev-reverse said:**
+> You only need to restore your firmware, or you can restore your full backup. It should get rid of that red screen. The difference between preparing the firmware and not loading the ROM image along with it is that a full backup takes longer, and you would be doing a new installation. It would boot as if it were a device that has never been used, which is why I separated the firmware from the ROM. In any case, you will use the ZTE Toolbox to load this new image as a backup restoration, option 2 if I'm not mistaken.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+How i can do that? selecting 2 reflash full firm
+
+---
+
+### #2,069 — **dev-reverse** · May 19, 2026 at 8:55 PM · page 104
+
+> **5t0l3n said:**
+> How i can do that? selecting 2 reflash full firm
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+You can use option 2 and restore everything; it will have the same effect. See what happens and tell us here afterwards.
+
+---
+
+### #2,070 — **5t0l3n** · May 19, 2026 at 9:52 PM · page 104
+
+> **dev-reverse said:**
+> You can use option 2 and restore everything; it will have the same effect. See what happens and tell us here afterwards.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Sorry, I didn't understand your message.
+
+My process was to update to .20 from .16, roll back to .08 to verify that a revert with the latest EEA update was possible, and then update to .16 from .08.
+
+I made a .16 backup with the bootloader unlocked. I've already restored the system from .20.
+
+In version .20, option number 18 in ZTEToolBox doesn't work; it doesn't remove the yellow warning, and a new red warning appears. I can't get the fingerprint to work in this version.
+
+Reverting to .16 works fine as always, without any messages and fingerprint working.
+
+---
+
+### #2,071 — **dev-reverse** · May 19, 2026 at 10:03 PM · page 104
+
+> **5t0l3n said:**
+> Sorry, I didn't understand your message.
+>
+>
+>
+> My process was to update to .20 from .16, roll back to .08 to verify that a revert with the latest EEA update was possible, and then update to .16 from .08.
+>
+>
+>
+> I made a .16 backup with the bootloader unlocked. I've already restored the system from .20.
+>
+>
+>
+> In version .20, option number 18 in ZTEToolBox doesn't work; it doesn't remove the yellow warning, and a new red warning appears. I can't get the fingerprint to work in this version.
+>
+>
+>
+> Reverting to .16 works fine as always, without any messages and fingerprint working.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I understand the correction path must have changed, and the patch created in the ZTE Toolbox can't fix the issue in the version you're using. Something similar happens to me when I use the fastboot from the userdebug ROM; the TEE crashes and can't validate.
+
+But the red error, I don't have it, there's 1 comment now, I can't remember where it is, but someone managed to remove the red warning with a command in fastboot, there are so many pages I can't remember where it is, but it's just a visual correction.
+
+---
+
+### #2,072 — **dh2jt2** · May 20, 2026 at 2:09 AM · page 104
+
+> **Falkeen said:**
+> Hello, would someone be so kind as to help me unlock my Redmagic Astra? I've already read the entire guide but I'm stuck here (see images).
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+> **alejandroprz95 said:**
+> Use your backup, flash it with the tool, boot into recovery mode and perform a data wipe, then start again. Now connect it with USB debugging enabled; it will reboot into EDL mode.
+>
+> The unlock will be performed and the tool will restart in the system. It will ask you to reconnect it to EDL; connect it, confirm, and you're done.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Hi hello (using Qualcomm USB Driver v1.0.10065.1 + 1.2.4-beta1.7z - redmagic astra),
+
+I am having the same issue ... in screenshot, where the tablet's text is slanted.
+
+I am not seeing bootloader 9008 or adb driver anymore, just android other devices with exclaimation mark (in device manager).
+
+The flash option from backup mentioned above is that through the zte toolbox?
+
+---
+
+### #2,073 — **Devola-Sun** · May 20, 2026 at 2:19 AM · page 104
+
+> **dh2jt2 said:**
+> Hi hello (using Qualcomm USB Driver v1.0.10065.1 + 1.2.4-beta1.7z - redmagic astra),
+>
+> I am having the same issue ... in screenshot, where the tablet's text is slanted.
+>
+> I am not seeing bootloader 9008 or adb driver anymore, just android other devices with exclaimation mark (in device manager).
+>
+> The flash option from backup mentioned above is that through the zte toolbox?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Exactly
+
+---
+
+### #2,074 — **elrey120** · May 20, 2026 at 2:22 PM · page 104
+
+> **dev-reverse said:**
+> [View attachment 6346376](https://xdaforums.com/attachments/6346376/)
+>
+>
+>
+> *Based on the response I received, they don't care about us at all; they're not going to release anything. This will be my first and last Redmagic experience. I don't recommend them to anyone; the company treats its users like garbage.*
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Yeah you're getting the same experience I had in the past. Redmagic phones are really great for gaming, especially given how cheap they are compared to others but they might just have the worst customer support/oss/system software out there.
+
+It definitely is fun and all but given how bad the software is I might end up spending more money and going for a different brand of gaming phones.
+
+---
+
+### #2,075 — **dev-reverse** · May 20, 2026 at 2:29 PM · page 104
+
+> **elrey120 said:**
+> Yeah you're getting the same experience I had in the past. Redmagic phones are really great for gaming, especially given how cheap they are compared to others but they might just have the worst customer support/oss/system software out there.
+>
+> It definitely is fun and all but given how bad the software is I might end up spending more money and going for a different brand of gaming phones.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I haven't left them alone yet. I've requested again that they send me the compilable kernel, since the open-source page says at the bottom that they would send the kernel if the device was purchased with up to 3 years of support. I went there. Again, now they're asking for my device's data; they probably want to block the warranty. I want to know if they will provide me with the complete, compilable, and functional open-source code.
+
+---
+
+### #2,076 — **elrey120** · May 20, 2026 at 2:31 PM · page 104
+
+> **dev-reverse said:**
+> I haven't left them alone yet. I've requested again that they send me the compilable kernel, since the open-source page says at the bottom that they would send the kernel if the device was purchased with up to 3 years of support. I went there. Again, now they're asking for my device's data; they probably want to block the warranty. I want to know if they will provide me with the complete, compilable, and functional open-source code.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Well, you already lost your warranty by unlocking so nothing to lose ig.
+
+---
+
+### #2,077 — **dev-reverse** · May 20, 2026 at 2:33 PM · page 104
+
+> **elrey120 said:**
+> Well, you already lost your warranty by unlocking so nothing to lose ig.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+As far as I know, I've already locked and unlocked the device twice, so I don't believe there will be any traces left since the unlocking was done using an authentic FireHose.
+
+---
+
+### #2,078 — **elrey120** · May 20, 2026 at 2:56 PM · page 104
+
+> **dev-reverse said:**
+> As far as I know, I've already locked and unlocked the device twice, so I don't believe there will be any traces left since the unlocking was done using an authentic FireHose.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Is your TEE fixed? Still, probably there is some kind of mismatch between dates of flashing, running duck detector when locked should show if something's wrong.
+
+---
+
+### #2,079 — **elrey120** · May 20, 2026 at 3:07 PM · page 104
+
+Weird thing I found while translating Toolbox v1.2.6-beta1. There is this option 15 that is commented out:
+
+15.Temporarily enter full-functioning Fastboot
+
+It calls a part of non-existing code so it doesn't do anything. Still, maybe the dev is working on being able to flash things temporarily through fastboot?
+
+---
+
+### #2,080 — **dev-reverse** · May 20, 2026 at 3:09 PM · page 104
+
+> **elrey120 said:**
+> Weird thing I found while translating Toolbox v1.2.6-beta1. There is this option 15 that is commented out:
+>
+> 15.Temporarily enter full-functioning Fastboot
+>
+> It calls a part of non-existing code so it doesn't do anything. Still, maybe the dev is working on being able to flash things temporarily through fastboot?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+The device is 100% restored. I just don't know if there are any traces left in some inaccessible place, like a marker of how many times the firehose was used, or if that even exists. If not, then yes, it is 100% intact.
+
+---
+
+### #2,081 — **dev-reverse** · May 20, 2026 at 6:47 PM · page 105
+
+![9958.jpg](https://xdaforums.com/attachments/9958-jpg.6347086/)
+
+Now we just have to wait and see what their response will be, but I don't have high expectations. The only expectation I have is that they must have put my IMEI on some kind of blacklist or something like that.
+
+---
+
+### #2,082 — **borygo77** · May 20, 2026 at 7:16 PM · page 105
+
+You at least got answer to your email. I didn't ![🤔](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f914.png)
+
+Have you sent it to support or the one provided in there in opensource website?
+
+![142210.jpg](https://xdaforums.com/attachments/142210-jpg.6347097/)
+
+---
+
+### #2,083 — **dev-reverse** · May 20, 2026 at 8:04 PM · page 105
+
+> **borygo77 said:**
+> You at least got answer to your email. I didn't ![🤔](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f914.png)
+>
+> Have you sent it to support or the one provided in there in opensource website?
+>
+>
+>
+> [View attachment 6347097](https://xdaforums.com/attachments/6347097/)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+They don't respond to regular emails; I had to use my business email from my domain. I honestly have no idea why, but if it's the Redmagic 11 Pro issue, leave it to me since I'm in charge of it. Anyway, they made it clear that any updates will be made to their official repository. I won't receive anything special, and I doubt they'll even give me a compilable kernel. Honestly, I don't believe it. The only thing I can tell you is that you would need to send your smartphone's IMEI number and where you bought it.  Among other sensitive data, this is not pleasing and doesn't help at all, but if they provide a compilable kernel already configured, even if it's with KO drivers, we have a better path than what I've achieved so far. I managed to configure the kernel, but it doesn't have any kind of DTB configured in the kernel I configured; it only boots the pure kernel and will only be recognized by booting via RAM. If we can get a kernel that is truly compilable with drivers and other drivers, even if it's already compiled in KO format, it would be much better than what I've achieved here. That's why I'm fighting to get the drivers and the compilable kernel, and what they can't open source, they should load the already compiled external driver so that the kernel can work and be loaded on the smartphone. My point of view is that if they can't distribute something that isn't theirs, they should...  They could very well put the already compiled drivers in a folder stating that they cannot provide all the open-source code, but that users can use file X or Y. Of course, they wouldn't delete anything that's already there, just show that they can't, but they provide option 2. I'm not asking them to remove all the open-source code, just to provide option 2 so we could have a base and rebuild it in our own way with patches in the future. But they prefer to deliver everything broken; it's impossible to guess what's there, nothing works, and it's very frustrating.
+
+[support@redmagic.gg](mailto:support@redmagic.gg)
+
+---
+
+### #2,084 — **dev-reverse** · May 20, 2026 at 8:24 PM · page 105
+
+I forgot to mention that everything proprietary to ZtE is gone from the kernel; they removed it all. Nothing belonging to ZtE is there; I want to make that very clear.
+
+---
+
+### #2,085 — **Leb-son** · May 20, 2026 at 9:17 PM · page 105
+
+> **dev-reverse said:**
+> I forgot to mention that everything proprietary to ZtE is gone from the kernel; they removed it all. Nothing belonging to ZtE is there; I want to make that very clear.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I just want to say I appreciate all the work you've put in and continue to put in. With the ongoing android move towards closing the ecosystem I would love if we can get some great alternative options for this powerful hardware.
+
+I lack the technical skills to assist in building but I also have yet to attempt any unlocking so if there's anything I maybe able to help with, I'll try although RN in on holiday so I'll likely be slow to reply ![😅](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f605.png)
+
+---
+
+### #2,086 — **JustaF4n** · May 21, 2026 at 2:57 AM · page 105
+
+[@AdaUnlocked](https://xdaforums.com/m/13332763/)
+
+Heyy , I wanted to ask specifically about the “No-BL Root” method (EDL method).
+
+Is the RedMagic 11 Pro+ also supported by this method, or only the standard 11 Pro?
+
+I’m asking because in the thread sometimes you mention “RM11 Pro” and sometimes “RM11 Pro/Pro+”, so I wanted to make sure the Pro+ is actually compatible with the same tool/exploit since both devices use the same SoC/platform.
+
+Also, regarding the No-BL Root method specifically: how safe is it against a true HARD brick?
+
+I understand soft bricks can happen, but is there any known serious hard brick risk if the instructions are followed correctly?
+
+Thanks for sharing this with the community.
+
+---
+
+### #2,087 — **BassFuzz** · May 21, 2026 at 3:06 AM · page 105
+
+After unlocking the bootloader how are you supposed to update your firmware? GPU driver and security patches atleast
+
+---
+
+### #2,088 — **AlexASDP** · May 21, 2026 at 4:56 AM · page 105
+
+> **dev-reverse said:**
+> So, restore the ROM before unlocking, then use option 19 of the ZTE Toolbox. If you feel the device has reverted to factory settings, change the slot to slot A or B. Also restore that partition to the factory backup before modification and wipe it again with option 19. After that, when the device officially boots with the official ROM, change it to slot A (by default, it boots the system), and then put it in EDL mode and relock the bootloader again. I would do a wipe using option 19 and check if everything is working again with the bootloader locked. That's how I've locked and unlocked my device to factory mode a couple of times. Use your head and pure logic; there's no secret, just think a little.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+How do I restore the rom?
+
+---
+
+### #2,089 — **elrey120** · May 21, 2026 at 9:11 AM · page 105
+
+> **JustaF4n said:**
+> [@AdaUnlocked](https://xdaforums.com/m/13332763/)
+>
+> Heyy , I wanted to ask specifically about the “No-BL Root” method (EDL method).
+>
+> Is the RedMagic 11 Pro+ also supported by this method, or only the standard 11 Pro?
+>
+> I’m asking because in the thread sometimes you mention “RM11 Pro” and sometimes “RM11 Pro/Pro+”, so I wanted to make sure the Pro+ is actually compatible with the same tool/exploit since both devices use the same SoC/platform.
+>
+> Also, regarding the No-BL Root method specifically: how safe is it against a true HARD brick?
+>
+> I understand soft bricks can happen, but is there any known serious hard brick risk if the instructions are followed correctly?
+>
+> Thanks for sharing this with the community.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+The redmagic 11 pro + is just the same as the normal 11 pro but from china, no differences in hardware.
+
+Regarding your question about a hard brick, you are never going to truly brick this phone, anything can be recovered through edl. Either way, if you follow the instructions properly everything will be fine
+
+---
+
+### #2,090 — **elrey120** · May 21, 2026 at 9:12 AM · page 105
+
+> **BassFuzz said:**
+> After unlocking the bootloader how are you supposed to update your firmware? GPU driver and security patches atleast
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Restore your os to stock and then install ota manually. I know there is a way to download the ota directly from a link where you have to write the version you want from the link. It's somewhere in the thread, sorry but I don't know where it is.
+
+---
+
+### #2,091 — **elrey120** · May 21, 2026 at 9:16 AM · page 105
+
+> **AlexASDP said:**
+> How do I restore the rom?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Option 19 in toolbox, have the stock rom in a folder without any spaces or special characters.
+
+---
+
+### #2,092 — **BassFuzz** · May 21, 2026 at 1:14 PM · page 105
+
+> **elrey120 said:**
+> Restore your os to stock and then install ota manually. I know there is a way to download the ota directly from a link where you have to write the version you want from the link. It's somewhere in the thread, sorry but I don't know where it is.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+You mean relocking the bootloader? The would defeat the point
+
+---
+
+### #2,093 — **elrey120** · May 21, 2026 at 1:16 PM · page 105
+
+> **BassFuzz said:**
+> You mean relocking the bootloader? The would defeat the point
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I meant just the os
+
+---
+
+### #2,094 — **JustaF4n** · May 21, 2026 at 2:25 PM · page 105
+
+> **BassFuzz said:**
+> After unlocking the bootloader how are you supposed to update your firmware? GPU driver and security patches
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+> **elrey120 said:**
+> The redmagic 11 pro + is just the same as the normal 11 pro but from china, no differences in hardware.
+>
+> Regarding your question about a hard brick, you are never going to truly brick this phone, anything can be recovered through edl. Either way, if you follow the instructions properly everything will be fine
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Thanks
+
+---
+
+### #2,095 — **BassFuzz** · May 21, 2026 at 3:27 PM · page 105
+
+> **elrey120 said:**
+> I meant just the os
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+What does restoring the os to stock mean? Removing magisk modules?
+
+---
+
+### #2,096 — **elrey120** · May 21, 2026 at 3:30 PM · page 105
+
+> **BassFuzz said:**
+> What does restoring the os to stock mean? Removing magisk modules?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Removing all modifications you did. Just think of it as not having anything installed that you wouldn't be able to install while having a locked bootloader.
+
+---
+
+### #2,097 — **BassFuzz** · May 21, 2026 at 3:35 PM · page 105
+
+> **elrey120 said:**
+> Removing all modifications you did. Just think of it as not having anything installed that you wouldn't be able to install while having a locked bootloader.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Sorry for insisting but I want to understand this: you mean anything that alters other partitions?
+
+---
+
+### #2,098 — **elrey120** · May 21, 2026 at 3:36 PM · page 105
+
+> **BassFuzz said:**
+> Sorry for insisting but I want to understand this: you mean anything that alters other partitions?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Yes exactly that.
+
+---
+
+### #2,099 — **BassFuzz** · May 21, 2026 at 3:38 PM · page 105
+
+> **elrey120 said:**
+> Yes exactly that.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Thank you! I assume the inbuilt ota update downloader stops working with an unlocked bootloader?
+
+---
+
+### #2,100 — **elrey120** · May 21, 2026 at 3:44 PM · page 105
+
+> **BassFuzz said:**
+> Thank you! I assume the inbuilt ota update downloader stops working with an unlocked bootloader?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+You won't be able to download otas from there but installing the package manually allegedly works. That's what worked for me on Xiaomi phones and it's also what other people in this thread have said works. I myself haven't updated ever since I unlocked so I got no way of telling you 100% for sure.
+
+---
+
+### #2,101 — **JustaF4n** · May 21, 2026 at 9:16 PM · page 106
+
+> **elrey120 said:**
+> You won't be able to download otas from there but installing the package manually allegedly works. That's what worked for me on Xiaomi phones and it's also what other people in this thread have said works. I myself haven't updated ever since I unlocked so I got no way of telling you 100% for sure.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Local updates work but they haven't posted the rom updates on their website.
+
+---
+
+### #2,102 — **elrey120** · May 21, 2026 at 9:38 PM · page 106
+
+> **JustaF4n said:**
+> Local updates work but they haven't posted the rom updates on their website.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+https://rom.download.nubia.com/Europe%26Asia/NX809J/REDMAGICOS11.0.16MR3_GB/update.zip
+
+You'd have to edit that link and write whatever version you want to download to get the ota manually
+
+---
+
+### #2,103 — **borygo77** · May 21, 2026 at 9:41 PM · page 106
+
+Or use [@szescxz](https://xdaforums.com/m/10107309/) repo to download what you need ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+
+![github.com](/proxy.php?image=https%3A%2F%2Fopengraph.githubassets.com%2F59b79f9b6cd6a1b0550b6d385cb38a027016f01fb12240081f74d5723a8a8ba9%2Fszescxz%2FZTE_NX809J_FOTA&hash=2c3fa13a008a3935050c2951f3290b81&return_error=1)
+
+### Releases · szescxz/ZTE_NX809J_FOTA
+
+Unofficial FOTA Tracking Repository. NO SUPPORT PROVIDED, PROCEED AT YOUR OWN RISK. Might be discontinued as I don't have the device. Git repo subject to force pushes and branch renamings. PM m...
+
+![github.com](/proxy.php?image=https%3A%2F%2Fgithub.githubassets.com%2Ffavicons%2Ffavicon.svg&hash=39b48b32410d41e23249bf67277031ca&return_error=1)
+
+					github.com
+
+---
+
+### #2,104 — **dev-reverse** · May 21, 2026 at 11:23 PM · page 106
+
+Limited Edition Wuthering Waves (Mingchao). If you have it, could you provide it to me on Google Driver, I couldn't download it anywhere else, the connection always drops
+
+https://hakata.infini-cloud.net/share/136103a02ce746c3
+
+---
+
+### #2,105 — **aisiggnz** · May 21, 2026 at 11:38 PM · page 106
+
+![WhatsApp Image 2026-05-21 at 8.50.46 PM.jpeg](https://xdaforums.com/attachments/whatsapp-image-2026-05-21-at-8-50-46-pm-jpeg.6347404/)
+
+Phones been stuck like this for 11 hours tried every restart methodever and pc doesnt detect it ? am icooked ?
+
+---
+
+### #2,106 — **dev-reverse** · May 22, 2026 at 12:05 AM · page 106
+
+> **aisiggnz said:**
+> [View attachment 6347404](https://xdaforums.com/attachments/6347404/)Phones been stuck like this for 11 hours tried every restart methodever and pc doesnt detect it ? am icooked ?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+explains what you were doing from the beginning step by step until you reached this stuck screen
+
+---
+
+### #2,107 — **aisiggnz** · May 22, 2026 at 12:32 AM · page 106
+
+> **aisiggnz said:**
+> > **dev-reverse said:**
+> > explains what you were doing from the beginning step by step until you reached this stuck screen
+> >
+> >
+> > Click to expand...
+> >
+> > Click to collapse
+>
+>
+> Here's the updated write-up with FTM mode included:
+>
+>
+>
+>
+>
+>
+>
+>
+>
+> **RedMagic NX809J Bootloader Unlock via EDL — Full Process
+>
+>
+>
+>
+>
+> Goal:** Unlock bootloader on RedMagic 11 (NX809J, SM8550, RedMagicOS 11.0.18MR2)
+>
+>
+>
+>
+>
+>
+>
+>
+>
+> **Step 1: Enable FTM Mode**
+>
+>
+>
+>
+>
+>
+> - On RedMagic devices, FTM (Factory Test Mode) is a special mode where ADB works even without USB debugging enabled in settings
+> - Dial *#*#2846579#*#* in the phone dialer to access engineering menu
+> - Enable FTM mode from the menu
+> - Phone reboots into FTM — screen shows "FTM" and ADB is available
+> - From FTM, reboot to EDL:
+> adb reboot edl
+>
+>
+>
+>
+>
+>
+> - Phone screen goes black and Windows detects QUSB_BULK device (VID 05C6 PID 9008)
+>
+>
+>
+>
+>
+>
+> **Problem 1: COM port blocked**
+>
+>
+>
+>
+>
+>
+> - Windows blocked the Qualcomm 9008 serial driver due to HVCI/VBS (Hypervisor-Protected Code Integrity)
+> - Device showed as CM_PROB_UNSIGNED_DRIVER in Device Manager
+> - Attempted: F7 DSE disable, bcdedit testsigning — both blocked by Secure Boot/HVCI
+> - **Fix:** Used Zadig to install WinUSB driver (Microsoft-signed) on the QUSB_BULK device (VID 05C6 PID 9008), bypassing HVCI entirely. This lets Python edl.py talk directly via USB bulk instead of COM port.
+>
+>
+>
+>
+>
+>
+> **Problem 2: edl.py failing with Sahara error 0x29**
+>
+>
+>
+>
+>
+>
+> - NX809J requires an 8-file multi-image Sahara sequence before firehose boots
+> - edl.py was only sending prog_firehose_ddr.elf
+> - **Fix:** Created programmer.xml with sahara_config format listing all 8 image IDs:
+> <?xml version="1.0" ?>
+>
+> <sahara_config>
+>
+>   <chipset>SM8550</chipset>
+>
+>   <images>
+>
+>     <image image_id="36" image_path="multi_image_qti.mbn" />
+>
+>     <image image_id="37" image_path="multi_image.mbn" />
+>
+>     <image image_id="21" image_path="xbl_sc.elf" />
+>
+>     <image image_id="60" image_path="signed_firmware_soc_view.elf" />
+>
+>     <image image_id="59" image_path="sequencer_ram.elf" />
+>
+>     <image image_id="61" image_path="tme_config.elf" />
+>
+>     <image image_id="13" image_path="prog_firehose_ddr.elf" />
+>
+>     <image image_id="38" image_path="xbl_config_devprg.elf" />
+>
+>   </images>
+>
+> </sahara_config>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+> **Problem 3: "ERROR: Tool doesn't come from ZTE"**
+>
+>
+>
+>
+>
+>
+> - NX809J firehose programmer validates vendor by checking Oem="ZTE" in the configure XML
+> - Generic edl.py doesn't send this
+> - **Fix:** Modified edlclient/Library/firehose.py to send ZTE-specific configure XML:
+> connectcmd = f"<?xml version=\"1.0\" encoding=\"UTF-8\" ?><data>" + \
+>
+>              f"<configure MemoryName=\"ufs\" " + \
+>
+>              f"Verbose=\"0\" " + \
+>
+>              f"AlwaysValidate=\"0\" " + \
+>
+>              f"MaxDigestTableSizeInBytes=\"8192\" " + \
+>
+>              f"MaxPayloadSizeToTargetInBytes=\"1048576\" " + \
+>
+>              f"ZlpAwareHost=\"1\" " + \
+>
+>              f"SkipStorageInit=\"0\" " + \
+>
+>              f"Oem=\"ZTE\""
+>
+>
+>
+>
+>
+>
+>
+>
+>
+> **Problem 4: UnicodeEncodeError in progress bar**
+>
+>
+>
+>
+>
+>
+> - Windows terminal CP1252 can't render Unicode block characters in edl.py progress bar
+> - **Fix:** Replaced █ with # in edlclient/Library/utils.py line 761
+>
+>
+>
+>
+>
+>
+> **Result: Full firehose access achieved**
+>
+>
+>
+>
+>
+>
+> - python edl.py printgpt — successfully printed GPT for all 6 LUNs
+> - python edl.py r devinfo devinfo.bin — backed up devinfo partition
+> - devinfo contained: ANDROID-BOOT! magic + byte 13=0x01 (unlock flag)
+>
+>
+>
+>
+>
+>
+> **Bootloader unlock method: efisp**
+>
+>
+>
+>
+>
+>
+> - Discovered from ZTE toolbox config: blplan=efisp — NX809J uses UEFI-based unlock
+> - The write.bat in ZTE Family Toolbox revealed the exact unlock method
+> - **Action:** Flashed linuxloader.efi (45056 bytes, from ZTE toolbox res folder) to efisp partition:
+> python edl.py w efisp linuxloader.efi --loader=programmer.xml --memory=ufs --vid=0x05C6 --pid=0x9008
+>
+>
+>
+>
+>
+>
+>
+>
+>
+> **Current status:**
+>
+>
+>
+>
+>
+>
+> - Phone booted and showed: VbNuStateApp: VBRwDeviceState(WRITE_CONFIG) success
+> - Unlock config successfully written ![✅](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/2705.png)
+> - Phone then got stuck on boot logo (linuxloader.efi hung after writing config)
+> - Hardware EDL button combo doesn't work on NX809J (presskeytoedl=n)
+> - NX809J has no hardware EDL combo — only adb reboot edl from FTM works
+> - Waiting for battery to die to re-enter EDL, then will erase efisp to allow normal boot
+> - Bootloader IS unlocked — just need to clear efisp
+>
+>
+>
+>
+>
+>
+> **Important notes for NX809J specifically:**
+>
+>
+>
+>
+>
+>
+> - presskeytoedl=n — hardware Vol+Power EDL combo does NOT work
+> - Must use adb reboot edl from FTM mode to enter 9008
+> - Uses multi-image Sahara (8 files) — single ELF loader will fail
+> - ZTE vendor lock in firehose — must patch edl.py with Oem="ZTE"
+> - Bootloader unlock method is efisp partition, not devinfo
+>
+>
+>
+>
+>
+>
+> **Tools used:**
+>
+>
+>
+>
+>
+>
+> - Bkerler edl.py (modified)
+> - Zadig (WinUSB driver)
+> - ZTE Family Toolbox (for firehose binaries and config reference)
+> - Python 3
+> [View attachment 6347404](https://xdaforums.com/attachments/6347404/)Phones been stuck like this for 11 hours tried every restart methodever and pc doesnt detect it ? am icooked ?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+---
+
+### #2,108 — **n00b-xda-disciple** · May 22, 2026 at 12:38 AM · page 106
+
+HOLD DOWN POWER+VOL UP+DOWN when connecting the phone to force edl.
+
+Also looks like your trying to do this in a different way with python. The toolbox has everything you need for unlocking (Besides drivers and Platform Tools) Use the toolbox version released for your device and follow directions from the main post.
+
+---
+
+### #2,109 — **aisiggnz** · May 22, 2026 at 12:46 AM · page 106
+
+**Every EDL method we tried on NX809J:**
+
+**Method 1: Vol Up + Vol Down while plugging USB**
+
+- Hold both volume buttons, plug USB in
+- Result: Nothing, no Windows sound, no 9008 detected
+**Method 2: Vol Down only while plugging USB**
+
+- Hold just volume down, plug USB in
+- Result: Nothing
+**Method 3: Power + Vol Up + Vol Down while plugging USB**
+
+- Hold all three buttons together, plug USB in
+- Result: Nothing
+**Method 4: Force off first, then Vol Up + Vol Down + plug USB**
+
+- Hold power 15-30 seconds until screen goes black
+- Immediately hold Vol Up + Vol Down and plug USB in
+- Result: Phone just boots back to logo, no EDL
+**Method 5: Force off first, then Power + Vol Up + Vol Down + plug USB**
+
+- Same as above but holding all three
+- Result: Nothing
+**Method 6: ADB reboot edl (while stuck on boot logo)**
+
+- Ran polling loop trying adb reboot edl every 500ms
+- Result: Phone never reaches Android/ADB during boot loop so command never lands
+**Method 7: Catching it mid-boot with ADB**
+
+- Unplugged USB, let phone get stuck on logo
+- Plugged USB back in trying to catch ADB window
+- Result: Boot hangs before ADB daemon starts, never visible to PC
+
+**Why none of the hardware combos work:**
+
+The NX809J config file (dev-NX809J.bat) inside ZTE Family Toolbox explicitly states:
+
+presskeytoedl=n
+
+This means ZTE intentionally disabled hardware button EDL on this device. The ONLY supported method is adb reboot edl from FTM mode. Once the phone is stuck before Android loads, you have no software path to EDL without ADB.
+
+**What does work on NX809J:**
+
+- Boot phone normally or into FTM mode (*#*#2846579#*#*)
+- From FTM: adb reboot edl
+- Phone drops to 9008, Windows detects QUSB_BULK (VID 05C6 PID 9008)
+- Install WinUSB via Zadig on that device
+- Use edl.py with programmer.xml and ZTE patches
+
+**Current situation:** Phone is stuck on boot logo after linuxloader.efi wrote unlock config. Can't reach ADB. Waiting for battery to fully die — when Qualcomm devices boot with a dead battery and USB plugged in, some auto-enter EDL mode. That's the last software option before opening the phone and shorting the EDL test point on the PCB.
+
+---
+
+### #2,110 — **n00b-xda-disciple** · May 22, 2026 at 12:49 AM · page 106
+
+And here I thought it was impossible to completely brick these devices. I'm not sure what you did but I don't think what you explained was the correct way.
+
+Can you reverse what you did? I know how to use python but that wasn't required for this tool. Fastboot is kind of broken on stock ABL.
+
+---
+
+### #2,111 — **aisiggnz** · May 22, 2026 at 12:53 AM · page 106
+
+> **n00b-xda-disciple said:**
+> And here I thought it was impossible to completely brick these devices. I'm not sure what you did but I don't think what you explain
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+It's not bricked. The phone is stuck on the boot logo because linuxloader.efi (the ZTE UEFI unlock app) successfully wrote the unlock config but then hung instead of rebooting. The message on screen was literally VbNuStateApp: VBRwDeviceState(WRITE_CONFIG) success — so it did its job, just didn't exit cleanly.
+
+The fix is simple: get back into EDL and erase the efisp partition (write zeros back). Phone boots fine after that. The bootloader unlock config is already written to a different location so erasing efisp doesn't undo the unlock.
+
+The only reason we're stuck is presskeytoedl=n — ZTE disabled hardware EDL on NX809J so we can't force 9008 via button combo. We're waiting for the battery to die because dead battery + USB plugged in sometimes forces Qualcomm devices into EDL automatically.
+
+We have full EDL access, all the right tools and firehose binaries, the programmer.xml with the correct 8-file Sahara sequence, and a backup of devinfo. Once we get back into 9008 it's a 30 second fix.
+
+Not bricked. Just waiting on a 6500mAh battery.
+
+---
+
+### #2,112 — **elrey120** · May 22, 2026 at 12:55 AM · page 106
+
+> **aisiggnz said:**
+> **Every EDL method we tried on NX809J:**
+>
+>
+>
+>
+>
+> **Method 1: Vol Up + Vol Down while plugging USB**
+>
+>
+>
+>
+> - Hold both volume buttons, plug USB in
+> - Result: Nothing, no Windows sound, no 9008 detected
+> **Method 2: Vol Down only while plugging USB**
+>
+>
+>
+>
+> - Hold just volume down, plug USB in
+> - Result: Nothing
+> **Method 3: Power + Vol Up + Vol Down while plugging USB**
+>
+>
+>
+>
+> - Hold all three buttons together, plug USB in
+> - Result: Nothing
+> **Method 4: Force off first, then Vol Up + Vol Down + plug USB**
+>
+>
+>
+>
+> - Hold power 15-30 seconds until screen goes black
+> - Immediately hold Vol Up + Vol Down and plug USB in
+> - Result: Phone just boots back to logo, no EDL
+> **Method 5: Force off first, then Power + Vol Up + Vol Down + plug USB**
+>
+>
+>
+>
+> - Same as above but holding all three
+> - Result: Nothing
+> **Method 6: ADB reboot edl (while stuck on boot logo)**
+>
+>
+>
+>
+> - Ran polling loop trying adb reboot edl every 500ms
+> - Result: Phone never reaches Android/ADB during boot loop so command never lands
+> **Method 7: Catching it mid-boot with ADB**
+>
+>
+>
+>
+> - Unplugged USB, let phone get stuck on logo
+> - Plugged USB back in trying to catch ADB window
+> - Result: Boot hangs before ADB daemon starts, never visible to PC
+>
+>
+> **Why none of the hardware combos work:**
+>
+>
+>
+> The NX809J config file (dev-NX809J.bat) inside ZTE Family Toolbox explicitly states:
+>
+>
+>
+> presskeytoedl=n
+>
+>
+>
+> This means ZTE intentionally disabled hardware button EDL on this device. The ONLY supported method is adb reboot edl from FTM mode. Once the phone is stuck before Android loads, you have no software path to EDL without ADB.
+>
+>
+>
+>
+>
+> **What does work on NX809J:**
+>
+>
+>
+>
+> - Boot phone normally or into FTM mode (*#*#2846579#*#*)
+> - From FTM: adb reboot edl
+> - Phone drops to 9008, Windows detects QUSB_BULK (VID 05C6 PID 9008)
+> - Install WinUSB via Zadig on that device
+> - Use edl.py with programmer.xml and ZTE patches
+>
+>
+> **Current situation:** Phone is stuck on boot logo after linuxloader.efi wrote unlock config. Can't reach ADB. Waiting for battery to fully die — when Qualcomm devices boot with a dead battery and USB plugged in, some auto-enter EDL mode. That's the last software option before opening the phone and shorting the EDL test point on the PCB.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+No? That's not right. I feel like you're getting a lot of information from an AI, if that's true I really don't recommend you do that.
+
+That aside, plug in your phone, hold both volume buttons (do not let go) and start pressing the power button until the screen powers of. This should force the phone into edl mode. Also try different cables/ports.
+
+Edl mode is accessible from powered off state by pressing both volume buttons and plugging in the phone to a computer, trust me on this, I have probably bricked this phone in every way possible.
+
+---
+
+### #2,113 — **n00b-xda-disciple** · May 22, 2026 at 12:56 AM · page 106
+
+> **aisiggnz said:**
+> It's not bricked. The phone is stuck on the boot logo because linuxloader.efi (the ZTE UEFI unlock app) successfully wrote the unlock config but then hung instead of rebooting. The message on screen was literally VbNuStateApp: VBRwDeviceState(WRITE_CONFIG) success — so it did its job, just didn't exit cleanly.
+>
+>
+>
+> The fix is simple: get back into EDL and erase the efisp partition (write zeros back). Phone boots fine after that. The bootloader unlock config is already written to a different location so erasing efisp doesn't undo the unlock.
+>
+>
+>
+> The only reason we're stuck is presskeytoedl=n — ZTE disabled hardware EDL on NX809J so we can't force 9008 via button combo. We're waiting for the battery to die because dead battery + USB plugged in sometimes forces Qualcomm devices into EDL automatically.
+>
+>
+>
+> We have full EDL access, all the right tools and firehose binaries, the programmer.xml with the correct 8-file Sahara sequence, and a backup of devinfo. Once we get back into 9008 it's a 30 second fix.
+>
+>
+>
+> Not bricked. Just waiting on a 6500mAh battery.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I got yah. Yeah you might have to wait for battery to die. - Definitely try different cable for edl trouble shooting.
+
+---
+
+### #2,114 — **dev-reverse** · May 22, 2026 at 1:37 AM · page 106
+
+> **n00b-xda-disciple said:**
+> I got yah. Yeah you might have to wait for battery to die. - Definitely try different cable for edl trouble shooting.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+volume - and power button it works to restart the device yes what will you do if this works and the simple command you will press volume plus and volume minus and also the power button when it turns off you release your finger from the power button it will remain in edl
+
+Go to the Windows device manager to check if it has entered EDL
+
+---
+
+### #2,115 — **q_Rudolf_p** · May 22, 2026 at 1:41 AM · page 106
+
+Hello.
+
+Please add support for the ZTE Axon 41 Ultra? It's also known as the Nubia Z40 Pro.
+
+Specifications:
+
+CPU: Snapdragon 8 Gen 1
+
+RAM: 12 GB
+
+ROM: 512 GB
+
+If needed, I can help extract all the necessary images using QFIL. I can also assist in developing a method for unlocking the bootloader.
+
+---
+
+### #2,116 — **dev-reverse** · May 22, 2026 at 1:57 AM · page 106
+
+> **q_Rudolf_p said:**
+> Hello.
+>
+>
+>
+> Please add support for the ZTE Axon 41 Ultra? It's also known as the Nubia Z40 Pro.
+>
+>
+>
+> Specifications:
+>
+>
+>
+> CPU: Snapdragon 8 Gen 1
+>
+>
+>
+> RAM: 12 GB
+>
+>
+>
+> ROM: 512 GB
+>
+>
+>
+> If needed, I can help extract all the necessary images using QFIL. I can also assist in developing a method for unlocking the bootloader.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+It's very simple to understand, it's in China and you won't be able to get in there unless you know a Chinese person to help you. There is no point in having an SMS number from China. I even know where they are, but it's no use. If you need a Chinese person who wants to help, it will be extremely rare. and there are few Chinese who can access abroad and so, you know, it's not like me and you access the internet
+
+---
+
+### #2,117 — **SnowFuhrer** · May 22, 2026 at 7:53 AM · page 106
+
+> **aisiggnz said:**
+> **Every EDL method we tried on NX809J:**
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Very interesting. My NX809J is the most EDL happy phone I've ever seen. Just hold all three buttons whenever a cable is plugged in. Hold three buttons at any point and it will go into EDL mode as long as it's plugged in.
+
+---
+
+### #2,118 — **SnowFuhrer** · May 22, 2026 at 8:08 AM · page 106
+
+I modified this to work with RedMagic 11. Basically this makes it so the device is in orange state, but fingerprint still works.With this, we can boot unsigned images. (I haven't tested recovery). AND keep fingerprint. I have not tested hardware attestation yet. Also, if you hold the volume up button while booting, it will boot into its own fastboot mode, allowing fastboot flash command(boot doesn't work afaik) Oh and I got the orange screen removed as well.
+
+Please note that YOUR DATA WILL BE WIPED if you already had an efisp patch to fix fingerprint and orange screen by passing fakelock. FLash this to efisp if you didn't know. I take no responsibility
+
+![github.com](/proxy.php?image=https%3A%2F%2Fopengraph.githubassets.com%2F2a42112220c6a3c66fef4168b028ff111656edf54746bc11acd6db3f1b45fc38%2F1vivy%2Fgbl-chainload&hash=5c82610b5f57151f86a16cadce6f3d2b&return_error=1)
+
+### GitHub - 1vivy/gbl-chainload: GBL chainloader
+
+GBL chainloader . Contribute to 1vivy/gbl-chainload development by creating an account on GitHub.
+
+![github.com](/proxy.php?image=https%3A%2F%2Fgithub.githubassets.com%2Ffavicons%2Ffavicon.svg&hash=39b48b32410d41e23249bf67277031ca&return_error=1)
+
+					github.com
+
+---
+
+### #2,119 — **elrey120** · May 22, 2026 at 9:17 AM · page 106
+
+> **SnowFuhrer said:**
+> I modified this to work with RedMagic 11. Basically this makes it so the device is in orange state, but fingerprint still works.With this, we can boot unsigned images. (I haven't tested recovery). AND keep fingerprint. I have not tested hardware attestation yet. Also, if you hold the volume up button while booting, it will boot into its own fastboot mode, allowing fastboot flash command(boot doesn't work afaik) Oh and I got the orange screen removed as well.
+>
+> Please note that YOUR DATA WILL BE WIPED if you already had an efisp patch to fix fingerprint and orange screen by passing fakelock. FLash this to efisp if you didn't know. I take no responsibility
+>
+>
+>
+>
+> ![github.com](/proxy.php?image=https%3A%2F%2Fopengraph.githubassets.com%2F2a42112220c6a3c66fef4168b028ff111656edf54746bc11acd6db3f1b45fc38%2F1vivy%2Fgbl-chainload&hash=5c82610b5f57151f86a16cadce6f3d2b&return_error=1)
+>
+>
+>
+>
+> ### GitHub - 1vivy/gbl-chainload: GBL chainloader
+>
+> GBL chainloader . Contribute to 1vivy/gbl-chainload development by creating an account on GitHub.
+>
+>
+>
+> ![github.com](/proxy.php?image=https%3A%2F%2Fgithub.githubassets.com%2Ffavicons%2Ffavicon.svg&hash=39b48b32410d41e23249bf67277031ca&return_error=1)
+>
+> 					github.com
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Well you beat me to it. I was planning on doing that as soon as I finished translating the toolbox to English haha.
+
+You mean fastbootd? It would be more useful if you could make it boot to that by pressing the volume down, that way we can access both recovery and fastbootd.
+
+---
+
+### #2,120 — **SnowFuhrer** · May 22, 2026 at 9:29 AM · page 106
+
+> **elrey120 said:**
+> Well you beat me to it. I was planning on doing that as soon as I finished translating the toolbox to English haha.
+>
+> You mean fastbootd? It would be more useful if you could make it boot to that by pressing the volume down, that way we can access both recovery and fastbootd.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+No I mean bootloader fastboot. It's built in. But i reckon we could add a fastbootd option to the fastboot menu? Let's make a full blown TWRP in efisp. HA.
+
+---
+
+### #2,121 — **elrey120** · May 22, 2026 at 9:39 AM · page 107
+
+> **SnowFuhrer said:**
+> No I mean bootloader fastboot. It's built in. But i reckon we could add a fastbootd option to the fastboot menu? Let's make a full blown TWRP in efisp. HA.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Are you using the abl from the userdebug rom? Or did you manage to patch the abl on the fly using the efisp exploit to add the commands back? I was thinking of trying that but didn't get the chance to do so
+
+If possible please share you source, I'd love to look at it.
+
+---
+
+### #2,122 — **SnowFuhrer** · May 22, 2026 at 9:53 AM · page 107
+
+> **elrey120 said:**
+> Are you using the abl from the userdebug rom? Or did you manage to patch the abl on the fly using the efisp exploit to add the commands back? I was thinking of trying that but didn't get the chance to do so
+>
+> If possible please share you source, I'd love to look at it.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I'm using the abl from the stock, the fastboot is just built in to the efisp, I was working at making one that could patch it into the abl but I never got it working. It's basically like you catch the efisp fastboot before the abl fastboot when you hold the volume up. And adb reboot bootloader brings you to the stock(abl) fastboot. I'll post it next moment I have time.
+
+---
+
+### #2,123 — **elrey120** · May 22, 2026 at 10:39 AM · page 107
+
+Posted translation for ZTE Family Toolbox on this other thread:
+
+https://xdaforums.com/t/translated-zte-family-toolbox.4789388/
+
+I believe everything works but I haven't been able to fully test it.
+
+---
+
+### #2,124 — **elrey120** · May 22, 2026 at 10:45 AM · page 107
+
+[@SnowFuhrer](https://xdaforums.com/m/9069680/) have you tried flashing gsi with your efisp?
+
+---
+
+### #2,125 — **aisiggnz** · May 22, 2026 at 3:14 PM · page 107
+
+Its a
+
+> **n00b-xda-disciple said:**
+> And here I thought it was impossible to completely brick these devices. I'm not sure what you did but I don't think what you explained was the correct way.
+>
+>
+>
+> Can you reverse what you did? I know how to use python but that wasn't required for this tool. Fastboot is kind of broken on stock ABL.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+all good battery died got it working again the button method ended up working after the battery died volume up+down plus hold on power then constatnyl press power button worked flawless for me , finally rooted the phone and tested my custom app that acc world first cheat engine that runs directly on the phone on any app or game tested 5 games all working
+
+---
+
+### #2,126 — **n00b-xda-disciple** · May 22, 2026 at 3:28 PM · page 107
+
+It really is almost impossible to brick for good lol. I'm glad it ended up working out. Really cool finding out the different ways to unlock.
+
+---
+
+### #2,127 — **SnowFuhrer** · May 22, 2026 at 3:43 PM · page 107
+
+> **elrey120 said:**
+> [@SnowFuhrer](https://xdaforums.com/m/9069680/) have you tried flashing gsi with your efisp?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Nope not yet
+
+---
+
+### #2,128 — **jolly_roger_hook** · May 22, 2026 at 4:28 PM · page 107
+
+> **dev-reverse said:**
+> [View attachment 6346376](https://xdaforums.com/attachments/6346376/)
+>
+>
+>
+> *Based on the response I received, they don't care about us at all; they're not going to release anything. This will be my first and last Redmagic experience. I don't recommend them to anyone; the company treats its users like garbage.*
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+It's specifically this device it seems it was like a test device as ther is nothing In the support site about this device it was all a test for the 11s
+
+---
+
+### #2,129 — **jolly_roger_hook** · May 22, 2026 at 4:33 PM · page 107
+
+> **MrKonic said:**
+> yeah they're required by law since they're using the linux kernel which is under gpl  2 license.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Yes but the loophole there is they did release one just not a working one
+
+---
+
+### #2,130 — **n00b-xda-disciple** · May 22, 2026 at 4:45 PM · page 107
+
+I'm digging into the kernel today. Just got my back injections. Off work until Tuesday.
+
+---
+
+### #2,131 — **dev-reverse** · May 22, 2026 at 6:29 PM · page 107
+
+![github.com](/proxy.php?image=https%3A%2F%2Fopengraph.githubassets.com%2Fc0decc2476cc062aa4757b2acd1b280311f9d29a005285ef8b896c23540d1d1b%2FCoding-BR%2Fandroid_kernel_nubia_sm8850_qwjujube&hash=62748ad996769ae80e50682fd1e6d4e9&return_error=1)
+
+### GitHub - Coding-BR/android_kernel_nubia_sm8850_qwjujube: Linux Kernel 6.12 (Android 16 GKI) for Nubia RedMagic 11 Pro (NX809J) - Codename: qwjujube
+
+Linux Kernel 6.12 (Android 16 GKI) for Nubia RedMagic 11 Pro (NX809J) - Codename: qwjujube - Coding-BR/android_kernel_nubia_sm8850_qwjujube
+
+![github.com](/proxy.php?image=https%3A%2F%2Fgithub.githubassets.com%2Ffavicons%2Ffavicon.svg&hash=39b48b32410d41e23249bf67277031ca&return_error=1)
+
+					github.com
+
+This work has already evolved a lot, I migrated all the initialization to the official kernel, now I just need to rebuild the drivers, I think everything necessary is there on github
+
+Until last week I was using a generic GKI kernel that wasn't from ZTE. I took everything that was there since I had already made it work, and now I've migrated and fixed the initialization of the ZTE open-source kernel. Now the most complicated part is getting some open-source drivers to initialize. If you configure and read all the .md files, maybe you'll understand where I am now.
+
+Every commit and solution must be sent to my repository; now everyone can help in building the kernel.
+
+---
+
+### #2,132 — **Zenasus** · May 22, 2026 at 8:06 PM · page 107
+
+I got a great second hand deal right now for one of them bad boys & this whole thread is making me question if I should seize it. Just 102 more pages to read. I'm getting there !
+
+I got no idea when the phone was last updated — normies love their updoots. Which firmware version is the cut off version after which the unlock tool certainly doesnt work anymore (Redmagic 11 pro)?
+
+---
+
+### #2,133 — **n00b-xda-disciple** · May 22, 2026 at 9:01 PM · page 107
+
+> **Zenasus said:**
+> I got a great second hand deal right now for one of them bad boys & this whole thread is making me question if I should seize it. Just 102 more pages to read. I'm getting there !
+>
+> I got no idea when the phone was last updated — normies love their updoots. Which firmware version is the cut off version after which the unlock tool certainly doesnt work anymore (Redmagic 11 pro)?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+You’ll probably be good, but I can’t say there’s a known “safe cutoff” firmware yet. As far as I’ve seen, there isn’t confirmed news that RedMagic has patched the ZTE Family Toolbox unlock on the RM11 Pro, but I’d still treat OTA updates as risky until someone confirms that exact build works.
+
+Best move is to ask the seller for the current firmware/build number before buying. If it’s already updated to the newest OTA, I’d wait for someone else to confirm unlock still works on that version first. If it’s on older firmware, I’d grab it, keep it offline/disable OTA, unlock first, then worry about updating manually later.
+
+---
+
+### #2,134 — **Bobo9996** · May 22, 2026 at 10:09 PM · page 107
+
+> **aisiggnz said:**
+> [View attachment 6347404](https://xdaforums.com/attachments/6347404/)Phones been stuck like this for 11 hours tried every restart methodever and pc doesnt detect it ? am icooked ?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+on page 2- 4 read my cmt u stuck there bc u didn't finish all steps nvm u already fixed it ![:)](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+
+---
+
+### #2,135 — **dev-reverse** · May 22, 2026 at 11:05 PM · page 107
+
+ZTE toolbox 1.2.7.7 stable
+
+---
+
+### #2,136 — **EliteBlackKaiser** · May 22, 2026 at 11:21 PM · page 107
+
+> **dev-reverse said:**
+> ZTE toolbox 1.2.7.7 stable
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Changes?!
+
+---
+
+### #2,137 — **dev-reverse** · May 22, 2026 at 11:28 PM · page 107
+
+> **EliteBlackKaiser said:**
+> Changes?!
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+The developer doesn't leave a message in the file; you have to open it and see what has changed.
+
+---
+
+### #2,138 — **dev-reverse** · May 22, 2026 at 11:42 PM · page 107
+
+I'll leave this folder open for sharing and deletion, so be careful, although if there's anything important in it, I'll back it up to another folder so nobody accidentally deletes it. https://drive.google.com/drive/folders/19Y5DTOahr9uon9lhGxQAKZyzvuj-IryB?usp=sharing
+
+---
+
+### #2,139 — **EliteBlackKaiser** · May 23, 2026 at 12:00 AM · page 107
+
+> **dev-reverse said:**
+> The developer doesn't leave a message in the file; you have to open it and see what has changed.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Only way your gonna tell what has changed is if dev includes a changelog , and or post what's changed. Otherwise your using a differ tool or reverse engineering it. Hence why h had asked. My apologies... Would be nice if in efisp he did what the previous user had done and that's add fastboot commands...
+
+My app is on pause because I can't effectively use the full potential of my device without knowing if it works fine on custom or gsi roms. And flashing userdebug ROM you sacrifice fingerprint and I can't.
+
+But all is fine ![🙏](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f64f.png)
+
+---
+
+### #2,140 — **dev-reverse** · May 23, 2026 at 12:08 AM · page 107
+
+> **EliteBlackKaiser said:**
+> Only way your gonna tell what has changed is if dev includes a changelog , and or post what's changed. Otherwise your using a differ tool or reverse engineering it. Hence why h had asked. My apologies... Would be nice if in efisp he did what the previous user had done and that's add fastboot commands...
+>
+>
+>
+> My app is on pause because I can't effectively use the full potential of my device without knowing if it works fine on custom or gsi roms. And flashing userdebug ROM you sacrifice fingerprint and I can't.
+>
+>
+>
+> But all is fine ![🙏](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f64f.png)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Just use the abl file I posted here; its extension is .Elf. However, you risk losing your installed apps. It's very easy to install, and it's also in the ZTE Toolbox. You just need to upload it to partition A/B and then use option 19 to clear the data. If you don't do this, the message "dumper" will appear. While using abl userdebug, your device will not certify the Play Store or Fingerprint. Don't even think about using option 18 with abl userdebug.
+
+I don't know if what he did actually works; I'm waiting for him to show that it does. Ideally, every discovery is open source on GitHub with source code and methods, but anyway, I'm waiting for him to show that it really works.
+
+---
+
+### #2,141 — **EliteBlackKaiser** · May 23, 2026 at 12:11 AM · page 108
+
+Also
+
+This
+
+![github.com](/proxy.php?image=https%3A%2F%2Fopengraph.githubassets.com%2Ff46b5788550c0d52253544a59f47d280c599728a46cdce6665e369048cd0fa83%2FR0rt1z2%2Ffenrir&hash=9303a4cc83be22dc4aac145d8b035a61&return_error=1)
+
+### GitHub - R0rt1z2/fenrir: Let's control MediaTek's bootchain
+
+Let's control MediaTek's bootchain. Contribute to R0rt1z2/fenrir development by creating an account on GitHub.
+
+![github.com](/proxy.php?image=https%3A%2F%2Fgithub.githubassets.com%2Ffavicons%2Ffavicon.svg&hash=39b48b32410d41e23249bf67277031ca&return_error=1)
+
+					github.com
+
+Understand it's mtk!!! That not what I'm plotting at. I'm wondering and if only we could speak with dev. Since this is closed source right ( toolkit )? If something like this could be achieve on Snapdragon devices since we have full 9008 access. And we already have custom efisp as is with toolkit...
+
+Fenrir is and is what refers to a known exploit used for MediaTek-powered devices. It is a security vulnerability that allows users to spoof a locked bootloader to pass Google's Strong Integrity checks, allowing secure banking apps to work properly on a modified or rooted phone.
+
+Imagine this for our chipset and never needing modules again.
+
+---
+
+### #2,142 — **EliteBlackKaiser** · May 23, 2026 at 12:16 AM · page 108
+
+> **dev-reverse said:**
+> Just use the abl file I posted here; its extension is .Elf. However, you risk losing your installed apps. It's very easy to install, and it's also in the ZTE Toolbox. You just need to upload it to partition A/B and then use option 19 to clear the data. If you don't do this, the message "dumper" will appear. While using abl userdebug, your device will not certify the Play Store or Fingerprint. Don't even think about using option 18 with abl userdebug.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Would prefer a clean guide from . A to . B and so on. As I or many would not want to risk our devices. ![🙏](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f64f.png) I'd just like to get to a gsi state !
+
+---
+
+### #2,143 — **dev-reverse** · May 23, 2026 at 12:26 AM · page 108
+
+> **EliteBlackKaiser said:**
+> Would prefer a clean guide from . A to . B and so on. As I or many would not want to risk our devices. ![🙏](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f64f.png) I'd just like to get to a gsi state !
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I already left GSI because we don't have a custom kernel, but the idea is the same. I used AI to do everything for me, even the ROM, but I have all the commands on Telegram, not here. But in short, to boot a GSI you don't need fastboot abl. I use abl fastboot to test the kernel. The command to boot a GSI ROM is basically to disable VBmeta and then enter that white recovery screen. The command to boot the image, in the case of Linux, requires you to decompress the image and boot it. Take a look at this tutorial here: [https://xdaforums.com/t/redmagic-11...t-guide-fastboot-o-fastbootd-o-gsi-o.4787673/](https://xdaforums.com/t/redmagic-11-pro-10-pro-astra-bootloader-unlock-root-guide-fastboot-o-fastbootd-o-gsi-o.4787673/)
+
+◆**Mod Edit** by [Vagelis1608](https://xdaforums.com/m/4849551/)✧Telegram link removed as it did not meet [posting requirements](https://forum.xda-developers.com/t/device-forum-rules-please-read-before-posting.3333345/post-79278325)◆
+
+---
+
+### #2,144 — **elrey120** · May 23, 2026 at 1:32 AM · page 108
+
+> **EliteBlackKaiser said:**
+> Also
+>
+>
+>
+> This
+>
+>
+>
+>
+> ![github.com](/proxy.php?image=https%3A%2F%2Fopengraph.githubassets.com%2Ff46b5788550c0d52253544a59f47d280c599728a46cdce6665e369048cd0fa83%2FR0rt1z2%2Ffenrir&hash=9303a4cc83be22dc4aac145d8b035a61&return_error=1)
+>
+>
+>
+>
+> ### GitHub - R0rt1z2/fenrir: Let's control MediaTek's bootchain
+>
+> Let's control MediaTek's bootchain. Contribute to R0rt1z2/fenrir development by creating an account on GitHub.
+>
+>
+>
+> ![github.com](/proxy.php?image=https%3A%2F%2Fgithub.githubassets.com%2Ffavicons%2Ffavicon.svg&hash=39b48b32410d41e23249bf67277031ca&return_error=1)
+>
+> 					github.com
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+> Understand it's mtk!!! That not what I'm plotting at. I'm wondering and if only we could speak with dev. Since this is closed source right ( toolkit )? If something like this could be achieve on Snapdragon devices since we have full 9008 access. And we already have custom efisp as is with toolkit...
+>
+>
+>
+> Fenrir is and is what refers to a known exploit used for MediaTek-powered devices. It is a security vulnerability that allows users to spoof a locked bootloader to pass Google's Strong Integrity checks, allowing secure banking apps to work properly on a modified or rooted phone.
+>
+>
+>
+> Imagine this for our chipset and never needing modules again.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I wouldn't say the toolbox is neither open nor closed source, it's just a .bat written with [BFF](https://gitee.com/mouzei/bff), also created by the creator of the toolkit. Basically if you open the toolbox .bat file with notepad++ you'll be able to see everything it does.
+
+And just to summarize for the redmagic 11 pro, it calls a bunch of edl commands to read/flash/erase partitions. To manage the unlock process and then restoring the fingerprint sensor and removing the yellow warning text at boot it uses a modified version of this open[source implementation](https://github.com/superturtlee/gbl_root_canoe)of the efisp exploit.
+
+Now, what [@SnowFuhrer](https://xdaforums.com/m/9069680/) did and what I'm currently checking out is creating our own fork of [this more advanced version](https://github.com/1vivy/gbl-chainload) of the efisp exploit.
+
+I would love to go much more in depth in this message here but I have to understand a bunch more things of how it works before that. Just wait, I feel that we can work this one out.
+
+---
+
+### #2,145 — **dev-reverse** · May 23, 2026 at 1:49 AM · page 108
+
+> **elrey120 said:**
+> I wouldn't say the toolbox is neither open nor closed source, it's just a .bat written with [BFF](https://gitee.com/mouzei/bff), also created by the creator of the toolkit. Basically if you open the toolbox .bat file with notepad++ you'll be able to see everything it does.
+>
+> And just to summarize for the redmagic 11 pro, it calls a bunch of edl commands to read/flash/erase partitions. To manage the unlock process and then restoring the fingerprint sensor and removing the yellow warning text at boot it uses a modified version of this open[source implementation](https://github.com/superturtlee/gbl_root_canoe)of the efisp exploit.
+>
+> Now, what [@SnowFuhrer](https://xdaforums.com/m/9069680/) did and what I'm currently checking out is creating our own fork of [this more advanced version](https://github.com/1vivy/gbl-chainload) of the efisp exploit.
+>
+> I would love to go much more in depth in this message here but I have to understand a bunch more things of how it works before that. Just wait, I feel that we can work this one out.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Help him out, contact him if you think this will work. At least that way you can open a repository and work on it. I'm struggling alone with the kernel for the first time. I'm trying to initialize with drivers. The touchscreen didn't work, but at least the device turned on. I just hope I don't activate any pointer that could burn something out, but that's it.
+
+---
+
+### #2,146 — **SnowFuhrer** · May 23, 2026 at 4:47 AM · page 108
+
+[@elrey120](https://xdaforums.com/m/12985459/) Here is the source and feel free to make your own if you like. I'm quite new at this.
+
+![github.com](/proxy.php?image=https%3A%2F%2Fopengraph.githubassets.com%2F59b8b2ef4d70fa3cf2ba78c2c038699307983c91b0824fe7cea459e1b3efd424%2FSnowFuhrer%2Fgbl-chainload&hash=eba44f277d10a56d5502dc26229b29b5&return_error=1)
+
+### GitHub - SnowFuhrer/gbl-chainload: GBL chainloader modified for RedMagic 11 Pro
+
+GBL chainloader modified for RedMagic 11 Pro. Contribute to SnowFuhrer/gbl-chainload development by creating an account on GitHub.
+
+![github.com](/proxy.php?image=https%3A%2F%2Fgithub.githubassets.com%2Ffavicons%2Ffavicon.svg&hash=39b48b32410d41e23249bf67277031ca&return_error=1)
+
+					github.com
+
+Tested hardware attestation and it works YAY
+
+---
+
+### #2,147 — **EliteBlackKaiser** · May 23, 2026 at 8:22 AM · page 108
+
+> **SnowFuhrer said:**
+> [@elrey120](https://xdaforums.com/m/12985459/) Here is the source and feel free to make your own if you like. I'm quite new at this.
+>
+>
+>
+>
+> ![github.com](/proxy.php?image=https%3A%2F%2Fopengraph.githubassets.com%2F59b8b2ef4d70fa3cf2ba78c2c038699307983c91b0824fe7cea459e1b3efd424%2FSnowFuhrer%2Fgbl-chainload&hash=eba44f277d10a56d5502dc26229b29b5&return_error=1)
+>
+>
+>
+>
+> ### GitHub - SnowFuhrer/gbl-chainload: GBL chainloader modified for RedMagic 11 Pro
+>
+> GBL chainloader modified for RedMagic 11 Pro. Contribute to SnowFuhrer/gbl-chainload development by creating an account on GitHub.
+>
+>
+>
+> ![github.com](/proxy.php?image=https%3A%2F%2Fgithub.githubassets.com%2Ffavicons%2Ffavicon.svg&hash=39b48b32410d41e23249bf67277031ca&return_error=1)
+>
+> 					github.com
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+> Tested hardware attestation and it works YAY
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Woooo wait what ?  What you mean you tested hw attestation and it works ?
+
+---
+
+### #2,148 — **SnowFuhrer** · May 23, 2026 at 8:40 AM · page 108
+
+> **EliteBlackKaiser said:**
+> Woooo wait what ?  What you mean you tested hw attestation and it works ?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I set up google wallet on this with this new efisp patch in mode 2 which is basically unlocked bootloader. So we own the world or whatever. Oh and I just did the adb thing to reprovision it.  I have no modules setup for this.
+
+One interesting glitch is that the fan spools up momentarily on boot lols. Maybe I'll look into that sometime, maybe I won't
+
+---
+
+### #2,149 — **EliteBlackKaiser** · May 23, 2026 at 8:47 AM · page 108
+
+> **SnowFuhrer said:**
+> I set up google wallet on this with this new efisp patch in mode 2 which is basically unlocked bootloader. So we own the world or whatever. Oh and I just did the adb thing to reprovision it.  I have no modules setup for this.
+>
+>
+>
+> One interesting glitch is that the fan spools up momentarily on boot lols. Maybe I'll look into that sometime, maybe I won't
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Now when I edl flashed the userdebug ROM and then came back too 11.0.18MR1 I had green passing of all 3 checks , but needed tee simulator, TA advance and HMA modules to make wallet work but didn't need play integrity modules.
+
+I'm hoping it isn't that kind of scenario... Hope this is some deep bootloader spoofing and survives no matter what edl ROM you flash.!
+
+---
+
+### #2,150 — **SnowFuhrer** · May 23, 2026 at 9:00 AM · page 108
+
+> **EliteBlackKaiser said:**
+> Now when I edl flashed the userdebug ROM and then came back too 11.0.18MR1 I had green passing of all 3 checks , but needed tee simulator, TA advance and HMA modules to make wallet work but didn't need play integrity modules.
+>
+>
+>
+> I'm hoping it isn't that kind of scenario... Hope this is some deep bootloader spoofing and survives no matter what edl ROM you flash.!
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Well, Im guessing it won't work with userdebug ROM and I had to set it up because I had never fixed TEE. I should see if I can make a patch for the userdebug abl but it seems a bit different than the user abl that phones launch with.
+
+And Google wallet requires something more than passing three checks so it's my ultimate test.
+
+---
+
+### #2,151 — **EliteBlackKaiser** · May 23, 2026 at 9:13 AM · page 108
+
+> **SnowFuhrer said:**
+> Well, Im guessing it won't work with userdebug ROM and I had to set it up because I had never fixed TEE. I should see if I can make a patch for the userdebug abl but it seems a bit different than the user abl that phones launch with.
+>
+>
+>
+> And Google wallet requires something more than passing three checks so it's my ultimate test.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Well I'm not worried about userdebug ROM , this mode 2 is a huge win for this community running ROMs that come with their phone.... if what your saying is true. It means users won't need to deal with google's play integrity BS as much. It'll be less of cat and mouse game.
+
+Cause according too the GBL chainload GitHub
+
+mode-2 — TA-payload spoof at QSEE/SPSS boundaries (custom-ROM mode); ABL stays honest; per-OTA typed-struct profile injected via GblPayloadLib.
+
+Says ABL stays honest. So I don't think we need any ABL patched. But I could be wrong.
+
+---
+
+### #2,152 — **EliteBlackKaiser** · May 23, 2026 at 9:14 AM · page 108
+
+Let’s break this down carefully:
+
+mode-2 — TA-payload spoof at QSEE/SPSS boundaries
+
+(custom-ROM mode)
+
+ABL stays honest
+
+per-OTA typed-struct profile injected via GblPayloadLib
+
+This is radically different from simple “fake locked bootloader” patching.
+
+The huge clue is:
+
+## “ABL stays honest”​
+That means:
+
+- they are *not* simply patching ABL to lie anymore
+- they are intentionally avoiding crude bootloader fakelock hacks
+Instead:
+
+## “TA-payload spoof at QSEE/SPSS boundaries”​
+That points toward:
+
+- Trusted Applications (TAs)
+- Qualcomm Secure Execution Environment (QSEE)
+- Secure Processing Subsystem (SPSS)
+Meaning: the spoofing likely occurs at the interface between:
+
+- Android / KeyMint clients
+- and the secure world trust services.
+That is far deeper and more sophisticated.
+
+This is also why they mention:
+
+## “custom-ROM mode”​
+Because the goal is likely:
+
+- keep bootloader honestly unlocked,
+- keep ABL honest,
+- but shape the trusted payloads/responses seen by attestation systems.
+That is much closer to:
+
+- virtualization/shimming
+- protocol-layer spoofing
+- typed response emulation
+than crude prop spoofing.
+
+And this line:
+
+## “per-OTA typed-struct profile injected”​
+…is incredibly telling.
+
+That means they likely discovered:
+
+- attestation payload structures differ per firmware/OTA
+- offsets/layouts/types vary between updates
+- so mode 2 injects firmware-specific payload definitions
+That is a very advanced design decision.
+
+That strongly suggests:
+
+- they are interacting with real low-level trust structures,
+- not just editing Android props.
+
+So architecturally, this sounds like:
+
+Android
+
+  ↓
+
+KeyMint / Keystore
+
+  ↓
+
+QSEE Trusted App boundary
+
+  ↓
+
+Mode-2 payload shim/spoof
+
+  ↓
+
+Real secure hardware underneath
+
+Instead of:
+
+Android
+
+  ↓
+
+fake ro.boot props
+
+That is a completely different league technically.
+
+And the fact they explicitly say:
+
+- “ABL stays honest”
+is actually a good sign from a stability perspective.
+
+Because aggressive ABL lying can:
+
+- break OTA
+- break rollback protections
+- break key provisioning
+- softbrick recovery flows
+Whereas boundary spoofing is more targeted.
+
+Now, the dangerous reality:
+
+If this really manipulates:
+
+- TA payloads
+- QSEE boundaries
+- attestation structs
+…then:
+
+- every OTA could potentially break compatibility
+- wrong typed structures could crash trustlets
+- malformed payloads could panic secure world
+- future Google changes could instantly invalidate it
+That is why they mention:
+
+- “per-OTA profiles.”
+Meaning: this probably requires maintenance per firmware build.
+
+That's if I'm right and understanding this.!
+
+---
+
+### #2,153 — **SnowFuhrer** · May 23, 2026 at 9:36 AM · page 108
+
+> **EliteBlackKaiser said:**
+> Let’s break this down carefully:
+>
+>
+>
+> mode-2 — TA-payload spoof at QSEE/SPSS boundaries
+>
+> (custom-ROM mode)
+>
+> ABL stays honest
+>
+> That's if I'm right and understanding this.!
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I think that's maybe overcomplicating it a bit but something like that. And I don't think OTAs will be much more of a problem than the current efisp patches, could be wrong though.
+
+The developer explains it more [here](https://xdaforums.com/t/efisp-root-gbl-chainload-efisp-chainloader-for-oneplus-15.4786301/).
+
+---
+
+### #2,154 — **elrey120** · May 23, 2026 at 10:47 AM · page 108
+
+> **SnowFuhrer said:**
+> [@elrey120](https://xdaforums.com/m/12985459/) Here is the source and feel free to make your own if you like. I'm quite new at this.
+>
+>
+>
+>
+> ![github.com](/proxy.php?image=https%3A%2F%2Fopengraph.githubassets.com%2F59b8b2ef4d70fa3cf2ba78c2c038699307983c91b0824fe7cea459e1b3efd424%2FSnowFuhrer%2Fgbl-chainload&hash=eba44f277d10a56d5502dc26229b29b5&return_error=1)
+>
+>
+>
+>
+> ### GitHub - SnowFuhrer/gbl-chainload: GBL chainloader modified for RedMagic 11 Pro
+>
+> GBL chainloader modified for RedMagic 11 Pro. Contribute to SnowFuhrer/gbl-chainload development by creating an account on GitHub.
+>
+>
+>
+> ![github.com](/proxy.php?image=https%3A%2F%2Fgithub.githubassets.com%2Ffavicons%2Ffavicon.svg&hash=39b48b32410d41e23249bf67277031ca&return_error=1)
+>
+> 					github.com
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+> Tested hardware attestation and it works YAY
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Thank you, this will help a lot, you save me a lot of time with this.
+
+> **SnowFuhrer said:**
+> One interesting glitch is that the fan spools up momentarily on boot lols. Maybe I'll look into that sometime, maybe I won't
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I think I might know how to fix that, still is not something that bad.
+
+---
+
+### #2,155 — **dev-reverse** · May 23, 2026 at 3:35 PM · page 108
+
+See if this can help us follow the documentation or something like that. I won't be able to use it; my tokens and the plan I use here are too low. Anyone helping with the kernel, take a look at this:
+
+https://github.com/sandeco/reversa
+
+![github.com](/proxy.php?image=https%3A%2F%2Fopengraph.githubassets.com%2F4a849a66567412fe42b7306b545b42d5249ba04dc32b8080c6b69429a6e2818e%2FNikkaGames%2FELFLoaderARM&hash=73fe3981e8906fb0b4cb8159bd57b490&return_error=1)
+
+### GitHub - NikkaGames/ELFLoaderARM: Load ARM64 ELF directly from memory.
+
+Load ARM64 ELF directly from memory. Contribute to NikkaGames/ELFLoaderARM development by creating an account on GitHub.
+
+![github.com](/proxy.php?image=https%3A%2F%2Fgithub.githubassets.com%2Ffavicons%2Ffavicon.svg&hash=39b48b32410d41e23249bf67277031ca&return_error=1)
+
+					github.com
+
+![github.com](/proxy.php?image=https%3A%2F%2Fopengraph.githubassets.com%2Fae88727d522482d7527f1ff0a1568887fd9a264c3f61f347c6dd36f79e0d4d97%2FKhanhNguyen9872%2FNubiaToolkit&hash=3e1c9b511f30e7988367d96282f9adbe&return_error=1)
+
+### GitHub - KhanhNguyen9872/NubiaToolkit: Nubia Toolkit is an Xposed/LSPosed module designed for Nubia RedMagic devices to unlock hidden features, remove limitations, and enhance the user experience of compiled system apps like Game Space and Game Assis
+
+Nubia Toolkit is an Xposed/LSPosed module designed for Nubia RedMagic devices to unlock hidden features, remove limitations, and enhance the user experience of compiled system apps like Game Space ...
+
+![github.com](/proxy.php?image=https%3A%2F%2Fgithub.githubassets.com%2Ffavicons%2Ffavicon.svg&hash=39b48b32410d41e23249bf67277031ca&return_error=1)
+
+					github.com
+
+---
+
+### #2,156 — **laminarturbulent** · May 23, 2026 at 11:45 PM · page 108
+
+Anybody tried this with the 11S Pro yet? Seems to have launched in China back on May 18 (and global launch is May 27). I hope this won't be patched for the 11S Pro since the 11 Pro is completely out of stock, at least on the NA and global stores.
+
+---
+
+### #2,157 — **dev-reverse** · May 24, 2026 at 12:24 AM · page 108
+
+> **laminarturbulent said:**
+> Anybody tried this with the 11S Pro yet? Seems to have launched in China back on May 18 (and global launch is May 27). I hope this won't be patched for the 11S Pro since the 11 Pro is completely out of stock, at least on the NA and global stores.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+redmagic 11 pro overlock model S is now available in china so unlocking works normally
+
+---
+
+### #2,158 — **borygo77** · May 24, 2026 at 7:32 AM · page 108
+
+Suddenly today my wallet stopped working.
+
+Have they implemented some new checks after app update? ![🙄](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f644.png)
+
+RCS works and have all integrity green strong included
+
+---
+
+### #2,159 — **caioiii** · May 24, 2026 at 11:10 AM · page 108
+
+> **borygo77 said:**
+> Or use [@szescxz](https://xdaforums.com/m/10107309/) repo to download what you need ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+>
+>
+>
+>
+>
+>
+> ![github.com](/proxy.php?image=https%3A%2F%2Fopengraph.githubassets.com%2F59b79f9b6cd6a1b0550b6d385cb38a027016f01fb12240081f74d5723a8a8ba9%2Fszescxz%2FZTE_NX809J_FOTA&hash=2c3fa13a008a3935050c2951f3290b81&return_error=1)
+>
+>
+>
+>
+> ### Releases · szescxz/ZTE_NX809J_FOTA
+>
+> Unofficial FOTA Tracking Repository. NO SUPPORT PROVIDED, PROCEED AT YOUR OWN RISK. Might be discontinued as I don't have the device. Git repo subject to force pushes and branch renamings. PM m...
+>
+>
+>
+> ![github.com](/proxy.php?image=https%3A%2F%2Fgithub.githubassets.com%2Ffavicons%2Ffavicon.svg&hash=39b48b32410d41e23249bf67277031ca&return_error=1)
+>
+> 					github.com
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+by applying the update I will definitely lose the root but to restore it? Do I use the tools option simply by connecting to edl? Apply update but don't reboot, rebooting from magisk on inactive slot doesn't work here like in oneplus?
+
+---
+
+### #2,160 — **fsblue** · May 24, 2026 at 2:48 PM · page 108
+
+> **borygo77 said:**
+> Suddenly today my wallet stopped working.
+>
+> Have they implemented some new checks after app update? ![🙄](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f644.png)
+>
+> RCS works and have all integrity green strong included
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Yep, i confirm the same. Still don't know which check they do, but seem like they can update gwallet app or protocol without increasing its version number in play store...
+
+---
+
+### #2,161 — **dev-reverse** · May 24, 2026 at 3:15 PM · page 109
+
+I'll explain again: I left the repository in the kernel's github. Read my last commit that I sent there. The kernel is bootable, but the touchscreen won't work. I left it in that exact part to show that I'm trying to fix this. I ask that whoever helps with the development and solution to the problem, the files are there. I can even explain the method privately, but basically all the necessary files are in the decompiled folder. What you need is a smartphone with the shell enabled and root permission. I use kernelsu, but you can also do this in Magisk. When you work on solving the touchscreen driver problem, send small commits to your repository, and if you manage to solve the touchscreen problem, send it to my repository informing that the problem has been solved. Please don't send small pulls to my repository as junk commits; this will mess up my repository. I don't want to mess it up; I want that when someone downloads the repository, it's working so they can get a copy from the mirror. From my repository, try working with it using some AI, and whenever you make small commits for your development, don't send them to the repository I created; send them to your copy. This keeps the repository clean, and only send the commit after you've solved the problem if you manage to fix it.
+
+![github.com](/proxy.php?image=https%3A%2F%2Fopengraph.githubassets.com%2Fc0decc2476cc062aa4757b2acd1b280311f9d29a005285ef8b896c23540d1d1b%2FCoding-BR%2Fandroid_kernel_nubia_sm8850_qwjujube&hash=62748ad996769ae80e50682fd1e6d4e9&return_error=1)
+
+### GitHub - Coding-BR/android_kernel_nubia_sm8850_qwjujube: Linux Kernel 6.12 (Android 16 GKI) for Nubia RedMagic 11 Pro (NX809J) - Codename: qwjujube
+
+Linux Kernel 6.12 (Android 16 GKI) for Nubia RedMagic 11 Pro (NX809J) - Codename: qwjujube - Coding-BR/android_kernel_nubia_sm8850_qwjujube
+
+![github.com](/proxy.php?image=https%3A%2F%2Fgithub.githubassets.com%2Ffavicons%2Ffavicon.svg&hash=39b48b32410d41e23249bf67277031ca&return_error=1)
+
+					github.com
+
+Read the repository's readme again. Never flash the device; do not write files directly to the device. Whenever you need to flash the kernel to your smartphone, flash it to RAM. Do not use the flash command. Anyone who hasn't read my documentation has probably crashed their smartphone at this point.
+
+---
+
+### #2,162 — **dev-reverse** · May 24, 2026 at 3:32 PM · page 109
+
+Red Magic 11_Mingchao Edição Limitada_11.0.21mr_9008 Pacote Flash Unbricking.7z
+
+https://drive.google.com/file/d/1K-ocx8CSjZmkcb4Upr6fSL9bqoo4HuSe/view?usp=sharing
+
+---
+
+### #2,163 — **Vagelis1608** · May 24, 2026 at 3:40 PM · page 109
+
+> **borygo77 said:**
+> Suddenly today my wallet stopped working.
+>
+> Have they implemented some new checks after app update? ![🙄](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f644.png)
+>
+> RCS works and have all integrity green strong included
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+> **fsblue said:**
+> Yep, i confirm the same. Still don't know which check they do, but seem like they can update gwallet app or protocol without increasing its version number in play store...
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Check your PI verdict.
+
+One of the Root CA Certs expires today, could be that it already has and is now blocked.
+
+---
+
+### #2,164 — **borygo77** · May 24, 2026 at 3:45 PM · page 109
+
+Something really not right here.
+
+I had DRM info installed from playstore and it wouldn't open. Deleted and I can't install it now.
+
+---
+
+### #2,165 — **fsblue** · May 24, 2026 at 4:33 PM · page 109
+
+> **Vagelis1608 said:**
+> Check your PI verdict.
+>
+> One of the Root CA Certs expires today, could be that it already has and is now blocked.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+All verdicts are meet and play store show certified but still the gwallet show device doesn't meet security requirements ![🤷‍♂️](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f937-2642.png)
+
+---
+
+### #2,166 — **dev-reverse** · May 24, 2026 at 5:24 PM · page 109
+
+![1779632579272.png](https://xdaforums.com/attachments/1779632579272-png.6348089/)
+
+My current coding plan isn't powerful enough to handle much. I need to read a lot of context and can't simply create a new chat to avoid using tokens; I need to read my entire history constantly so it understands what it's doing. However, this is detrimental as it consumes tokens quickly. In short, I've used all the tokens from two accounts, and they won't be available until the 28th. So I'm waiting for results from the community and will keep you updated on what you've managed to do with the kernel.
+
+---
+
+### #2,167 — **Leb-son** · May 24, 2026 at 5:31 PM · page 109
+
+> **dev-reverse said:**
+> [View attachment 6348089](https://xdaforums.com/attachments/6348089/)
+>
+> My current coding plan isn't powerful enough to handle much. I need to read a lot of context and can't simply create a new chat to avoid using tokens; I need to read my entire history constantly so it understands what it's doing. However, this is detrimental as it consumes tokens quickly. In short, I've used all the tokens from two accounts, and they won't be available until the 28th. So I'm waiting for results from the community and will keep you updated on what you've managed to do with the kernel.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Could you use potentially break it up into different organized chucks using the AI. When using Claude I rely Obsidian to create a table of contents and use back-links/ wiki-links and effectively create a mini rag system. Mix that with a good Claude MD that only includes the basic like when to call upon skills and how to navigate the obsidian vault and any other consistent information for the project, you can create a token effective system that can still retrieve the relevant context.
+
+---
+
+### #2,168 — **borygo77** · May 24, 2026 at 5:51 PM · page 109
+
+> **dev-reverse said:**
+> [View attachment 6348089](https://xdaforums.com/attachments/6348089/)
+>
+> My current coding plan isn't powerful enough to handle much. I need to read a lot of context and can't simply create a new chat to avoid using tokens; I need to read my entire history constantly so it understands what it's doing. However, this is detrimental as it consumes tokens quickly. In short, I've used all the tokens from two accounts, and they won't be available until the 28th. So I'm waiting for results from the community and will keep you updated on what you've managed to do with the kernel.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Can you pay for better plan?
+
+I can donate for your hard work and time spend on it ![😊](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f60a.png)
+
+---
+
+### #2,169 — **dev-reverse** · May 24, 2026 at 6:08 PM · page 109
+
+> **Leb-son said:**
+> Could you use potentially break it up into different organized chucks using the AI. When using Claude I rely Obsidian to create a table of contents and use back-links/ wiki-links and effectively create a mini rag system. Mix that with a good Claude MD that only includes the basic like when to call upon skills and how to navigate the obsidian vault and any other consistent information for the project, you can create a token effective system that can still retrieve the relevant context.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I'm used to antigravity because of the interface IDE; I know exactly what's happening and when I can revert. Also, the files on GitHub—I always keep the best version available. I never upload anything there that isn't the best I could get. To use what you're talking about, I'd probably have to use the terminal. If I'm wrong, show me a better option that would maintain all the context without using so many tokens, or you yourselves could help. I managed to get the official kernel bootable through sheer effort, reading, and testing. It wasn't a miracle; it was just persistence until I succeeded in initializing it.
+
+---
+
+### #2,170 — **dev-reverse** · May 24, 2026 at 6:10 PM · page 109
+
+> **borygo77 said:**
+> Can you pay for better plan?
+>
+> I can donate for your hard work and time spend on it ![😊](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f60a.png)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I appreciate the help, but I can't afford the Ultra plan and I don't know if it's worth it. To be honest, the price they charge in my country is basically my monthly salary. I don't work in development; my job is regular, and the salary in my country is quite low. I believe that if someone could lend me an account with higher limits or another IDE that contains AI and is as secure as Antigravity, I could adapt without problems, as long as I can maintain a secure workflow. What is the secure method? Everything I do in the Antigravity IDE generates the modified files, but I have a button to revert what it did or not, and while that's happening, I can do the tests. If it worked, I accept the change; if it failed, I can revert without depending on a Git backup. And the best of both worlds is that I can simply modify the file and test it without actually changing anything on the hard drive. That's the great advantage of the Antigravity IDE. Initially, I only need an account with tokens. If I or someone else manages to proceed with the project, I will find a way to make a donation available in some way if someone wants to help, or I can leave my PayPal. I don't know exactly what the best path would be, but I'm sure that the path now would be to find an account with higher limits so that I can try rebuilding the touchscreen driver; that would be the first decisive step.
+
+---
+
+### #2,171 — **n00b-xda-disciple** · May 24, 2026 at 6:22 PM · page 109
+
+> **dev-reverse said:**
+> I'll explain again: I left the repository in the kernel's github. Read my last commit that I sent there. The kernel is bootable, but the touchscreen won't work. I left it in that exact part to show that I'm trying to fix this. I ask that whoever helps with the development and solution to the problem, the files are there. I can even explain the method privately, but basically all the necessary files are in the decompiled folder. What you need is a smartphone with the shell enabled and root permission. I use kernelsu, but you can also do this in Magisk. When you work on solving the touchscreen driver problem, send small commits to your repository, and if you manage to solve the touchscreen problem, send it to my repository informing that the problem has been solved. Please don't send small pulls to my repository as junk commits; this will mess up my repository. I don't want to mess it up; I want that when someone downloads the repository, it's working so they can get a copy from the mirror. From my repository, try working with it using some AI, and whenever you make small commits for your development, don't send them to the repository I created; send them to your copy. This keeps the repository clean, and only send the commit after you've solved the problem if you manage to fix it.
+>
+>
+>
+>
+>
+>
+> ![github.com](/proxy.php?image=https%3A%2F%2Fopengraph.githubassets.com%2Fc0decc2476cc062aa4757b2acd1b280311f9d29a005285ef8b896c23540d1d1b%2FCoding-BR%2Fandroid_kernel_nubia_sm8850_qwjujube&hash=62748ad996769ae80e50682fd1e6d4e9&return_error=1)
+>
+>
+>
+>
+> ### GitHub - Coding-BR/android_kernel_nubia_sm8850_qwjujube: Linux Kernel 6.12 (Android 16 GKI) for Nubia RedMagic 11 Pro (NX809J) - Codename: qwjujube
+>
+> Linux Kernel 6.12 (Android 16 GKI) for Nubia RedMagic 11 Pro (NX809J) - Codename: qwjujube - Coding-BR/android_kernel_nubia_sm8850_qwjujube
+>
+>
+>
+> ![github.com](/proxy.php?image=https%3A%2F%2Fgithub.githubassets.com%2Ffavicons%2Ffavicon.svg&hash=39b48b32410d41e23249bf67277031ca&return_error=1)
+>
+> 					github.com
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+> Read the repository's readme again. Never flash the device; do not write files directly to the device. Whenever you need to flash the kernel to your smartphone, flash it to RAM. Do not use the flash command. Anyone who hasn't read my documentation has probably crashed their smartphone at this point.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I got touch working flawlessly. Seriously check out my work.
+
+---
+
+### #2,172 — **Leb-son** · May 24, 2026 at 6:25 PM · page 109
+
+> **dev-reverse said:**
+> I'm used to antigravity because of the interface IDE; I know exactly what's happening and when I can revert. Also, the files on GitHub—I always keep the best version available. I never upload anything there that isn't the best I could get. To use what you're talking about, I'd probably have to use the terminal. If I'm wrong, show me a better option that would maintain all the context without using so many tokens, or you yourselves could help. I managed to get the official kernel bootable through sheer effort, reading, and testing. It wasn't a miracle; it was just persistence until I succeeded in initializing it.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I'll be honest when it comes to the technical stuff I can already know you know more then me, I'm still brand new to all of it overall but I've been using VScodium in a Debian container using Claude Code terminal through the extension I still need to learn proper GitHub practice so I've mostly been taking manual backups. I apologise if this isn't helpful just how I've been managing my personal stuff whilst learning everything. I do plan to try help in the future but whilst I'm leaning (so I don't hand over something sloppy) i end up using up my session window and weekly limits with a Claude pro subscription.
+
+---
+
+### #2,173 — **dev-reverse** · May 24, 2026 at 6:28 PM · page 109
+
+> **n00b-xda-disciple said:**
+> I got touch working flawlessly. Seriously check out my work.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I'll take a look, but I can't proceed with anything here; my weekly limit has been reached. I saw that you posted a commit there.
+
+---
+
+### #2,174 — **n00b-xda-disciple** · May 24, 2026 at 6:29 PM · page 109
+
+> **dev-reverse said:**
+> I'll take a look, but I can't proceed with anything here; my weekly limit has been reached. I saw that you posted a commit there.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Read the documents. I updated the project. We're a lot further now!! - I tested everything I posted.
+
+---
+
+### #2,175 — **n00b-xda-disciple** · May 24, 2026 at 6:47 PM · page 109
+
+> **SnowFuhrer said:**
+> Well, Im guessing it won't work with userdebug ROM and I had to set it up because I had never fixed TEE. I should see if I can make a patch for the userdebug abl but it seems a bit different than the user abl that phones launch with.
+>
+>
+>
+> And Google wallet requires something more than passing three checks so it's my ultimate test.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I need to update my guide. Engineer abl and rom not required anymore. Use [@dev-reverse](https://xdaforums.com/m/11311597/) repository Abl.elf or efisp chain-loader to get fastboot flashing
+
+---
+
+### #2,176 — **dev-reverse** · May 24, 2026 at 6:51 PM · page 109
+
+> **n00b-xda-disciple said:**
+> I need to update my guide. Engineer abl and rom not required anymore. Use [@dev-reverse](https://xdaforums.com/m/11311597/) repository Abl.elf or efisp chain-loader to get fastboot flashing
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+It would be easier for you to go to GitHub and join Telegram... but yes, I left the abl unlock file there, and I also explained how to initialize it without causing problems.
+
+---
+
+### #2,177 — **n00b-xda-disciple** · May 24, 2026 at 7:05 PM · page 109
+
+> **dev-reverse said:**
+> It would be easier for you to go to GitHub and join Telegram... but yes, I left the abl unlock file there, and I also explained how to initialize it without causing problems.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+RM11 Pro / NX809J recovery + fastboot progress synopsis
+
+Current device state:
+
+- Device is unlocked.
+
+- ABL unlock path is working.
+
+- Fastboot commands now work after ABL was flashed correctly.
+
+- Device is currently safe and booting Android on slot A.
+
+- Android boot state remains normal:
+
+  - slot: _a
+
+  - sys.boot_completed: 1
+
+  - verifiedbootstate: orange
+
+  - flash.locked: 0
+
+Important fastboot finding:
+
+- fastboot boot is now available, but it is NOT a valid recovery-mode test path on this device.
+
+- Even when using stock kernel + stock DTB + stock recovery ramdisk, fastboot boot still routes into Android.
+
+- Stock recovery.img itself cannot be fastboot-booted directly because it is ramdisk-only:
+
+  - KERNEL_SZ = 0
+
+  - RAMDISK_SZ != 0
+
+- Therefore the recovery entry path depends on bootloader/recovery handoff, BCB/misc, bootconfig, or normal recovery partition routing, not simple fastboot boot.
+
+Stock recovery status:
+
+- adb reboot recovery works.
+
+- Stock recovery boots.
+
+- Display works.
+
+- Touch works.
+
+- Recovery ADB shows unauthorized, which appears to be normal stock behavior.
+
+Recovery partition testing:
+
+- recovery_a and recovery_b both exist.
+
+- Both are size 0x6400000.
+
+- A byte-identical repacked stock recovery image was created and flashed to recovery_a and recovery_b successfully.
+
+- Android still booted afterward.
+
+- adb reboot recovery still entered recovery afterward.
+
+- This validated the recovery partition write path.
+
+Recovery ramdisk modification testing:
+
+- marker-001: added a harmless static marker file inside the recovery ramdisk. Flashed recovery_a/recovery_b. Android and recovery still booted. PASS.
+
+- marker-002: added a second static marker and safe comment. Flashed recovery_a/recovery_b. Android and recovery still booted. PASS.
+
+- marker-003: changed only the recovery title PNG resource. Recovery booted and showed the modified title, proving recovery loaded the modified ramdisk resource. PASS, but title fit/cropping was imperfect.
+
+- marker-004: corrected the visible title image. Recovery booted and displayed “Recovery 004” correctly enough. PASS.
+
+Current conclusion:
+
+- The recovery partition modification lane is working.
+
+- The recovery ramdisk unpack/repack/flash/test workflow is validated.
+
+- Recovery UI resource replacement works on-device.
+
+- We now have visual proof that the modified recovery ramdisk is executing.
+
+- No boot, vendor_boot, init_boot, vbmeta, or slot experiments are needed for this phase.
+
+- The next useful work should stay recovery-partition only and focus on the smallest functional change needed for recovery/touch work.
+
+Safety rules:
+
+- Do not use fastboot boot as the recovery validation path.
+
+- Do not use force-recovery cmdline images; one caused crashdump.
+
+- Do not touch boot, vendor_boot, init_boot, vbmeta, or slots unless there is a very specific reason.
+
+- Do not wipe data.
+
+- Test changes by flashing recovery_a/recovery_b only, then boot Android, then adb reboot recovery.
+
+- Keep the byte-identical stock recovery repack as rollback.
+
+---
+
+### #2,178 — **borygo77** · May 24, 2026 at 8:31 PM · page 109
+
+> **dev-reverse said:**
+> It would be easier for you to go to GitHub and join Telegram... but yes, I left the abl unlock file there, and I also explained how to initialize it without causing problems.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+It's Google AI Pro were talking about?
+
+If I add this to my account how do I share it with you?
+
+---
+
+### #2,179 — **dev-reverse** · May 24, 2026 at 8:55 PM · page 109
+
+> **borygo77 said:**
+> It's Google AI Pro were talking about?
+>
+> If I add this to my account how do I share it with you?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I would have to have access to your email to log into the tool here, without this I can't do anything theoretically you would have to contact me via Telegram or the email I left here and with that you would have direct contact with me and you would have to give me the details so that I can log in without this I can't log into your account it is not shareable my data is on github which I made available there is my email and there are also other social networks that I am active
+
+---
+
+### #2,180 — **borygo77** · May 24, 2026 at 8:59 PM · page 109
+
+I'll open new account just for this later tonightwhen back home and give you access ![😊](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f60a.png)
+
+---
+
+### #2,181 — **n00b-xda-disciple** · May 24, 2026 at 10:36 PM · page 110
+
+Shared my work with [@dev-reverse](https://xdaforums.com/m/11311597/) stay tuned!
+
+---
+
+### #2,182 — **borygo77** · May 25, 2026 at 1:23 AM · page 110
+
+> **fsblue said:**
+> All verdicts are meet and play store show certified but still the gwallet show device doesn't meet security requirements ![🤷‍♂️](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f937-2642.png)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Uninstall updates from Google wallet.
+
+Disable update with zygisk detach.
+
+Seems to be working for me ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+
+edit. This actually doesn't work. Just tested in vending machine and it gave me usual error with device doesn't meet security requirements...
+
+---
+
+### #2,183 — **robonxt** · May 25, 2026 at 1:43 AM · page 110
+
+If anyone needs full fresh backups with removed device-specific .img files, let me know!
+
+I currently have backed up the following versions for RedMagic 11 Pro Global (512GB/16GB):
+
+1. 11.0.12MR2_GB (shipped version)
+
+2. 11.0.14MR1_GB
+
+3. 11.0.14MR3_GB
+
+4. 11.0.16MR1_GB
+
+5. 11.0.16MR2_GB
+
+6. 11.0.16MR3_GB
+
+7. 11.0.18_GB
+
+Links are in the original post on the other thread: https://xdaforums.com/t/4787673/post-90593073
+
+---
+
+### #2,184 — **dev-reverse** · May 25, 2026 at 2:01 AM · page 110
+
+> **robonxt said:**
+> If anyone needs full fresh backups with removed device-specific .img files, let me know!
+>
+>
+>
+> I currently have backed up the following versions for RedMagic 11 Pro Global (512GB/16GB):
+>
+> 1. 11.0.12MR2_GB (shipped version)
+>
+> 2. 11.0.14MR1_GB
+>
+> 3. 11.0.14MR3_GB
+>
+> 4. 11.0.16MR1_GB
+>
+> 5. 11.0.16MR2_GB
+>
+> 6. 11.0.16MR3_GB
+>
+> 7. 11.0.18_GB
+>
+>
+>
+> My original post from the other thread: https://xdaforums.com/t/4787673/post-90593073
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+https://drive.google.com/drive/folders/19Y5DTOahr9uon9lhGxQAKZyzvuj-IryB?usp=sharing
+
+If you have access to a computer, you can upload all the ROMs to  google driver
+
+---
+
+### #2,185 — **dev-reverse** · May 25, 2026 at 2:06 AM · page 110
+
+> **Leb-son said:**
+> Could you use potentially break it up into different organized chucks using the AI. When using Claude I rely Obsidian to create a table of contents and use back-links/ wiki-links and effectively create a mini rag system. Mix that with a good Claude MD that only includes the basic like when to call upon skills and how to navigate the obsidian vault and any other consistent information for the project, you can create a token effective system that can still retrieve the relevant context.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Software engineering doesn't quite work that way, although every kernel is divided into several parts, just like drivers are separate, but some are dependent. The problem here isn't that; it's a combination of factors. The AI needs to collect as much data as possible to understand the context. A kernel has billions of lines of code; you can't limit it to one purpose. It needs free access to navigate and decide for itself what is useful or not, and this consumes a lot of tokens. Also, the fact that it's trying to rebuild something blindly... the biggest problem is who's behind the computer machine, in this case, me. Because I don't have the technical knowledge about the hardware or the techniques I should know to proceed with solving the problems. It's similar to replacing a running engine, but without knowledge, it wouldn't work very well. But that's what I'm doing.
+
+---
+
+### #2,186 — **robonxt** · May 25, 2026 at 2:22 AM · page 110
+
+> **dev-reverse said:**
+> https://drive.google.com/drive/folders/19Y5DTOahr9uon9lhGxQAKZyzvuj-IryB?usp=sharing
+>
+>
+>
+> If you have access to a computer, you can upload all the ROMs to  google driver
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I would, but the file size will count against my Google Drive storage (see https://support.google.com/drive/thread/224917633). I also don't want to expose my personal account so I'm using a alternative cloud storage (MEGA, Drime, etc).
+
+What I can do is upload the files one by one, share the link and once you've downloaded it, I can remove it and push another backup due to the limited cloud storage.
+
+---
+
+### #2,187 — **dev-reverse** · May 25, 2026 at 2:27 AM · page 110
+
+> **robonxt said:**
+> I would, but the file size will count against my Google Drive storage (see https://support.google.com/drive/thread/224917633). I also don't want to expose my personal account so I'm using a alternative cloud storage (MEGA, Drime, etc).
+>
+> What I can do is upload the files one by one, share the link and once you've downloaded it, I can remove it and push another backup due to the limited cloud storage.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I don't know if you noticed, but I made this folder visible to everyone. And I'm using Google Drive.
+
+If you don't know how to do what I'm saying, do it the way you understand it; it's all good to me.
+
+So, the first two that came out that you managed to back up are already good.
+
+1. 11.0.12MR2_GB (shipped version)
+
+2. 11.0.14MR1_GB
+
+---
+
+### #2,188 — **robonxt** · May 25, 2026 at 2:50 AM · page 110
+
+> **dev-reverse said:**
+> I don't know if you noticed, but I made this folder visible to everyone. And I'm using Google Drive.
+>
+> If you don't know how to do what I'm saying, do it the way you understand it; it's all good to me.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I will share my files across different cloud storages because I do not have enough space for all of the backups to be placed on a single cloud storage, so please bear with me. ![😅](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f605.png)![🙏](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f64f.png)
+
+I will update my original post with links when they are ready.
+
+---
+
+### #2,189 — **jolly_roger_hook** · May 25, 2026 at 2:56 AM · page 110
+
+> **robonxt said:**
+> I will share my files across different cloud storages because I do not have enough space for all of the backups to be placed on a single cloud storage, so please bear with me. ![😅](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f605.png)![🙏](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f64f.png)
+>
+> I will update my original post with links when they are ready.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I have REDMAGICOS11.0.18_GB on my drive already EDIT :if you want to use that link
+
+### REDMAGICOS11.0.18_GB
+
+![drive.google.com](/proxy.php?image=https%3A%2F%2Fssl.gstatic.com%2Fimages%2Fbranding%2Fproduct%2F1x%2Fdrive_2020q4_32dp.png&hash=cb464dc9ad0545d94fe752d1439c24b1&return_error=1)
+
+					drive.google.com
+
+---
+
+### #2,190 — **robonxt** · May 25, 2026 at 3:19 AM · page 110
+
+> **jolly_roger_hook said:**
+> I have REDMAGICOS11.0.18_GB on my drive already EDIT :if you want to use that link
+>
+>
+>
+>
+>
+>
+>
+> ### REDMAGICOS11.0.18_GB
+>
+>
+>
+>
+>
+> ![drive.google.com](/proxy.php?image=https%3A%2F%2Fssl.gstatic.com%2Fimages%2Fbranding%2Fproduct%2F1x%2Fdrive_2020q4_32dp.png&hash=cb464dc9ad0545d94fe752d1439c24b1&return_error=1)
+>
+> 					drive.google.com
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I guess I do not need to upload my version then, unless someone really wants it ![:D](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+
+> **dev-reverse said:**
+> So, the first two that came out that you managed to back up are already good.
+>
+>
+>
+> 1. 11.0.12MR2_GB (shipped version)
+>
+> 2. 11.0.14MR1_GB
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Uploading cleaned versions for both right now; I will update the links in the original post when they are ready.
+
+EDIT: updated the original post, both are uploaded:  https://xdaforums.com/t/4787673/post-90593073
+
+---
+
+### #2,191 — **borygo77** · May 25, 2026 at 4:47 AM · page 110
+
+Is it only me with useless device now? ![🙄](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f644.png)
+
+Can you check if DRM info works for you guys?
+
+Some other apps I've bought from playstore stopped working as well...
+
+---
+
+### #2,192 — **dev-reverse** · May 25, 2026 at 4:52 AM · page 110
+
+> **borygo77 said:**
+> I have fastboot enabled so I don't have TEE validated, but that's very strange. Maybe those keys are there, but somehow they must be updating somewhere else. And maybe the device isn't doing that. Are you using root? And if so, are you using kernelsu or magisk?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+---
+
+### #2,193 — **dev-reverse** · May 25, 2026 at 5:17 AM · page 110
+
+await
+
+---
+
+### #2,194 — **borygo77** · May 25, 2026 at 5:55 AM · page 110
+
+Kernel su with PlayIntefrityFork was working great till yesterday. Nothing changed and suddenly today wallet and some apps just doesn't work anymore ![😒](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f612.png)
+
+---
+
+### #2,195 — **n00b-xda-disciple** · May 25, 2026 at 5:56 AM · page 110
+
+> **borygo77 said:**
+> Kernel su with PlayIntefrityFork was working great till yesterday. Nothing changed and suddenly today wallet and some apps just doesn't work anymore ![😒](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f612.png)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Have you tried the efisp chain-loader snow forked?
+
+---
+
+### #2,196 — **borygo77** · May 25, 2026 at 6:11 AM · page 110
+
+Nope. Would this make any difference you think?
+
+---
+
+### #2,197 — **n00b-xda-disciple** · May 25, 2026 at 6:14 AM · page 110
+
+![1779678890464.png](https://xdaforums.com/attachments/1779678890464-png.6348264/)
+
+---
+
+### #2,198 — **borygo77** · May 25, 2026 at 6:24 AM · page 110
+
+This says nothing to me to be honest ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+
+Any steps to try to make it work being with original ZTE ToolBox efisp installed?
+
+How do you choose mode? Which one should I try?
+
+---
+
+### #2,199 — **n00b-xda-disciple** · May 25, 2026 at 6:33 AM · page 110
+
+Research it and you'll start to understand. The modes are just for different use cases. Mode 3 is for custom roms that would obviously fail everything. And you download or clone the repo and build it.
+
+Consider each one a different tier in what it's able to do - hiding/able to hide. lock/relock. It's a workaround for keeping TEE in tact but I don't think there will be a time you won't have to fix it. Later this year after the big change, it probably won't matter anymore anyways.
+
+I think it's useful to at least look into. I think I saw them joke about running a custom recovery in efisp lmao.
+
+It's utilizing the same strategy the toolbox uses with flashing custom efisp to unlock. Except you can do more than just unlock/relock bootloader with it.
+
+---
+
+### #2,200 — **SnowFuhrer** · May 25, 2026 at 9:39 AM · page 110
+
+Well said. And the fix fingerprint option that the toolbox uses, writes a custom efisp that makes the abl think it's locked. The original bootloader unlock wiped the efisp back to stock when it was completed. And fingerprint requires patching abl. If we didn't have this exploit and still managed to unlock the bootloader, we wouldn't have fingerprint.
+
+---
+
+### #2,201 — **borygo77** · May 25, 2026 at 9:43 AM · page 111
+
+> **SnowFuhrer said:**
+> Well said. And the fix fingerprint option that the toolbox uses, writes a custom efisp that makes the abl think it's locked. The original bootloader unlock wiped the efisp back to stock when it was completed. And fingerprint requires patching abl. If we didn't have this exploit and still managed to unlock the bootloader, we wouldn't have fingerprint.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Is there any chance you could release prebuild efisp partitions? Would you require any of my stock abl or some other img?
+
+Have no idea how to make it bootable so any help is appreciated ![😊](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f60a.png)
+
+---
+
+### #2,202 — **SnowFuhrer** · May 25, 2026 at 9:49 AM · page 111
+
+> **borygo77 said:**
+> Is there any chance you could release prebuild efisp partitions? Would you require any of my stock abl or some other img?
+>
+> Have no idea how to make it bootable so any help is appreciated ![😊](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f60a.png)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I should put them on the repo. For now it is [here](https://xdaforums.com/t/red-magic-11-pro-guide-bootloader-unlock-free-also-support-rm10-pad3pro-z70u-z80u-unlock-zte-family-toolbox.4780930/post-90604371) for mode 2. If you are on the old fingerprint patches, this will require a reset as the phone is now seen as unlocked. Also, I don't think it will work with userdebug abl.
+
+---
+
+### #2,203 — **borygo77** · May 25, 2026 at 9:57 AM · page 111
+
+Thank you ![😊](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f60a.png) I wanna try it cause my wallet is acting strange and some app which requires Google play services not longer works.
+
+Do you think your efisp will help with it?
+
+---
+
+### #2,204 — **SnowFuhrer** · May 25, 2026 at 10:21 AM · page 111
+
+> **borygo77 said:**
+> Thank you ![😊](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f60a.png) I wanna try it cause my wallet is acting strange and some app which requires Google play services not longer works.
+>
+> Do you think your efisp will help with it?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Depends what your app requirements are. I am passing basic and device. But my wallet is working which has always been the hard part. And I'm not using any modules. I'm sure there's some easy way to pass strong since we have hardware attestation but I haven't looked into it really. OnePlus 15 efisp chat might have details, I haven't looked through.
+
+---
+
+### #2,205 — **dev-reverse** · May 25, 2026 at 1:24 PM · page 111
+
+> **borygo77 said:**
+> Kernel su with PlayIntefrityFork was working great till yesterday. Nothing changed and suddenly today wallet and some apps just doesn't work anymore ![😒](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f612.png)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+You don't need any modules to get all the certifications. I never needed them on the Redmagic 11 Pro. If you had to use a module, that's your problem! You did something wrong when unlocking the device. It never needed anything; it can certify everything without using a module. The only thing you need is kernelsu. I use kernelsu with the corrected init boot from the ROM itself. Then I install the one with the OnePlus 15 Susfs fix and the gold standard. If you've lost your digital certificate, there's a .bat script I made that restores your certification. You can only have the yellow warning on Android startup; if you have the red one, your device is broken. Although I'm using abl fastboot, it doesn't show the red warning, but it won't work. Another detail: your device needs to have fingerprint recognition working.
+
+My translation came out a bit rough, a bit hostile, but read carefully and you'll understand the message.
+
+![😂](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f602.png)![😂](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f602.png)
+
+---
+
+### #2,206 — **borygo77** · May 25, 2026 at 1:57 PM · page 111
+
+Cause you probably never used wallet.
+
+I had all three including strong without PIF installed as well but RCS and wallet would not work.
+
+It's all went **** without me changing anything.
+
+---
+
+### #2,207 — **dev-reverse** · May 25, 2026 at 2:12 PM · page 111
+
+> **borygo77 said:**
+> Cause you probably never used wallet.
+>
+> I had all three including strong without PIF installed as well but RCS and wallet would not work.
+>
+> It's all went **** without me changing anything.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Well, I can tell you that I haven't actually used my card on my smartphone, but I don't think there would be a problem. I can't say for sure because I haven't gone anywhere and used that payment method. I will do that in the future. I only have one piece of advice for you: if you were using that module to correct the payment, that certificate expires. If Google found out who created it, they invalidated that key.
+
+---
+
+### #2,208 — **borygo77** · May 25, 2026 at 2:13 PM · page 111
+
+Do you use RCS messages? ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+
+---
+
+### #2,209 — **dev-reverse** · May 25, 2026 at 2:17 PM · page 111
+
+No
+
+---
+
+### #2,210 — **dev-reverse** · May 25, 2026 at 4:03 PM · page 111
+
+> **borygo77 said:**
+> Do you use RCS messages? ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Then look at my messages on Telegram and I didn't quite understand, it seems you're in Nikka's group. Do you have the Redmagic 9? Were you installing Windows on your smartphone?
+
+---
+
+### #2,211 — **dev-reverse** · May 25, 2026 at 4:13 PM · page 111
+
+Okay everyone, I want to share the news that to build our custom ROM, we don't need a custom kernel. Things have changed drastically. Imagine a web application. That's the shortest way to explain it. Now imagine you have an API running on a server, and you built this API to communicate with your web front-end hosted elsewhere, or in the same place but separately. Now imagine you need to rebuild a new front-end, but you need new functions, but you need to maintain both front-ends. What would you do? We do something called versioning. Internally, we say API/login-v1. To avoid breaking the old communication, we say API-v2. We don't break the old communication, but we create compatibility between them. We create new endpoints, if possible with the custom kernel, saving on external translation so as not to cause problems. Regarding long-term performance, but to summarize, the HALL layer is built in the Android ROM, not the kernel, which I'm rebuilding. We'll see if I can rebuild everything necessary or if I can only partially rebuild it; it's too early to say. But your focus should be on the custom ROM. And I'll say in advance that you don't need to wait for the kernel to be ready. You can take a LineageOS and rebuild the entire interface instead of building the application, as long as you do it intelligently, and then migrate to future versions of Android. If you're still having difficulty, contact me; I'll teach you how to install the GSI and I'll also update the tutorial.
+
+---
+
+### #2,212 — **elrey120** · May 25, 2026 at 6:27 PM · page 111
+
+> **dev-reverse said:**
+> Okay everyone, I want to share the news that to build our custom ROM, we don't need a custom kernel. Things have changed drastically. Imagine a web application. That's the shortest way to explain it. Now imagine you have an API running on a server, and you built this API to communicate with your web front-end hosted elsewhere, or in the same place but separately. Now imagine you need to rebuild a new front-end, but you need new functions, but you need to maintain both front-ends. What would you do? We do something called versioning. Internally, we say API/login-v1. To avoid breaking the old communication, we say API-v2. We don't break the old communication, but we create compatibility between them. We create new endpoints, if possible with the custom kernel, saving on external translation so as not to cause problems. Regarding long-term performance, but to summarize, the HALL layer is built in the Android ROM, not the kernel, which I'm rebuilding. We'll see if I can rebuild everything necessary or if I can only partially rebuild it; it's too early to say. But your focus should be on the custom ROM. And I'll say in advance that you don't need to wait for the kernel to be ready. You can take a LineageOS and rebuild the entire interface instead of building the application, as long as you do it intelligently, and then migrate to future versions of Android. If you're still having difficulty, contact me; I'll teach you how to install the GSI and I'll also update the tutorial.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Lineageos for the OnePlus 15 doesn't use a custom kernel yet, it's using a prebuilt. I already tried twice to port lineageos to the redmagic 11 pro with the same way but either I did something wrong or the phone decided it would be fun to not boot custom partitions.
+
+Still, I'm a bit set back on trying to make TWRP or lineageos again now that you and [@n00b-xda-disciple](https://xdaforums.com/m/5836662/) figured out the userdebug rom thing, having the fingerprint sensor not work feels like too much maybe.
+
+---
+
+### #2,213 — **dev-reverse** · May 25, 2026 at 7:32 PM · page 111
+
+> **elrey120 said:**
+> Lineageos for the OnePlus 15 doesn't use a custom kernel yet, it's using a prebuilt. I already tried twice to port lineageos to the redmagic 11 pro with the same way but either I did something wrong or the phone decided it would be fun to not boot custom partitions.
+>
+> Still, I'm a bit set back on trying to make TWRP or lineageos again now that you and [@n00b-xda-disciple](https://xdaforums.com/m/5836662/) figured out the userdebug rom thing, having the fingerprint sensor not work feels like too much maybe.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I would have to figure out how to spoof the TEE so that it can read the biometrics because this also happens in the GSI ROM, although when I installed the GSI I didn't remove the userdebug abl. Maybe if you restore the original abl of the device, but you will need to keep the AVB meta disabled or the GSI ROM won't be able to boot, so it would be a matter of camouflaging the AVB meta. I believe it's possible, especially since there are groups on Telegram with patches to fix GSI.
+
+---
+
+### #2,214 — **n00b-xda-disciple** · May 25, 2026 at 7:40 PM · page 111
+
+![IMG_20260525_112435.jpg](/proxy.php?image=https%3A%2F%2Fmedia.discordapp.net%2Fattachments%2F620071087069200394%2F1508506697918976120%2FIMG_20260525_112435.jpg%3Fex%3D6a15c9d7%26is%3D6a147857%26hm%3D9b3349f94c1c5066b227af795698f8cbeeaa35a3424d50d0d674c33c82b5f5a7%26%3D%26format%3Dwebp%26width%3D920%26height%3D1227&hash=cba6154443ecc9f5493f5bc904dcf73a)
+
+Progress.
+
+---
+
+### #2,215 — **dev-reverse** · May 25, 2026 at 7:42 PM · page 111
+
+Go to my repository and you'll understand. GSI ROMs don't use their kernels, because what you're saying doesn't make sense. If it were that easy, they should standardize the physical pinout of every motherboard manufactured worldwide, but that's not how it works. Each manufacturer has its own component map and address, so what you're saying about LineageOS having its own kernel makes no sense at all. The ROM is basically the system composed of 3 files, so much so that you can install any compiled GSI; its driver remains there. If you create your own application, you can communicate with it. The GSI ROM never touches the kernel; you're mistaken.
+
+---
+
+### #2,216 — **SnowFuhrer** · May 25, 2026 at 8:39 PM · page 111
+
+There isn't really any use to use userdebug anymore, except for using *fastboot boot. *I'm kinda working on a solution, but it's not even necessary given that we have orange state efisp. Fingerprint is so much more superior to fastboot boot which is just a minor convenience, EDL works great.
+
+---
+
+### #2,217 — **dev-reverse** · May 25, 2026 at 9:00 PM · page 111
+
+Sooner or later the manufacturer will blow the fuse, preventing the smartphone from rollback and even the firehose will stop working. But thinking about it, since ZTE will never update this kernel to version 7.x.x, they'll keep this thing in version 6.12.x. What's the reason for them to want to blow the fuse in my device? The kernel itself supports up to Android 18; just search for it. At least, according to the news I found, kernel 6.12.x has a 4-year LTS (Long Term Support) from the release date, which will end exactly with Android 18, if I'm not mistaken.
+
+When a new Android version comes out, I'll do the same thing I do with GSI: I'll flash the ROM and leave the rest aside. I'm not crazy. Unless the Chinese manages to create a new FireHose, then I'll be fine.
+
+---
+
+### #2,218 — **sree1456** · May 25, 2026 at 10:53 PM · page 111
+
+[NEED HELP] Nubia Z70 Ultra (NX736J) - IMEI Injection Blocked
+
+Device: Nubia Z70 Ultra (NX736J) | Snapdragon 8 Elite
+
+Current State: Bootloader Unlocked & Rooted.
+
+The Issue: Cross-flashed from CN to Global ROM. EFS is wiped, and the baseband is defaulting to hardware dummy/panic IMEIs (000039... & 004400...).
+
+What I've Tried: QCN restoration fails due to architecture mismatch. Direct hex injection to NV Item 550 via Diag Port (FTM Mode / EFS Pro / QXDM) fails with NV_ERR_READ_ONLY_NV_ITEM.
+
+I have hit the QSEE/TrustZone hardware lock. Standard Diag port writes are blocked.
+
+What I Need:
+
+The File: Does anyone have the NX736J_ENG_Modem.bin (Engineering Modem) so I can temporarily drop the TrustZone lock and write the NV items myself?
+
+OR
+
+Tool/Remote Assistance: Does anyone have a method to bypass the Diag port and force-patch the IMEI using my Rooted ADB shell (e.g., using *******)?
+
+◆**Mod Edit** by [Vagelis1608](https://xdaforums.com/m/4849551/)✧Paid Tool Refs Removed◆
+
+---
+
+### #2,219 — **dev-reverse** · May 25, 2026 at 11:47 PM · page 111
+
+> **sree1456 said:**
+> [NEED HELP] Nubia Z70 Ultra (NX736J) - IMEI Injection Blocked
+>
+> Device: Nubia Z70 Ultra (NX736J) | Snapdragon 8 Elite
+>
+> Current State: Bootloader Unlocked & Rooted.
+>
+> The Issue: Cross-flashed from CN to Global ROM. EFS is wiped, and the baseband is defaulting to hardware dummy/panic IMEIs (000039... & 004400...).
+>
+> What I've Tried: QCN restoration fails due to architecture mismatch. Direct hex injection to NV Item 550 via Diag Port (FTM Mode / EFS Pro / QXDM) fails with NV_ERR_READ_ONLY_NV_ITEM.
+>
+> I have hit the QSEE/TrustZone hardware lock. Standard Diag port writes are blocked.
+>
+> What I Need:
+>
+> The File: Does anyone have the NX736J_ENG_Modem.bin (Engineering Modem) so I can temporarily drop the TrustZone lock and write the NV items myself?
+>
+> OR
+>
+> Tool/Remote Assistance: Does anyone have a method to bypass the Diag port and force-patch the IMEI using my Rooted ADB shell (e.g., using *******)?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+If you have access to EDL mode, what would be the problem with you uploading your entire backup back to the device?
+
+---
+
+### #2,220 — **jolly_roger_hook** · May 26, 2026 at 2:21 AM · page 111
+
+> **sree1456 said:**
+> [NEED HELP] Nubia Z70 Ultra (NX736J) - IMEI Injection Blocked
+>
+> Device: Nubia Z70 Ultra (NX736J) | Snapdragon 8 Elite
+>
+> Current State: Bootloader Unlocked & Rooted.
+>
+> The Issue: Cross-flashed from CN to Global ROM. EFS is wiped, and the baseband is defaulting to hardware dummy/panic IMEIs (000039... & 004400...).
+>
+> What I've Tried: QCN restoration fails due to architecture mismatch. Direct hex injection to NV Item 550 via Diag Port (FTM Mode / EFS Pro / QXDM) fails with NV_ERR_READ_ONLY_NV_ITEM.
+>
+> I have hit the QSEE/TrustZone hardware lock. Standard Diag port writes are blocked.
+>
+> What I Need:
+>
+> The File: Does anyone have the NX736J_ENG_Modem.bin (Engineering Modem) so I can temporarily drop the TrustZone lock and write the NV items myself?
+>
+> OR
+>
+> Tool/Remote Assistance: Does anyone have a method to bypass the Diag port and force-patch the IMEI using my Rooted ADB shell (e.g., using *******)?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I'm assuming you did not make a backup cus had this Same issue your kinda screwed if you did not I have this same issue in my 11 pro luckly carrier still. Activated it even with the messed up imei
+
+---
+
+### #2,221 — **Saurabh6661** · May 26, 2026 at 8:30 AM · page 112
+
+Is there any way to root Redmagic 11 pro , Build is 11.0.23MR1 (CN version)
+
+Or can I just downgrade the OS? Is this possible?
+
+---
+
+### #2,222 — **SnowFuhrer** · May 26, 2026 at 8:47 AM · page 112
+
+> **Saurabh6661 said:**
+> Is there any way to root Redmagic 11 pro , Build is 11.0.23MR1 (CN version)
+>
+>
+>
+> Or can I just downgrade the OS? Is this possible?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Does the toolbox work?
+
+---
+
+### #2,223 — **Saurabh6661** · May 26, 2026 at 8:52 AM · page 112
+
+> **SnowFuhrer said:**
+> Does the toolbox work?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+It has been mentioned in thread not to proceed if it's 11.0.23 that's why am just trying to confirm it.
+
+---
+
+### #2,224 — **SnowFuhrer** · May 26, 2026 at 8:59 AM · page 112
+
+> **Saurabh6661 said:**
+> It has been mentioned in thread not to proceed if it's 11.0.23 that's why am just trying to confirm it.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Where
+
+---
+
+### #2,225 — **Saurabh6661** · May 26, 2026 at 9:13 AM · page 112
+
+> **SnowFuhrer said:**
+> Where
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+This
+
+---
+
+### #2,226 — **SnowFuhrer** · May 26, 2026 at 9:27 AM · page 112
+
+> **Saurabh6661 said:**
+> This
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+You should be fine as long as you make a backup. DO NOT SKIP.  And I'm sure if they fused the bootloader the tool would fail to make a backup. If it's still not fused, they might have patched the abl. In that case you'd have to roll back.
+
+---
+
+### #2,227 — **jolly_roger_hook** · May 26, 2026 at 9:51 AM · page 112
+
+> **Saurabh6661 said:**
+> This
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+That's not saying it won't work just has noy been tested make sure you make a backup the tool will fail if it's patched and if it does make a backup and something else fails you can restore your backup and as always proceed at your own risk and let us know what happens if you do
+
+---
+
+### #2,228 — **Leb-son** · May 26, 2026 at 12:21 PM · page 112
+
+> **dev-reverse said:**
+> Software engineering doesn't quite work that way, although every kernel is divided into several parts, just like drivers are separate, but some are dependent. The problem here isn't that; it's a combination of factors. The AI needs to collect as much data as possible to understand the context. A kernel has billions of lines of code; you can't limit it to one purpose. It needs free access to navigate and decide for itself what is useful or not, and this consumes a lot of tokens. Also, the fact that it's trying to rebuild something blindly... the biggest problem is who's behind the computer machine, in this case, me. Because I don't have the technical knowledge about the hardware or the techniques I should know to proceed with solving the problems. It's similar to replacing a running engine, but without knowledge, it wouldn't work very well. But that's what I'm doing.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I didn't mean breaking up the kernel, I meant making a tree of documentation that the AI can refer to, remember what relates to what, and what has been attempted and changed so it may not need to always read everything and figure out everything from scratch. However I don't know just how effective it would be so I will butt out ![😅](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f605.png)
+
+Once again thanks for all the work, you guys seem to be making amazing progress.
+
+---
+
+### #2,229 — **borygo77** · May 27, 2026 at 1:04 PM · page 112
+
+> **fsblue said:**
+> All verdicts are meet and play store show certified but still the gwallet show device doesn't meet security requirements ![🤷‍♂️](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f937-2642.png)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Were you able to fix wallet eventually?
+
+---
+
+### #2,230 — **dev-reverse** · May 27, 2026 at 2:17 PM · page 112
+
+I'm waiting for someone to help try and fix the problems. If you manage to fix the current problems, please send me an email or contact me via Telegram.
+
+![github.com](/proxy.php?image=https%3A%2F%2Fopengraph.githubassets.com%2Fc0decc2476cc062aa4757b2acd1b280311f9d29a005285ef8b896c23540d1d1b%2FCoding-BR%2Fandroid_kernel_nubia_sm8850_qwjujube&hash=62748ad996769ae80e50682fd1e6d4e9&return_error=1)
+
+### GitHub - Coding-BR/android_kernel_nubia_sm8850_qwjujube: Linux Kernel 6.12 (Android 16 GKI) for Nubia RedMagic 11 Pro (NX809J) - Codename: qwjujube
+
+Linux Kernel 6.12 (Android 16 GKI) for Nubia RedMagic 11 Pro (NX809J) - Codename: qwjujube - Coding-BR/android_kernel_nubia_sm8850_qwjujube
+
+![github.com](/proxy.php?image=https%3A%2F%2Fgithub.githubassets.com%2Ffavicons%2Ffavicon.svg&hash=39b48b32410d41e23249bf67277031ca&return_error=1)
+
+					github.com
+
+---
+
+### #2,231 — **fsblue** · May 27, 2026 at 3:26 PM · page 112
+
+> **borygo77 said:**
+> Were you able to fix wallet eventually?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Sadly, no. I will just use my 2nd phone for Gwallet for now. As SnowFuhrer mentioned, new efisp development worth a try (actually the only option, i think) but i didn't find time to check it out yet.
+
+---
+
+### #2,232 — **dev-reverse** · May 27, 2026 at 3:54 PM · page 112
+
+ZTE Kernel Sources Omitted: A Call for XDA Escalation and Community Action
+
+As of now, the kernel for this device is closed. Proceeding further requires either legal pressure regarding GPL compliance or a massive social media campaign to force ZTE to release the source code. XDA has a history of calling out ZTE’s lack of ethics in relevant forums, and we desperately need that level of escalation right now.
+
+For me, continuing this project solo has become financially unviable. I have documented all my progress on GitHub, clearly outlining where I stopped and what components are missing. Just as developers couldn't compile TWRP due to non-existent source code, I hit the same wall. The documentation is there for anyone to review.
+
+It is unacceptable that in 2026, ZTE is withholding code they routinely released in the past. This is an artificial limitation driven by greed, intended to make our devices disposable.
+
+I’ve done my part. Now, this needs to be escalated to the XDA News Team and developers with broader influence. I know active modders are monitoring these threads—I've seen my own Telegram links being moderated and removed recently, which proves the community is active and watching. Instead of fragmenting, I urge these modders to organize, use the GitHub base I’ve provided, and help us pressure ZTE. I can't do this alone, but together, the community can demand what is rightfully ours.
+
+---
+
+### #2,233 — **borygo77** · May 27, 2026 at 11:20 PM · page 112
+
+> **fsblue said:**
+> Sadly, no. I will just use my 2nd phone for Gwallet for now. As SnowFuhrer mentioned, new efisp development worth a try (actually the only option, i think) but i didn't find time to check it out yet.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Not good for me. 11 is the only device I wanna have with me. Just wondering what's blocking wallet activation as my duck detector show clean system and no more than you and me are having problems ![🙄](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f644.png)
+
+---
+
+### #2,234 — **borygo77** · May 27, 2026 at 11:22 PM · page 112
+
+> **SnowFuhrer said:**
+> I should put them on the repo. For now it is [here](https://xdaforums.com/t/efisp-root-gbl-chainload-efisp-chainloader-for-oneplus-15.4786301/) for mode 2. If you are on the old fingerprint patches, this will require a reset as the phone is now seen as unlocked. Also, I don't think it will work with userdebug abl.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Those zips actually doesn't work for me.
+
+He said to flash it with kernelSU Anykerlnel3 option build in but sadly I can not get it to work...
+
+---
+
+### #2,235 — **dev-reverse** · May 28, 2026 at 2:09 AM · page 112
+
+https://xdaforums.com/t/discussion-gplv2-violation-redmagic-11-pro-nx809j-incomplete-unbuildable-kernel-sources.4790008/
+
+![gpl_violation_artwork.jpg](https://xdaforums.com/attachments/gpl_violation_artwork-jpg.6348970/)
+
+---
+
+### #2,236 — **sree1456** · May 28, 2026 at 2:16 AM · page 112
+
+> **dev-reverse said:**
+> If you have access to EDL mode, what would be the problem with you uploading your entire backup back to the device?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I didn’t take a backup of my device, which caused the issue. Is there any way to fix it now?
+
+---
+
+### #2,237 — **sree1456** · May 28, 2026 at 2:18 AM · page 112
+
+> **jolly_roger_hook said:**
+> I'm assuming you did not make a backup cus had this Same issue your kinda screwed if you did not I have this same issue in my 11 pro luckly carrier still. Activated it even with the messed up imei
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Yes, I didn’t take a backup ![😭](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f62d.png). any Solution..![🤔](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f914.png)
+
+---
+
+### #2,238 — **jolly_roger_hook** · May 28, 2026 at 2:24 AM · page 112
+
+> **sree1456 said:**
+> Yes, I didn’t take a backup ![😭](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f62d.png). any Solution..![🤔](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f914.png)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Nope if you did not make a backup there is no fixing it untill we get twrp and even then maybe not  I've been through every option nothing works you can return your device to complete stock redmagic will take it in for a repair but that's your only option but that requires relocking your bootloader and that will break tee if you don't need service there shouldent be an issue  but if you do you will have to use T-Mobile or an offshoot of it
+
+---
+
+### #2,239 — **jolly_roger_hook** · May 28, 2026 at 2:28 AM · page 112
+
+> **dev-reverse said:**
+> https://xdaforums.com/t/discussion-gplv2-violation-redmagic-11-pro-nx809j-incomplete-unbuildable-kernel-sources.4790008/
+>
+>
+>
+>
+> [View attachment 6348970](https://xdaforums.com/attachments/6348970/)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I wholeheartedly believe the 11 pro was just a test for the 11s as there is no support for this device anywhere so they don't care because they will stop suprting is att the 11s droped today
+
+---
+
+### #2,240 — **dev-reverse** · May 28, 2026 at 2:36 AM · page 112
+
+> **jolly_roger_hook said:**
+> I wholeheartedly believe the 11 pro was just a test for the 11s as there is no support for this device anywhere so they don't care because they will stop suprting is att the 11s droped today
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+They are the same device, the same motherboard, don't worry. The only difference between them is the processor.
+
+---
+
+### #2,241 — **jolly_roger_hook** · May 28, 2026 at 3:00 AM · page 113
+
+> **dev-reverse said:**
+> They are the same device, the same motherboard, don't worry. The only difference between them is the processor.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+So if they release the kernal for the 11s that works Will that work For our deivice as well
+
+---
+
+### #2,242 — **dev-reverse** · May 28, 2026 at 3:11 AM · page 113
+
+> **jolly_roger_hook said:**
+> So if they release the kernal for the 11s that works Will that work For our deivice as well
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Yes, it's the same kernel, only the frequencies change, but it's the same thing.
+
+The Problem of Kernel Updates and False Security in Android
+
+The manufacturer will continue using the same kernel base (6.12.X). Being an LTS (Long Term Support) version, it has years of official support, which theoretically would provide ample technical resources to support even a future Android 18. However, history shows that official support for the device will end long before the kernel reaches its end of life.
+
+There is much discussion about the new European Union legislation, which requires 5 years of security updates. Some users question how manufacturers meet this requirement without updating the main kernel version. The issue is that the law does not require a version jump (such as going from 6.12 to 6.19). The Android standard allows maintaining the old base and applying security via backports—bringing vulnerability fixes to the current version. This ensures the stability of the ROM and proprietary drivers without breaking the system.
+
+The real problem, and where the consumer is frequently deceived, lies in the negligence regarding sub-patches. Currently, our kernel is stuck on an old version (like 6.12.23, which is already considerably outdated compared to the current Linux upstream). If the manufacturer doesn't synchronize the device's code with the latest patches from the 6.12 branch, Android security updates become superficial. In practice, they keep the device functioning at the bare minimum necessary just to deliver the latest promised ROM version, abandoning real kernel-level security and masking planned obsolescence.
+
+---
+
+### #2,243 — **SnowFuhrer** · May 28, 2026 at 4:24 AM · page 113
+
+> **borygo77 said:**
+> Those zips actually doesn't work for me.
+>
+> He said to flash it with kernelSU Anykerlnel3 option build in but sadly I can not get it to work...
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+My apologies, I meant to link my efisp, not the original thread. I will edit the link.
+
+[efisp](https://xdaforums.com/t/red-magic-11-pro-guide-bootloader-unlock-free-also-support-rm10-pad3pro-z70u-z80u-unlock-zte-family-toolbox.4780930/post-90604371)
+
+---
+
+### #2,244 — **n00b-xda-disciple** · May 28, 2026 at 4:27 AM · page 113
+
+Even then... It's just higher binned gen 5s overclocked. Probably isn't even much better without overclock lol.
+
+---
+
+### #2,245 — **SnowFuhrer** · May 28, 2026 at 4:30 AM · page 113
+
+I've done some serious gaming sessions with this, and I've yet to make it properly hot. But I'm sure there's ways ![🌚](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f31a.png)
+
+---
+
+### #2,246 — **jolly_roger_hook** · May 28, 2026 at 7:16 AM · page 113
+
+Maybe I'm stupid but is there no way to extract the kernal from our device then pull the source code from it I'm guessing not since we haven't done it yet
+
+---
+
+### #2,247 — **dev-reverse** · May 28, 2026 at 7:38 AM · page 113
+
+> **jolly_roger_hook said:**
+> Maybe I'm stupid but is there no way to extract the kernal from our device then pull the source code from it I'm guessing not since we haven't done it yet
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+That's exactly what I did, which is called reverse engineering: rebuilding the core kernel so that it's compilable. That's how I managed to find and confirm to the world that they hid the source code and broke the entire kernel. But for ordinary people, there's a limit to how far the reconstruction is worthwhile. We're not big tech, we're end consumers; they have to provide the code. I made small corrections with reverse engineering; rebuilding the touchscreen GPU driver would take years and be very expensive.
+
+Follow the unfolding events here.
+
+https://xdaforums.com/t/discussion-gplv2-violation-redmagic-11-pro-nx809j-incomplete-unbuildable-kernel-sources.4790008/#post-90610220
+
+---
+
+### #2,248 — **5t0l3n** · May 28, 2026 at 3:12 PM · page 113
+
+> **dev-reverse said:**
+> Okay everyone, I want to share the news that to build our custom ROM, we don't need a custom kernel. Things have changed drastically. Imagine a web application. That's the shortest way to explain it. Now imagine you have an API running on a server, and you built this API to communicate with your web front-end hosted elsewhere, or in the same place but separately. Now imagine you need to rebuild a new front-end, but you need new functions, but you need to maintain both front-ends. What would you do? We do something called versioning. Internally, we say API/login-v1. To avoid breaking the old communication, we say API-v2. We don't break the old communication, but we create compatibility between them. We create new endpoints, if possible with the custom kernel, saving on external translation so as not to cause problems. Regarding long-term performance, but to summarize, the HALL layer is built in the Android ROM, not the kernel, which I'm rebuilding. We'll see if I can rebuild everything necessary or if I can only partially rebuild it; it's too early to say. But your focus should be on the custom ROM. And I'll say in advance that you don't need to wait for the kernel to be ready. You can take a LineageOS and rebuild the entire interface instead of building the application, as long as you do it intelligently, and then migrate to future versions of Android. If you're still having difficulty, contact me; I'll teach you how to install the GSI and I'll also update the tutorial.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I've tried to build super.img then flash but then phone wasn't booting anymore.
+
+Please, do a tut
+
+---
+
+### #2,249 — **dev-reverse** · May 28, 2026 at 3:16 PM · page 113
+
+> **5t0l3n said:**
+> I've tried to build super.img then flash but then phone wasn't booting anymore.
+>
+> Please, do a tut
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+You must upload a pre-compiled GSI image; do not attempt to compile your own GSI ROM. Contact me; find my GitHub profile (I posted it) and we'll resolve this so you can upload the GSI ROM. This way I can update the tutorial, save it, and make it available here as well.
+
+---
+
+### #2,250 — **5t0l3n** · May 28, 2026 at 3:25 PM · page 113
+
+> **dev-reverse said:**
+> You must upload a pre-compiled GSI image; do not attempt to compile your own GSI ROM. Contact me; find my GitHub profile (I posted it) and we'll resolve this so you can upload the GSI ROM. This way I can update the tutorial, save it, and make it available here as well.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+It wasn't gsi. Tried to rebuild stock super.img. There's like _cow images when unpacking, probably messed up when rebuilding.
+
+So, since I need then phone as daily, testing things makes It harder since I cannot backup/restore userdata making testing things painfull.
+
+:/
+
+---
+
+### #2,251 — **Kid8** · May 29, 2026 at 6:39 AM · page 113
+
+> **kreva119 said:**
+> finally I’ve successfully unlocked the BL and rooted my Redmagic Astra.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+hello sir, what version did you use?
+
+---
+
+### #2,252 — **Gamefreak89** · May 29, 2026 at 8:49 PM · page 113
+
+So, a couple questions. How far off away from a working Lineage based distro? Also, is this current method of unlocking the bootloader or rooting the phone currently still being supported or it hasn't been since whatever happened to the original owner and creator of the ZTE family unlocking tool? Also, another question. I have the 11 Pro 24GB 1TB model, the global version that's already at my doorsteps now, haven't been opened. What are the chances of it containing the right firmware version or below?
+
+---
+
+### #2,253 — **EliteBlackKaiser** · May 29, 2026 at 8:52 PM · page 113
+
+> **Gamefreak89 said:**
+> So, a couple questions. How far off away from a working Lineage based distro? Also, is this current method of unlocking the bootloader or rooting the phone currently still being supported or it hasn't been since whatever happened to the original owner and creator of the ZTE family unlocking tool? Also, another question. I have the 11 Pro 24GB 1TB model, the global version that's already at my doorsteps now, haven't been opened. What are the chances of it containing the right firmware version or below?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+There is not even kernel source / compilable kernel yet as zte/RedMagic only released a broken kernel source.  And all versions are supported up too 11.0.18 and for cn versions 11.0.23.
+
+---
+
+### #2,254 — **borygo77** · May 29, 2026 at 8:56 PM · page 113
+
+11.0.18EA release isn't but this is not a problem if his phone arrives with it.
+
+He can downgrade with toolbox to 16mr3 and then root.
+
+---
+
+### #2,255 — **dev-reverse** · May 29, 2026 at 8:57 PM · page 113
+
+> **EliteBlackKaiser said:**
+> There is not even kernel source / compilable kernel yet as zte/RedMagic only released a broken kernel source.  And all versions are supported up too 11.0.18 and for cn versions 11.0.23.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I'm trying to put pressure on them because they have a ZTE company here in my country, even though Redmagic is imported. But if they resell their own brand's product, they have to respect the law here. So I justified it both with their errors regarding open-source law and also with the national law of my country. They told me to wait, but I don't know if that's just a way for them to stall. But I already reported them. I have a thread where I post any new news. I'm fed up with this company.
+
+---
+
+### #2,256 — **jolly_roger_hook** · May 29, 2026 at 8:57 PM · page 113
+
+> **Gamefreak89 said:**
+> So, a couple questions. How far off away from a working Lineage based distro? Also, is this current method of unlocking the bootloader or rooting the phone currently still being supported or it hasn't been since whatever happened to the original owner and creator of the ZTE family unlocking tool? Also, another question. I have the 11 Pro 24GB 1TB model, the global version that's already at my doorsteps now, haven't been opened. What are the chances of it containing the right firmware version or below?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Just 100% make sure you make. Backup before anything
+
+---
+
+### #2,257 — **EliteBlackKaiser** · May 29, 2026 at 9:20 PM · page 113
+
+> **borygo77 said:**
+> 11.0.18EA release isn't but this is not a problem if his phone arrives with it.
+>
+> He can downgrade with toolbox to 16mr3 and then root.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Honestly .16 is the best version I've found everything works for what I need... .18 broke many features that you can find on stock android that I need!
+
+---
+
+### #2,258 — **Gamefreak89** · May 29, 2026 at 9:23 PM · page 113
+
+> **jolly_roger_hook said:**
+> Just 100% make sure you make. Backup before anything
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+So in other words, don't install any updates when I open it.
+
+---
+
+### #2,259 — **Gamefreak89** · May 29, 2026 at 9:24 PM · page 113
+
+> **borygo77 said:**
+> 11.0.18EA release isn't but this is not a problem if his phone arrives with it.
+>
+> He can downgrade with toolbox to 16mr3 and then root.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Because technically I won't be back home until Monday of next week. I just wanted to make sure that if it arrived on the lower version firmware.
+
+---
+
+### #2,260 — **dev-reverse** · May 29, 2026 at 9:26 PM · page 113
+
+> **Gamefreak89 said:**
+> Because technically I won't be back home until Monday of next week. I just wanted to make sure that if it arrived on the lower version firmware.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+In other words, do not connect the device to the internet. Make a complete backup without a password or anything else, in factory default mode – a clean backup. Then download the freezer script so the device doesn't search for updates. After that, you decide whether or not to unlock the device.
+
+---
+
+### #2,261 — **EliteBlackKaiser** · May 29, 2026 at 9:27 PM · page 114
+
+> **Gamefreak89 said:**
+> Because technically I won't be back home until Monday of next week. I just wanted to make sure that if it arrived on the lower version firmware.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Any version right now is rootable "11 pro" that's is. But a lot of users do recommend .16 update. And then on page 10 theirs commands to disable otas
+
+---
+
+### #2,262 — **Twiash** · May 29, 2026 at 9:46 PM · page 114
+
+anyone know how to convert global rom to china rom? The floating window feature of global rom is buggy
+
+---
+
+### #2,263 — **Gamefreak89** · May 29, 2026 at 11:25 PM · page 114
+
+> **EliteBlackKaiser said:**
+> Any version right now is rootable "11 pro" that's is. But a lot of users do recommend .16 update. And then on page 10 theirs commands to disable otas
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+So, even if it was on the latest Android update, it'd still be rootable? But usually the better standard is the .16 update?
+
+---
+
+### #2,264 — **dev-reverse** · May 29, 2026 at 11:37 PM · page 114
+
+I heard that the most noticeable difference between the old and new ROMs is that they contain more plugins in the smartphone's Game Space, but this can also get you banned from the game, which is why they removed it. I read this in China. In Chinese ROMs, if a ROM gives you these benefits in the game, depending on the game, they consider it a hack, so be careful.
+
+---
+
+### #2,265 — **n00b-xda-disciple** · May 29, 2026 at 11:51 PM · page 114
+
+> **EliteBlackKaiser said:**
+> Any version right now is rootable "11 pro" that's is. But a lot of users do recommend .16 update. And then on page 10 theirs commands to disable otas
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I  ![💯](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f4af.png) agree. Best stable version.
+
+---
+
+### #2,266 — **jolly_roger_hook** · May 30, 2026 at 12:16 AM · page 114
+
+> **n00b-xda-disciple said:**
+> I  ![💯](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f4af.png) agree. Best stable version.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I haveent had and issues with .18 but I don't really do anything crazy on the phone beside watch videos and play games
+
+---
+
+### #2,267 — **EliteBlackKaiser** · May 30, 2026 at 12:48 AM · page 114
+
+> **jolly_roger_hook said:**
+> I haveent had and issues with .18 but I don't really do anything crazy on the phone beside watch videos and play games
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+My biggest thing that stops me from using the phone full-time, and it makes me use my pixel 10 Pro xl alongside my 11 Pro is because One cameras suck on red magic, and because Facebook Messenger is completely broken. You can't have a chat. Reply field be too long otherwise it gets cut off, and also Androids native bubble heads no longer work with messenger because they broke something. But it works perfectly fine on the .16 update
+
+---
+
+### #2,268 — **jolly_roger_hook** · May 30, 2026 at 12:52 AM · page 114
+
+> **EliteBlackKaiser said:**
+> My biggest thing that stops me from using the phone full-time, and it makes me use my pixel 10 Pro xl alongside my 11 Pro is because One cameras suck on red magic, and because Facebook Messenger is completely broken. You can't have a chat. Reply field be too long otherwise it gets cut off, and also Androids native bubble heads no longer work with messenger because they broke something. But it works perfectly fine on the .16 update
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Im trying to use is as my daily I don't ever take pics so cameras not a d isuue if you roll back messenger it works and no idea what bubble heads are
+
+---
+
+### #2,269 — **borygo77** · May 30, 2026 at 12:52 AM · page 114
+
+You need this one [https://files.oops.wtf/files/com.fa..._minAPI28(arm64-v8a)(nodpi)_apkmirror.com.apk](https://files.oops.wtf/files/com.facebook.orca_555.0.0.56.66-341012523_minAPI28(arm64-v8a)(nodpi)_apkmirror.com.apk)
+
+---
+
+### #2,270 — **InfectedThoughts** · May 30, 2026 at 1:26 AM · page 114
+
+> **dev-reverse said:**
+> I'm trying to put pressure on them because they have a ZTE company here in my country, even though Redmagic is imported. But if they resell their own brand's product, they have to respect the law here. So I justified it both with their errors regarding open-source law and also with the national law of my country. They told me to wait, but I don't know if that's just a way for them to stall. But I already reported them. I have a thread where I post any new news. I'm fed up with this company.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+If we need to do a partition on ZTE/RedMagic I'll sign! We do need that source code, if it comes down to it just pm me I'll try to help ![😎](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f60e.png)
+
+---
+
+### #2,271 — **dev-reverse** · May 30, 2026 at 2:23 AM · page 114
+
+I don't know if anyone has tried sending it in for warranty repair, but look at this information. Since I spent quite a bit of time debugging the smartphone's RAM, I saw that it stores everything from the first time the smartphone was turned on until now. I think you should take a look at that. I think we need new functions in the ZTE Toolbox.
+
+# Factory Restoration and Secure Locking Guide (ZTE Toolbox)
+
+This guide describes the procedure to return the RedMagic 11 Pro (NX809J) to its original factory stock state using the **ZTE Toolbox** (via EDL/9008 mode), wiping all remnants of custom development, RAM dumps, panic logs, and securely restoring the original bootloader lock state.
+
+---
+
+## Procedure Flow
+
+```mermaid
+
+graph TD
+
+    A[1. Flash ROM via ZTE Toolbox] --> B[2. Erase rawdump and logfs Partitions]
+
+    B --> C[3. Boot Completely to Reset NVMEM]
+
+    C --> D[4. 30-Second Cold Boot]
+
+    D --> E[5. Lock Bootloader ]
+
+    E --> F[6. Validation and State Verification]
+
+```
+
+---
+
+## 1. Firmware Restoration via ZTE Toolbox
+
+Since you are using the **ZTE Toolbox** to restore the ROM, it will flash the official system partitions with their respective original signatures.
+
+1. Put the smartphone into **EDL (Qualcomm QDLoader 9008)** mode.
+
+2. In the **ZTE Toolbox** interface, select the official stock firmware package matching your device.
+
+3. Start the flashing process and wait for it to complete successfully.
+
+4. **IMPORTANT:** Do not attempt to force lock the bootloader directly through the tool during flashing to avoid incompatibility issues or boot failure. Let the tool only flash the original system.
+
+---
+
+## 2. Physical Cleaning of Dumps and Logs Partitions (Fastboot Mode)
+
+Even when flashing the original ROM, secondary partitions containing logs and crash data (`rawdump`) are usually not cleared automatically by standard flashing tools. To clear them manually:
+
+1. Once the firmware flashing is complete, put the device into **Fastboot** mode (by holding **Power + Volume Down**).
+
+2. Connect it to the PC via USB.
+
+3. In your computer's terminal, run the following erase commands to zero out the physical RAM dump partitions and hardware crash logs:
+
+```bash
+
+# Erase SoC RAM dumps physically recorded in storage
+
+fastboot erase rawdump
+
+fastboot erase rawdump_a
+
+fastboot erase rawdump_b
+
+# Erase crash logs stored in flash
+
+fastboot erase logfs
+
+```
+
+---
+
+## 3. First Normal Boot (Wiping ZTE Telemetry in NVRAM)
+
+ZTE uses non-volatile register cells (`NVMEM`) managed by the processor firmware (Qualcomm SCM) to record details about the last occurred Kernel Panic (via the driver `zte_reboot_ext.c`).
+
+1. In your computer's terminal, execute:
+
+   ```bash
+
+   fastboot reboot
+
+   ```
+
+2. Let the phone boot up normally until it reaches the Android setup wizard screen.
+
+3. **What happens in hardware:** During this first successful boot with the official stock kernel, the telemetry driver is initialized with an empty buffer and writes `0` (null) over the previous panic records, permanently erasing any old crash telemetry.
+
+---
+
+## 4. Physical RAM Erasure (Cold Boot)
+
+To ensure that no residual data from custom runs remains in the physical RAM cells:
+
+1. Turn off the phone completely.
+
+2. Disconnect the USB cable and any power source.
+
+3. Keep the device powered off for at least **30 seconds** (this ensures the motherboard and RAM capacitors discharge completely, clearing all volatile residual memory).
+
+---
+
+## 5. Secure Bootloader Locking
+
+Now that all partitions have valid original stock signatures and logs have been wiped, it is safe to lock the bootloader:
+
+1. Turn on the device in **Fastboot** mode (hold **Power + Volume Down**).
+
+2. In your computer's terminal, run:
+
+   ```bash
+
+   fastboot flashing lock
+
+   ```
+
+3. On the phone's screen, use the volume keys to select **"LOCK THE BOOTLOADER"** and confirm by pressing the **Power** button.
+
+4. The phone will automatically reboot and perform the final factory data reset (`Wipe Data`).
+
+---
+
+## 6. Verification of Success
+
+Once the device boots up, you can verify a clean state:
+
+* **Boot Screen:** The orange warning message indicating an unlocked bootloader ("Your device software cannot be checked...") will no longer appear, and the phone will show the stock boot animation directly.
+
+* **Play Integrity / SafetyNet:** Integrity tests will pass natively (including hardware-backed integrity) since the bootloader status is reported as `LOCKED` in the processor's secure enclave.
+
+* **No Remaining Traces:** Unlike Samsung devices (which have the Knox eFuse), Qualcomm platforms do not use permanent physical fuses to mark bootloader unlocks. Locking it returns the device to a fully clean, factory-certified state.
+
+---
+
+### #2,272 — **dev-reverse** · May 30, 2026 at 2:40 AM · page 114
+
+> **InfectedThoughts said:**
+> If we need to do a partition on ZTE/RedMagic I'll sign! We do need that source code, if it comes down to it just pm me I'll try to help ![😎](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f60e.png)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+This needs to start with you. If you feel wronged, go ahead and claim your rights. If you're satisfied, continue doing nothing. It's quite simple: if you don't care, ZTE cares even less, and that means less money going into their pockets, wasting the development team's time on something that doesn't generate a return. Now, if you want to claim something, just do it, as I am doing. It's your right. The problem is that most people here are complacent, thinking "it doesn't matter" or "they'll release it someday" and receiving crumbs. But the problem is that everyone here has the right to receive the compilable version, and this situation is regrettable. The lack of interest from everyone here is a shame because it wastes time, generates frustration, and so on.
+
+https://xdaforums.com/t/discussion-gplv2-violation-redmagic-11-pro-nx809j-incomplete-unbuildable-kernel-sources.4790008/#post-90611004
+
+---
+
+### #2,273 — **borygo77** · May 30, 2026 at 11:26 AM · page 114
+
+> **fsblue said:**
+> Sadly, no. I will just use my 2nd phone for Gwallet for now. As SnowFuhrer mentioned, new efisp development worth a try (actually the only option, i think) but i didn't find time to check it out yet.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I'm back to stock. Took a while to bring everything back to same look/feel without swift backup ![😩](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f629.png)
+
+Hate bringing card with me everywhere I go so I decided wallet is more important...
+
+Maybe some day I'll come back with efisp trick ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+
+---
+
+### #2,274 — **Venthus25** · May 30, 2026 at 4:12 PM · page 114
+
+How can I fix this message? I've lost my device integrity and now it shows as corrupted.
+
+---
+
+### #2,275 — **borygo77** · May 30, 2026 at 4:15 PM · page 114
+
+> **Venthus25 said:**
+> How can I fix this message? I've lost my device integrity and now it shows as corrupted.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+adb reboot "dm-verity\ enforcing"
+
+---
+
+### #2,276 — **Venthus25** · May 30, 2026 at 4:31 PM · page 114
+
+and how enter to adb on the phone
+
+---
+
+### #2,277 — **borygo77** · May 30, 2026 at 4:33 PM · page 114
+
+You need to connect it to pc with usb or wireless...
+
+After enabling developer options enable debugging to have it available..
+
+---
+
+### #2,278 — **Venthus25** · May 30, 2026 at 4:42 PM · page 114
+
+any totorial for that, i learn 100 pages and i dont find it
+
+---
+
+### #2,279 — **borygo77** · May 30, 2026 at 4:42 PM · page 114
+
+Not here. Type adb connection in YouTube..
+
+---
+
+### #2,280 — **dev-reverse** · May 30, 2026 at 4:48 PM · page 114
+
+I was asked how to restore a Play Store key, so I'll share it here, even though I already posted it on my Telegram... In an old post, someone made a text tutorial, and I decided to turn it into an executable file. It only works on Windows; I haven't made a Linux version and I don't intend to. But you need root access and shell permission in kernelsu. For those who don't know where it is, just look in kernelsu; at the bottom, there's a shield symbol and above it, you'll see all the Android applications. Click on the shield and type "Shell", enable it for superuser and have USB debugging permission. After running the script, it will restore your Play Store keys, provided your device doesn't have a corrupted TEE or a red screen. I use this all the time, so it works. If someone can't restore the keys, it's because they did something wrong with their smartphone; it's not the script's fault, but something you did to the smartphone! The Redmagic 11 Pro doesn't need modules for certification; Simply restore the device's own key, and that's what the script does. It also needs USB debugging enabled in developer mode. The file is in zip format; unzip it and run the script. The Play Store key and various other information should appear after execution. If it gives error messages in the .bat file, something is wrong.
+
+Just a small correction for those who don't know: an intact TEE means your fingerprint must work before performing this.
+
+---
+
+### #2,281 — **Venthus25** · May 30, 2026 at 5:14 PM · page 115
+
+Thanks, I was able to remove that annoying ad, but is there any way to recover the keys? I want to disable the bootloader and have Google Wallet back.
+
+---
+
+### #2,282 — **borygo77** · May 30, 2026 at 5:27 PM · page 115
+
+> **Venthus25 said:**
+> Thanks, I was able to remove that annoying ad, but is there any way to recover the keys? I want to disable the bootloader and have Google Wallet back.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Post in thread '[Red Magic 11 Pro] [GUIDE] Bootloader Unlock (FREE) - Also Support RM10, Pad3Pro, Z70U, Z80U Unlock - ZTE Family Toolbox' [https://xdaforums.com/t/red-magic-1...lock-zte-family-toolbox.4780930/post-90612201](https://xdaforums.com/t/red-magic-11-pro-guide-bootloader-unlock-free-also-support-rm10-pad3pro-z70u-z80u-unlock-zte-family-toolbox.4780930/post-90612201)
+
+Try this. I went the hard way involved restoring edl backup twice but it's doable.
+
+Never tested what dev-reverse shared. I don't think you can do it this way but worth trying ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+
+---
+
+### #2,283 — **dev-reverse** · May 30, 2026 at 5:33 PM · page 115
+
+> **borygo77 said:**
+> Post in thread '[Red Magic 11 Pro] [GUIDE] Bootloader Unlock (FREE) - Also Support RM10, Pad3Pro, Z70U, Z80U Unlock - ZTE Family Toolbox' [https://xdaforums.com/t/red-magic-1...lock-zte-family-toolbox.4780930/post-90612201](https://xdaforums.com/t/red-magic-11-pro-guide-bootloader-unlock-free-also-support-rm10-pad3pro-z70u-z80u-unlock-zte-family-toolbox.4780930/post-90612201)
+>
+>
+>
+> Try this. I went the hard way involved restoring edl backup twice but it's doable.
+>
+> Never tested what dev-reverse shared. I don't think you can do it this way but worth trying ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+You don't need to do what I posted. That's to remove the traces before returning it to a repair shop. What I posted is something else entirely. In that link you shared, I only gave an idea of what needs to be done. I didn't actually do it on the smartphone. That's because I'm constantly checking logs on the smartphone to verify kernel errors, but the smartphone stores its data in those logs, and that's traceable. If those apps are somehow reading those logs, it would be almost impossible because that depends on root access.
+
+---
+
+### #2,284 — **Venthus25** · May 30, 2026 at 5:36 PM · page 115
+
+He creado dos copias del archivo EDL, una sin permisos de administrador y otra con permisos de administrador. ¿Qué archivo contiene la firma de la cartera?
+
+---
+
+### #2,285 — **dev-reverse** · May 30, 2026 at 5:39 PM · page 115
+
+> **Venthus25 said:**
+> He created two copies of the EDL file, one without administrator permissions and the other with administrator permissions. Which file contains the signature on the letter?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+If I were you, I'd put your content in English. The moderator will be here soon. You need to check the end of the file; the one with the lowest number is the primary backup, and Windows also marks the folder's creation date. You have these two ways to check the backup date.
+
+---
+
+### #2,286 — **Zyper827** · May 30, 2026 at 5:41 PM · page 115
+
+![image.jpg](https://xdaforums.com/attachments/image-jpg.6349630/)
+
+Hello guys, I’m new to this kind of stuff. Can anyone help me unlock the bootloader and root my RedMagic 10 Pro?
+
+I’m currently on this firmware version
+
+ Can anyone guide me im going to use windows btw
+
+---
+
+### #2,287 — **dev-reverse** · May 30, 2026 at 5:48 PM · page 115
+
+> **Zyper827 said:**
+> [View attachment 6349630](https://xdaforums.com/attachments/6349630/)
+>
+> Hello guys, I’m new to this kind of stuff. Can anyone help me unlock the bootloader and root my RedMagic 10 Pro?
+>
+>
+>
+> I’m currently on this firmware version
+>
+>  Can anyone guide me im going to use windows btw
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+FIRST, use the tool to make a complete backup of your smartphone (option 4). Then you can unlock the bootloader. If you want to root your phone without unlocking, there's a translated version of it; you just need to check which smartphone model you have in the device selector. It's best to use an AI to guide you through this.
+
+https://xdaforums.com/t/translated-zte-family-toolbox.4789388/#post-90604490
+
+---
+
+### #2,288 — **Zyper827** · May 30, 2026 at 5:58 PM · page 115
+
+> **dev-reverse said:**
+> FIRST, use the tool to make a complete backup of your smartphone (option 4). Then you can unlock the bootloader. If you want to root your phone without unlocking, there's a translated version of it; you just need to check which smartphone model you have in the device selector. It's best to use an AI to guide you through this.
+>
+>
+>
+>
+> https://xdaforums.com/t/translated-zte-family-toolbox.4789388/#post-90604490
+>
+>
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Thanks for the very very fast reply i really appreciate it im gonna do this tmr i love this website
+
+---
+
+### #2,289 — **Venthus25** · May 30, 2026 at 6:02 PM · page 115
+
+I restored from the first full EDL backup, but the wallet key problem persists. Any suggestions? I've locked the bootloader.
+
+---
+
+### #2,290 — **dev-reverse** · May 30, 2026 at 6:08 PM · page 115
+
+> **Venthus25 said:**
+> I restored from the first full EDL backup, but the wallet key problem persists. Any suggestions? I've locked the bootloader.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+If the Play Store certificate works and the L1 certificate is intact, perhaps someone would have to spend time seeing what other places it checks to make it work with an unlocked bootloader. Honestly, I haven't tested it; I spent most of my time with the device in fastboot mode rather than actually using the smartphone on a daily basis.
+
+---
+
+### #2,291 — **Venthus25** · May 30, 2026 at 6:24 PM · page 115
+
+Thanks anyway, at least that message isn't annoying. I'll root it again and try to fix the incompatibility using modules.
+
+---
+
+### #2,292 — **InfectedThoughts** · May 30, 2026 at 6:29 PM · page 115
+
+> **dev-reverse said:**
+> I was asked how to restore a Play Store key, so I'll share it here, even though I already posted it on my Telegram... In an old post, someone made a text tutorial, and I decided to turn it into an executable file. It only works on Windows; I haven't made a Linux version and I don't intend to. But you need root access and shell permission in kernelsu. For those who don't know where it is, just look in kernelsu; at the bottom, there's a shield symbol and above it, you'll see all the Android applications. Click on the shield and type "Shell", enable it for superuser and have USB debugging permission. After running the script, it will restore your Play Store keys, provided your device doesn't have a corrupted TEE or a red screen. I use this all the time, so it works. If someone can't restore the keys, it's because they did something wrong with their smartphone; it's not the script's fault, but something you did to the smartphone! The Redmagic 11 Pro doesn't need modules for certification; Simply restore the device's own key, and that's what the script does. It also needs USB debugging enabled in developer mode. The file is in zip format; unzip it and run the script. The Play Store key and various other information should appear after execution. If it gives error messages in the .bat file, something is wrong.
+>
+>
+>
+> Just a small correction for those who don't know: an intact TEE means your fingerprint must work before performing this.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Thanks for the tutorial!! ![😎](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f60e.png) also does it matter if your using magisk or kernelsu? Or is there any real differences cause I never really used kernelsu.
+
+---
+
+### #2,293 — **dev-reverse** · May 30, 2026 at 6:45 PM · page 115
+
+> **InfectedThoughts said:**
+> Thanks for the tutorial!! ![😎](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f60e.png) also does it matter if your using magisk or kernelsu? Or is there any real differences cause I never really used kernelsu.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Magisk is detectable even by a cockroach. Kernelsu is easier to hide; I can play games with Kernelsu, unlike Magisk which I can't. Maybe it would work if you installed thousands of modules to try and hide it.
+
+---
+
+### #2,294 — **InfectedThoughts** · May 30, 2026 at 6:51 PM · page 115
+
+> **dev-reverse said:**
+> Magisk is detectable even by a cockroach. Kernelsu is easier to hide; I can play games with Kernelsu, unlike Magisk which I can't. Maybe it would work if you installed thousands of modules to try and hide it.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Ok I'll switch to kernelsu, to switch from magisk to kernelsu all I need to do is download and install it grant it superuser rights then do a full uninstall of magisk correct? Ok I got kernelsu installed ![😎](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f60e.png)
+
+---
+
+### #2,295 — **dev-reverse** · May 30, 2026 at 7:56 PM · page 115
+
+> **InfectedThoughts said:**
+> Ok I'll switch to kernelsu, to switch from magisk to kernelsu all I need to do is download and install it grant it superuser rights then do a full uninstall of magisk correct? Ok I got kernelsu installed ![😎](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f60e.png)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+If you want extra protection, there's another method using SUSFS, but someone here mentioned that the fast loading function stops working when using this patch. I honestly don't know if that happened to me or if it changes anything, but I always like using it. It's a little different; you need to use https://github.com/fatalcoder524/KernelFlasher/releases/
+
+and the file [https://github.com/WildKernels/OneP...android16-6.12.23_KSUN_33150_SuSFS_v2.1.0.zip](https://github.com/WildKernels/OnePlus_KernelSU_SUSFS/releases/download/v2.1.0-r4/AK3_OP15_OOS16_android16-6.12.23_KSUN_33150_SuSFS_v2.1.0.zip)
+
+I'll also leave the link to the site where I download it; just remember to access the correct folder and the correct number 6.12.23.
+
+OnePlus Kernels With KernelSU Next & SUSFS v2.1.0
+
+![github.com](/proxy.php?image=https%3A%2F%2Fopengraph.githubassets.com%2F0044d9d67d2f8311f8a6de0c134579af06598197f4a4d42e0d09ba050a83bde3%2FWildKernels%2FOnePlus_KernelSU_SUSFS%2Freleases%2Ftag%2Fv2.1.0-r4&hash=2d0f687edd6a02356ca77f759de7f0b1&return_error=1)
+
+### Release OnePlus Kernels With KernelSU Next & SUSFS v2.1.0 · WildKernels/OnePlus_KernelSU_SUSFS
+
+🎯 OnePlus Kernels with KernelSU Next & SUSFS v2.1.0  Build Date: 2026-05-20 17:52:29 UTC Build ID: 26179073310 Workflow: Build and Release OnePlus Kernels   WarningOnePlus 15 kernel doesn't boot on...
+
+![github.com](/proxy.php?image=https%3A%2F%2Fgithub.githubassets.com%2Ffavicons%2Ffavicon.svg&hash=39b48b32410d41e23249bf67277031ca&return_error=1)
+
+					github.com
+
+and select the option "any kernel zip" or something similar to upload this file to the smartphone in the correct partition. You have to see which partition it is active on in the kernelflash application; you can see which one is active (A or B) and install this zip file there. It's quite straightforward. And always use the kernelsunext application.
+
+---
+
+### #2,296 — **Venthus25** · May 30, 2026 at 7:56 PM · page 115
+
+> **InfectedThoughts said:**
+> Ok I'll switch to kernelsu, to switch from magisk to kernelsu all I need to do is download and install it grant it superuser rights then do a full uninstall of magisk correct? Ok I got kernelsu installed ![😎](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f60e.png)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I've done this and I'm sure it's working, how do I prevent banks from detecting root? with kernel su
+
+---
+
+### #2,297 — **dev-reverse** · May 30, 2026 at 8:00 PM · page 115
+
+> **Venthus25 said:**
+> I've done this and I'm sure it's working, how do I prevent banks from detecting root? with kernel su
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Unfortunately, some banks will still give you trouble even if you use the SUSFS method. This is because, to remain undetectable, we need a compilable kernel to inject this information into the kernel, not externally, as a patch. Since kernelsu generates identifiable binaries, banks already know which applications are generated by the binaries. They might try to camouflage this somewhat using the SUSFS method I mentioned above, employing the kernelnext application. This kernelnext has two types of apps: a spoof and a normal one.
+
+---
+
+### #2,298 — **Venthus25** · May 30, 2026 at 10:05 PM · page 115
+
+Well, I've managed to prevent root from detecting the banking apps, but I lose access to my wallet, and if I gain access to my wallet, I lose the banking apps. At least I don't have a bricked phone, which kept me up until all hours yesterday, thinking I'd broken it.
+
+---
+
+### #2,299 — **dev-reverse** · May 30, 2026 at 10:20 PM · page 115
+
+> **Venthus25 said:**
+> Well, I've managed to prevent root from detecting the banking apps, but I lose access to my wallet, and if I gain access to my wallet, I lose the banking apps. At least I don't have a bricked phone, which kept me up until all hours yesterday, thinking I'd broken it.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Please explain here what you did to gain access to your bank account and why you think it invalidates your credit card upon registration.
+
+---
+
+### #2,300 — **Venthus25** · May 30, 2026 at 10:28 PM · page 115
+
+I used the kernel su plus the Windows file to fix the device integrity, which I think made the wallet work without problems, but the banking app detected it. So I used the ziguist next module plus Vector 2.0 for exposed, and installed the Hide My App app. This prevented the bank from detecting root access, but the wallet still did.
+
+Sorry if I'm not explaining myself well, I'm from Spain.
+
+---
+
+### #2,301 — **Gamefreak89** · May 30, 2026 at 10:45 PM · page 116
+
+So in terms of:
+
+- What works?
+
+- What mostly works?
+
+- What works somewhat?
+
+- What doesn't work or Is being worked on?
+
+Basically a list of short summarised questions to determine how far along the rooting process and usability with the current firmware and below on the 11 series. Just gauging how practical with using my 11 pro as my primary driver, if changes to the bootloader or being rooted were made.
+
+---
+
+### #2,302 — **dev-reverse** · May 30, 2026 at 10:46 PM · page 116
+
+> **Venthus25 said:**
+> I used the kernel su plus the Windows file to fix the device integrity, which I think made the wallet work without problems, but the banking app detected it. So I used the ziguist next module plus Vector 2.0 for exposed, and installed the Hide My App app. This prevented the bank from detecting root access, but the wallet still did.
+>
+>
+>
+> Sorry if I'm not explaining myself well, I'm from Spain.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I understand you installed LSposed, the new application called Vector, the latest available patch for LSposed. Inside it, you used Zigist Next. I'm not familiar with that, but I'll research what happened later. Android must have detected this patch; it probably needs to find another application that can hide these two so that the rest works. Could you write the file names correctly?
+
+---
+
+### #2,303 — **Venthus25** · May 30, 2026 at 10:51 PM · page 116
+
+Sí, por supuesto. Te enviaré los enlaces.
+
+![github.com](/proxy.php?image=https%3A%2F%2Fopengraph.githubassets.com%2F83494cc9cf6362e460bf3ec14d009b32475db1ade6327a5281c474590f02b35a%2FJingMatrix%2FVector&hash=ec143268061f8d651a08a798d1e9b9f1&return_error=1)
+
+### Releases · JingMatrix/Vector
+
+Modern Xposed Framework. Contribute to JingMatrix/Vector development by creating an account on GitHub.
+
+![github.com](/proxy.php?image=https%3A%2F%2Fgithub.githubassets.com%2Ffavicons%2Ffavicon.svg&hash=39b48b32410d41e23249bf67277031ca&return_error=1)
+
+					github.com
+
+![github.com](/proxy.php?image=https%3A%2F%2Fopengraph.githubassets.com%2Fa4567d103d7682402ab575b6c052138ab19c76aab661a3ddccc9c9214671b978%2FDr-TSNG%2FZygiskNext&hash=7407bd9dbfb6b6ca5537e09ce4148317&return_error=1)
+
+### GitHub - Dr-TSNG/ZygiskNext: Standalone implementation of Zygisk
+
+Standalone implementation of Zygisk. Contribute to Dr-TSNG/ZygiskNext development by creating an account on GitHub.
+
+![github.com](/proxy.php?image=https%3A%2F%2Fgithub.githubassets.com%2Ffavicons%2Ffavicon.svg&hash=39b48b32410d41e23249bf67277031ca&return_error=1)
+
+					github.com
+
+![github.com](/proxy.php?image=https%3A%2F%2Frepository-images.githubusercontent.com%2F349446219%2Fdf59cda9-5bb5-4af3-8096-2ae51f4c2c60&hash=b48c251f6259c577ce1a3c7cc63c65ae&return_error=1)
+
+### GitHub - Dr-TSNG/Hide-My-Applist: An Xposed module to intercept applist detections
+
+An Xposed module to intercept applist detections. Contribute to Dr-TSNG/Hide-My-Applist development by creating an account on GitHub.
+
+![github.com](/proxy.php?image=https%3A%2F%2Fgithub.githubassets.com%2Ffavicons%2Ffavicon.svg&hash=39b48b32410d41e23249bf67277031ca&return_error=1)
+
+					github.com
+
+---
+
+### #2,304 — **jolly_roger_hook** · May 31, 2026 at 12:53 AM · page 116
+
+> **dev-reverse said:**
+> This needs to start with you. If you feel wronged, go ahead and claim your rights. If you're satisfied, continue doing nothing. It's quite simple: if you don't care, ZTE cares even less, and that means less money going into their pockets, wasting the development team's time on something that doesn't generate a return. Now, if you want to claim something, just do it, as I am doing. It's your right. The problem is that most people here are complacent, thinking "it doesn't matter" or "they'll release it someday" and receiving crumbs. But the problem is that everyone here has the right to receive the compilable version, and this situation is regrettable. The lack of interest from everyone here is a shame because it wastes time, generates frustration, and so on.
+>
+>
+>
+>
+> https://xdaforums.com/t/discussion-gplv2-violation-redmagic-11-pro-nx809j-incomplete-unbuildable-kernel-sources.4790008/#post-90611004
+>
+>
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+The pornlem is yelling at them isint going to do anything if they is no legal action taken they will just keep doing what they are cuz there is no ramifications not to idk what avenubid have to take to take legal action or I would
+
+---
+
+### #2,305 — **dev-reverse** · May 31, 2026 at 12:58 AM · page 116
+
+> **jolly_roger_hook said:**
+> The pornlem is yelling at them isint going to do anything if they is no legal action taken they will just keep doing what they are cuz there is no ramifications not to idk what avenubid have to take to take legal action or I would
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+For this to work, ZTE itself — not just the Redmagic brand — must have an official subsidiary selling the device in your country. If they operate officially in your region, the viability of a lawsuit is very high. If you file a suit, the chances of winning are excellent; it is practically impossible to lose a case like this, as the GPL license violation is unquestionable, and the Linux kernel itself guarantees your rights.
+
+On the other hand, trying to sue the company directly in China is a waste of time. Even if you are in the right, you will not win. Besides the lack of local jurisdiction to force them to respond to the lawsuit, they will simply ignore the case. The enforcement of intellectual property laws there is often neglected, which unfortunately makes the country a favorable environment for license violations.
+
+---
+
+### #2,306 — **jolly_roger_hook** · May 31, 2026 at 1:06 AM · page 116
+
+> **Gamefreak89 said:**
+> So in terms of:
+>
+>
+>
+> - What works? Everything
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+> **Gamefreak89 said:**
+> - What mostly things that detect and don't work with  rooted and bootloader unlock phone some games most banking apps and wallet
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+> **Gamefreak89 said:**
+> - What works somewhat?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+> **Gamefreak89 said:**
+> - What doesn't work or Is being worked on?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Custom recovery and fastboot
+
+We are trying but with a half baked kernel its very hard
+
+> **Gamefreak89 said:**
+> Basically a list of short summarised questions to determine how far along the rooting process and usability with the current firmware and below on the 11 series. Just gauging how practical with using my 11 pro as my primary driver, if changes to the bootloader or being rooted were made.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I use mine as a primary drive but I also don't use banking apps or wallet so I don't have any issues but if you do might not be the right choice
+
+---
+
+### #2,307 — **Gamefreak89** · May 31, 2026 at 1:10 AM · page 116
+
+> **jolly_roger_hook said:**
+> Custom recovery and fastboot
+>
+> We are trying but with a half baked kernel its very hard
+>
+>
+>
+> I use mine as a primary drive but I also don't use banking apps or wallet so I don't have any issues but if you do might not be the right choice
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+So, in other words, it's only half completed? And pretty much work is being made or going to be made on working on the other half to be baked in or fully compiled?
+
+I mean, I use two phones, one as a primary, one as a secondary, every day. I could always use my secondary Android phone as a backup for my banking apps and wallet. It's more of on the lines of the T-Mobile itself because I'm on a T-Mobile post paid account using their app, to handle transactions and billing.
+
+---
+
+### #2,308 — **dev-reverse** · May 31, 2026 at 1:17 AM · page 116
+
+> **Gamefreak89 said:**
+> So, in other words, it's only half completed? And pretty much work is being made or going to be made on working on the other half to be baked in or fully compiled?
+>
+>
+>
+> I mean, I use two phones, one as a primary, one as a secondary, every day. I could always use my secondary Android phone as a backup for my banking apps and wallet. It's more of on the lines of the T-Mobile itself because I'm on a T-Mobile post paid account using their app, to handle transactions and billing.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Within the official kernel there's a file called defconfig. This file allows billions of combinations, and it's impossible for me to guess the order. It starts there. The problem is that it's not possible to compile the kernel into an installation, and that's why I'm so angry with ZTE. They even deleted the basic kernel configuration; it's almost ridiculous.
+
+From Redmagic 11s they did worse, the file is corrupted, there's only one file there of 300 MB.
+
+---
+
+### #2,309 — **dev-reverse** · May 31, 2026 at 1:39 AM · page 116
+
+The Legal Challenge: Who Can Sue?
+
+Therein lies the biggest legal obstacle. In the case of non-compliance with the GPLv2, the end consumer does not have standing to sue the company for license infringement.
+
+This is because the infringement is not against the buyer of the cell phone, but against the copyright holders of the original code. Only the original authors of the Linux kernel (such as Linus Torvalds, the thousands of contributors, or the organizations that represent them) can file a copyright infringement lawsuit against ZTE or any other manufacturer.
+
+Engaging Advocacy Organizations: The most effective and formal approach is to document the manufacturer's refusal and submit a detailed report to the Software Freedom Conservancy (SFC) or the Free Software Foundation (FSF). They have legal teams dedicated to issuing extrajudicial notices and, if necessary, suing tech giants to force the release of the code.
+
+---
+
+### #2,310 — **dev-reverse** · May 31, 2026 at 1:44 AM · page 116
+
+In short, we need to find people willing to help us on GitHub who are part of these kernel-focused organizations.
+
+---
+
+### #2,311 — **InfectedThoughts** · May 31, 2026 at 2:54 AM · page 116
+
+> **dev-reverse said:**
+> If you want extra protection, there's another method using SUSFS, but someone here mentioned that the fast loading function stops working when using this patch. I honestly don't know if that happened to me or if it changes anything, but I always like using it. It's a little different; you need to use https://github.com/fatalcoder524/KernelFlasher/releases/
+>
+>
+>
+> and the file [https://github.com/WildKernels/OneP...android16-6.12.23_KSUN_33150_SuSFS_v2.1.0.zip](https://github.com/WildKernels/OnePlus_KernelSU_SUSFS/releases/download/v2.1.0-r4/AK3_OP15_OOS16_android16-6.12.23_KSUN_33150_SuSFS_v2.1.0.zip)
+>
+>
+>
+> I'll also leave the link to the site where I download it; just remember to access the correct folder and the correct number 6.12.23.
+>
+>
+>
+> OnePlus Kernels With KernelSU Next & SUSFS v2.1.0
+>
+>
+>
+>
+>
+>
+> ![github.com](/proxy.php?image=https%3A%2F%2Fopengraph.githubassets.com%2F0044d9d67d2f8311f8a6de0c134579af06598197f4a4d42e0d09ba050a83bde3%2FWildKernels%2FOnePlus_KernelSU_SUSFS%2Freleases%2Ftag%2Fv2.1.0-r4&hash=2d0f687edd6a02356ca77f759de7f0b1&return_error=1)
+>
+>
+>
+>
+> ### Release OnePlus Kernels With KernelSU Next & SUSFS v2.1.0 · WildKernels/OnePlus_KernelSU_SUSFS
+>
+> 🎯 OnePlus Kernels with KernelSU Next & SUSFS v2.1.0  Build Date: 2026-05-20 17:52:29 UTC Build ID: 26179073310 Workflow: Build and Release OnePlus Kernels   WarningOnePlus 15 kernel doesn't boot on...
+>
+>
+>
+> ![github.com](/proxy.php?image=https%3A%2F%2Fgithub.githubassets.com%2Ffavicons%2Ffavicon.svg&hash=39b48b32410d41e23249bf67277031ca&return_error=1)
+>
+> 					github.com
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+> and select the option "any kernel zip" or something similar to upload this file to the smartphone in the correct partition. You have to see which partition it is active on in the kernelflash application; you can see which one is active (A or B) and install this zip file there. It's quite straightforward. And always use the kernelsunext application.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I try this if I have any other issues arise, but the steps I took to install kernelsu is
+
+1) I download the lastest version of kernelsu from GitHub which is kernelsu v3.2.4.apk and installed it.
+
+2) I granted it superuser rights through magisk when I first opened it.
+
+3) I tried to install direct image which was default but gave an error can't patch magisk image.
+
+4) I then did a complete uninstall of magisk and uninstalled the app after.
+
+5) I went in kernelsu then I was able to install kernelsu and it worked..
+
+---
+
+### #2,312 — **InfectedThoughts** · May 31, 2026 at 3:28 AM · page 116
+
+> **Venthus25 said:**
+> I've done this and I'm sure it's working, how do I prevent banks from detecting root? with kernel su
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+When I first rooted my phone I was able to login to cashapp without any modules in magisk as far as wallet I don't remember cause I didn't use it at the time, but I did log into it at one point but wallet stopped working, so since I switched to kernelsu I was able to put in my 3 digit cvv number and login without error, I did have to verify it was me using cashapp to verify. Also I don't have any modules installed and I'm play store certified and I have strong integrity.
+
+---
+
+### #2,313 — **EliteBlackKaiser** · May 31, 2026 at 4:04 AM · page 116
+
+> **dev-reverse said:**
+> I was asked how to restore a Play Store key, so I'll share it here, even though I already posted it on my Telegram... In an old post, someone made a text tutorial, and I decided to turn it into an executable file. It only works on Windows; I haven't made a Linux version and I don't intend to. But you need root access and shell permission in kernelsu. For those who don't know where it is, just look in kernelsu; at the bottom, there's a shield symbol and above it, you'll see all the Android applications. Click on the shield and type "Shell", enable it for superuser and have USB debugging permission. After running the script, it will restore your Play Store keys, provided your device doesn't have a corrupted TEE or a red screen. I use this all the time, so it works. If someone can't restore the keys, it's because they did something wrong with their smartphone; it's not the script's fault, but something you did to the smartphone! The Redmagic 11 Pro doesn't need modules for certification; Simply restore the device's own key, and that's what the script does. It also needs USB debugging enabled in developer mode. The file is in zip format; unzip it and run the script. The Play Store key and various other information should appear after execution. If it gives error messages in the .bat file, something is wrong.
+>
+>
+>
+> Just a small correction for those who don't know: an intact TEE means your fingerprint must work before performing this.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+There's this that does it without pc.!!!
+
+---
+
+### #2,314 — **Zyper827** · May 31, 2026 at 4:10 AM · page 116
+
+> **dev-reverse said:**
+> FIRST, use the tool to make a complete backup of your smartphone (option 4). Then you can unlock the bootloader. If you want to root your phone without unlocking, there's a translated version of it; you just need to check which smartphone model you have in the device selector. It's best to use an AI to guide you through this.
+>
+>
+>
+>
+> https://xdaforums.com/t/translated-zte-family-toolbox.4789388/#post-90604490
+>
+>
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Hey can u guide me please i don’t want to brick my red magic
+
+---
+
+### #2,315 — **dev-reverse** · May 31, 2026 at 4:20 AM · page 116
+
+> **Zyper827 said:**
+> Hey can u guide me please i don’t want to brick my red magic
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Are you talking about the Redmagic 10? I heard there's no way to unlock it, I haven't seen anyone trying. I saw that the Redmagic 10 Air is available for unlocking, but I haven't seen anything about the 10. I don't even know if it's possible; you'd have to open the ZTE Toolbox and see.
+
+Before leaving, click on unlock or backup to see if it's compatible. What processor is it, 8th gen 3?
+
+---
+
+### #2,316 — **Zyper827** · May 31, 2026 at 4:22 AM · page 116
+
+> **dev-reverse said:**
+> Are you talking about the Redmagic 10? I heard there's no way to unlock it, I haven't seen anyone trying. I saw that the Redmagic 10 Air is available for unlocking, but I haven't seen anything about the 10. I don't even know if it's possible; you'd have to open the ZTE Toolbox and see.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Yes im talking about rm10pro
+
+---
+
+### #2,317 — **dev-reverse** · May 31, 2026 at 4:24 AM · page 116
+
+> **Zyper827 said:**
+> Yes im talking about rm10pro
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Download the latest version of ZTE Toolbox 1.2.7.7 or the English version, which is 1.2.6.
+
+---
+
+### #2,318 — **Zyper827** · May 31, 2026 at 4:25 AM · page 116
+
+> **dev-reverse said:**
+> Download the latest version of ZTE Toolbox 1.2.7.7 or the English version, which is 1.2.6.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Done
+
+---
+
+### #2,319 — **Zyper827** · May 31, 2026 at 4:26 AM · page 116
+
+> **dev-reverse said:**
+> Download the latest version of ZTE Toolbox 1.2.7.7 or the English version, which is 1.2.6.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+---
+
+### #2,320 — **dev-reverse** · May 31, 2026 at 4:27 AM · page 116
+
+I don't know how the translation of that is, but a bunch of devices will appear to select. See if there's an option for an 8 gen 3. I think your device is an 8 gen 3.
+
+8 elite, I'm getting confused.
+
+---
+
+### #2,321 — **Zyper827** · May 31, 2026 at 4:29 AM · page 117
+
+> **dev-reverse said:**
+> I don't know how the translation of that is, but a bunch of devices will appear to select. See if there's an option for an 8 gen 3. I think your device is an 8 gen 3.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+No it’s snapdragon 8E
+
+---
+
+### #2,322 — **dev-reverse** · May 31, 2026 at 4:32 AM · page 117
+
+> **Zyper827 said:**
+> No it’s snapdragon 8E
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Make a backup after selecting the device. It will be option 4.
+
+---
+
+### #2,323 — **dev-reverse** · May 31, 2026 at 4:33 AM · page 117
+
+I still think there's no bootloader unlock for it. It doesn't hurt to try. I think if the backup works, the unlock will work too.
+
+---
+
+### #2,324 — **Zyper827** · May 31, 2026 at 4:35 AM · page 117
+
+> **dev-reverse said:**
+> I still think there's no bootloader unlock for it. It doesn't hurt to try. I think if the backup works, the unlock will work too.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+So no ?
+
+---
+
+### #2,325 — **dev-reverse** · May 31, 2026 at 4:40 AM · page 117
+
+> **Zyper827 said:**
+> So no ?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Try making a backup, let's see if the firehose connects.
+
+---
+
+### #2,326 — **Zyper827** · May 31, 2026 at 4:41 AM · page 117
+
+> **dev-reverse said:**
+> Try making a backup, let's see if the firehose connects.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Alright ill try bro
+
+---
+
+### #2,327 — **n00b-xda-disciple** · May 31, 2026 at 4:47 AM · page 117
+
+> **Zyper827 said:**
+> Alright ill try bro
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+If it let's you make a backup. You will be able to unlock. Make sure it's reading qualcomm 9008 in device manager for toolbox to connect. For unlock. Connect your phone through adb debugging and have oem unlock checked in Developer Options. Toolbox needs to read phone via adb first before rebooting to edl.
+
+---
+
+### #2,328 — **dev-reverse** · May 31, 2026 at 4:49 AM · page 117
+
+I've already searched the entire forum in China and saw some users on Telegram discussing rooting the Redmagic 10, and nobody has it. I think it's unlikely, but it doesn't hurt to try backing it up.
+
+---
+
+### #2,329 — **n00b-xda-disciple** · May 31, 2026 at 4:53 AM · page 117
+
+> **dev-reverse said:**
+> I've already searched the entire forum in China and saw some users on Telegram discussing rooting the Redmagic 10, and nobody has it. I think it's unlikely, but it doesn't hurt to try backing it up.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+![1780192390360.png](https://xdaforums.com/attachments/1780192390360-png.6349756/)
+
+![1780192501174.png](https://xdaforums.com/attachments/1780192501174-png.6349757/)
+
+---
+
+### #2,330 — **dev-reverse** · May 31, 2026 at 4:57 AM · page 117
+
+> **n00b-xda-disciple said:**
+> [View attachment 6349756](https://xdaforums.com/attachments/6349756/)
+>
+> [View attachment 6349757](https://xdaforums.com/attachments/6349757/)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+The problem is that I took this screenshot from the possible developer, I'm on the Chinese person's profile, and I can't find Redmagic 10. But as I said, I tried to make a backup.
+
+---
+
+### #2,331 — **Zyper827** · May 31, 2026 at 5:00 AM · page 117
+
+> **dev-reverse said:**
+> Try making a backup, let's see if the firehose connects.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+how to do reboot to edl
+
+---
+
+### #2,332 — **dev-reverse** · May 31, 2026 at 5:02 AM · page 117
+
+> **Zyper827 said:**
+> how to do reboot to edl
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Turn off your smartphone. Press both volume buttons and plug it into your smartphone. You need to have the driver installed for it to be recognized in EDL mode. Access the Windows Device Manager to see it connected.
+
+---
+
+### #2,333 — **dev-reverse** · May 31, 2026 at 6:07 AM · page 117
+
+> **Zyper827 said:**
+> how to do reboot to edl
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+https://xdaforums.com/t/redmagic-10-pro.4711211/page-34
+
+---
+
+### #2,334 — **dev-reverse** · May 31, 2026 at 6:10 AM · page 117
+
+Your device supports unlocking, the problem is that some people on Telegram are saying it doesn't.
+
+---
+
+### #2,335 — **n00b-xda-disciple** · May 31, 2026 at 6:24 AM · page 117
+
+> **dev-reverse said:**
+> Your device supports unlocking, the problem is that some people on Telegram are saying it doesn't.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Are they on newest firmware?
+
+---
+
+### #2,336 — **Gamefreak89** · May 31, 2026 at 12:28 PM · page 117
+
+> **n00b-xda-disciple said:**
+> Are they on newest firmware?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+That's what I was about to say. Considering the fact after the last new security updates, it completely fried the sockets, preventing the boot loader from being unlocked.
+
+---
+
+### #2,337 — **dev-reverse** · May 31, 2026 at 2:51 PM · page 117
+
+I don't know what's going on there, and it's unlikely they blew the fuse to make it work with the EDL. The device is already an old version. If they didn't do it even with the Redmagic 11, it doesn't make sense to do it with an old device. I simply don't know why they can't. I didn't ask, I just saw the messages.
+
+---
+
+### #2,338 — **Saurabh6661** · May 31, 2026 at 3:31 PM · page 117
+
+> **dev-reverse said:**
+> I don't know what's going on there, and it's unlikely they blew the fuse to make it work with the EDL. The device is already an old version. If they didn't do it even with the Redmagic 11, it doesn't make sense to do it with an old device. I simply don't know why they can't. I didn't ask, I just saw the messages.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Am running on 11.0.23 cn version I want to root my device where should I start from?
+
+I saw it on some other post that we shouldn't update the phone, I already got it w 11.0.23MR1.
+
+Just give me decent instructions post/video I'll be very much thankful to you.
+
+---
+
+### #2,339 — **n00b-xda-disciple** · May 31, 2026 at 3:52 PM · page 117
+
+> **Saurabh6661 said:**
+> Am running on 11.0.23 cn version I want to root my device where should I start from?
+>
+>
+>
+> I saw it on some other post that we shouldn't update the phone, I already got it w 11.0.23MR1.
+>
+>
+>
+> Just give me decent instructions post/video I'll be very much thankful to you.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+[https://xdaforums.com/t/redmagic-11...t-guide-fastboot-o-fastbootd-o-gsi-o.4787673/](https://xdaforums.com/t/redmagic-11-pro-10-pro-astra-bootloader-unlock-root-guide-fastboot-o-fastbootd-o-gsi-o.4787673/) My guide should give you a good flow on the process. Use CTRL-F (Find) for stuff you want to learn more about if you don't know. - You can also do a filtered search in here or my thread as well.
+
+---
+
+### #2,340 — **Saurabh6661** · May 31, 2026 at 4:15 PM · page 117
+
+> **n00b-xda-disciple said:**
+> [https://xdaforums.com/t/redmagic-11...t-guide-fastboot-o-fastbootd-o-gsi-o.4787673/](https://xdaforums.com/t/redmagic-11-pro-10-pro-astra-bootloader-unlock-root-guide-fastboot-o-fastbootd-o-gsi-o.4787673/) My guide should give you a good flow on the process. Use CTRL-F (Find) for stuff you want to learn more about if you don't know. - You can also do a filtered search in here or my thread as wel
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+> **n00b-xda-disciple said:**
+> [https://xdaforums.com/t/redmagic-11...t-guide-fastboot-o-fastbootd-o-gsi-o.4787673/](https://xdaforums.com/t/redmagic-11-pro-10-pro-astra-bootloader-unlock-root-guide-fastboot-o-fastbootd-o-gsi-o.4787673/) My guide should give you a good flow on the process. Use CTRL-F (Find) for stuff you want to learn more about if you don't know. - You can also do a filtered search in here or my thread as well.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Went through the thread. I see am on 11.0.23MR1 Chinese version also the last security update which I had was on 1st February 2026.
+
+Would you still suggest me to go ahead?
+
+---
+
+### #2,341 — **n00b-xda-disciple** · May 31, 2026 at 4:16 PM · page 118
+
+> **Saurabh6661 said:**
+> Went through the thread. I see am on 11.0.23MR1 Chinese version also the last security update which I had was on 1st February 2026.
+>
+>
+>
+> Would you still suggest me to go ahead?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Make back up. If that works. Continue
+
+---
+
+### #2,342 — **Saurabh6661** · May 31, 2026 at 4:26 PM · page 118
+
+> **n00b-xda-disciple said:**
+> Make back up. If that works. Continue
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Am worried about efuse thing which this device has. I think best move would be to wait and someone else to try this out because am not in good position to afford another one.
+
+So for now I'll freeze the update and wait for someone to confirm it for me.
+
+Thank you for your quick response, have a good day!
+
+---
+
+### #2,343 — **dev-reverse** · May 31, 2026 at 5:07 PM · page 118
+
+[1] **Snapdragon 660** | ZTE V890
+
+[2] **Snapdragon 765G** | ZTE Axon 11 5G, Axon 20 5G (Standard Edition, Extreme Edition), Blade 20 Pro 5G
+
+[3] **Snapdragon 765G** | Nubia Play 5G
+
+[4] **Snapdragon 768G** | ZTE Tianji A31 5G, S30 Pro
+
+[5] **Snapdragon 820** | ZTE Tianji 7 (Axon 7)
+
+[6] **Snapdragon 835** | Nubia Z17
+
+[7] **Snapdragon 835** | Nubia Red Magic
+
+[8] **Snapdragon 845** | ZTE Axon 9, Axon 9 Pro
+
+[9] **Snapdragon 845** | Nubia Z18
+
+[10] **Snapdragon 845** | Nubia X
+
+[11] **Snapdragon 845** | Red Magic Mars
+
+[12] **Snapdragon 855** | ZTE Axon 10 Pro (4G, 5G, Global Version)
+
+[13] **Snapdragon 855** | Nubia Mini 5G
+
+[14] **Snapdragon 855** | Red Magic 3, 3S
+
+[15] **Snapdragon 855** | China Mobile Forerunner X1 (Pioneer X1)
+
+[16] **Snapdragon 865** | ZTE Axon 10s Pro
+
+[17] **Snapdragon 865** | Red Magic 5G, 5S
+
+[18] **Snapdragon 870** | *(Bootloader unlocking not supported)* ZTE Axon 30 5G, Axon 30S, Axon 40 Pro, Tianji A41 5G
+
+[19] **Snapdragon 888** | 【ZTE】Tianji A31 Pro 5G, Axon 30 Pro 5G, Axon 30 Ultra (Standard Edition, Aerospace Edition); 【Nubia】Z30 Pro, Pad 3D (1st Gen); 【Red Magic】6R
+
+[20] **Snapdragon 888** | Red Magic 6, 6 Pro, 6S Pro
+
+[21] **Snapdragon 8 Gen 1** | *(Bootloader unlocking not supported)* 【ZTE】Axon 40 Ultra (Standard Edition, Aerospace Edition), A41 Ultra; 【Nubia】Z40 Pro
+
+[22] **Snapdragon 8 Gen 1** | Red Magic 7, 7 Pro
+
+[23] **Snapdragon 8+** | *(Bootloader unlocking not supported)* 【ZTE】AxonPad; 【Red Magic】Gaming Tablet (1st Gen)
+
+[24] **Snapdragon 8+** | Red Magic 7S
+
+[25] **Snapdragon 8+** | Red Magic 7S Pro
+
+[26] **Snapdragon 8 Gen 2** | *(To unlock the Bootloader, please join the group and DM the admin for testing)* 【Nubia】Pad 3D (2nd Gen); 【Red Magic】Red Magic Tablet 3D Explorer Edition
+
+[27] **Snapdragon 8 Gen 2** | Red Magic 8 Series (China Version, Global Version)
+
+[28] **Snapdragon 8 Gen 3** | 【Nubia】Z60 Ultra (Standard Edition, Photographer Edition, Leading Version); 【Red Magic】9 Series
+
+[29] **Snapdragon 8 Gen 3** | Red Magic 10 Air
+
+[30] **Snapdragon 8 Gen 3** | 【Nubia】Nubia Pad Pro; 【Red Magic】Red Magic Gaming Tablet Pro (REDMAGIC Nova Gaming Tablet)
+
+[31] **Snapdragon 8E** *(Elite)* | 【Nubia】Z70 Ultra; 【Red Magic】10 Series
+
+[32] **Snapdragon 8E** *(Elite)* | 【Nubia】Z70S Ultra; 【Red Magic】11 Air
+
+[33] **Snapdragon 8E** *(Elite)* | Red Magic Gaming Tablet 3 Pro
+
+[34] **Snapdragon 8E5** | Red Magic 11 Series
+
+[35] **Snapdragon 8E5** | Nubia Z80 Ultra
+
+---
+
+### #2,344 — **jolly_roger_hook** · May 31, 2026 at 6:20 PM · page 118
+
+> **Saurabh6661 said:**
+> Am worried about efuse thing which this device has. I think best move would be to wait and someone else to try this out because am not in good position to afford another one.
+>
+>
+>
+> So for now I'll freeze the update and wait for someone to confirm it for me.
+>
+>
+>
+> Thank you for your quick response, have a good day!
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+You won't break anything if that backup dosent work the rest won't eaither and if anything does happen if you did get a backup you can always restore it it's kind hard to brick If you have your backup
+
+---
+
+### #2,345 — **dev-reverse** · May 31, 2026 at 6:35 PM · page 118
+
+> **jolly_roger_hook said:**
+> You won't break anything if that backup dosent work the rest won't eaither and if anything does happen if you did get a backup you can always restore it it's kind hard to brick If you have your backup
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+When a fuse blows, you can't use your firehose because the switch it was supposed to accept, according to the manufacturer, blows the fuse. So now it only accepts the new firehose, acting as a kind of protection against firehose leakage.
+
+---
+
+### #2,346 — **Saurabh6661** · May 31, 2026 at 6:38 PM · page 118
+
+> **dev-reverse said:**
+> When a fuse blows, you can't use your firehose because the switch it was supposed to accept, according to the manufacturer, blows the fuse. So now it only accepts the new firehose, acting as a kind of protection against firehose leakage.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+So it becomes a hardware level issue right?
+
+---
+
+### #2,347 — **dev-reverse** · May 31, 2026 at 6:40 PM · page 118
+
+> **Saurabh6661 said:**
+> So it becomes a hardware level issue right?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Until now, no one has experienced a real lockout or fuse blowout until the new Redmagic 11s overclock version is available for unlocking.
+
+The Redmagic 11s doesn't have a lock either. I think the translation is a bit strange.
+
+---
+
+### #2,348 — **EliteBlackKaiser** · Jun 1, 2026 at 12:36 AM · page 118
+
+> **borygo77 said:**
+> You need this one [https://files.oops.wtf/files/com.fa..._minAPI28(arm64-v8a)(nodpi)_apkmirror.com.apk](https://files.oops.wtf/files/com.facebook.orca_555.0.0.56.66-341012523_minAPI28(arm64-v8a)(nodpi)_apkmirror.com.apk)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+557.x fixes the reply field too... My issue is I want to be able to use androids native bubble system too use as like a messenger head. That's my problem.
+
+---
+
+### #2,349 — **m.kaya** · Jun 1, 2026 at 12:54 AM · page 118
+
+Unlocked 10 pro here..lets goo..
+
+---
+
+### #2,350 — **dev-reverse** · Jun 1, 2026 at 6:01 AM · page 118
+
+![1780282639747.png](https://xdaforums.com/attachments/1780282639747-png.6350106/)
+
+app windows check update  kernel
+
+So, be careful not to overload the ZTE server, but I configured the application to check every 30 minutes. You can use it to download the kernel for any device. Or at least it should. In practice, you'll see that the kernel for our device doesn't work, and the new kernel for the Redmagic 11S only contains 300 MB, which is corrupted. But I made it available here in case anyone wants to get frustrated instead of going to the website; it's faster here. I created this little application in 10 minutes just to check and monitor. But it's a complete bore. At least you can see the date and time of the last update, unlike the website which shows nothing.
+
+---
+
+### #2,351 — **borygo77** · Jun 1, 2026 at 8:53 AM · page 118
+
+> **EliteBlackKaiser said:**
+> 557.x fixes the reply field too... My issue is I want to be able to use androids native bubble system too use as like a messenger head. That's my problem.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Chat bubbles works OK for me on the version I've linked for you ![😊](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f60a.png)
+
+---
+
+### #2,352 — **EliteBlackKaiser** · Jun 1, 2026 at 8:39 PM · page 118
+
+> **borygo77 said:**
+> Chat bubbles works OK for me on the version I've linked for you ![😊](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f60a.png)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Are you using messenger chat bubbles or are you using androids native bubble for messenger? They are two different things.
+
+---
+
+### #2,353 — **borygo77** · Jun 1, 2026 at 9:33 PM · page 118
+
+Are they? bubbles enabled in settings and also in messenger ![:D](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7) No idea if any other bubbles exists ![;)](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+
+---
+
+### #2,354 — **vnm0008** · Jun 2, 2026 at 8:01 PM · page 118
+
+Hlw... I unlock the bootloader of my astra tab by zte family toolbox.. But its not turning on.. Going back to fast boot mode.. But fastboot mode also not showing there are so many lines.... I tried to flash a edl rom by qfil but sahara failed.. How to solve this..
+
+---
+
+### #2,355 — **vnm0008** · Jun 2, 2026 at 8:03 PM · page 118
+
+> **vnm0008 said:**
+> Hlw... I unlock the bootloader of my astra tab by zte family toolbox.. But its not turning on.. Going back to fast boot mode.. But fastboot mode also not showing there are so many lines.... I tried to flash a edl rom by qfil but sahara failed.. How to solve this..
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+The tools cant also detect direct from edl... I unlock it then... I cant restored those files are backed up.. Cz the tools cant detect direct from edl.. Its asking to start from adb but device isnt turning on so how to solve?
+
+---
+
+### #2,356 — **InfectedThoughts** · Jun 2, 2026 at 8:57 PM · page 118
+
+> **vnm0008 said:**
+> Hlw... I unlock the bootloader of my astra tab by zte family toolbox.. But its not turning on.. Going back to fast boot mode.. But fastboot mode also not showing there are so many lines.... I tried to flash a edl rom by qfil but sahara failed.. How to solve this..
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+It appears you are stuck in a bootloop, my next question is did you make a backup in the zte family toolbox before unlocking the bootloader and rooting, if you made a backup you need to get back into 9008 mode and flash your backup, I don't have the astra tab or know if it's the same process as the 11 pro or not but you may need to hold the power button till it turns off then simultaneously press the volume up and volume down button while putting the USB cable in connecting to pc it you got to be quick may take a couple tries but should trigger 9008 mode so you can flash the backup, that's what I had to do with my 11 pro.. again you got to be quick to do it..
+
+---
+
+### #2,357 — **vnm0008** · Jun 2, 2026 at 9:08 PM · page 118
+
+> **InfectedThoughts said:**
+> It appears you are stuck in a bootloop, my next question is did you make a backup in the zte family toolbox before unlocking the bootloader and rooting, if you made a backup you need to get back into 9008 mode and flash your backup, I don't have the astra tab or know if it's the same process as the 11 pro or not but you may need to hold the power button till it turns off then simultaneously press the volume up and volume down button while putting the USB cable in connecting to pc it you got to be quick may take a couple tries but should trigger 9008 mode so you can flash the backup, that's what I had to do with my 11 pro.. again you got to be quick to do it..
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I dont have any backup ![🙁](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f641.png)
+
+---
+
+### #2,358 — **InfectedThoughts** · Jun 2, 2026 at 9:15 PM · page 118
+
+> **vnm0008 said:**
+> I dont have any backup ![🙁](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f641.png)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Ok only other option I see is you have to download the firmware from the red magic website and flash it to restore your system then after restoring and it boots up do a factory data reset and make a backup in the zte family toolbox
+
+---
+
+### #2,359 — **InfectedThoughts** · Jun 2, 2026 at 9:22 PM · page 118
+
+I can't stress this enough but please make a backup of your device before you attempt to unlock your bootloader or root your device it's been said countless times to do so, it will get you out of a sticky situation if something goes wrong plus it holds your imei and other unique keys!!!
+
+---
+
+### #2,360 — **borygo77** · Jun 2, 2026 at 9:23 PM · page 118
+
+> **InfectedThoughts said:**
+> Ok only other option I see is you have to download the firmware from the red magic website and flash it to restore your system then after restoring and it boots up do a factory data reset and make a backup in the zte family toolbox
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Not gonna work. He needs to flash edl from someone...
+
+---
+
+### #2,361 — **InfectedThoughts** · Jun 2, 2026 at 9:31 PM · page 119
+
+> **borygo77 said:**
+> Not gonna work. He needs to flash edl from someone...
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Ah ok I see thanks for the information [@borygo77](https://xdaforums.com/m/8093282/) ![🙂](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f642.png) welp I don't have a edl for the astra tab so I can help you [@vnm0008](https://xdaforums.com/m/13409040/) ![😔](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f614.png) maybe someone else has it..
+
+---
+
+### #2,362 — **vnm0008** · Jun 2, 2026 at 9:59 PM · page 119
+
+> **borygo77 said:**
+> Not gonna work. He needs to flash edl from someone...
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Bro i have edl firmware... But how to flash... In qfil its sahara error and when im going to load firehorse its not detecting why idk... Anyone here can help me to flash in edl mode

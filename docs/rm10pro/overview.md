@@ -26,11 +26,11 @@ Sibling devices that share the unlock toolchain and exploit surface:
 | V10.0.18 NX789J GB | Build referenced by Enddo in May 2026 [#667 p34] |
 | Android 16 update | Adds files in `/metadata/aconfig/maps/system.flag.map` that break permission controller when used as base for GSI/DSU on A15 [#279 p14 Reminon] |
 
-## What works (as of May 2026)
+## What works (as of June 2026)
 
 | Goal | Method | Status |
 |------|--------|--------|
-| Bootloader unlock | ZTE Family Toolbox ≥1.2.3 (1.2.4 recommended, 1.2.6 latest as of May 2026) | Working for RM10 Pro |
+| Bootloader unlock | ZTE Family Toolbox ≥1.2.3 (**1.2.7.7** current stable, **1.2.6** is the English build) | Working for RM10 Pro — confirmed in the wild by multiple users [RM11 #2317 p116 dev-reverse] |
 | Root with locked bootloader | EDL-flash patched init_boot + patched vbmeta | Working — see [BD_Security's guide](/rm10pro/bd-security-edl-root) |
 | Root with unlocked bootloader | Magisk init_boot patch via `dd` from system | Working [#589 p30 HammadYasin] |
 | TWRP / OFRP custom recovery | Reminon's WIP device tree | Builds & boots, touch works, mount issues being chased [#481 p25] |

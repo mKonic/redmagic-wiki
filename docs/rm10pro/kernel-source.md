@@ -48,6 +48,17 @@ Public release of the kernel source happened relatively recently — announced i
 
 With NX789S sources public, a fully self-built kernel is feasible without that scaffolding.
 
+## GPLv2 dispute & the reverse-engineered kernel {#gplv2-kernel}
+
+The clean "the source is public" story above is the **NX789S (RM10 Pro)** case. The sibling **RM11 Pro (NX809J)** is the opposite — an open GPLv2 fight — and it's directly relevant here because the two devices share a kernel family.
+
+- ZTE's published RM11 Pro kernel source is **incomplete / unbuildable** — missing the pieces needed to actually compile a bootable kernel [RM11 #2235, #2247 p112–113 dev-reverse].
+- **dev-reverse** reverse-engineered the shipped kernel back into a **bootable** tree (his words: *"The kernel is bootable, but the touchscreen won't work"*), using AI-assisted tooling — Ghidra, Frida, qemu, and a KernelSU-Next module to override the video driver (60→144 Hz) [RM11 #1831 p92, #1918 p96, #1965 p99]. **n00b-xda-disciple** then got the **touchscreen working** [RM11 #2171 p109]. Community kernel repo: **[Coding-BR/android_kernel_nubia_sm8850_qwjujube](https://github.com/Coding-BR/android_kernel_nubia_sm8850_qwjujube)** (Linux 6.12 / Android 16 GKI). ⚠️ Per dev-reverse's README: **flash the test kernel to RAM only — never write it directly to the device**, or you'll brick it.
+- A dedicated escalation thread was opened: **[\[Discussion\] GPLv2 Violation: RedMagic 11 Pro (NX809J) Incomplete/Unbuildable Kernel Sources](https://xdaforums.com/t/discussion-gplv2-violation-redmagic-11-pro-nx809j-incomplete-unbuildable-kernel-sources.4790008/)** [RM11 #2235 p112]. ZTE's source-compliance contact is `tech.sp@zte.com.cn`. Legal caveat from the thread: under GPLv2 the *end consumer* generally lacks standing — pressure has to come from a copyright holder [RM11 #2309 p116 dev-reverse]. **MrKonic** weighed in affirming the obligation: *"they're required by law since they're using the linux kernel which is under GPL 2"* [RM11 #2066 p104].
+- On the RM10 side, **dev-reverse** re-sent a kernel-source request to ZTE [#674 p34].
+
+**Why it matters for rooting:** a fully compilable kernel is the prerequisite for *undetectable* root (KernelSU + SUSFS injected at build time) and for working biometrics/Wallet on custom setups. As elrey120 put it: banking apps and Wallet check **bootloader state**, not just root — *"that's why this modded kernel is important"* [RM11 #177 p9]. See [Known issues](/rm10pro/known-issues) and [Root with Magisk / KernelSU](/rm10pro/root-magisk).
+
 ## Flashing a self-built kernel
 
 You'll need either:

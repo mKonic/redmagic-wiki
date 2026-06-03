@@ -37,12 +37,31 @@ The [Red Magic 11 Pro free-unlock thread](https://xdaforums.com/t/red-magic-11-p
 
 See [Toolbox cross-reference](/rm11pro/toolbox-cross-reference) for the version-history and companion-exploits map.
 
+### RM11-thread principals
+
+These drive the RM11 Pro / toolbox work, and several touch the RM10 Pro directly. Posts in this thread are cited as `[RM11 #N pP]` (search `data/rm11pro-unlock.md`).
+
+| Handle | Role |
+|--------|------|
+| **dev-reverse** | The engine of the thread this cycle. Reverse-engineered a **bootable** RM11/RM10 kernel (the published ZTE source is unbuildable); leads the GPLv2 escalation; tracks toolbox releases (called 1.2.7.7 stable); walks newcomers through RM10 Pro unlock. |
+| **SnowFuhrer** | `efisp` "mode" bootloader-state work (boot unlocked while presenting as locked); author of the `edl-ng` EDL client. |
+| **n00b-xda-disciple** | Also on the RM10 thread; got the RE'd kernel's **touchscreen** working; front-line unlock support. |
+| **elrey120** | English-translation work on the toolbox; early "banking/Wallet check bootloader state, not just root" insight. |
+| **EliteBlackKaiser** | Maintains the community mega-guide Google Doc; documents the `efisp` "modes". |
+| **superturtlee** | Author of `gbl_root_canoe` (the open-sourced modded-`efisp` / no-BL-root reference codebase). |
+| **Grimish2280** | Drafting a native-Linux (`bkerler/edl`) NX789J unlock writeup [#676 p34, RM10 thread] — WIP, "do not use yet". |
+| **jolly_roger_hook** | Shared the English ZTE Toolbox Drive folder; FOD/calibration analysis. |
+| **AdaUnlocked** | Free-unlock activism & fuse-warning broadcasts (same role as on the RM10 thread). |
+
+**MrKonic (you)** also weighed in on the RM11 thread, affirming the GPLv2 kernel-source obligation [RM11 #2066 p104].
+
 ## Verifying citations
 
-Every citation in this wiki uses the form `[#N pP]` — post number `N` on page `P` of the XDA thread. The raw post text for both threads (extracted to markdown and JSONL) lives in [`data/`](https://github.com/mKonic/redmagic-wiki/tree/main/data) in this repo, so you can search a post number directly with:
+Citations use the form `[#N pP]` — post number `N` on page `P` of the **RM10 Pro** thread — or `[RM11 #N pP]` for the **RM11 Pro / toolbox** thread. The raw post text for both threads (extracted to markdown and JSONL) lives in [`data/`](https://github.com/mKonic/redmagic-wiki/tree/main/data) in this repo, so you can search a post number directly with:
 
 ```bash
-grep -n "^### #423" data/rm10pro.md      # finds post #423
+grep -n "^### #423" data/rm10pro.md            # RM10 thread, post #423
+grep -n "^### #2,066" data/rm11pro-unlock.md   # RM11 thread, post #2066
 ```
 
 Or query the JSONL programmatically:
