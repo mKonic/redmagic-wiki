@@ -111,6 +111,15 @@ A separate line of work centred on the **RM11 Pro (NX809J)** — conceptually po
 
 This is bootloader-state spoofing at the `efisp`/ABL layer rather than the `ztecfg`/RSA layer the rest of this chapter covers. It's also why a compilable kernel matters — see [Kernel source → GPLv2 dispute](/rm10pro/kernel-source#gplv2-kernel).
 
+### Where this landed {#efisp-status}
+
+- **In the toolbox.** The `efisp` write is exposed as **Option 18** ("Snapdragon 8E5 without unlocking BL + fingerprint protection") and its reversal as **Option 19** — see [Options 18 and 19](/rm10pro/zte-family-toolbox#option-18-19). You don't need to hand-flash payloads any more; SnowFuhrer himself now points people at the toolbox, or at `edl-ng` for Linux [RM11 #2885 p145].
+- **SnowFuhrer considers his part done** — *"everything worked in the way I wanted so I moved to other things"* [RM11 #2885 p145].
+- **ZTE patched it.** dev-reverse traces the fix into the ABL: *"The flags that used to exist inside the `abl` file are gone now… the names needed to change the flag in the hex code simply don't exist anymore. That exploit is dead"* [RM11 #2794 p140]. Confirmed dead from RM11 firmware `.19 MR2` [RM11 #2763 p139], and on the Z80 Ultra the `efisp` fix stops working at `.20` [RM11 #2476 p124].
+- **It still works on older firmware**, which is the entire reason the "don't update" rule exists. borygo77 runs stock ROM with nothing but the `efisp` exploit applied and has Wallet and RCS working without a single module [RM11 #3024 p152].
+
+The RM10 Pro shares the partition and the ABL behaviour, so the mechanism ports — but no RM10-specific `efisp` payload or version cutoff has been published.
+
 ## See also
 
 - [Aleph Security: Exploiting Qualcomm EDL Programmers (1)](https://alephsecurity.com/2018/01/22/qualcomm-edl-1/) — background on PBL/firehose architecture [linked in #419 by c3c3]

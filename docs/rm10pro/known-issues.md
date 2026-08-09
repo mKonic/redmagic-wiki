@@ -16,7 +16,20 @@ Key points:
 
 **Mitigation:** uninstall the Android updater app (`adb shell pm uninstall --user 0 <updater pkg>`). Freeze any "system update" notifier. Stay on the version that works for you.
 
-**Status as of May 31, 2026:** despite the relentless warnings, **no one has yet reported a confirmed real-world fuse blowout / permanent lockout** on any of these devices [RM11 #2347 p118 dev-reverse]. The expectation in-thread is that the first hard fuse-lock arrives with the new **RM11s "overclock"** variant's unlock. Practical canary (SnowFuhrer's reasoning, not a confirmed test): a fused device would *fail* to make a toolbox backup — so if your **Option 4 (Back All)** backup succeeds, you're probably not fused [RM11 #2226 p112]. The "don't update" rule still stands; the downside of being wrong is permanent and there's no recovery from a blown fuse.
+**Status as of late July 2026:** still **no confirmed real-world fuse blowout** on any device in this family. AdaUnlocked's Jul 22 bump: *"There is still a glimmer of hope! It seems the destructive hardware fuses haven't been completely blown yet"* [RM11 #2921 p147]; dev-reverse, more specifically, says there is no fuse blowing in `.18 MR1` or `.19 MR2` [RM11 #2838 p142]. The 5t0l3n data point on the sibling Z80 Ultra is the most concrete evidence anyone has produced: `.27` **does not** blow the efuse, and downgrading from it back to `.16` worked [RM11 #2476 p124].
+
+Practical canary (SnowFuhrer's reasoning, not a confirmed test): a fused device would *fail* to make a toolbox backup — so if your **Option 4 (Back All)** backup succeeds, you're probably not fused [RM11 #2226 p112].
+
+### What updating actually costs you today {#what-updating-costs}
+
+The fuse is the tail risk. The thing that is **already happening** is ordinary software patching, and it's worth being precise about the failure mode because it isn't the intuitive one:
+
+- **You do not lose the unlock.** An OTA doesn't relock the bootloader.
+- **You lose EDL.** These phones have no write-capable fastboot on stock firmware, so firehose/EDL is the only way to put an image on the device. Patch that, and an unlocked bootloader is inert. dev-reverse: *"You don't lose the unlock; you lose access to EDL mode"* [RM11 #2855 p143]. Haldi4803: *"No more EDL. No more flashing anything, no ROMs, not even root exploit"* [RM11 #2858 p143].
+- **The GBL exploit is confirmed patched** as of RM11 `.19 MR2` [RM11 #2763 p139] — that's the one Option 18 uses for locked-bootloader root and the fingerprint fix.
+- The 5t0l3n ladder on the Z80 Ultra shows the sequencing clearly: `.16` everything works → `.20` efisp fix broken → `.27` can't unlock or root at all, *but firehose still functions* [RM11 #2476 p124]. His read: *"seems like everything is patched except firehose. You know what's next."*
+
+**Downgrading is still possible** on unfused devices [RM11 #2941 p148, #3018 p151]. Check any prospective update for anti-rollback first with [otaripper](https://github.com/syedinsaf/otaripper) or [arbscan](https://github.com/syedinsaf/arbscan) [RM11 #2595 p130, #2371 p119].
 
 ## Brick recovery cheatsheet
 
@@ -49,9 +62,51 @@ Suggests **partition-state desync** between what was backed up and what the unlo
 
 joao_lisa's later question [#670 p34]: *"Have they managed to resolve the bootloop issue by unlocking the bootloader?"* — no public resolution as of mid-May 2026.
 
-### No backup = unrecoverable (until custom recovery exists)
+### No backup = unrecoverable
 
-The most-repeated lesson in the newer RM11 posts: **make a full EDL backup (toolbox Option 4 / "Back All") before unlocking or rooting** — and ideally a second one right after unlocking. Several users hard-bricked with no backup and there is currently **no recovery path**: restoring needs either *your own* EDL dump or someone else's *matching-firmware* dump, and a working custom recovery for these devices doesn't exist yet [RM11 #2226 p112 SnowFuhrer — *"You should be fine as long as you make a backup. DO NOT SKIP."*]. Don't unlock on a phone you can't afford to lose without that backup in hand.
+The most-repeated lesson in the newer RM11 posts: **make a full EDL backup (toolbox Option 4 / "Back All") before unlocking or rooting** — and ideally a second one right after unlocking [RM11 #2739 p137]. Restoring needs either *your own* EDL dump or someone else's *matching-firmware* dump [RM11 #2226 p112 SnowFuhrer — *"You should be fine as long as you make a backup. DO NOT SKIP."*]. A [custom recovery does now exist](/rm10pro/recovery-twrp) for the RM10 Pro, but it is not a substitute: it needs a genuinely unlocked bootloader to install, and on the RM11 port TWRP's restore path is broken even though backup works [RM11 #2771 p139].
+
+**The IMEI is the part you can't buy back.** Several users flashed with a corrupt or missing backup and lost their original IMEIs, replaced by Qualcomm fallbacks. dev-reverse, repeatedly: there is no way to rewrite them without your own dump — *"only ZTE can help"* [RM11 #2513 p126, #2545 p128]. This is the concrete cost of the [corrupted-backup bug in the older English toolbox builds](/rm10pro/zte-family-toolbox#download).
+
+### Verify the backup — "success" is not enough
+
+A backup that reports success can still be unusable. Check before you rely on it [RM11 #2509 p126, #2963 p149]:
+
+- Folder is **~22 GB** (RM11 Pro figure; an RM10S Pro 256/12 dump came to ~7.6 GB [RM11 #2966 p149], so calibrate to your storage tier)
+- `.img` and `.xml` files are actually present
+- On success the toolbox **closes itself and the phone powers back on** [RM11 #2474 p124]
+
+Warnings like `Couldn't find the file 'init_boot_b.img', returning NULL` mean the dump is incomplete [RM11 #2780 p139].
+
+### Storage reported as 512 GB after an EDL restore {#storage-halved}
+
+Flashing a donor EDL package onto a 1 TB device makes it report 512 GB, because `rawprogram0.xml` carries the *donor's* `userdata` geometry. desudecchi's fix [RM11 #2891 p145]:
+
+1. In the EDL package's `images/rawprogram0.xml`, find the `userdata` line and replace `num_partition_sectors` with the value from **your own** backup's `rawprogram0.xml` (e.g. `118996179` → `243963091`).
+2. Copy `gpt_main0..5.bin` and `gpt_backup0..5.bin` from your own backup into the package's `images/` folder.
+3. Flash as normal.
+
+Without your own backup this is much harder; shaj10 eventually recovered by resizing with `sgdisk` from TWRP and formatting through the recovery UI [RM11 #3007 p151].
+
+## Fingerprint reader stops working after unlock {#fingerprint-after-unlock}
+
+Universal on this family: unlock the bootloader, and Settings starts reporting *"Fingerprint hardware missing"* [RM11 #2710 p136].
+
+**dev-reverse's explanation** — worth flagging as a claim from the thread's most active reverse-engineer, not an independently verified finding [RM11 #2794 p140]:
+
+> *"They created two paths in the system: it detects that your bootloader is unlocked and sends commands to a fake virtual fingerprint reader instead of the actual hardware sensor… It doesn't actually break the TEE related to the fingerprint; it's just a malicious stunt they pulled in their ROM."*
+
+Two things follow if that's right, and both match reported behaviour:
+
+- The sensor hardware and its calibration are **fine** — this is ROM-side gating, not damage. Restoring `persist` doesn't fix it because `persist` was never the problem.
+- **Custom ROMs are unaffected**: *"If you're using a custom ROM, the fingerprint scanner will work fine, provided it's compiled correctly."*
+
+### What actually restores it
+
+- **Toolbox Option 18** is the supported fix, and it works only on firmware where the GBL exploit is still open — up to `.18 MR1` on the RM11 Pro, not on `.19 MR2` or later [RM11 #2763, #2790 p139–140]. See [Options 18 and 19](/rm10pro/zte-family-toolbox#option-18-19).
+- **It is incompatible with `abl userdebug` and with TWRP** — Option 19 has to strip the patch before either will run, and stripping it un-does the fingerprint fix [RM11 #2629 p132, #2807 p141].
+- Reports of Option 18 *not* working are common on newer firmware and on the 11S Pro [RM11 #2559 p128, #2714 p136]; several of those ended in a soft-brick recovered by restoring a personal backup.
+- On the **RM10S Pro**, -CNote- reports unlock + root **with a working fingerprint** on `RedMagicOS11.0.5MR_GB` [RM11 #2987 p150] — no procedure published.
 
 ## Google Wallet / Play Integrity / banking apps after root
 
@@ -59,7 +114,17 @@ Banking apps and Google Wallet check **bootloader state**, not just the presence
 
 - Use **KernelSU**, not Magisk, for Wallet/banking — Magisk is far easier for these checks to detect; the toolbox's no-BL-root path ships a KSU build for exactly this [RM11 #117 p6 elrey120].
 - Stronger hiding comes from **KernelSU + SUSFS**, but that reportedly needs a **compilable kernel** to inject the patches cleanly — the current blocker, see [Kernel source → GPLv2 dispute](/rm10pro/kernel-source#gplv2-kernel).
-- The cleanest answer is the **`efisp` "mode 2"** approach (keep stock attestation while booting unlocked) — see [Reverse engineering → efisp modes](/rm10pro/reverse-engineering#efisp-modes).
+- The cleanest answer is the **`efisp` "mode 2"** approach (keep stock attestation while booting unlocked) — see [Reverse engineering → efisp modes](/rm10pro/reverse-engineering#efisp-modes). borygo77 runs stock ROM with only the `efisp` exploit applied and reports Wallet and RCS working **with no modules at all** [RM11 #3024 p152]; his warning is that touching the kernel is what breaks them [RM11 #2910 p146].
+
+### The module stack that people actually landed on
+
+For those who do end up needing to paper over integrity checks, the combination reported working on RM11S Pro `11.5.5_GB` — all three green, RCS restored, Google Pay working over NFC [RM11 #3031, #3033 p152 christopherrrg; corroborated #3034, #3036 p152 kravnos]:
+
+- **Play Integrity Fork**
+- **Tricky Store**
+- **Yurikey Manager**
+
+The pattern reported there is worth knowing: the **first** boot after unlock passes integrity using the device's own keys, and it's only once Magisk is actually detected that RCS and Google services drop — the modules restore what that costs you.
 
 ## OTA / update gotchas
 

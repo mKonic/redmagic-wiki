@@ -9,7 +9,7 @@ Reference for tracking who's the authority on what when reading the raw extract.
 | **Reminon** | 44 | Custom recovery (TWRP/OFRP) lead — see [his repo](https://github.com/reminon/twrp_device_nubia_nx789j); AVB experiments; manual delta-payload patching wizard. |
 | **hoahenry** | 39 | RE on ztecfg layout; coordinated the data-gathering for signature analysis [#225]; one of the first users to confirm working free-toolbox unlock [#659, #664]. |
 | **HyoudoIsse** | 26 | Active community Q&A. |
-| **hyty** | 26 | Active community Q&A. |
+| **hyty** (GitHub `plompomg`) | 32 | Built the [**OrangeFox recovery** for the RM10 Pro](https://github.com/plompomg/rm10pro-orangefox-recovery) — boots, decryption working [#679–#686 p34–35]. Forked from Reminon's TWRP tree. Also general community Q&A. |
 | **ks75vl** | 23 | Cryptographic RE lead — extracted abl_eng RSA pubkey, ran Unicorn-emulated verification [#186, #189, #192]; "boot from USB" speculative bypass [#422]. |
 | **GigaWrathWave** | 22 | EDL tooling experimentation; bkerler/edl ZTE-OEM issue surfacing [#514]. |
 | **engosen2580** | 20 | Q&A. |
@@ -43,9 +43,16 @@ These drive the RM11 Pro / toolbox work, and several touch the RM10 Pro directly
 
 | Handle | Role |
 |--------|------|
-| **dev-reverse** | The engine of the thread this cycle. Reverse-engineered a **bootable** RM11/RM10 kernel (the published ZTE source is unbuildable); leads the GPLv2 escalation; tracks toolbox releases (called 1.2.7.7 stable); walks newcomers through RM10 Pro unlock. |
-| **SnowFuhrer** | `efisp` "mode" bootloader-state work (boot unlocked while presenting as locked); author of the `edl-ng` EDL client. |
-| **n00b-xda-disciple** | Also on the RM10 thread; got the RE'd kernel's **touchscreen** working; front-line unlock support. |
+| **dev-reverse** | The engine of the thread this cycle (146 of the ~676 posts added Jun–Aug 2026). Reverse-engineered a **bootable** RM11/RM10 kernel (the published ZTE source is unbuildable); leads the GPLv2 escalation and filed the formal *Reclame Aqui* complaint with its technical audit [RM11 #2367 p119]; published the working **1.2.8-beta2** English toolbox; authored the definitive Option 18/19 explanation [RM11 #2807 p141]. **Stepped back from XDA support in Jul 2026** after a moderator warning over off-site links [RM11 #2915 p146]. |
+| **SnowFuhrer** | `efisp` "mode" bootloader-state work (boot unlocked while presenting as locked); author of the `edl-ng` EDL client. Confirms the custom `efisp` work is finished from his side and points at ZTE Toolbox or `edl-ng` to flash it [RM11 #2885 p145]. |
+| **n00b-xda-disciple** | Also on the RM10 thread; got the RE'd kernel's **touchscreen** working; shipped the RM11 **OrangeFox** build ([Coding-BR/rm11pro-canoe-dock](https://github.com/Coding-BR/rm11pro-canoe-dock)) and the Canoe Dock guide; drives the Droidspaces / Linux-on-device work. Claims to have reconstructed the missing kernel sources [RM11 #2867 p144] — **unverified**, no repo published against the claim. |
+| **astroskyisme** | High-volume tester (53 posts) — the `abl userdebug` / Option 18 / dump-mode failure modes are largely documented through his troubleshooting; surfaced Droidspaces to the thread. |
+| **IronSingh** | Ported **LineageOS 23.2** (Android 16) to the NX809J — [thread 4791285](https://xdaforums.com/t/rom-nx809j-unofficial-lineageos-23-2-alpha-09-06-2026.4791285/) [RM11 #2492–#2517 p125–126]. |
+| **borygo77** | Firmware-compatibility reporting and the "stock ROM + `efisp` exploit only, no modules" configuration that keeps Wallet and RCS working [RM11 #3024 p152]. Shares EDL backups. |
+| **christopherrrg** | Wrote the reproducible **RM11S Pro on `11.5.5_GB`** procedure with 1.2.8-beta2, including the integrity module stack [RM11 #3019, #3031 p151–152]. |
+| **-CNote-** | First reported **Red Magic 10S Pro** unlock + root with a **working fingerprint** [RM11 #2987 p150]; uploaded a full 10S Pro partition backup [RM11 #2966 p149]. |
+| **kcodya** | Author of the [REDMAX](https://github.com/kencalx/REDMAX-11) root module (re-enables features RedMagic OS disables). |
+| **Haldi4803** | The clearest voice on *why* not to update — the EDL-loss consequence chain [RM11 #2858, #2881 p143–145]. |
 | **elrey120** | English-translation work on the toolbox; early "banking/Wallet check bootloader state, not just root" insight. |
 | **EliteBlackKaiser** | Maintains the community mega-guide Google Doc; documents the `efisp` "modes". |
 | **superturtlee** | Author of `gbl_root_canoe` (the open-sourced modded-`efisp` / no-BL-root reference codebase). |

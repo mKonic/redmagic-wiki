@@ -1,6 +1,6 @@
 # rm10pro
 
-_Extracted from 34 pages_
+_Extracted from 36 pages_
 
 
 ---
@@ -21788,7 +21788,7 @@ Please use version 1.2.3 or later. Older versions do not support bootloader unlo
 
 ### ZTE Family Toolbox 中兴家族工具箱1.2.4-beta1.7z
 
-![drive.google.com](/proxy.php?image=https%3A%2F%2Fssl.gstatic.com%2Fimages%2Fbranding%2Fproduct%2F1x%2Fdrive_2020q4_32dp.png&hash=cb464dc9ad0545d94fe752d1439c24b1&return_error=1)
+![drive.google.com](/proxy.php?image=https%3A%2F%2Fssl.gstatic.com%2Fdocs%2Fdoclist%2Fimages%2Fdrive_favicon_2026_32dp.png&hash=cbb4bc26ec5c3449347a5897da90c838&return_error=1)
 
 					drive.google.com
 
@@ -21882,7 +21882,7 @@ There is this guy who made a hardware control app for the Red Magic 11 Pro. I fo
 
 Oh yeah, and feel free to contribute to the project too.
 
-![github.com](/proxy.php?image=https%3A%2F%2Fopengraph.githubassets.com%2F725fa49936cc199bf5b83f1734d4654efaf08db31c64339c818d31f922e7018c%2FmKonic%2FRedmagic-Control-Center&hash=fb7026e50aa0c5b381fbf3d24f122cac&return_error=1)
+![github.com](/proxy.php?image=https%3A%2F%2Fopengraph.githubassets.com%2F5778741573425ac9ee28a45d571a5f46ec07df12f90bbe7a2fd4633a0772ddcd%2FmKonic%2FRedmagic-Control-Center&hash=cef607b24bff19014ca40c07815b1fe0&return_error=1)
 
 ### GitHub - mKonic/Redmagic-Control-Center
 
@@ -22308,3 +22308,436 @@ hows the translating going?
 > Click to collapse
 
 Post in thread '[Red Magic 11 Pro] [GUIDE] Bootloader Unlock (FREE) - Also Support RM10, Pad3Pro, Z70U, Z80U Unlock - ZTE Family Toolbox' [https://xdaforums.com/t/red-magic-1...lock-zte-family-toolbox.4780930/post-90613814](https://xdaforums.com/t/red-magic-11-pro-guide-bootloader-unlock-free-also-support-rm10-pad3pro-z70u-z80u-unlock-zte-family-toolbox.4780930/post-90613814)
+
+---
+
+### #679 — **hyty** · Jun 5, 2026 at 12:31 AM · page 34
+
+for who wants it I have a working and booting version of orange fox recovery for the rm 10 pro, Ill be putting it on GitHub soon if I don't forget, I only tested to see if it boots if people want to do more rigorous testing on it they can dm me or wait till I upload it to GitHub
+
+---
+
+### #680 — **dev-reverse** · Jun 5, 2026 at 12:34 AM · page 34
+
+> **hyty said:**
+> for who wants it I have a working and booting version of orange fox recovery for the rm 10 pro, Ill be putting it on GitHub soon if I don't forget, I only tested to see if it boots if people want to do more rigorous testing on it they can dm me or wait till I upload it to GitHub
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Is the decryption working or not? Because if it is, I'll use the database for Redmagic 11.
+
+---
+
+### #681 — **n00b-xda-disciple** · Jun 5, 2026 at 12:43 AM · page 35
+
+> **dev-reverse said:**
+> Is the decryption working or not? Because if it is, I'll use the database for Redmagic 11.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Wishful thinking lol. My guess is no.
+
+---
+
+### #682 — **hyty** · Jun 5, 2026 at 1:23 AM · page 35
+
+> **dev-reverse said:**
+> Is the decryption working or not? Because if it is, I'll use the database for Redmagic 11.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Yes decryption works
+
+---
+
+### #683 — **Reminon** · Jun 5, 2026 at 2:32 AM · page 35
+
+> **hyty said:**
+> Yes decryption works
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Did you make the device tree from scratch or fork it from somewhere? I'm curious if yours has any improvements over mine. OFRP was giving me hell early on and I stuck with just porting twrp. I haven't looked into OFRP again after I finished twrp.
+
+---
+
+### #684 — **hyty** · Jun 5, 2026 at 2:45 AM · page 35
+
+> **Reminon said:**
+> Did you make the device tree from scratch or fork it from somewhere? I'm curious if yours has any improvements over mine. OFRP was giving me hell early on and I stuck with just porting twrp. I haven't looked into OFRP again after I finished twrp.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I forked it from the twrp one after I heard the orange fox used twrp as a base
+
+---
+
+### #685 — **hyty** · Jun 5, 2026 at 2:46 AM · page 35
+
+I need to wait for orange fox 15.1 to have "native" support in other words just without changing anything
+
+---
+
+### #686 — **hyty** · Jun 6, 2026 at 2:44 AM · page 35
+
+The repo is online at: https://github.com/plompomg/rm10pro-orangefox-recovery
+
+---
+
+### #687 — **GigaWrathWave** · Jun 7, 2026 at 4:32 PM · page 35
+
+I dont know if someone can help me about this but I have 2 Redmagic 10 pro, one is rooted with the zte toolbox, and the other one is stock. On the rooted one, the firmware installed on it is 11.0.4 and the latest OTA upgrade possible is 11.0.5, but this update crash when I tried to install it. On my stock RM10 the firmware installed is 10.0.18mr1 and I dont see any others OTA update possible. Can someone check your version on a rooted phone, I dont know where the 11.0.4 and 11.0.5 come from because on the official Redmagic ROM website, the latest one for Global is 10.0.18mr1
+
+Thanks!
+
+---
+
+### #688 — **SansQuartier** · Jun 9, 2026 at 10:01 PM · page 35
+
+> **GigaWrathWave said:**
+> I dont know if someone can help me about this but I have 2 Redmagic 10 pro, one is rooted with the zte toolbox, and the other one is stock. On the rooted one, the firmware installed on it is 11.0.4 and the latest OTA upgrade possible is 11.0.5, but this update crash when I tried to install it. On my stock RM10 the firmware installed is 10.0.18mr1 and I dont see any others OTA update possible. Can someone check your version on a rooted phone, I dont know where the 11.0.4 and 11.0.5 come from because on the official Redmagic ROM website, the latest one for Global is 10.0.18mr1
+>
+>
+>
+> Thanks!
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+If your version is EEA you can flash V10.0.14 from https://help.redmagic.gg/hc/en-us/articles/42689608796057-REDMAGIC-10-Pro and afterwards you'll get an OTA that allows you to update to EU, and then to the android 16 version (at least that's what happened for me)
+
+Not sure if that's what you want but hope it helps
+
+---
+
+### #689 — **dev-reverse** · Jun 17, 2026 at 11:48 PM · page 35
+
+> **hyty said:**
+> The repo is online at: https://github.com/plompomg/rm10pro-orangefox-recovery
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Take some time and post on this site; it will help the whole world. Submit your repository here: https://twrp.me/contactus/
+
+Take some time to create a separate TWRP thread for your device; nobody is seeing it.
+
+It took me a while to find this page.
+
+https://xdaforums.com/c/nubia-red-magic.7925/
+
+---
+
+### #690 — **DexyStorm** · Jul 2, 2026 at 2:17 AM · page 35
+
+Can I use the ZTE Family Toolbox to unlock the bootloader of my Red Magic 10S Pro and root it?
+
+---
+
+### #691 — **_tyler_** · Jul 3, 2026 at 8:28 AM · page 35
+
+Can anyone with NX789J on 10.0.18 Andromeda please post a rom dump ![😭](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f62d.png) or rawprogram files
+
+---
+
+### #692 — **dev-reverse** · Jul 3, 2026 at 6:26 PM · page 35
+
+> **_tyler_ said:**
+> Can anyone with NX789J on 10.0.18 Andromeda please post a rom dump ![😭](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f62d.png) or rawprogram files
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Didn't you back up your device before messing with it?
+
+---
+
+### #693 — **Jole7** · Jul 3, 2026 at 8:33 PM · page 35
+
+> **_tyler_ said:**
+> Can anyone with NX789J on 10.0.18 Andromeda please post a rom dump ![😭](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f62d.png) or rawprogram files
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+![dumps.tadiphone.dev](/proxy.php?image=https%3A%2F%2Fdumps.tadiphone.dev%2Fassets%2Ftwitter_card-570ddb06edf56a2312253c5872489847a0f385112ddbcd71ccfa1570febab5d2.jpg&hash=80d7c961583a5c50cfce79d25ef94336&return_error=1)
+
+### Android Dumps / nubia / nx789j · GitLab
+
+GitLab Enterprise Edition
+
+![dumps.tadiphone.dev](/proxy.php?image=https%3A%2F%2Fdumps.tadiphone.dev%2Fdumps%2Fnubia%2Fnx789j%2F&hash=73b662d0bbf5156f150a6bca3b8df5e3&return_error=1)
+
+					dumps.tadiphone.dev
+
+I found this if that helps
+
+---
+
+### #694 — **_tyler_** · Jul 7, 2026 at 6:54 AM · page 35
+
+> **dev-reverse said:**
+> Didn't you back up your device before messing with it?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I did but the backup seems to be incomplete, missing most partitions ![:(](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+
+---
+
+### #695 — **_tyler_** · Jul 7, 2026 at 6:55 AM · page 35
+
+> **Jole7 said:**
+> ![dumps.tadiphone.dev](/proxy.php?image=https%3A%2F%2Fdumps.tadiphone.dev%2Fassets%2Ftwitter_card-570ddb06edf56a2312253c5872489847a0f385112ddbcd71ccfa1570febab5d2.jpg&hash=80d7c961583a5c50cfce79d25ef94336&return_error=1)
+>
+>
+>
+>
+> ### Android Dumps / nubia / nx789j · GitLab
+>
+> GitLab Enterprise Edition
+>
+>
+>
+> ![dumps.tadiphone.dev](/proxy.php?image=https%3A%2F%2Fdumps.tadiphone.dev%2Fdumps%2Fnubia%2Fnx789j%2F&hash=73b662d0bbf5156f150a6bca3b8df5e3&return_error=1)
+>
+> 					dumps.tadiphone.dev
+>
+>
+>
+>
+>
+>
+>
+>
+> I found this if that helps
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Unfortunately that's an earlier version than what I need (10.0.18). It also doesn't seem to be complete?
+
+---
+
+### #696 — **dev-reverse** · Jul 7, 2026 at 2:24 PM · page 35
+
+> **_tyler_ said:**
+> I did but the backup seems to be incomplete, missing most partitions ![:(](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Read through the 35 pages; the correct ROM name is listed there. It might help those with an unlocked bootloader.
+
+---
+
+### #697 — **dev-reverse** · Jul 11, 2026 at 5:50 PM · page 35
+
+It seems like you RedMagic 10 users aren't helping each other out. We RedMagic 11 Pro users already have backups that we can share, and we even know which ROM versions are compatible and that unlocking is safe. But for the RedMagic 10, nobody posts a notice saying which ROM version is compatible, and nobody leaves an EDL backup—it's crazy.
+
+I might be able to help, but you'll have to join my Telegram. And please, be smart about this—I can't teach you everything; I'll just show you the files, and you'll have to do the testing yourself. If you managed to unlock the device, you'll be able to understand what I'm saying and figure it out through testing.
+
+@redmagic11PR0
+
+---
+
+### #698 — **bpe57** · Jul 12, 2026 at 11:59 PM · page 35
+
+Maybe that's exactly the problem   "can't teach you everything"
+
+---
+
+### #699 — **chi0** · Jul 14, 2026 at 9:06 PM · page 35
+
+Has anyone created an AOSP build yet?
+
+---
+
+### #700 — **HammadYasin** · Jul 17, 2026 at 7:14 PM · page 35
+
+> **chi0 said:**
+> Has anyone created an AOSP build yet?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+### 中国移动云盘分享
+
+中国移动云盘（原名和彩云网盘）是中国移动面向所有用户推出的一款安全、智能、不限速、移动用户免流量的产品。产品涵盖存储备份、多端同步、在线管理、群组分享四大核心能力。
+
+![yun.139.com](/proxy.php?image=http%3A%2F%2Fstatic%2Fimg%2Ffavicon.ico&hash=2df51470c3af774763dc55069c78ab27&return_error=1)
+
+					yun.139.com
+
+Some Chinese developer build hyperos based custom rom for redmagic 10 series and 11 series but need china number to download this I hope someone download these rom and upload it here
+
+---
+
+### #701 — **Kaksambrotik** · Jul 21, 2026 at 10:31 PM · page 36
+
+> **extra98 said:**
+> Hey there. I buy that phone but 10s pro.
+>
+>
+>
+> Idk dont use android many years and my knowledge about andoid very old.
+>
+>
+>
+> But I good reverser. So now about tool, 5 min and i get it work.
+>
+>
+>
+> [View attachment 6299675](https://xdaforums.com/attachments/6299675/)[View attachment 6299676](https://xdaforums.com/attachments/6299676/)
+>
+>
+>
+>
+>
+> Someone who on PC now can test, idk work that fully or not.
+>
+>
+>
+> Login - Adnan
+>
+> Password - Adnan
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+> **extra98 said:**
+> Hey there. I buy that phone but 10s pro.
+>
+>
+>
+> Idk dont use android many years and my knowledge about andoid very old.
+>
+>
+>
+> But I good reverser. So now about tool, 5 min and i get it work.
+>
+>
+>
+> [View attachment 6299675](https://xdaforums.com/attachments/6299675/)[View attachment 6299676](https://xdaforums.com/attachments/6299676/)
+>
+>
+>
+>
+>
+> Someone who on PC now can test, idk work that fully or not.
+>
+>
+>
+> Login - Adnan
+>
+> Password - Adnan
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Hey, please, can you help me to unblock my bootloader? Red magic 10s pro. There's literally no information about it. I don't even know what to do
+
+---
+
+### #702 — **bpe57** · Jul 23, 2026 at 12:30 AM · page 36
+
+Really curious to see the NX789J_HyperOS build.
+
+Saddly i dont have a chinese number.
+
+---
+
+### #703 — **bpe57** · Jul 31, 2026 at 10:17 PM · page 36
+
+> **HammadYasin said:**
+> ### 中国移动云盘分享
+>
+> 中国移动云盘（原名和彩云网盘）是中国移动面向所有用户推出的一款安全、智能、不限速、移动用户免流量的产品。产品涵盖存储备份、多端同步、在线管理、群组分享四大核心能力。
+>
+>
+>
+> ![yun.139.com](/proxy.php?image=http%3A%2F%2Fstatic%2Fimg%2Ffavicon.ico&hash=2df51470c3af774763dc55069c78ab27&return_error=1)
+>
+> 					yun.139.com
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+> Some Chinese developer build hyperos based custom rom for redmagic 10 series and 11 series but need china number to download this I hope someone download these rom and upload it here
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Where i can find the original Forum / Thread ?
+
+---
+
+### #704 — **HammadYasin** · Jul 31, 2026 at 10:19 PM · page 36
+
+> **bpe57 said:**
+> Where i can find the original Forum / Thread ?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+On Coolsapk
+
+https://www.coolapk.com/feed/71480823?s=N2I2M2E4ZDAwZzZhNTNkZWUwega1622
+
+---
+
+### #705 — **bpe57** · Aug 5, 2026 at 12:03 AM · page 36
+
+Something else to try?
+
+---
+
+### #706 — **chrismsor93** · Aug 5, 2026 at 12:56 PM · page 36
+
+I got my bootloader unlock, if i did a software update is it gonna going to relock itself? Or is it safe?

@@ -25,11 +25,26 @@ fastboot reboot
 
 [#589 p30 HammadYasin] — confirms the `dd` extract approach. He flashes back to the **same** slot via `dd` from inside a rooted shell, but cross-slot `fastboot flash` from the inactive slot is the safer pattern.
 
-## Path B — unlocked bootloader, KernelSU
+## Path B — unlocked bootloader, KernelSU Next
 
 KernelSU patches init_boot too (it loads as a kernel module / ramdisk overlay). Same procedure as Magisk but use the KernelSU Manager app's "Install to a file" option [#561 p29 pipegrep — used the toolbox path and ended up with Magisk regardless of starting with KSU].
 
-If you'd rather merge KernelSU directly into a custom kernel build instead of patching init_boot, see [Kernel source](/rm10pro/kernel-source) for the public NX789S kernel tree.
+**KernelSU Next** is what the RM11 side settled on, and the flow avoids the toolbox's built-in patcher entirely — that patcher fails on Android 16 init_boot images with `测试ramdisk.cpio失败` / "ramdisk.cpio test failed" [RM11 #2402 p121]. dev-reverse's procedure [RM11 #2457 p123, #2685 p135]:
+
+1. Install the **KernelSU Next** APK from GitHub on the phone.
+2. Copy the stock `init_boot.img` out of the toolbox's backup folder onto the device.
+3. Patch it in the app (if it asks for a kernel version, give it the one your build reports — `6.12.23` on RM11 Pro / Android 16).
+4. Rename the output to something short, and flash it with **toolbox Option 12** to the **active** slot's `init_boot`.
+
+:::warning Magisk and KernelSU don't coexist
+Installing KernelSU while Magisk is still present fails with an error about not being able to patch the Magisk boot image. Fully uninstall Magisk first [RM11 #2650 p133 InfectedThoughts].
+:::
+
+:::tip "KernelSU says Working but `su` is missing"
+On Android 16, one user hit a state where the manager reported the LKM loaded and the superuser list populated, but `su` was absent from userspace (`/system/bin/sh: su: inaccessible or not found`) [RM11 #2720 p136]. It went unanswered in-thread — if you hit it, check you flashed the patched `init_boot` to the **active** slot, and that the slot you're booting isn't the one marked unbootable.
+:::
+
+If you'd rather merge KernelSU directly into a custom kernel build instead of patching init_boot, see [Kernel source](/rm10pro/kernel-source) for the public NX789S kernel tree — and the [prebuilt WildKernels / Coding-BR SUSFS kernels](/rm10pro/kernel-source#related-projects-in-the-ecosystem) the RM11 side flashes instead of building.
 
 ## Path C — locked bootloader, root via EDL
 

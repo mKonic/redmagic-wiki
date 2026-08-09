@@ -3,7 +3,7 @@
 Modding knowledge base for the Red Magic 10 Pro, codename **NX789J** (Global) / **NX789S** (China overclocked variant — same kernel, different config). Snapdragon 8 Elite (SM8750) platform.
 
 :::warning Don't update
-ZTE is rolling out **irreversible hardware-fuse updates** that permanently lock unlock-capable devices. Freeze the system updater before doing anything else. See [Known issues — the fusing threat](./known-issues#the-fusing-threat-read-first).
+Freeze the system updater before doing anything else. Newer firmware **patches the exploits the unlock depends on** — confirmed, and already shipping — and destructive hardware fusing remains the longer-term threat. Crucially, an update doesn't relock your bootloader; it takes away **EDL**, which is the only write path these phones have. See [Known issues — the fusing threat](./known-issues#the-fusing-threat-read-first) and [what updating actually costs](./known-issues#what-updating-costs).
 :::
 
 ## Quick links
@@ -24,7 +24,7 @@ ZTE is rolling out **irreversible hardware-fuse updates** that permanently lock 
 ### Going deeper
 1. [Kernel source](./kernel-source) — building from NX789S sources
 2. [Reverse engineering](./reverse-engineering) — abl_eng / ztecfg / RSA signing
-3. [Custom recovery (TWRP)](./recovery-twrp) — Reminon's WIP device tree
+3. [Custom recovery](./recovery-twrp) — OrangeFox (decryption working) and Reminon's TWRP tree
 
 ### Want to keep BL locked
 - [De-Googling without root](./degoogling-no-root) — what you can do on stock
