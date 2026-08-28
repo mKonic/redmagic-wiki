@@ -59,6 +59,8 @@ export default defineConfig({
           collapsed: false,
           items: [
             { text: 'Magisk / KernelSU', link: '/rm10pro/root-magisk' },
+            { text: 'GhostLock (locked-BL temp root)', link: '/rm10pro/ghostlock-temp-root' },
+            { text: 'Play Integrity & attestation', link: '/rm10pro/play-integrity-attestation' },
             { text: 'Partitions, AVB, vbmeta', link: '/rm10pro/partitions-avb' },
             { text: 'Custom recovery (TWRP)', link: '/rm10pro/recovery-twrp' },
             { text: 'De-Googling without root', link: '/rm10pro/degoogling-no-root' },

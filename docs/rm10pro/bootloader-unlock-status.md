@@ -23,6 +23,8 @@
 | Jun 28, 2026 | **The GBL exploit is patched** in RM11's `.19 MR2` firmware [RM11 #2763 p139 dev-reverse] — unlock still possible on affected builds, but the fingerprint fix is not |
 | Jul 22, 2026 | AdaUnlocked: *"THE BLOCKADE HAS ARRIVED"* — software patching confirmed across the family; destructive fuses still **not** observed blown [RM11 #2921 p147] |
 | Jul 30, 2026 | **Red Magic 10S Pro** reported unlocked **and** rooted with a **working fingerprint reader** — first such report for the 10S [RM11 #2987 p150 -CNote-] |
+| Aug 17, 2026 | **The firmware patch is bypassed.** Elivizon299 finds that flashing a *pre-patch* `abl` + `efisp` back onto a patched device restores the exploit — Option 18 works again on any firmware [RM11 #3,055 p153]. See [downgrading the bootloader](#abl-efisp-downgrade) |
+| Aug 21, 2026 | **GhostLock** published — temporary root on a **locked** bootloader via CVE-2026-43499, and the RM10 Pro's shipping kernel is a supported target [#708 p36]. See [GhostLock](/rm10pro/ghostlock-temp-root) |
 
 ## Which firmware can still be unlocked? {#firmware-compatibility}
 
@@ -35,9 +37,33 @@ What *is* pinned down, on the sibling **RM11 Pro** (NX809J), and worth reading a
 | `11.0.18MR1_GB` | ✅ | ✅ — last fully-working Global build |
 | `11.0.18(MR1)_EA` | ✅ | ✅ |
 | `11.0.23_CN` | ✅ | ✅ |
-| `11.0.19MR2_GB` / `.19_EA` and later | ✅ still possible | ❌ **GBL exploit patched** [RM11 #2763 p139] |
+| `11.0.19MR2_GB` / `.19_EA` and later | ✅ still possible | ⚠️ **GBL exploit patched** [RM11 #2763 p139] — but see [the downgrade bypass](#abl-efisp-downgrade) |
 
-So on current firmware you can generally still unlock — what you lose is the exploit that restores the fingerprint reader and suppresses the boot warning.
+So on current firmware you can generally still unlock — what you lose is the exploit that restores the fingerprint reader and suppresses the boot warning. Since August 2026 that loss is **reversible on the RM11 family**, and the matrix above is no longer a wall.
+
+## Putting the exploit back: the abl + efisp downgrade {#abl-efisp-downgrade}
+
+The patch ZTE shipped lives in two partitions, not in the firmware as a whole. Flash the **pre-patch** versions of those partitions back onto an otherwise-current device and the exploit works again — the rest of the ROM neither notices nor cares. Elivizon299, who found it [RM11 #3,055 p153]:
+
+> *"Fix 18 will now work on any firmware and any region. I found a vulnerability before the device booted."*
+
+The procedure on the RM11 Pro:
+
+1. Enter [EDL](/rm10pro/edl-9008).
+2. With **Option 12** (flash arbitrary partition), write a pre-patch `abl.img` to **both** `abl_a` and `abl_b`, and a pre-patch `efisp.img` to `efisp`. Known-good sources: RM11 `11.0.16MR3_GB`, Nubia Z80 MyOS `16.0.16`.
+3. **Without unplugging the cable or rebooting**, close the toolbox and open it again.
+4. Run **Option 18**.
+
+Confirmed by others on RM11 `11.0.20_GB` [RM11 #3,069 p154 Dimachi], `11.5.6MR1` [RM11 #3,131 p157], 11S Pro `11.5.5` [RM11 #3,190 p160], and Nubia Z80 Ultra on MyOS `16.0.28` [RM11 #3,059 p153 seedkls] — the last with no prior unlock and **no data loss**. A full Z80 Ultra write-up followed [RM11 #3,171 p159].
+
+Two corollaries worth knowing:
+
+- **Option 18 becomes optional.** All Option 18 does is flash a modified `efisp` from another folder inside the toolbox — if you flashed a patched `efisp` yourself in step 2, you're already done [RM11 #3,177 p159 borygo77].
+- **Flashing `abl` without `efisp` half-bricks you**: the device stops at `fs_mgr_mount_all` with "Try again / Factory data reset". It is not a brick — Factory data reset boots it, at the cost of your data [RM11 #3,102–#3,107 p156].
+
+:::danger This has not been demonstrated on the RM10 Pro
+Every confirmation above is an RM11-family or Nubia Z80 device, and the method is built around an **`efisp` partition that the NX789J does not have** — a partition dump from a shipping RM10 Pro lists `ztecfg`, `uefi_a/b`, `uefivarstore` and `xbl_config_a/b`, but no `efisp` at all (see [Partitions & AVB](/rm10pro/partitions-avb#no-efisp)). Whatever the equivalent is on the SM8750 platform, nobody has published it. Do not copy the RM11 steps onto an RM10 and hope.
+:::
 
 :::tip Red Magic 10S Pro
 The 10S Pro was an open question for months. On Jul 30 2026 **-CNote-** reported the full result on `RedMagicOS11.0.5MR_GB` — bootloader unlocked, rooted, **fingerprint fully functional** [RM11 #2987 p150] — and had earlier uploaded a complete 10S Pro (256/12) partition backup to [MEGA](https://mega.nz/folder/IgknWKDZ) for others to restore from [RM11 #2966 p149]. The exact option sequence was never written up, and dev-reverse's guess that the 10S lives under **Option 31** is explicitly hedged [RM11 #2779 p139]. Treat this as "confirmed possible, procedure undocumented".

@@ -2,7 +2,6 @@
 
 _Extracted from 36 pages_
 
-
 ---
 
 ### #1 — **Ssmiles** · Jan 1, 2025 at 3:10 PM · page 1
@@ -22741,3 +22740,126 @@ Something else to try?
 ### #706 — **chrismsor93** · Aug 5, 2026 at 12:56 PM · page 36
 
 I got my bootloader unlock, if i did a software update is it gonna going to relock itself? Or is it safe?
+
+---
+
+### #707 — **Jole7** · Aug 19, 2026 at 4:02 PM · page 36
+
+> **chrismsor93 said:**
+> I got my bootloader unlock, if i did a software update is it gonna going to relock itself? Or is it safe?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+it is safe you can proceed and update.
+
+---
+
+### #708 — **HammadYasin** · Aug 21, 2026 at 4:39 PM · page 36
+
+Lock Bootloader Temporary Root For REDMAGIC 10(S) PRO / Tablet 3 Pro / 11 PRO / Tablet 5 Pro /11 Air
+
+**Orginal Post Link :**
+
+[**
+		https://www.reddit.com/r/RedMagic/comments/1vsifg1](https://www.reddit.com/r/RedMagic/comments/1vsifg1)
+
+This guide is copied from my discord server so I apologize for any formatting issues that could happen from pasting it into reddit. AI was used to reformat and restructure the text to make it easier to read, I've manually checked that the information was still accurate.
+
+It's also meant for people that knows what root is and can understand the limitations of this type of root, **installing the wrong thing can brick your phone**, be warned!
+
+> ![⚠️](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/26a0.png) **Important:** This method provides **temporary root access**. Root access is removed when you perform a normal reboot.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+## Requirements​
+Before starting, download and install:
+
+- [ ] [**GhostLock APK**](https://drive.google.com/drive/folders/1ihuCGhhGaR_i3bMMjmW5M7CVEh-V5xDO?usp=sharing)
+- [ ] [**KernelSU APK**](https://github.com/tiann/KernelSU/releases) or [**ReSukiSu APK**](https://github.com/ReSukiSU/ReSukiSU/releases)
+
+## Step 1 - Run GhostLock​
+
+1. Open the **GhostLock** app.
+2. If your REDMAGIC phone is supported, press **Run**.
+3. GhostLock will start the root process.
+4. **Wait for the process to finish.** Do not restart or interfere with the phone while it is running.
+5. Once the process finishes successfully, **KernelSU should open automatically**.
+
+### If your phone reboots​
+Don't worry! This means the root attempt failed.
+
+Simply wait for the phone to boot back up and **try the process again**. It can sometimes take several attempts, and this is normal.
+
+## Step 2 - Verify Root​
+Once you are in **KernelSU**, you should already have root access.
+
+You can now use root apps and install KernelSU modules.
+
+![⚠️](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/26a0.png) Do not press on install in KernelSu, it will patch your boot partition and make the phone unbootable with the bootloader locked
+
+### Important: Use a Soft Restart​
+This method keeps root access only until the phone performs a **normal reboot**.
+
+Because of this:
+
+- **Installing a module → perform a Soft Restart** to apply it.
+- **Normal restart → root access is lost.**
+- After a normal restart, you must run GhostLock again to regain root.
+- Modules you installed will remain installed, but they **will not be active until root is obtained again**.
+
+## Known Issues​
+
+### The phone may restart during the root process​
+This is expected if the exploit fails. Simply boot the phone back up and try again.
+
+### Network connection may stop working​
+In some cases, obtaining root can cause the network connection to stop working.
+
+From our testing, **running the GhostLock root process again without restarting the phone** can fix the issue.
+
+## VERY IMPORTANT - Do Not Modify Partitions​
+**DO NOT MODIFY OR FLASH ANY PARTITION WHILE USING THIS METHOD.**
+
+This method works while the **bootloader remains locked**. Modifying or flashing partitions can invalidate the device's secure-boot signatures and potentially **brick your phone**.
+
+### Generally safe​
+Most standard **KernelSU modules** should be safe to use as long as they do not modify or replace protected partitions.
+
+### Avoid​
+Do **not** use tools or apps that modify the device's boot/kernel partitions, including:
+
+- **Magisk**
+- **KonaBess**
+- Other tools that modify or flash partitions
+If you are unsure whether a module or app modifies a partition, **don't use it until you have confirmed what it does**.
+
+## Quick Summary​
+**GhostLock → Run → KernelSU → Root**
+
+- ![✅](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/2705.png) Root works until a normal reboot
+- ![✅](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/2705.png) Use **Soft Restart** after installing modules
+- ![🔄](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f504.png) If the phone reboots during GhostLock, try again
+- ![🌐](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f310.png) If network breaks, try GhostLock again without rebooting
+- ![❌](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/274c.png) **Never flash or modify partitions**
+- ![❌](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/274c.png) Avoid Magisk, KonaBess, and similar partition-modifying tools
+
+## Credits & Support​
+Huge thanks to **YuKongA** for creating the GhostLock app! ![❤️](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/2764.png)
+
+### Currently supported REDMAGIC models​
+
+- REDMAGIC 10(S) PRO / Tablet 3 Pro
+- REDMAGIC 11 PRO / Tablet 5 Pro
+- REDMAGIC 11 Air
+If you want to keep using this method please disable the auto system updates, this method will be patched soon.
+
+Additionally if you have the boot.img from your phone you can import it in the app to gain root access if your version isn't currently supported and your kernel is vulnerable
+
+## Repository​
+https://github.com/YuKongA/ghostlock-app

@@ -60,6 +60,20 @@ This works without ever touching the bootloader. Trade-off: every kernel/init_bo
 
 The ZTE Family Toolbox 1.2.3+ offers a "no-BL root via KernelSU" feature for users who want root without unlocking. Internally this is the same EDL/firehose flow as Path C, automated. Use this if you want the bootloader locked for SafetyNet / banking-app reasons. See [ZTE Family Toolbox](/rm10pro/zte-family-toolbox).
 
+## Path E — locked bootloader, no flashing at all (GhostLock)
+
+A userspace kernel exploit (CVE-2026-43499) that grants uid 0 on a completely stock device — no EDL, no Windows, no partition written, verified boot stays green. The catch is that the root is **temporary**: it dies on the next normal reboot. The RM10 Pro's shipping kernel is a supported target.
+
+See [GhostLock — temporary root with the bootloader locked](/rm10pro/ghostlock-temp-root). Use it when you want a rooted shell for reading partitions or running a module occasionally, not as the foundation of a permanent setup.
+
+## Choosing between the paths
+
+| | BL | Survives reboot | Needs Windows/EDL | Attestation |
+|---|---|---|---|---|
+| **A/B** — fastboot flash | unlocked | ✅ | ❌ | breaks (unlocked BL is visible) |
+| **C/D** — EDL-flash patched `init_boot` | locked | ✅ | ✅ | preserved — see [Play Integrity](/rm10pro/play-integrity-attestation) |
+| **E** — GhostLock | locked | ❌ | ❌ | preserved |
+
 ## Slot handling
 
 ```bash
@@ -88,4 +102,5 @@ adb shell su -c "ls -l /dev/block/by-name/" | head
 
 - **OnePlus-style "fastbootd" trap**: bobbyp1086 [#33 p2] notes that on some devices `fastboot flash` doesn't actually flash from regular bootloader fastboot — you need `fastbootd` (userspace fastboot, reached via `adb reboot fastboot` from a rooted/booted state). Reminon [#257 p13] confirms: with stock recovery present, RM10 Pro bootloader-fastboot won't switch slots or flash some partitions — you have to use fastbootd via stock recovery. Custom recovery removes this restriction.
 - **AVB on `boot` (not init_boot)**: modifying `boot_b` triggers AVB and forces a factory reset; modifying `init_boot_b` does not [#315 p16 Reminon]. So patch init_boot, never boot, for root.
-- **Disabling vbmeta via fastboot is a trap**: `fastboot flash --disable-verity --disable-verification vbmeta` triggers a bootloader-mode loop, requires EDL restore [#315 p16 Reminon]. Patch vbmeta flags offline (offset 0x0C → 0x02) and flash the patched img, don't use the fastboot flags.
+- **Disabling vbmeta via fastboot is a trap**: `fastboot flash --disable-verity --disable-verification vbmeta` triggers a bootloader-mode loop, requires EDL restore [#315 p16 Reminon]. Patch the vbmeta flags offline and flash the patched img, don't use the fastboot flags — the field is at **offset 0x78, big-endian**, see [Partitions & AVB](/rm10pro/partitions-avb#vbmeta-header-flag-byte).
+- **You may not need to touch vbmeta at all.** A shipping NX789J running a KernelSU-patched `init_boot` on the active slot boots `verifiedbootstate=green` with a **stock, unpatched** vbmeta and a locked bootloader — consistent with `init_boot` not being covered by the enforced chain on this device. Try the `init_boot` patch alone before disabling verification.

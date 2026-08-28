@@ -2,7 +2,7 @@
 
 The [Red Magic 11 Pro free-unlock guide](https://xdaforums.com/t/red-magic-11-pro-guide-bootloader-unlock-free-also-support-rm10-pad3pro-z70u-z80u-unlock-zte-family-toolbox.4780930/) is the canonical home of the **ZTE Family Toolbox**. The toolbox was originally RM11-only and incrementally grew RM10/Pro+, Pad 3 Pro, Z70U, Z80U support. Some details there are only stated in this thread.
 
-Raw extract (3,038 posts, 152 pages) is in the repo at [`data/rm11pro-unlock.md`](https://github.com/mKonic/redmagic-wiki/blob/main/data/rm11pro-unlock.md) — useful for verifying citations.
+Raw extract (3,192 posts, 160 pages) is in the repo at [`data/rm11pro-unlock.md`](https://github.com/mKonic/redmagic-wiki/blob/main/data/rm11pro-unlock.md) — useful for verifying citations.
 
 ## Tool author identity
 
@@ -39,9 +39,14 @@ The clearest statement of where the exploit stands, from dev-reverse [RM11 #2788
 | `11.0.18MR1_GB` | ✅ | ✅ last fully-working Global build |
 | `11.0.18(MR1)_EA` | ✅ | ✅ |
 | `11.0.23_CN` | ✅ | ✅ |
-| `11.0.19MR2_GB` / `.19_EA`+ | ✅ | ❌ **GBL exploit patched** [RM11 #2763 p139] |
+| `11.0.19MR2_GB` / `.19_EA`+ | ✅ | ⚠️ **GBL exploit patched** [RM11 #2763 p139] — restored by the swap below |
+| `11.0.20_GB`, `11.5.5`, `11.5.6MR1` | ✅ | ✅ **after flashing pre-patch `abl` + `efisp`** [RM11 #3,055 p153, #3,069 p154, #3,190 p160] |
 
 Two adjacent data points: the **11S Pro** unlocks and roots on `11.5.5_GB` with 1.2.8-beta2, fingerprint included [RM11 #3031 p152]; and on the **Z80 Ultra**, `.16` works fully, `.20` breaks the efisp fix, `.27` blocks unlock and root but leaves firehose alive — *and does not blow the efuse* [RM11 #2476 p124 5t0l3n].
+
+Since August 2026 the bottom rows are no longer a dead end: flashing a **pre-patch `abl` + `efisp`** from `11.0.16MR3_GB` (RM11) or MyOS `16.0.16` (Z80) restores the exploit on any firmware and region, after which Option 18 behaves as it did on `.18 MR1` [RM11 #3,055 p153 Elivizon299]. The full procedure and its caveats — including why it **cannot** be copied onto an RM10 Pro — are on the RM10 page: [the abl + efisp downgrade](/rm10pro/bootloader-unlock-status#abl-efisp-downgrade).
+
+**RM11 Pro can run 11S Pro firmware.** borygo77's `11Pro_11.5.6MR1GB.7z` EDL package bundles a KernelSU-3.3.0 `init_boot`, a vulnerable `abl` and a patched `eFisp`, flashes over anything lower including `11.0.12`, and needs no data wipe [RM11 #3,078 p154, #3,083 p155]; several users confirmed it in-thread [RM11 #3,099 p155 kcodya, #3,131 p157 christopherrrg]. RAM is unaffected by the firmware swap, storage geometry is not — see [storage reported as 512 GB](/rm10pro/known-issues#storage-halved). The 11S clock bump does **not** carry over to an NX809J [RM11 #3,119 p156].
 
 For the RM10 Pro there is **no equivalent matrix** — see [RM10 KB → Which firmware can still be unlocked?](/rm10pro/bootloader-unlock-status#firmware-compatibility).
 

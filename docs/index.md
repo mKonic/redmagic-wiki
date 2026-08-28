@@ -55,12 +55,12 @@ Everything documented here is **at your own risk**. Bootloader unlocking, rootin
 
 ## How this wiki was assembled
 
-This wiki was bootstrapped in May 2026 by **scraping two XDA forum threads** with a Claude Code agent — extracting per-post markdown, then synthesizing the high-signal content into topical pages. Last re-scraped **June 2026**: 153 pages, 3,040 posts.
+This wiki was bootstrapped in May 2026 by **scraping two XDA forum threads** with a Claude Code agent — extracting per-post markdown, then synthesizing the high-signal content into topical pages. Last re-scraped **August 2026**: 196 pages, 3,900 posts.
 
 **Source threads:**
 
-- [Red Magic 10 Pro general thread](https://xdaforums.com/t/redmagic-10-pro.4711211/) (34 pages, 678 posts)
-- [Red Magic 11 Pro — Bootloader Unlock (FREE) — ZTE Family Toolbox guide](https://xdaforums.com/t/red-magic-11-pro-guide-bootloader-unlock-free-also-support-rm10-pad3pro-z70u-z80u-unlock-zte-family-toolbox.4780930/) (119 pages, 2,362 posts)
+- [Red Magic 10 Pro general thread](https://xdaforums.com/t/redmagic-10-pro.4711211/) (36 pages, 708 posts)
+- [Red Magic 11 Pro — Bootloader Unlock (FREE) — ZTE Family Toolbox guide](https://xdaforums.com/t/red-magic-11-pro-guide-bootloader-unlock-free-also-support-rm10-pad3pro-z70u-z80u-unlock-zte-family-toolbox.4780930/) (160 pages, 3,192 posts)
 
 The raw extracts live in [`data/`](https://github.com/mKonic/redmagic-wiki/tree/main/data) inside this repo. Every fact in the wiki is cited back to the post it came from in the form `[#N pP]` (post number, page number) so you can verify any claim in the originals.
 
@@ -91,6 +91,10 @@ This wiki is a synthesis, not original research. **Every breakthrough documented
 | `efisp` "mode" bootloader-state work; `edl-ng` EDL tool | **SnowFuhrer** |
 | `gbl_root_canoe` no-BL-root reference codebase | **superturtlee** |
 | WIP native-Linux (`bkerler/edl`) NX789J unlock writeup | **Grimish2280** |
+| `abl` + `efisp` downgrade — restoring the exploit on patched firmware | **Elivizon299**, with testing by **Dimachi**, **borygo77**, **seedkls** |
+| GhostLock — locked-bootloader temporary root (CVE-2026-43499) | **YuKongA**; brought to XDA by **HammadYasin** |
+| RKP key re-provisioning instead of fake keyboxes | **Dimachi**, **Bobo9996**, **christopherrrg** |
+| EDL packages and update-without-wipe testing for the RM11 family | **borygo77**, **EliteBlackKaiser** |
 
 Every author named above retains credit for their original posts. If you contributed and aren't listed, or if you'd rather not be named, **open an issue or PR** — see [Contributing](/contributing).
 

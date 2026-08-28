@@ -114,26 +114,28 @@ INIT_BOOT_B = {
 
 ## Phase 3 — patch vbmeta
 
+:::warning Offset correction
+This procedure has circulated with the flags field at offset `0x0C`, little-endian. That is not where AVB keeps it. `AvbVBMetaImageHeader` is **big-endian** and the 4-byte `flags` field sits at **0x78**; `0x0C` lands inside `authentication_data_block_size`, and writing there yields a vbmeta the bootloader rejects. Verified by diffing two real NX789J vbmeta images that differ only in their flags — the single differing header byte is `0x7b`, while `0x0C` is byte-identical in both. Full working shown in [Partitions & AVB](/rm10pro/partitions-avb#vbmeta-header-flag-byte).
+:::
+
 ```python
-def patch_vbmeta_flags(input_file, output_file):
-    """Set AVB flags to 0x02 (verification disabled)."""
+def patch_vbmeta_flags(input_file, output_file, flags=0x03):
+    """Set AVB flags (0x01 hashtree-disabled | 0x02 verification-disabled)."""
     with open(input_file, 'rb') as f:
         data = bytearray(f.read())
-    # Flags at offset 0x0C, 4-byte LE: 00 00 00 00 → 02 00 00 00
-    data[12:16] = b'\x02\x00\x00\x00'
+    assert data[:4] == b'AVB0', "not an AVB image"
+    assert data[0x80:0x87] == b'avbtool', "unexpected header layout"
+    data[0x78:0x7C] = flags.to_bytes(4, 'big')   # big-endian, offset 0x78
     with open(output_file, 'wb') as f:
         f.write(data)
 
 patch_vbmeta_flags("vbmeta_b_stock.img", "vbmeta_b_patched.img")
 ```
 
-Verify:
+Verify — and trust `avbtool` over any hexdump, since it parses the header properly:
 ```bash
 avbtool info_image --image vbmeta_b_patched.img | grep Flags
-# Flags: 2
-
-hexdump -C -n 64 vbmeta_b_patched.img | head
-# At offset 0x0C: 02 00 00 00
+# Flags: 3
 ```
 
 ## Phase 4 — Magisk-patch init_boot

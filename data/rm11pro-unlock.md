@@ -1,7 +1,6 @@
 # rm11pro-unlock
 
-_Extracted from 152 pages_
-
+_Extracted from 160 pages_
 
 ---
 
@@ -19880,24 +19879,6 @@ Just don't reboot without installing to inactive slot or you'll have to use edl 
 
 ---
 
-### #1,000 — **dev-reverse** · Apr 4, 2026 at 11:58 PM · page 50
-
-> **EliteBlackKaiser said:**
-> REDMAGICOS11.0.18_GB EDL is LIVE!!!
->
->
->
-> [Google Drive](https://drive.google.com/drive/folders/1Ok_pexgxD8FlTv2M4uXeDwXHDJkZDJfw?usp=sharing)
->
->
-> Click to expand...
->
-> Click to collapse
-
-Thank you so much! Finally, version .18 has arrived! Now it will be possible to unlock the bootloader. I'll wait for a tutorial on how to do this safely. It's my first Redmagic and I don't want to lose it on the first unlock. I don't know who will provide the tutorial, if there have been any changes, or if someone will record a video showing how to unlock it, but anyway, thank you. I saw that I need to back up the device images before proceeding with any action, but I'm waiting.m    All that's left is to release a patch now to crack and unlock the bootloader. I'm eager to see it coming.
-
----
-
 ### #981 — **Juggalo23451** · Apr 4, 2026 at 2:06 PM · page 50
 
 > **borygo77 said:**
@@ -20215,6 +20196,24 @@ Redmagic 11 Pro -512gb ( doesn't work and boots back to stock os, kernel version
 > Click to collapse
 
 Haven't tried to compile it, but ZTE has the NX809J Kernel source on their [open source site.](http://opensource.ztedevices.com) It's currently down, but it's been there for a good while now.
+
+---
+
+### #1,000 — **dev-reverse** · Apr 4, 2026 at 11:58 PM · page 50
+
+> **EliteBlackKaiser said:**
+> REDMAGICOS11.0.18_GB EDL is LIVE!!!
+>
+>
+>
+> [Google Drive](https://drive.google.com/drive/folders/1Ok_pexgxD8FlTv2M4uXeDwXHDJkZDJfw?usp=sharing)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Thank you so much! Finally, version .18 has arrived! Now it will be possible to unlock the bootloader. I'll wait for a tutorial on how to do this safely. It's my first Redmagic and I don't want to lose it on the first unlock. I don't know who will provide the tutorial, if there have been any changes, or if someone will record a video showing how to unlock it, but anyway, thank you. I saw that I need to back up the device images before proceeding with any action, but I'm waiting.m    All that's left is to release a patch now to crack and unlock the bootloader. I'm eager to see it coming.
 
 ---
 
@@ -50960,20 +50959,6 @@ Ah ok I see thanks for the information [@borygo77](https://xdaforums.com/m/80932
 
 ---
 
-### #2,362 — **vnm0008** · Jun 2, 2026 at 9:59 PM · page 119
-
-> **borygo77 said:**
-> Not gonna work. He needs to flash edl from someone...
->
->
-> Click to expand...
->
-> Click to collapse
-
-Bro i have edl firmware... But how to flash... In qfil its sahara error and when im going to load firehorse its not detecting why idk... Anyone here can help me to flash in edl mode
-
----
-
 ### #2,361 — **dev-reverse** · Jun 3, 2026 at 1:11 PM · page 119
 
 > **Twiash said:**
@@ -50985,6 +50970,20 @@ Bro i have edl firmware... But how to flash... In qfil its sahara error and when
 > Click to collapse
 
 If he's using Abl userdebug and selects option 18, it will cause a crash dumper on the screen; Abl userdebug doesn't accept the correction made by gbl.
+
+---
+
+### #2,362 — **vnm0008** · Jun 2, 2026 at 9:59 PM · page 119
+
+> **borygo77 said:**
+> Not gonna work. He needs to flash edl from someone...
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Bro i have edl firmware... But how to flash... In qfil its sahara error and when im going to load firehorse its not detecting why idk... Anyone here can help me to flash in edl mode
 
 ---
 
@@ -64820,3 +64819,3698 @@ So sadly my information isn't entirely complete but should any other 11s pro use
 I also got those 3 modules which did fix the google api integrity, the only thing you've done that I haven't yet is option 18 in the tool to fix fingerprint/yellow warning on boot.
 
 also messing with custom launchers & roms. if we can replace the software with our own and keep the hardware this phone is mint
+
+---
+
+### #3,037 — **pipes80** · Aug 10, 2026 at 3:36 PM · page 152
+
+> **Dimachi said:**
+> Safely restore your TEE without losing your unique keys
+>
+>
+>
+> So, let's download the three apps.
+>
+>
+>
+>
+> <details><summary>Spoiler: download the three apps.</summary>
+>
+>
+> <details><summary>Spoiler</summary>
+>
+>
+> </details>
+>
+> </details>
+>
+>
+> In the first, second, and third applications, we look, if so, then we rejoice and pass by
+>
+>
+> <details><summary>Spoiler: then we rejoice and pass by</summary>
+>
+>
+> <details><summary>Spoiler</summary>
+>
+>
+> </details>
+>
+> </details>
+>
+>
+> And if this happens in the first, second, or third app, then don't worry, it's all fixable.
+>
+>
+> <details><summary>Spoiler: don't worry, it's all fixable.</summary>
+>
+>
+> <details><summary>Spoiler: third app</summary>
+>
+>
+> <details><summary>Spoiler</summary>
+>
+>
+> </details>
+>
+> </details>
+>
+> </details>
+>
+>
+> I'm writing this while the trail is still fresh, I just restored everything.
+>
+>
+>
+>
+>
+> So, where do we begin?
+>
+> 1. Connect your phone to your computer in developer mode and enable USB debugging.
+>
+> 2. Launch the command prompt. It will look like this:
+>
+> Microsoft Windows [Version 10.0.26100.8246]
+>
+> (c) Microsoft Corporation. All rights reserved.
+>
+>
+>
+> C:\Users\xxxxxi>
+>
+> 3. Type: cd C:\platform-tools
+>
+> C:\platform-tools is the path to the adb folder.
+>
+> It should look like this:
+>
+> C:\Users\xxxxxi>cd C:\platform-tools
+>
+> Press Enter and you'll get:
+>
+> Microsoft Windows [Version 10.0.26100.8246]
+>
+> (c) Microsoft Corporation. All rights reserved.
+>
+>
+>
+> C:\Users\xxxxxi>cd C:\platform-tools
+>
+>
+>
+> C:\platform-tools>
+>
+>
+>
+> 4. Now run the command
+>
+> adb shell cmd remote_provisioning certify default
+>
+> With this command, we're trying to determine whether our TEE is alive or not, meaning it should give us keys
+>
+> but it didn't give me any
+>
+>
+>
+>
+> <details><summary>Spoiler: but he gave it to me</summary>
+>
+>
+> <details><summary>Spoiler</summary>
+>
+>
+> </details>
+>
+> </details>
+>
+>
+>
+>
+> 5. If you have the same or similar problem, then do the following.
+>
+> Get root if you don't have it and your TEE has crashed.
+>
+> Grant root rights to the shell.
+>
+> Since our firmware includes KmInstallKeybox, simply run this command.
+>
+> This command creates an empty file without keys, so we won't flash new keys.
+>
+> This way, we won't lose our unique keys.
+>
+> C:\platform-tools>adb shell su -c "touch /data/local/tmp/empty.xml"
+>
+> 6. After creating the empty file, run the second command.
+>
+> C:\platform-tools>adb shell su -c "LD_LIBRARY_PATH=/vendor/lib64/hw /vendor/bin/KmInstallKeybox /data/local/tmp/empty.xml 0 true true"
+>
+> What it does
+>
+> Argument parsing:
+>
+> /data/local/tmp/empty.xml — path to an empty file (it's not used because RKP=true).
+>
+> 0 — Device ID (you can leave it at 0; the system will automatically determine the correct one).
+>
+> true — scan the Device ID.
+>
+> true — enable RKP mode.
+>
+> This is how we get this:
+>
+> The utility will only scan the Device ID, without touching the keybox.
+>
+> will launch RKP to generate new keys, preserving the originals.
+>
+> RKP (Remote Key Provisioning.)
+>
+> 7. After executing the command, a response will appear.
+>
+>
+> <details><summary>Spoiler: After executing the command, a response will appear.</summary>
+>
+>
+> <details><summary>Spoiler</summary>
+>
+>
+> </details>
+>
+> </details>
+> 8. Reboot the device
+>
+> C:\platform-tools>adb reboot
+>
+>
+>
+> 9. After the device reboots
+>
+> Unlock it and click Allow
+>
+>
+> <details><summary>Spoiler: Unlock it and click Allow</summary>
+>
+>
+> <details><summary>Spoiler</summary>
+>
+>
+> </details>
+>
+> </details>
+> 10. Run the command
+>
+> C:\platform-tools>adb shell cmd remote_provisioning certify default
+>
+> And it will display this
+>
+>
+> <details><summary>Spoiler: it gave out the keys</summary>
+>
+>
+> <details><summary>Spoiler</summary>
+>
+>
+> </details>
+>
+> </details>
+> 11. Run the command
+>
+> C:\platform-tools>adb shell cmd remote_provisioning list
+>
+> default
+>
+> avf
+>
+>
+>
+> You'll see "default" and "avf".
+>
+>
+>
+> 12. Run the command
+>
+> C:\platform-tools>adb shell cmd remote_provisioning csr default
+>
+> xxxxxxx
+>
+> generates a base64 CSR string; I replaced it with xxxxxxx
+>
+>
+>
+> 13. Run the command to clear the Google Play Services cache
+>
+> C:\platform-tools>adb shell pm clear com.google.android.gms
+>
+> Success
+>
+>
+>
+> 14. Run the command
+>
+> C:\platform-tools>adb reboot
+>
+>
+>
+> and the result is like this
+>
+>
+> <details><summary>Spoiler: and the result is like this</summary>
+>
+>
+> <details><summary>Spoiler</summary>
+>
+>
+> </details>
+>
+> </details>
+>
+>
+> This confirms that the Remote Key Provisioning mechanism is fully functional and ready to issue new keys when needed.
+>
+>
+>
+> The device should now pass hardware attestation (strong attestation) for Play Integrity-verifying apps.
+>
+> You've restored keys without rewriting the original keybox, using only RKP via KmInstallKeybox with the true flag.
+>
+> What to do next
+>
+> Check attestation functionality
+>
+> Install any Play Integrity-verifying app (such as "Play Integrity API Checker" from Google Play) or Key Attestation. It should show that the device has hardware attestation (HARDWARE_BACKED) and a locked bootloader.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I was trying this method but I'm stuck at the first command because I don't have it SU
+
+---
+
+### #3,038 — **jolly_roger_hook** · Aug 10, 2026 at 3:37 PM · page 152
+
+> **pipes80 said:**
+> I was trying this method but I'm stuck at the first command because I don't have it SU
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+You have to be rooted to get su permissions are you rooted?
+
+---
+
+### #3,039 — **pipes80** · Aug 12, 2026 at 3:03 AM · page 152
+
+> **jolly_roger_hook said:**
+> You have to be rooted to get su permissions are you rooted?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+yes it is rooted and using evox
+
+---
+
+### #3,040 — **jolly_roger_hook** · Aug 12, 2026 at 4:12 AM · page 152
+
+> **pipes80 said:**
+> yes it is rooted and using evox
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+That's your issue you using a rom not redmagic os
+
+---
+
+### #3,041 — **Bobo9996** · Aug 12, 2026 at 1:38 PM · page 153
+
+> **pipes80 said:**
+> yes it is rooted and using evox
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+using ksu? give shell root
+
+---
+
+### #3,042 — **christopherrrg** · Aug 12, 2026 at 2:05 PM · page 153
+
+-removed-
+
+---
+
+### #3,043 — **pipes80** · Aug 12, 2026 at 4:01 PM · page 153
+
+Is it normal for the backup made to damage the Google Play Store certification if it is restored?
+
+---
+
+### #3,044 — **joselito96** · Aug 12, 2026 at 4:32 PM · page 153
+
+Based on your experience so far, which of the following do you recommend for rooting:
+
+- Magisk
+- KernelSU
+- KernelSU NEXT
+- Apatch
+If you could also mention the modules you’ve installed to maintain DRM, banking apps, etc., that would be very helpful
+
+---
+
+### #3,045 — **Dimachi** · Aug 12, 2026 at 5:14 PM · page 153
+
+> **pipes80 said:**
+> Is it normal for the backup made to damage the Google Play Store certification if it is restored?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Yes, I have the same problem when restoring a backup via EDL, the certificate disappears.
+
+---
+
+### #3,046 — **Bobo9996** · Aug 12, 2026 at 5:44 PM · page 153
+
+> **pipes80 said:**
+> Is it normal for the backup made to damage the Google Play Store certification if it is restored?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+exo x will break it in stock rom run
+
+adb shell su -c "touch /data/local/tmp/empty.xml"
+
+adb shell su -c "LD_LIBRARY_PATH=/vendor/lib64/hw /vendor/bin/KmInstallKeybox /data/local/tmp/empty.xml 0 true true"
+
+adb reboot
+
+adb shell pm clear com.google.android.gms
+
+adb reboot
+
+in google play -about click fix should fix Play Store certification and device id
+
+following [#1,565](https://xdaforums.com/t/red-magic-11-pro-guide-bootloader-unlock-free-also-support-rm10-pad3pro-z70u-z80u-unlock-zte-family-toolbox.4780930/post-90574362) guide
+
+---
+
+### #3,047 — **pipes80** · Aug 12, 2026 at 6:02 PM · page 153
+
+> **Bobo9996 said:**
+> exo x will break it in stock rom run
+>
+>
+>
+> adb shell su -c "touch /data/local/tmp/empty.xml"
+>
+>
+>
+> adb shell su -c "LD_LIBRARY_PATH=/vendor/lib64/hw /vendor/bin/KmInstallKeybox /data/local/tmp/empty.xml 0 true true"
+>
+>
+>
+> adb reboot
+>
+>
+>
+> adb shell pm clear com.google.android.gms
+>
+>
+>
+> adb reboot
+>
+>
+>
+> in google play -about click fix should fix Play Store certification and device id
+>
+>
+>
+> following [#1,565](https://xdaforums.com/t/red-magic-11-pro-guide-bootloader-unlock-free-also-support-rm10-pad3pro-z70u-z80u-unlock-zte-family-toolbox.4780930/post-90574362) guide
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+sorry but i'm ot because i talk of stock rom backup, because when i restore my backup my certification device has damage
+
+---
+
+### #3,048 — **pipes80** · Aug 12, 2026 at 6:42 PM · page 153
+
+s...ide unlock program
+
+---
+
+### #3,049 — **Haldi4803** · Aug 12, 2026 at 7:01 PM · page 153
+
+> **joselito96 said:**
+> [KernelSU NEXT](https://github.com/KernelSU-Next/KernelSU-Next/releases/tag/v3.2.0)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+This?
+
+---
+
+### #3,050 — **Bobo9996** · Aug 12, 2026 at 7:07 PM · page 153
+
+> **pipes80 said:**
+> sorry but i'm ot because i talk of stock rom backup, because when i restore my backup my certification device has damage
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+u sure bc u used exo x i only noticed later when i restarted my backup if not the case maybe bc newest tool bug? im stll using 1.2.1 beta3
+
+---
+
+### #3,051 — **pipes80** · Aug 12, 2026 at 11:14 PM · page 153
+
+> **Bobo9996 said:**
+> u sure bc u used exo x i only noticed later when i restarted my backup if not the case maybe bc newest tool bug? im stll using 1.2.1 beta3
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+If I try to lock my device and install my backup, the Playstore certification is invalid.
+
+I had use 1.28 beta 2 translated
+
+---
+
+### #3,052 — **Bobo9996** · Aug 13, 2026 at 12:48 AM · page 153
+
+> **pipes80 said:**
+> If I try to lock my device and install my backup, the Playstore certification is invalid.
+>
+> I had use 1.28 beta 2 translated
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+dont relock mine fine even on evox just run few adb xd also make sure to redo option 18
+
+---
+
+### #3,053 — **pipes80** · Aug 13, 2026 at 7:55 PM · page 153
+
+> **Bobo9996 said:**
+> dont relock mine fine even on evox just run few adb xd also make sure to redo option 18
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I solved it by giving root to the Shell...the problem is why when you block the phone the PlayStore indicates the device is not certified, just for information. However, if I install .18_GB it breaks the slot
+
+---
+
+### #3,054 — **underworld737** · Aug 17, 2026 at 9:22 AM · page 153
+
+Confirmed working on 11.0.20_GB, used 1.2.8-beta2 of the toolbox "english translated one"
+
+---
+
+### #3,055 — **Elivizon299** · Aug 17, 2026 at 1:46 PM · page 153
+
+In one night I got to the bottom of the truth.
+
+This method will work on Z80+,pro, Ultra or RM11+,Air,Pro,S
+
+My English is bad, so I'll try to explain.
+
+Fix 18 will now work on any firmware and any region.
+
+I found a vulnerability before the device booted.
+
+1. Below I have provided files from both phones where the vulnerability still remains.
+
+• Original16 For Z80
+
+• Efisp_abl For RM11
+
+2. It is necessary to put the device into a state EDL
+
+3. Flash with command 12 file abl.img In slot abl_a and abl_b. Sew it efisp.img to the section efisp.
+
+4. Without disconnecting the cable or rebooting the device, close the zte_tool and open it again.
+
+5. Run command 18 to fix bootloader and fingerprint
+
+This way we get a fully working bootloader without the yellow window when loading and a working fingerprint scanner on any firmware version.
+
+The root is installed according to the standard commands 1 and 111.
+
+---
+
+### #3,056 — **joselito96** · Aug 17, 2026 at 1:53 PM · page 153
+
+> **Elivizon299 said:**
+> In one night I got to the bottom of the truth.
+>
+> This method will work on Z80+,pro, Ultra or RM11+,Air,Pro,S
+>
+> My English is bad, so I'll try to explain.
+>
+> Fix 18 will now work on any firmware and any region.
+>
+> I found a vulnerability before the device booted.
+>
+> 1. Below I have provided files from both phones where the vulnerability still remains.
+>
+> Original16 For Z80
+>
+> Efisp_abl For RM11
+>
+> 2. It is necessary to put the device into a state EDL
+>
+> 3. Flash with command 12 file abl.img In slot abl_a and abl_b. Sew it efisp.im to the section efisp.
+>
+> 4. Without disconnecting the cable or rebooting the device, close the zte_tool and open it again.
+>
+> 5. Run command 18 to fix bootloader and fingerprint
+>
+>
+>
+> This way we get a fully working bootloader without the yellow window when loading and a working fingerprint scanner on any firmware version.
+>
+> The root is installed according to the standard commands 1 and 111.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+ any firmware and any region? Which exact firmware version did you carry out the tests on?
+
+---
+
+### #3,057 — **Elivizon299** · Aug 17, 2026 at 2:04 PM · page 153
+
+> **joselito96 said:**
+> any firmware and any region? Which exact firmware version did you carry out the tests on?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I did the tests on device 11Pro. 11.0.16mr3
+
+I was able to flash the firmware from 11SPro 11.5.4mr1 I then tested the functionality of command 18, but there was no result. I updated to the latest version 11.5.6.Mr1
+
+Then I decided to try this trick and everything started working.
+
+We have already conducted tests on another forum WITH And the theory was fully confirmed in practice.
+
+We asked our neighbors Z80 Run a test and everything worked for them.
+
+---
+
+### #3,058 — **alatnet** · Aug 17, 2026 at 3:38 PM · page 153
+
+Ok, have a few questions.
+
+Granted, I have a Red Magic 11 Pro on 11.0.20_GB (July 2026 security update) and dont really expect to be able to root.
+
+1. Is there a simple guide to root.
+
+2. Is there a way to keep data without wiping, or at least do a temp root to do a full backup before wiping to do a full restore (as in COMPLETELY backup ALL data and not the "select" data that google's backup ineffectually does).
+
+3. Is there any information on being able to do this on Linux or is this Windows only?
+
+---
+
+### #3,059 — **seedkls** · Aug 17, 2026 at 4:24 PM · page 153
+
+![239979.jpg](https://xdaforums.com/attachments/239979-jpg.6374400/)
+
+MyOS 16.0.28
+
+Rooted without data loss. Didn't unlocked BL before.
+
+It just flashing vulnerable abl and efisp from old firmware(16.0.16) to updated firmware to make efisp exploit work
+
+---
+
+### #3,060 — **borygo77** · Aug 17, 2026 at 9:34 PM · page 153
+
+> **Elivizon299 said:**
+> I did the tests on device 11Pro. 11.0.16mr3
+>
+> I was able to flash the firmware from 11SPro 11.5.4mr1 I then tested the functionality of command 18, but there was no result. I updated to the latest version 11.5.6.Mr1
+>
+> Then I decided to try this trick and everything started working.
+>
+> We have already conducted tests on another forum WITH And the theory was fully confirmed in practice.
+>
+> We asked our neighbors Z80 Run a test and everything worked for them.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+How did you flashed 11S firmware?
+
+Edl or update somehow? ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+
+---
+
+### #3,061 — **Elivizon299** · Aug 17, 2026 at 9:36 PM · page 154
+
+> **borygo77 said:**
+> How did you flashed 11S firmware?
+>
+> Edl or update somehow? ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Cher EDL With regular firmware 11.5.4Mr1
+
+---
+
+### #3,062 — **borygo77** · Aug 17, 2026 at 9:43 PM · page 154
+
+> **alatnet said:**
+> Ok, have a few questions.
+>
+> Granted, I have a Red Magic 11 Pro on 11.0.20_GB (July 2026 security update) and dont really expect to be able to root.
+>
+>
+>
+> 1. Is there a simple guide to root.
+>
+> 2. Is there a way to keep data without wiping, or at least do a temp root to do a full backup before wiping to do a full restore (as in COMPLETELY backup ALL data and not the "select" data that google's backup ineffectually does).
+>
+> 3. Is there any information on being able to do this on Linux or is this Windows only?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Do what [@Elivizon299](https://xdaforums.com/m/12854467/) wrote above. Connect to windows with toolbox. Flash abl_slot attached to his post you're active now. Close toolbox and reopen and then use option 18 to unlock possibilities it's brings to your device ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png) This shouldn't wipe your data but it can't be guaranteed so it's better to backup most important stuff you have on your phone!
+
+---
+
+### #3,063 — **borygo77** · Aug 17, 2026 at 9:44 PM · page 154
+
+> **Elivizon299 said:**
+> Cher EDL With regular firmware 11.5.4Mr1
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Nice! Can you provide edl source? I would like to try it too ![😊](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f60a.png)
+
+---
+
+### #3,064 — **alatnet** · Aug 17, 2026 at 9:47 PM · page 154
+
+> **borygo77 said:**
+> Do what [@Elivizon299](https://xdaforums.com/m/12854467/) wrote above. Connect to windows with toolbox. Flash abl_slot attached to his post you're active now. Close toolbox and reopen and then use option 18 to unlock possibilities it's brings to your device ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+And what if I dont have a Windows setup?
+
+---
+
+### #3,065 — **borygo77** · Aug 17, 2026 at 9:51 PM · page 154
+
+> **alatnet said:**
+> And what if I dont have a Windows setup?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Search for Linux edl solution. There is one which exists but I can't remember when I've seen it. Can be here in some other topic... Check evoX topic...
+
+Or find some friend with Windows ![😜](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f61c.png)
+
+---
+
+### #3,066 — **alatnet** · Aug 17, 2026 at 9:54 PM · page 154
+
+> **borygo77 said:**
+> Search for Linux edl solution. There is one which exists but I can't remember when I've seen it. Can be here in some other topic... Check evoX topic...
+>
+> Or find some friend with Windows ![😜](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f61c.png)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Something like this?
+
+![github.com](/proxy.php?image=https%3A%2F%2Fopengraph.githubassets.com%2Fc2b18877946adfa9299dfa99792171e4a39cfe3f6dac95e0c293e9b5dadbdf2f%2FColdWindScholar%2Fedl&hash=ef19628d77625a0af9ad70551a45e5e4&return_error=1)
+
+### GitHub - ColdWindScholar/edl: Inofficial Qualcomm Firehose / Sahara / Streaming / Diag Tools :)
+
+Inofficial Qualcomm Firehose / Sahara / Streaming / Diag Tools :) - ColdWindScholar/edl
+
+![github.com](/proxy.php?image=https%3A%2F%2Fgithub.githubassets.com%2Ffavicons%2Ffavicon.svg&hash=39b48b32410d41e23249bf67277031ca&return_error=1)
+
+					github.com
+
+---
+
+### #3,067 — **borygo77** · Aug 17, 2026 at 9:59 PM · page 154
+
+> **alatnet said:**
+> Something like this?
+>
+>
+>
+>
+> ![github.com](/proxy.php?image=https%3A%2F%2Fopengraph.githubassets.com%2Fc2b18877946adfa9299dfa99792171e4a39cfe3f6dac95e0c293e9b5dadbdf2f%2FColdWindScholar%2Fedl&hash=ef19628d77625a0af9ad70551a45e5e4&return_error=1)
+>
+>
+>
+>
+> ### GitHub - ColdWindScholar/edl: Inofficial Qualcomm Firehose / Sahara / Streaming / Diag Tools :)
+>
+> Inofficial Qualcomm Firehose / Sahara / Streaming / Diag Tools :) - ColdWindScholar/edl
+>
+>
+>
+> ![github.com](/proxy.php?image=https%3A%2F%2Fgithub.githubassets.com%2Ffavicons%2Ffavicon.svg&hash=39b48b32410d41e23249bf67277031ca&return_error=1)
+>
+> 					github.com
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Honestly no idea as I've never tried it. Have Linux machine myself but only in work to play around...
+
+---
+
+### #3,068 — **alatnet** · Aug 17, 2026 at 10:05 PM · page 154
+
+> **borygo77 said:**
+> Honestly no idea as I've never tried it. Have Linux machine myself but only in work to play around...
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+apparently AI is saying there's a linux version of ZTE Toolbox, but dont know if that's true or not.
+
+Would this work via winboat and usb forward the 0x9008 usb to it?  Or is there more usb id's that need to be forward?
+
+Also, would this wipe my phone?
+
+---
+
+### #3,069 — **Dimachi** · Aug 18, 2026 at 2:13 PM · page 154
+
+Getting ROOT + saving fingerprints on the latest firmware version 11.0.20_GB is possible and higher
+
+Huge thanks to Elivison299
+
+So, for this you'll need:
+
+1. Backup 11.0.16MR3_GB
+
+2. Go to EDL
+
+3. Launch ZTE_Toolbox_1.2.8-beta2
+
+4. Flash the backup 11.0.16MR3_GB
+
+5. Start updating to the latest version (currently 11.0.20_GB)
+
+6. After updating to version 11.0.20_GB
+
+7. Launch ZTE_Toolbox_1.2.8-beta2 and select option 4. Make a backup of the latest version (currently 11.0.20_GB)
+
+Now, be very careful
+
+8. Take from backup  11.0.16MR3_GB 3 files abl_a, abl_b,  efisp and drop them next to the program ZTE_Toolbox_1.2.8-beta2
+
+<details><summary>Spoiler: files</summary>
+
+<details><summary>Spoiler</summary>
+
+</details>
+
+</details>
+9. Launch ZTE_Toolbox_1.2.8-beta2, turn off the phone, and enter edl.
+
+10. In the program, select 12. Flash a random partition and flash each partition one by one.
+
+abl_a, press Enter, select the path to the file, and then flash;
+
+abl_b, press Enter, select the path to the file, and then flash;
+
+efisp, press Enter, select the path to the file, and then flash.
+
+11. Close the program.
+
+12. Launch ZTE_Toolbox_1.2.8-beta2.
+
+13. In the program, select 18. Bypass bootloader unlock for Snapdragon 8E5 + save fingerprints.
+
+14. Wait for the device to reboot several times and enter recovery. Press Factory data reset, then press Reset, as highlighted in red in the screenshots.
+
+<details><summary>Spoiler: Factory reset data</summary>
+
+<details><summary>Spoiler</summary>
+
+</details>
+
+</details>
+15. Boot the system, configure the device, download the root app from the backup (11.0.20_GB or higher), take init_boot or another partition depending on the root.
+
+Patch it using the root app, copy the patched partition.
+
+16. Launch ZTE_Toolbox_1.2.8-beta2.
+
+17. Depending on the partition, select either step 111 or 12 and flash the patched partition.
+
+18. Turn on the device and rejoice. You should see the output.
+
+<details><summary>Spoiler: result</summary>
+
+<details><summary>Spoiler</summary>
+
+</details>
+
+</details>
+
+---
+
+### #3,070 — **joselito96** · Aug 18, 2026 at 3:22 PM · page 154
+
+> **Dimachi said:**
+> Es posible obtener ROOT y guardar huellas digitales en la última versión de firmware 11.0.20_GB y versiones superiores.
+>
+> Muchísimas gracias a Elivison299.
+>
+> Para ello necesitarás:
+>
+> 1. Copia de seguridad 11.0.16MR3_GB
+>
+> 2. Ir a EDL
+>
+> 3. Ejecutar ZTE_Toolbox_1.2.8-beta2
+>
+> 4. Flashea la copia de seguridad 11.0.16MR3_GB
+>
+> 5. Comience a actualizar a la última versión (actualmente 11.0.20_GB).
+>
+> 6. Después de actualizar a la versión 11.0.20_GB
+>
+> 7. Inicie ZTE_Toolbox_1.2.8-beta2 y seleccione la opción 4. Realice una copia de seguridad de la última versión (actualmente 11.0.20_GB).
+>
+> Ahora, ten mucho cuidado
+>
+> 8. Copie de la copia de seguridad 11.0.16MR3_GB los archivos abl_a, abl_b y efisp y colóquelos junto al programa ZTE_Toolbox_1.2.8-beta2.
+>
+>
+> <details><summary>Spoiler: archivos</summary>
+>
+>
+> <details><summary>Spoiler</summary>
+>
+>
+> </details>
+>
+> </details>
+> 9. Inicie ZTE_Toolbox_1.2.8-beta2, apague el teléfono y acceda a edl.
+>
+> 10. En el programa, seleccione 12. Flashee una partición aleatoria y flashee cada partición una por una.
+>
+> abl_a, presione Enter, seleccione la ruta al archivo y luego flashee;
+>
+> abl_b, presione Enter, seleccione la ruta al archivo y luego flashee;
+>
+> efisp, pulse Intro, seleccione la ruta al archivo y, a continuación, flashee.
+>
+> 11. Cierre el programa.
+>
+> 12. Inicie ZTE_Toolbox_1.2.8-beta2.
+>
+> 13. En el programa, seleccione 18. Desbloqueo del gestor de arranque para Snapdragon 8E5 + guardar huellas dactilares.
+>
+> 14. Espere a que el dispositivo se reinicie varias veces y entre en el modo de recuperación. Pulse Restablecer datos de fábrica y, a continuación, pulse Restablecer, como se muestra en rojo en las capturas de pantalla.
+>
+>
+> <details><summary>Spoiler: Datos de restablecimiento de fábrica</summary>
+>
+>
+> <details><summary>Spoiler</summary>
+>
+>
+> </details>
+>
+> </details>
+> 15. Arranca el sistema, configura el dispositivo, descarga la aplicación root desde la copia de seguridad (11.0.20_GB o superior), toma init_boot u otra partición dependiendo de la raíz.
+>
+> Aplica el parche usando la aplicación de root y copia la partición parcheada.
+>
+> 16. Inicie ZTE_Toolbox_1.2.8-beta2.
+>
+> 17. Dependiendo de la partición, seleccione el paso 111 o el 12 y flashee la partición parcheada.
+>
+> 18. Enciende el dispositivo y alégrate. Deberías ver la salida.
+>
+>
+> <details><summary>Spoiler: resultado</summary>
+>
+>
+> <details><summary>Spoiler</summary>
+>
+>
+> </details>
+>
+> </details>
+>
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+¿Está bloqueado o desbloqueado el gestor de arranque? Sería interesante lograrlo sin tener que realizar un restablecimiento de fábrica.
+
+---
+
+### #3,071 — **Dimachi** · Aug 18, 2026 at 3:36 PM · page 154
+
+> **joselito96 said:**
+> ¿Está bloqueado o desbloqueado el gestor de arranque? Sería interesante lograrlo sin tener que realizar un restablecimiento de fábrica.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+My bootloader is locked
+
+I just used item 18 in ztetollbox
+
+You can try without flashing, just go through the abl_a, abl_b, efisp partitions and then do step 18, but don't forget to make a backup before doing anything.
+
+---
+
+### #3,072 — **Bobo9996** · Aug 18, 2026 at 4:17 PM · page 154
+
+> **Dimachi said:**
+> My bootloader is locked
+>
+>
+>
+> I just used item 18 in ztetollbox
+>
+>
+>
+> You can try without flashing, just go through the abl_a, abl_b, efisp partitions and then do step 18, but don't forget to make a backup before doing anything.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+any improvement to use 11.0.20_GB from .18?
+
+---
+
+### #3,073 — **Dimachi** · Aug 18, 2026 at 5:47 PM · page 154
+
+> **Bobo9996 said:**
+> any improvement to use 11.0.20_GB from .18?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Network reception has improved slightly—that’s probably about it, though there might be other things I haven't noticed yet; I’ve only been using the phone with this firmware for a day.
+
+---
+
+### #3,074 — **Bobo9996** · Aug 18, 2026 at 6:50 PM · page 154
+
+> **Dimachi said:**
+> Network reception has improved slightly—that’s probably about it, though there might be other things I haven't noticed yet; I’ve only been using the phone with this firmware for a day.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+i read in reddit they removed some useful settings in game center .18 still better useless u notice big change
+
+---
+
+### #3,075 — **borygo77** · Aug 18, 2026 at 9:01 PM · page 154
+
+Updated my 11.0.16MR1EA with edl provided by [@Elivizon299](https://xdaforums.com/m/12854467/) for 11Spro without clearing data at the end and I'm running newest rom available after 3 updates applied after ![😁](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f601.png)
+
+Thank you guys for your testing and solution provided! ![😊](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f60a.png)
+
+---
+
+### #3,076 — **williamcll** · Aug 19, 2026 at 12:32 AM · page 154
+
+Which is the best redmagic phone to use for rooting at the moment? I don't feel like getting a pixel.
+
+---
+
+### #3,077 — **borygo77** · Aug 19, 2026 at 12:53 AM · page 154
+
+The newest ![😊](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f60a.png) 11sPro
+
+---
+
+### #3,078 — **borygo77** · Aug 19, 2026 at 1:36 PM · page 154
+
+[Here is the newest rom available for 11 & 11sPro  11.5.6MR1_GB.](https://drive.google.com/file/d/1iCVmkZW9ZQbyb2E9AGYHQg1FeO2Qsh04/view?usp=drivesdk)
+
+The package includes ksu3.3.0 rooted init_boot.img, vulnerable abl.img and also patched eFisp.img called accordingly..
+
+Originally you have clean stock rom but if you swap those three img with patched ones (renaming) and flash it there's no need to do anything else.
+
+It'll be rooted and updated.
+
+Can be flashed over anything lower including 11.0.12 from standard 11 pro....
+
+I went straight from 11.0.16MR1EA to this one without wiping at the end of the process and it saved me hours of my time to set up everything from scratch..
+
+My backup from Swift was 90GB + folders about 30.... Enjoy!
+
+Thank you again [@Elivizon299](https://xdaforums.com/m/12854467/) & [@Dimachi](https://xdaforums.com/m/13377057/) for testing! ![❤️](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/2764.png)![😊](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f60a.png)
+
+---
+
+### #3,079 — **pipes80** · Aug 19, 2026 at 9:45 PM · page 154
+
+> **borygo77 said:**
+> [Here is the newest rom available for 11 & 11sPro  11.5.6MR1_GB.](https://drive.google.com/file/d/1iCVmkZW9ZQbyb2E9AGYHQg1FeO2Qsh04/view?usp=drivesdk)
+>
+>
+>
+> The package includes ksu3.3.0 rooted init_boot.img, vulnerable abl.img and also patched eFisp.img called accordingly..
+>
+>
+>
+> Originally you have clean stock rom but if you swap those three img with patched ones (renaming) and flash it there's no need to do anything else.
+>
+> It'll be rooted and updated.
+>
+> Can be flashed over anything lower including 11.0.12 from standard 11 pro....
+>
+> I went straight from 11.0.16MR1EA to this one without wiping at the end of the process and it saved me hours of my time to set up everything from scratch..
+>
+> My backup from Swift was 90GB + folders about 30.... Enjoy!
+>
+> Thank you again [@Elivizon299](https://xdaforums.com/m/12854467/) & [@Dimachi](https://xdaforums.com/m/13377057/) for testing! ![❤️](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/2764.png)![😊](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f60a.png)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+11.5.6MR1_GB for 11 pro?
+
+---
+
+### #3,080 — **borygo77** · Aug 19, 2026 at 9:51 PM · page 154
+
+Yes
+
+---
+
+### #3,081 — **kcodya** · Aug 19, 2026 at 10:18 PM · page 155
+
+> **Elivizon299 said:**
+> In one night I got to the bottom of the truth.
+>
+> This method will work on Z80+,pro, Ultra or RM11+,Air,Pro,S
+>
+> My English is bad, so I'll try to explain.
+>
+> Fix 18 will now work on any firmware and any region.
+>
+> I found a vulnerability before the device booted.
+>
+> 1. Below I have provided files from both phones where the vulnerability still remains.
+>
+> • Original16 For Z80
+>
+> • Efisp_abl For RM11
+>
+> 2. It is necessary to put the device into a state EDL
+>
+> 3. Flash with command 12 file abl.img In slot abl_a and abl_b. Sew it efisp.img to the section efisp.
+>
+> 4. Without disconnecting the cable or rebooting the device, close the zte_tool and open it again.
+>
+> 5. Run command 18 to fix bootloader and fingerprint
+>
+>
+>
+> This way we get a fully working bootloader without the yellow window when loading and a working fingerprint scanner on any firmware version.
+>
+> The root is installed according to the standard commands 1 and 111.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+So, just to clarify, this wouldn't make the fingerprint work again if it stopped working before, right?
+
+---
+
+### #3,082 — **kcodya** · Aug 19, 2026 at 10:26 PM · page 155
+
+> **borygo77 said:**
+> [Here is the newest rom available for 11 & 11sPro  11.5.6MR1_GB.](https://drive.google.com/file/d/1iCVmkZW9ZQbyb2E9AGYHQg1FeO2Qsh04/view?usp=drivesdk)
+>
+>
+>
+> The package includes ksu3.3.0 rooted init_boot.img, vulnerable abl.img and also patched eFisp.img called accordingly..
+>
+>
+>
+> Originally you have clean stock rom but if you swap those three img with patched ones (renaming) and flash it there's no need to do anything else.
+>
+> It'll be rooted and updated.
+>
+> Can be flashed over anything lower including 11.0.12 from standard 11 pro....
+>
+> I went straight from 11.0.16MR1EA to this one without wiping at the end of the process and it saved me hours of my time to set up everything from scratch..
+>
+> My backup from Swift was 90GB + folders about 30.... Enjoy!
+>
+> Thank you again [@Elivizon299](https://xdaforums.com/m/12854467/) & [@Dimachi](https://xdaforums.com/m/13377057/) for testing! ![❤️](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/2764.png)![😊](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f60a.png)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+How did you flash? (Sorry, I'm very behind on developments)
+
+EDIT: Actually I figured it out. ![:)](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+
+---
+
+### #3,083 — **borygo77** · Aug 19, 2026 at 10:47 PM · page 155
+
+With my old translated toolbox 1.2.4 available here in this thread. There is many more newest releases of this tool available here as well.
+
+My one has reboot to edl as one of the options.
+
+So
+
+1. Made backup of my rooted 11.0.16MR1EA with swift backup. Copied it to external drive together with folders needed later (downloads, documents, music, movies)
+
+2. Logged out of Google account and deleted pin just in case something goes wrong. This automatically deleted fingerprints added.
+
+3. Plugged in to laptop and fired up toolbox with edl provided by [@Elivizon299](https://xdaforums.com/m/12854467/). Flashed all backup with I think option 4.
+
+4. After flashing closed toolbox and reopened to flash vulnerable abl.img and modded eFisp.img
+
+5. At the end it's asking you if you want clear data which is recommended but I picked reboot instead.
+
+Phone booted in to new system.
+
+No more problems with WiFi I had before.
+
+NovaLauncher works better here.
+
+Done two more updates from settings to newest firmware available and created my own edl provided in post above.
+
+This one is clean from device specific partitions so it's safe to flash.
+
+---
+
+### #3,084 — **pipes80** · Aug 19, 2026 at 11:09 PM · page 155
+
+> **borygo77 said:**
+> Yes
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Do you can flash on 11 pro an image for 11s pro?
+
+---
+
+### #3,085 — **borygo77** · Aug 20, 2026 at 2:24 AM · page 155
+
+> **pipes80 said:**
+> Do you can flash on 11 pro an image for 11s pro?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Yes you can!
+
+---
+
+### #3,086 — **badr4** · Aug 20, 2026 at 5:20 AM · page 155
+
+> **EliteBlackKaiser said:**
+> Easy magisk module fix
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+i use it on my oneplus 15t withoutany affect,couldit be adjusted for15t?
+
+---
+
+### #3,087 — **underworld737** · Aug 20, 2026 at 5:45 AM · page 155
+
+hey does anyone know any sources or files for a edl full flash package for the global version of the redmagic 11 pro? i only seem to find versions for the CN model
+
+---
+
+### #3,088 — **borygo77** · Aug 20, 2026 at 9:18 AM · page 155
+
+### 11Pro_11.5.6MR1GB.7z
+
+![drive.google.com](/proxy.php?image=https%3A%2F%2Fssl.gstatic.com%2Fdocs%2Fdoclist%2Fimages%2Fdrive_favicon_2026_32dp.png&hash=cbb4bc26ec5c3449347a5897da90c838&return_error=1)
+
+					drive.google.com
+
+---
+
+### #3,089 — **williamcll** · Aug 20, 2026 at 9:19 AM · page 155
+
+> **borygo77 said:**
+> The newest ![😊](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f60a.png) 11sPro
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Huh, OP says 11S Pro is a tickling time bomb because the ROMS are far harder to boot.
+
+> **borygo77 said:**
+> [Here is the newest rom available for 11 & 11sPro  11.5.6MR1_GB.](https://drive.google.com/file/d/1iCVmkZW9ZQbyb2E9AGYHQg1FeO2Qsh04/view?usp=drivesdk)
+>
+>
+>
+> The package includes ksu3.3.0 rooted init_boot.img, vulnerable abl.img and also patched eFisp.img called accordingly..
+>
+>
+>
+> Originally you have clean stock rom but if you swap those three img with patched ones (renaming) and flash it there's no need to do anything else.
+>
+> It'll be rooted and updated.
+>
+> Can be flashed over anything lower including 11.0.12 from standard 11 pro....
+>
+> I went straight from 11.0.16MR1EA to this one without wiping at the end of the process and it saved me hours of my time to set up everything from scratch..
+>
+> My backup from Swift was 90GB + folders about 30.... Enjoy!
+>
+> Thank you again [@Elivizon299](https://xdaforums.com/m/12854467/) & [@Dimachi](https://xdaforums.com/m/13377057/) for testing! ![❤️](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/2764.png)![😊](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f60a.png)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Suppose I do get the 11S Pro, do I flash these there img in abd and then I get kernelSU?
+
+Also speaking of, does this work with Zygisk Next, Play integrity fork, LSPosed and HideMyApp?
+
+---
+
+### #3,090 — **underworld737** · Aug 20, 2026 at 9:20 AM · page 155
+
+> **borygo77 said:**
+> ### 11Pro_11.5.6MR1GB.7z
+>
+>
+>
+>
+>
+> ![drive.google.com](/proxy.php?image=https%3A%2F%2Fssl.gstatic.com%2Fdocs%2Fdoclist%2Fimages%2Fdrive_favicon_2026_32dp.png&hash=cbb4bc26ec5c3449347a5897da90c838&return_error=1)
+>
+> 					drive.google.com
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Just to make sure, this can also be flashed onto the regular 11 pro? My current situation has landed me a soft brick and can't dig myself a deeper hole ![😅](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f605.png)
+
+---
+
+### #3,091 — **borygo77** · Aug 20, 2026 at 9:39 AM · page 155
+
+That's what I've done over with mine 11Pro 11.0.16EA.
+
+No data wipe needed and phone booted like it was waiting for it ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+
+If you swap (rename) those three img you only need to install Ksunext apk and it will show you rooted LKM... All modules works and no Play Integrity module needed to pass strong...
+
+---
+
+### #3,092 — **borygo77** · Aug 20, 2026 at 9:41 AM · page 155
+
+Here you have elitblackkaiser tools and roms including both ea and gb if you're scared to flash 11sPro rom.
+
+### Remagic11pro - Google Drive
+
+![drive.google.com](/proxy.php?image=https%3A%2F%2Fdrive.google.com%2Fdrive%2Ffolders%2F1Ok_pexgxD8FlTv2M4uXeDwXHDJkZDJfw%2F&hash=368093aa0ceb46986109e3dba716d8ed&return_error=1)
+
+					drive.google.com
+
+---
+
+### #3,093 — **Dimachi** · Aug 20, 2026 at 3:35 PM · page 155
+
+> **borygo77 said:**
+> Here you have elitblackkaiser tools and roms including both ea and gb if you're scared to flash 11sPro rom.
+>
+>
+>
+>
+>
+> ### Remagic11pro - Google Drive
+>
+>
+>
+>
+>
+> ![drive.google.com](/proxy.php?image=https%3A%2F%2Fdrive.google.com%2Fdrive%2Ffolders%2F1Ok_pexgxD8FlTv2M4uXeDwXHDJkZDJfw%2F&hash=368093aa0ceb46986109e3dba716d8ed&return_error=1)
+>
+> 					drive.google.com
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Hi, did you install the firmware from the 11S? Is your bootloader unlocked? Or did you just use step 18?
+
+---
+
+### #3,094 — **kcodya** · Aug 20, 2026 at 5:16 PM · page 155
+
+> **borygo77 said:**
+> With my old translated toolbox 1.2.4 available here in this thread. There is many more newest releases of this tool available here as well.
+>
+>
+>
+> My one has reboot to edl as one of the options.
+>
+>
+>
+> So
+>
+> 1. Made backup of my rooted 11.0.16MR1EA with swift backup. Copied it to external drive together with folders needed later (downloads, documents, music, movies)
+>
+> 2. Logged out of Google account and deleted pin just in case something goes wrong. This automatically deleted fingerprints added.
+>
+> 3. Plugged in to laptop and fired up toolbox with edl provided by [@Elivizon299](https://xdaforums.com/m/12854467/). Flashed all backup with I think option 4.
+>
+> 4. After flashing closed toolbox and reopened to flash vulnerable abl.img and modded eFisp.img
+>
+> 5. At the end it's asking you if you want clear data which is recommended but I picked reboot instead.
+>
+>
+>
+> Phone booted in to new system.
+>
+>
+>
+> No more problems with WiFi I had before.
+>
+> NovaLauncher works better here.
+>
+>
+>
+> Done two more updates from settings to newest firmware available and created my own edl provided in post above.
+>
+> This one is clean from device specific partitions so it's safe to flash.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Thanks, works great!
+
+---
+
+### #3,095 — **Bobo9996** · Aug 20, 2026 at 5:47 PM · page 155
+
+> **borygo77 said:**
+> Yes you can!
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+a bit confused why 11s any new stuff ?
+
+---
+
+### #3,096 — **borygo77** · Aug 20, 2026 at 6:03 PM · page 155
+
+> **Dimachi said:**
+> Hi, did you install the firmware from the 11S? Is your bootloader unlocked? Or did you just use step 18?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Only 18. Bootloader is locked.
+
+---
+
+### #3,097 — **borygo77** · Aug 20, 2026 at 6:07 PM · page 155
+
+> **Bobo9996 said:**
+> a bit confused why 11s any new stuff ?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Didn't found any new stuff. Not that I was looking for ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png) actually there's one which wasn't in 11pro build. I can enable "heat plate" from game centre side panel. This is my red magic cooler 8.
+
+Wifi bug is gone! This was driving me crazy!
+
+Fps is more stable in games. Maybe placebo ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+
+And last thing. Why not if we can?! ![😜](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f61c.png)
+
+---
+
+### #3,098 — **borygo77** · Aug 20, 2026 at 6:11 PM · page 155
+
+> **kcodya said:**
+> Thanks, works great!
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Can you confirm that you flashed this build and it works? Update without wiping? ![😊](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f60a.png)
+
+Have you swapped those three img for vulnerable ones to save couple reboots? ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+
+---
+
+### #3,099 — **kcodya** · Aug 20, 2026 at 6:49 PM · page 155
+
+> **borygo77 said:**
+> Can you confirm that you flashed this build and it works? Update without wiping? ![😊](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f60a.png)
+>
+> Have you swapped those three img for vulnerable ones to save couple reboots? ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Yes to all.
+
+---
+
+### #3,100 — **borygo77** · Aug 20, 2026 at 7:36 PM · page 155
+
+I'm really glad to hear it!
+
+It was theory that swapping img will work but I was right ![:)](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+
+---
+
+### #3,101 — **borygo77** · Aug 21, 2026 at 2:09 AM · page 156
+
+Haven't seen it earlier but the bug with connected WiFi but low quality is still here 🫣 this is mad!
+
+How they can't fix it for so long?!
+
+---
+
+### #3,102 — **invalidcredentials** · Aug 21, 2026 at 3:11 AM · page 156
+
+> **Elivizon299 said:**
+> In one night I got to the bottom of the truth.
+>
+> This method will work on Z80+,pro, Ultra or RM11+,Air,Pro,S
+>
+> My English is bad, so I'll try to explain.
+>
+> Fix 18 will now work on any firmware and any region.
+>
+> I found a vulnerability before the device booted.
+>
+> 1. Below I have provided files from both phones where the vulnerability still remains.
+>
+> • Original16 For Z80
+>
+> • Efisp_abl For RM11
+>
+> 2. It is necessary to put the device into a state EDL
+>
+> 3. Flash with command 12 file abl.img In slot abl_a and abl_b. Sew it efisp.img to the section efisp.
+>
+> 4. Without disconnecting the cable or rebooting the device, close the zte_tool and open it again.
+>
+> 5. Run command 18 to fix bootloader and fingerprint
+>
+>
+>
+> This way we get a fully working bootloader without the yellow window when loading and a working fingerprint scanner on any firmware version.
+>
+> The root is installed according to the standard commands 1 and 111.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I just bricked my phone doing this. Trying to fix it now. It no longer boots to android. After the redmagic screen, it shows 2 buttons "Try again" and "Factory data reset", along with "Reason: fs_mgr_mount_all" ![:(](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+
+Also, for some reason, even though Device Manager shows "Qualcomm HS-USB QDLoader 9008 (COM5), the toolbox (1.2.8-beta2) does not work at all. For any command that requires 9008, it just says 发送引导失败. 请将设备重新进入9008. (which I translated to "Boot delivery failed. Please re-enter 9008 mode."). If anybody has any advice, suggestions, tips, or anything else, please share. I'm about to cry. This is my only phone, and yes, I know this is entirely my fault ![😭](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f62d.png)
+
+---
+
+### #3,103 — **borygo77** · Aug 21, 2026 at 4:16 AM · page 156
+
+Have you flashed abl.img?
+
+Without disconnecting the phone you should flash eFisp.img or use option 18 in toolbox.
+
+Without it you will get fs_mgr fault...
+
+Try different toolbox. It doesn't need to be 1.2.8...
+
+---
+
+### #3,104 — **christopherrrg** · Aug 21, 2026 at 5:15 AM · page 156
+
+> **invalidcredentials said:**
+> I just bricked my phone doing this. Trying to fix it now. It no longer boots to android. After the redmagic screen, it shows 2 buttons "Try again" and "Factory data reset", along with "Reason: fs_mgr_mount_all" ![:(](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+>
+>
+>
+> Also, for some reason, even though Device Manager shows "Qualcomm HS-USB QDLoader 9008 (COM5), the toolbox (1.2.8-beta2) does not work at all. For any command that requires 9008, it just says 发送引导失败. 请将设备重新进入9008. (which I translated to "Boot delivery failed. Please re-enter 9008 mode."). If anybody has any advice, suggestions, tips, or anything else, please share. I'm about to cry. This is my only phone, and yes, I know this is entirely my fault ![😭](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f62d.png)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+You didn't brick anything, click factory reset....
+
+---
+
+### #3,105 — **christopherrrg** · Aug 21, 2026 at 5:23 AM · page 156
+
+> **borygo77 said:**
+> ### 11Pro_11.5.6MR1GB.7z
+>
+>
+>
+>
+>
+> ![drive.google.com](/proxy.php?image=https%3A%2F%2Fssl.gstatic.com%2Fdocs%2Fdoclist%2Fimages%2Fdrive_favicon_2026_32dp.png&hash=cbb4bc26ec5c3449347a5897da90c838&return_error=1)
+>
+> 					drive.google.com
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+You provided what red magic on discord would not so thank you.
+
+---
+
+### #3,106 — **christopherrrg** · Aug 21, 2026 at 5:29 AM · page 156
+
+> **borygo77 said:**
+> [Here is the newest rom available for 11 & 11sPro  11.5.6MR1_GB.](https://drive.google.com/file/d/1iCVmkZW9ZQbyb2E9AGYHQg1FeO2Qsh04/view?usp=drivesdk)
+>
+>
+>
+> The package includes ksu3.3.0 rooted init_boot.img, vulnerable abl.img and also patched eFisp.img called accordingly..
+>
+>
+>
+> Originally you have clean stock rom but if you swap those three img with patched ones (renaming) and flash it there's no need to do anything else.
+>
+> It'll be rooted and updated.
+>
+> Can be flashed over anything lower including 11.0.12 from standard 11 pro....
+>
+> I went straight from 11.0.16MR1EA to this one without wiping at the end of the process and it saved me hours of my time to set up everything from scratch..
+>
+> My backup from Swift was 90GB + folders about 30.... Enjoy!
+>
+> Thank you again [@Elivizon299](https://xdaforums.com/m/12854467/) & [@Dimachi](https://xdaforums.com/m/13377057/) for testing! ![❤️](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/2764.png)![😊](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f60a.png)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Is this twrp flashable? or should I still be swapping the partitions?
+
+11.5.5MR1 trying to upgrade without having to go backwards and fix fingerprint lol
+
+---
+
+### #3,107 — **invalidcredentials** · Aug 21, 2026 at 6:15 AM · page 156
+
+> **christopherrrg said:**
+> You didn't brick anything, click factory reset....
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+You're right! I lost all my data, but it's fully reset, and to my surprise, with a working fingerprint sensor, and full Google Integrity! Now I have to decide whether it was worth the hassle of losing so much functionality to have fully black backgrounds. I do hate that stupid dark grey Google uses...
+
+> **borygo77 said:**
+> Have you flashed abl.img?
+>
+> Without disconnecting the phone you should flash eFisp.img or use option 18 in toolbox.
+>
+> Without it you will get fs_mgr fault...
+>
+> Try different toolbox. It doesn't need to be 1.2.8...
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I tried the one in the linked post, but that didn't work. I'm wondering if I can somehow root my phone while keeping full Integrity check to use my Wallet, and fingerprint sensor. I haven't kept up with this thread
+
+---
+
+### #3,108 — **christopherrrg** · Aug 21, 2026 at 6:19 AM · page 156
+
+> **invalidcredentials said:**
+> You're right! I lost all my data, but it's fully reset, and to my surprise, with a working fingerprint sensor, and full Google Integrity! Now I have to decide whether it was worth the hassle of losing so much functionality to have fully black backgrounds. I do hate that stupid dark grey Google uses...
+>
+>
+>
+>
+>
+> I tried the one in the linked post, but that didn't work. I'm wondering if I can somehow root my phone while keeping full Integrity check to use my Wallet, and fingerprint sensor. I haven't kept up with this thread
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Make sure you switch over to kernelsu with susfs, it's the best way to hide everything and I've been running my phone fully unlocked minus fingerprint fix. (I'm lazy and rooted before we all figured out how to fix)
+
+Edit - am also a sucker for my black and red OLED theme from colorblendr lol
+
+---
+
+### #3,109 — **invalidcredentials** · Aug 21, 2026 at 6:48 AM · page 156
+
+> **christopherrrg said:**
+> Make sure you switch over to kernelsu with susfs, it's the best way to hide everything and I've been running my phone fully unlocked minus fingerprint fix. (I'm lazy and rooted before we all figured out how to fix)
+>
+>
+>
+> Edit - am also a sucker for my black and red OLED theme from colorblendr lol
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Thank you! I was running KernelSu before, but no matter what I tried, I couldn't hide everything. Hopefully I'm able to this time. I'm gonna spend some time reading the last 10-20 pages of this thread to see what the latest updates are. I'm also hoping to be able to update to the latest OS before locking, since I had an issue with the camera autofocus last time (although, it's surprisingly fixed after the reset).
+
+Another issue is that the ZTE Toolbox just doesnt work at all on my only Windows PC. No matter what, it is not able to communicate via the Qualcomm link (9008)
+
+---
+
+### #3,110 — **christopherrrg** · Aug 21, 2026 at 6:54 AM · page 156
+
+> **invalidcredentials said:**
+> Thank you! I was running KernelSu before, but no matter what I tried, I couldn't hide everything. Hopefully I'm able to this time. I'm gonna spend some time reading the last 10-20 pages of this thread to see what the latest updates are. I'm also hoping to be able to update to the latest OS before locking, since I had an issue with the camera autofocus last time (although, it's surprisingly fixed after the reset).
+>
+>
+>
+> Another issue is that the ZTE Toolbox just doesnt work at all on my only Windows PC. No matter what, it is not able to communicate via the Qualcomm link (9008)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+You gotta allow it through antivirus. That's all I had to do and now my Xbox ally X sends commands with EDL fastboot and adb no problem.
+
+---
+
+### #3,111 — **Dimachi** · Aug 21, 2026 at 7:25 AM · page 156
+
+> **invalidcredentials said:**
+> After the redmagic screen, it shows 2 buttons "Try again" and "Factory data reset", along with "Reason: fs_mgr_mount_all" ![:(](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+https://xdaforums.com/t/red-magic-11-pro-guide-bootloader-unlock-free-also-support-rm10-pad3pro-z70u-z80u-unlock-zte-family-toolbox.4780930/post-90700864
+
+How did you manage to get the factory reset screen?
+
+---
+
+### #3,112 — **borygo77** · Aug 21, 2026 at 8:35 AM · page 156
+
+> **christopherrrg said:**
+> Is this twrp flashable? or should I still be swapping the partitions?
+>
+>
+>
+> 11.5.5MR1 trying to upgrade without having to go backwards and fix fingerprint lol
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Toolbox flashable ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png) you should be good as long as your rom is lower than my one provided. Fingerprint reader should start working after.
+
+---
+
+### #3,113 — **Jole7** · Aug 21, 2026 at 2:59 PM · page 156
+
+> **invalidcredentials said:**
+> I just bricked my phone doing this. Trying to fix it now. It no longer boots to android. After the redmagic screen, it shows 2 buttons "Try again" and "Factory data reset", along with "Reason: fs_mgr_mount_all" ![:(](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+>
+>
+>
+> Also, for some reason, even though Device Manager shows "Qualcomm HS-USB QDLoader 9008 (COM5), the toolbox (1.2.8-beta2) does not work at all. For any command that requires 9008, it just says 发送引导失败. 请将设备重新进入9008. (which I translated to "Boot delivery failed. Please re-enter 9008 mode."). If anybody has any advice, suggestions, tips, or anything else, please share. I'm about to cry. This is my only phone, and yes, I know this is entirely my fault ![😭](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f62d.png)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Removed
+
+---
+
+### #3,114 — **HammadYasin** · Aug 21, 2026 at 4:54 PM · page 156
+
+Lock Bootloader Temporary Root For REDMAGIC 10(S) PRO / Tablet 3 Pro / 11 PRO / Tablet 5 Pro /11 Air
+
+**Orginal Post Link :**
+
+[**
+		https://www.reddit.com/r/RedMagic/comments/1vsifg1](https://www.reddit.com/r/RedMagic/comments/1vsifg1)
+
+This guide is copied from my discord server so I apologize for any formatting issues that could happen from pasting it into reddit. AI was used to reformat and restructure the text to make it easier to read, I've manually checked that the information was still accurate.
+
+It's also meant for people that knows what root is and can understand the limitations of this type of root, **installing the wrong thing can brick your phone**, be warned!
+
+> ![⚠️](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/26a0.png) **Important:** This method provides **temporary root access**. Root access is removed when you perform a normal reboot.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+## Requirements​
+Before starting, download and install:
+
+- [ ] [**GhostLock APK**](https://drive.google.com/drive/folders/1ihuCGhhGaR_i3bMMjmW5M7CVEh-V5xDO?usp=sharing)
+- [ ] [**KernelSU APK**](https://github.com/tiann/KernelSU/releases) or [**ReSukiSu APK**](https://github.com/ReSukiSU/ReSukiSU/releases)
+
+## Step 1 - Run GhostLock​
+
+1. Open the **GhostLock** app.
+2. If your REDMAGIC phone is supported, press **Run**.
+3. GhostLock will start the root process.
+4. **Wait for the process to finish.** Do not restart or interfere with the phone while it is running.
+5. Once the process finishes successfully, **KernelSU should open automatically**.
+
+### If your phone reboots​
+Don't worry! This means the root attempt failed.
+
+Simply wait for the phone to boot back up and **try the process again**. It can sometimes take several attempts, and this is normal.
+
+## Step 2 - Verify Root​
+Once you are in **KernelSU**, you should already have root access.
+
+You can now use root apps and install KernelSU modules.
+
+![⚠️](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/26a0.png) Do not press on install in KernelSu, it will patch your boot partition and make the phone unbootable with the bootloader locked
+
+### Important: Use a Soft Restart​
+This method keeps root access only until the phone performs a **normal reboot**.
+
+Because of this:
+
+- **Installing a module → perform a Soft Restart** to apply it.
+- **Normal restart → root access is lost.**
+- After a normal restart, you must run GhostLock again to regain root.
+- Modules you installed will remain installed, but they **will not be active until root is obtained again**.
+
+## Known Issues​
+
+### The phone may restart during the root process​
+This is expected if the exploit fails. Simply boot the phone back up and try again.
+
+### Network connection may stop working​
+In some cases, obtaining root can cause the network connection to stop working.
+
+From our testing, **running the GhostLock root process again without restarting the phone** can fix the issue.
+
+## VERY IMPORTANT - Do Not Modify Partitions​
+**DO NOT MODIFY OR FLASH ANY PARTITION WHILE USING THIS METHOD.**
+
+This method works while the **bootloader remains locked**. Modifying or flashing partitions can invalidate the device's secure-boot signatures and potentially **brick your phone**.
+
+### Generally safe​
+Most standard **KernelSU modules** should be safe to use as long as they do not modify or replace protected partitions.
+
+### Avoid​
+Do **not** use tools or apps that modify the device's boot/kernel partitions, including:
+
+- **Magisk**
+- **KonaBess**
+- Other tools that modify or flash partitions
+If you are unsure whether a module or app modifies a partition, **don't use it until you have confirmed what it does**.
+
+## Quick Summary​
+**GhostLock → Run → KernelSU → Root**
+
+- ![✅](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/2705.png) Root works until a normal reboot
+- ![✅](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/2705.png) Use **Soft Restart** after installing modules
+- ![🔄](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f504.png) If the phone reboots during GhostLock, try again
+- ![🌐](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f310.png) If network breaks, try GhostLock again without rebooting
+- ![❌](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/274c.png) **Never flash or modify partitions**
+- ![❌](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/274c.png) Avoid Magisk, KonaBess, and similar partition-modifying tools
+
+## Credits & Support​
+Huge thanks to **YuKongA** for creating the GhostLock app! ![❤️](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/2764.png)
+
+### Currently supported REDMAGIC models​
+
+- REDMAGIC 10(S) PRO / Tablet 3 Pro
+- REDMAGIC 11 PRO / Tablet 5 Pro
+- REDMAGIC 11 Air
+If you want to keep using this method please disable the auto system updates, this method will be patched soon.
+
+Additionally if you have the boot.img from your phone you can import it in the app to gain root access if your version isn't currently supported and your kernel is vulnerable
+
+## Repository​
+https://github.com/YuKongA/ghostlock-app
+
+---
+
+### #3,115 — **christopherrrg** · Aug 21, 2026 at 6:49 PM · page 156
+
+> **HammadYasin said:**
+> Lock Bootloader Temporary Root For REDMAGIC 10(S) PRO / Tablet 3 Pro / 11 PRO / Tablet 5 Pro /11 Air
+>
+>
+>
+> **Orginal Post Link :**
+>
+>
+>
+>
+> [**
+> 		https://www.reddit.com/r/RedMagic/comments/1vsifg1](https://www.reddit.com/r/RedMagic/comments/1vsifg1)
+>
+>
+>
+>
+> This guide is copied from my discord server so I apologize for any formatting issues that could happen from pasting it into reddit. AI was used to reformat and restructure the text to make it easier to read, I've manually checked that the information was still accurate.
+>
+>
+>
+> It's also meant for people that knows what root is and can understand the limitations of this type of root, **installing the wrong thing can brick your phone**, be warned!
+>
+>
+>
+>
+>
+>
+> ## Requirements​
+> Before starting, download and install:
+>
+>
+>
+>
+> - [ ] [**GhostLock APK**](https://drive.google.com/drive/folders/1ihuCGhhGaR_i3bMMjmW5M7CVEh-V5xDO?usp=sharing)
+> - [ ] [**KernelSU APK**](https://github.com/tiann/KernelSU/releases) or [**ReSukiSu APK**](https://github.com/ReSukiSU/ReSukiSU/releases)
+>
+> ## Step 1 - Run GhostLock​
+>
+> 1. Open the **GhostLock** app.
+> 2. If your REDMAGIC phone is supported, press **Run**.
+> 3. GhostLock will start the root process.
+> 4. **Wait for the process to finish.** Do not restart or interfere with the phone while it is running.
+> 5. Once the process finishes successfully, **KernelSU should open automatically**.
+>
+> ### If your phone reboots​
+> Don't worry! This means the root attempt failed.
+>
+>
+>
+> Simply wait for the phone to boot back up and **try the process again**. It can sometimes take several attempts, and this is normal.
+>
+>
+>
+>
+> ## Step 2 - Verify Root​
+> Once you are in **KernelSU**, you should already have root access.
+>
+>
+>
+> You can now use root apps and install KernelSU modules.
+>
+>
+>
+> ![⚠️](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/26a0.png) Do not press on install in KernelSu, it will patch your boot partition and make the phone unbootable with the bootloader locked
+>
+>
+>
+>
+> ### Important: Use a Soft Restart​
+> This method keeps root access only until the phone performs a **normal reboot**.
+>
+>
+>
+> Because of this:
+>
+>
+>
+>
+> - **Installing a module → perform a Soft Restart** to apply it.
+> - **Normal restart → root access is lost.**
+> - After a normal restart, you must run GhostLock again to regain root.
+> - Modules you installed will remain installed, but they **will not be active until root is obtained again**.
+>
+> ## Known Issues​
+>
+> ### The phone may restart during the root process​
+> This is expected if the exploit fails. Simply boot the phone back up and try again.
+>
+>
+>
+>
+> ### Network connection may stop working​
+> In some cases, obtaining root can cause the network connection to stop working.
+>
+>
+>
+> From our testing, **running the GhostLock root process again without restarting the phone** can fix the issue.
+>
+>
+>
+>
+> ## VERY IMPORTANT - Do Not Modify Partitions​
+> **DO NOT MODIFY OR FLASH ANY PARTITION WHILE USING THIS METHOD.**
+>
+>
+>
+> This method works while the **bootloader remains locked**. Modifying or flashing partitions can invalidate the device's secure-boot signatures and potentially **brick your phone**.
+>
+>
+>
+>
+> ### Generally safe​
+> Most standard **KernelSU modules** should be safe to use as long as they do not modify or replace protected partitions.
+>
+>
+>
+>
+> ### Avoid​
+> Do **not** use tools or apps that modify the device's boot/kernel partitions, including:
+>
+>
+>
+>
+> - **Magisk**
+> - **KonaBess**
+> - Other tools that modify or flash partitions
+> If you are unsure whether a module or app modifies a partition, **don't use it until you have confirmed what it does**.
+>
+>
+>
+>
+> ## Quick Summary​
+> **GhostLock → Run → KernelSU → Root**
+>
+>
+>
+>
+> - ![✅](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/2705.png) Root works until a normal reboot
+> - ![✅](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/2705.png) Use **Soft Restart** after installing modules
+> - ![🔄](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f504.png) If the phone reboots during GhostLock, try again
+> - ![🌐](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f310.png) If network breaks, try GhostLock again without rebooting
+> - ![❌](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/274c.png) **Never flash or modify partitions**
+> - ![❌](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/274c.png) Avoid Magisk, KonaBess, and similar partition-modifying tools
+>
+> ## Credits & Support​
+> Huge thanks to **YuKongA** for creating the GhostLock app! ![❤️](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/2764.png)
+>
+>
+>
+>
+> ### Currently supported REDMAGIC models​
+>
+> - REDMAGIC 10(S) PRO / Tablet 3 Pro
+> - REDMAGIC 11 PRO / Tablet 5 Pro
+> - REDMAGIC 11 Air
+> If you want to keep using this method please disable the auto system updates, this method will be patched soon.
+>
+>
+>
+> Additionally if you have the boot.img from your phone you can import it in the app to gain root access if your version isn't currently supported and your kernel is vulnerable
+>
+>
+>
+>
+> ## Repository​
+> https://github.com/YuKongA/ghostlock-app
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I tried running ghost lock on my 11s pro and it would not work ![:(](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+
+---
+
+### #3,116 — **HammadYasin** · Aug 21, 2026 at 6:52 PM · page 156
+
+Use the manually method and insert rom's stock boot.img and xbl_config
+
+> **christopherrrg said:**
+> I tried running ghost lock on my 11s pro and it would not work ![:(](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+---
+
+### #3,117 — **christopherrrg** · Aug 21, 2026 at 6:54 PM · page 156
+
+> **HammadYasin said:**
+> Use the manually method and insert rom's stock boot.img and xbl_config
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I'm fully unlocked, I just wanted to use it to go from magisk to kernelsu because I accidentally rebooted before applying the patched boot image ![🤣](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f923.png)
+
+Thank you for sharing!!
+
+---
+
+### #3,118 — **pipes80** · Aug 21, 2026 at 7:33 PM · page 156
+
+> **borygo77 said:**
+> Yes you can!
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+> **borygo77 said:**
+> ### 11Pro_11.5.6MR1GB.7z
+>
+>
+>
+>
+>
+> ![drive.google.com](/proxy.php?image=https%3A%2F%2Fssl.gstatic.com%2Fdocs%2Fdoclist%2Fimages%2Fdrive_favicon_2026_32dp.png&hash=cbb4bc26ec5c3449347a5897da90c838&return_error=1)
+>
+> 					drive.google.com
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Thank you man, you are great.
+
+This build work fine with root...If bootloader is locked or unlocked I don't know.
+
+I'll verified after made all configuration.
+
+I thought there was a frequency change attested to the nx809s model
+
+---
+
+### #3,119 — **borygo77** · Aug 21, 2026 at 8:07 PM · page 156
+
+There are but these don't apply to 809j only to 809s ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+
+---
+
+### #3,120 — **borygo77** · Aug 21, 2026 at 8:34 PM · page 156
+
+> **HammadYasin said:**
+> Lock Bootloader Temporary Root For REDMAGIC 10(S) PRO / Tablet 3 Pro / 11 PRO / Tablet 5 Pro /11 Air
+>
+>
+>
+> **Orginal Post Link :**
+>
+>
+>
+>
+> [**
+> 		https://www.reddit.com/r/RedMagic/comments/1vsifg1](https://www.reddit.com/r/RedMagic/comments/1vsifg1)
+>
+>
+>
+>
+> This guide is copied from my discord server so I apologize for any formatting issues that could happen from pasting it into reddit. AI was used to reformat and restructure the text to make it easier to read, I've manually checked that the information was still accurate.
+>
+>
+>
+> It's also meant for people that knows what root is and can understand the limitations of this type of root, **installing the wrong thing can brick your phone**, be warned!
+>
+>
+>
+>
+>
+>
+> ## Requirements​
+> Before starting, download and install:
+>
+>
+>
+>
+> - [ ] [**GhostLock APK**](https://drive.google.com/drive/folders/1ihuCGhhGaR_i3bMMjmW5M7CVEh-V5xDO?usp=sharing)
+> - [ ] [**KernelSU APK**](https://github.com/tiann/KernelSU/releases) or [**ReSukiSu APK**](https://github.com/ReSukiSU/ReSukiSU/releases)
+>
+> ## Step 1 - Run GhostLock​
+>
+> 1. Open the **GhostLock** app.
+> 2. If your REDMAGIC phone is supported, press **Run**.
+> 3. GhostLock will start the root process.
+> 4. **Wait for the process to finish.** Do not restart or interfere with the phone while it is running.
+> 5. Once the process finishes successfully, **KernelSU should open automatically**.
+>
+> ### If your phone reboots​
+> Don't worry! This means the root attempt failed.
+>
+>
+>
+> Simply wait for the phone to boot back up and **try the process again**. It can sometimes take several attempts, and this is normal.
+>
+>
+>
+>
+> ## Step 2 - Verify Root​
+> Once you are in **KernelSU**, you should already have root access.
+>
+>
+>
+> You can now use root apps and install KernelSU modules.
+>
+>
+>
+> ![⚠️](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/26a0.png) Do not press on install in KernelSu, it will patch your boot partition and make the phone unbootable with the bootloader locked
+>
+>
+>
+>
+> ### Important: Use a Soft Restart​
+> This method keeps root access only until the phone performs a **normal reboot**.
+>
+>
+>
+> Because of this:
+>
+>
+>
+>
+> - **Installing a module → perform a Soft Restart** to apply it.
+> - **Normal restart → root access is lost.**
+> - After a normal restart, you must run GhostLock again to regain root.
+> - Modules you installed will remain installed, but they **will not be active until root is obtained again**.
+>
+> ## Known Issues​
+>
+> ### The phone may restart during the root process​
+> This is expected if the exploit fails. Simply boot the phone back up and try again.
+>
+>
+>
+>
+> ### Network connection may stop working​
+> In some cases, obtaining root can cause the network connection to stop working.
+>
+>
+>
+> From our testing, **running the GhostLock root process again without restarting the phone** can fix the issue.
+>
+>
+>
+>
+> ## VERY IMPORTANT - Do Not Modify Partitions​
+> **DO NOT MODIFY OR FLASH ANY PARTITION WHILE USING THIS METHOD.**
+>
+>
+>
+> This method works while the **bootloader remains locked**. Modifying or flashing partitions can invalidate the device's secure-boot signatures and potentially **brick your phone**.
+>
+>
+>
+>
+> ### Generally safe​
+> Most standard **KernelSU modules** should be safe to use as long as they do not modify or replace protected partitions.
+>
+>
+>
+>
+> ### Avoid​
+> Do **not** use tools or apps that modify the device's boot/kernel partitions, including:
+>
+>
+>
+>
+> - **Magisk**
+> - **KonaBess**
+> - Other tools that modify or flash partitions
+> If you are unsure whether a module or app modifies a partition, **don't use it until you have confirmed what it does**.
+>
+>
+>
+>
+> ## Quick Summary​
+> **GhostLock → Run → KernelSU → Root**
+>
+>
+>
+>
+> - ![✅](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/2705.png) Root works until a normal reboot
+> - ![✅](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/2705.png) Use **Soft Restart** after installing modules
+> - ![🔄](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f504.png) If the phone reboots during GhostLock, try again
+> - ![🌐](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f310.png) If network breaks, try GhostLock again without rebooting
+> - ![❌](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/274c.png) **Never flash or modify partitions**
+> - ![❌](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/274c.png) Avoid Magisk, KonaBess, and similar partition-modifying tools
+>
+> ## Credits & Support​
+> Huge thanks to **YuKongA** for creating the GhostLock app! ![❤️](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/2764.png)
+>
+>
+>
+>
+> ### Currently supported REDMAGIC models​
+>
+> - REDMAGIC 10(S) PRO / Tablet 3 Pro
+> - REDMAGIC 11 PRO / Tablet 5 Pro
+> - REDMAGIC 11 Air
+> If you want to keep using this method please disable the auto system updates, this method will be patched soon.
+>
+>
+>
+> Additionally if you have the boot.img from your phone you can import it in the app to gain root access if your version isn't currently supported and your kernel is vulnerable
+>
+>
+>
+>
+> ## Repository​
+> https://github.com/YuKongA/ghostlock-app
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Have just tried it and it works! ![😊](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f60a.png)
+
+edit: But it's very unstable! Zygisk crashing, Vector shows that it has some problems running, hybrid mount doesn't work... Avoid it guys!
+
+Highly recommended to root using abl, init_boot and eFisp patched from my edl zip.... ![😜](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f61c.png)
+
+---
+
+### #3,121 — **pipes80** · Aug 21, 2026 at 10:43 PM · page 157
+
+> **borygo77 said:**
+> There are but these don't apply to 809j only to 809s ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+understand!
+
+It's a shame you can't get that slight increase in frequency. Why didn't you patch the vendor_boot file?
+
+---
+
+### #3,122 — **borygo77** · Aug 21, 2026 at 11:37 PM · page 157
+
+Because it broke my integrity.
+
+Don't need susfs as everything works for me.
+
+Never been happier with the root as I'm now with 11Pro ![😊](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f60a.png)
+
+---
+
+### #3,123 — **Bobo9996** · Aug 21, 2026 at 11:53 PM · page 157
+
+> **pipes80 said:**
+> understand!
+>
+> It's a shame you can't get that slight increase in frequency. Why didn't you patch the vendor_boot file?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+well its a silicon lottery my gpu crash at 1220mhz stock voltage but some managed to get 1300 at stock xd
+
+---
+
+### #3,124 — **pipes80** · Aug 22, 2026 at 12:54 AM · page 157
+
+> **borygo77 said:**
+> Because it broke my integrity.
+>
+> Don't need susfs as everything works for me.
+>
+> Never been happier with the root as I'm now with 11Pro ![😊](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f60a.png)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I asked you because I see that kernelsu-next app asks to patch both init_boot and vendor_boot
+
+---
+
+### #3,125 — **pipes80** · Aug 22, 2026 at 12:58 AM · page 157
+
+This is my key attestation if this is important.
+
+---
+
+### #3,126 — **pipes80** · Aug 22, 2026 at 1:00 AM · page 157
+
+how work your slot a?
+
+I ask because my slot is broken
+
+---
+
+### #3,127 — **borygo77** · Aug 22, 2026 at 1:29 AM · page 157
+
+After flashing this edl package it'll be on both slots.
+
+You can pick the one you want to run with toolbox.
+
+There's option for it. Try ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+
+Both my slots working as I was upgrading from [@Elivizon299](https://xdaforums.com/m/12854467/) package which is 3 versions behind.
+
+After every update device change slot as this is how it works.
+
+---
+
+### #3,128 — **pipes80** · Aug 22, 2026 at 1:31 AM · page 157
+
+> **borygo77 said:**
+> After flashing this edl package it'll be on both slots.
+>
+> You can pick the one you want to run with toolbox.
+>
+> There's option for it. Try ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+>
+>
+>
+> Both my slots working as I was upgrading from [@Elivizon299](https://xdaforums.com/m/12854467/) package which is 3 versions behind.
+>
+> After every update device change slot as this is how it works.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I know how to, but that broken all and need to reflash all...
+
+Edit: it is work, always I had chage slot but has always broken...thx man!!!
+
+If do this is interest? i had flash vendor_boot_A and b patched and i have not lost my integrity
+
+---
+
+### #3,129 — **pipes80** · Aug 22, 2026 at 1:44 AM · page 157
+
+But kernel is update at 6.12.38 version?
+
+---
+
+### #3,130 — **niponk94** · Aug 22, 2026 at 5:20 AM · page 157
+
+> **Elivizon299 said:**
+> In one night I got to the bottom of the truth.
+>
+> This method will work on Z80+,pro, Ultra or RM11+,Air,Pro,S
+>
+> My English is bad, so I'll try to explain.
+>
+> Fix 18 will now work on any firmware and any region.
+>
+> I found a vulnerability before the device booted.
+>
+> 1. Below I have provided files from both phones where the vulnerability still remains.
+>
+> • Original16 For Z80
+>
+> • Efisp_abl For RM11
+>
+> 2. It is necessary to put the device into a state EDL
+>
+> 3. Flash with command 12 file abl.img In slot abl_a and abl_b. Sew it efisp.img to the section efisp.
+>
+> 4. Without disconnecting the cable or rebooting the device, close the zte_tool and open it again.
+>
+> 5. Run command 18 to fix bootloader and fingerprint
+>
+>
+>
+> This way we get a fully working bootloader without the yellow window when loading and a working fingerprint scanner on any firmware version.
+>
+> The root is installed according to the standard commands 1 and 111.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Thanks for sharing. Could you confirm which ROM versions it's compatible with? Can I use it with my Chinese ROM version 11.0.24?
+
+---
+
+### #3,131 — **christopherrrg** · Aug 22, 2026 at 6:24 AM · page 157
+
+My slow behind just spent all day screwing my phone up lol
+
+I used your package over top of my backup and it worked fine except fingerprint so I went back locked bootloader and like a true genius flashed it again and got corrupt system haha so I ended up going back to 15.5 with my backup, used your file again with an unlocked bootloader and I lost fingerprint again but it worked. The trigger for my device seems to be using unlock BL period on the app.
+
+Seen that we can still flash images with 9008 so I ended up sending over abl_a, abl_b (both modified abl) and efisp (modified). Once those three were flashed I just closed and reopened the tool like above user mentioned and used option 18 which worked successfully after flashing those three partitions.
+
+I lose integrity but I've got fingerprint and no warning but full unlock and Kernelsu with susfs so I've added the modules.
+
+Working fully again and on 15.6 so thanks you guys!!!!
+![Screenshot_20260821_232334~2.jpg](https://xdaforums.com/attachments/screenshot_20260821_232334-2-jpg.6376065/)
+
+---
+
+### #3,132 — **borygo77** · Aug 22, 2026 at 9:12 AM · page 157
+
+Nice. Congrats! Now flash RKP fix to get integrity back. There is no need for any fake keyboxes or PIF modules after. You can also remove RKP after reboot and integrity stays ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+
+---
+
+### #3,133 — **underworld737** · Aug 22, 2026 at 11:17 AM · page 157
+
+> **InfectedThoughts said:**
+> [@borygo77](https://xdaforums.com/m/8093282/) if you have any compatibly issues with apps in the play store like I did just install the integrity fix module and you don't need to run it just install to magisk and reboot it'll fix that issue, apps I have issues with was PayPal I think and eBay for sure... But other than that I haven't had no other issues and this phone is my daily driver ![😂](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f602.png) I think that issue is due to the widevine fix? I'm not sure..
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Hey, which exact module did you use that fixed this issue? I'm seeing multiple play integrity fix modules through numerous GitHub repositories, I'm also having issues with certain apps like PayPal which shows on the Google play store "This app isn't compatible with your phone anymore" and even trying to sideload the app it would prompt me to open PayPal on the browser
+
+---
+
+### #3,134 — **underworld737** · Aug 22, 2026 at 11:21 AM · page 157
+
+> **borygo77 said:**
+> That's what I've done over with mine 11Pro 11.0.16EA.
+>
+> No data wipe needed and phone booted like it was waiting for it ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+>
+>
+>
+> If you swap (rename) those three img you only need to install Ksunext apk and it will show you rooted LKM... All modules works and no Play Integrity module needed to pass strong...
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+And thanks, that version worked, also cleared up the wifi bug I've constantly been having, though I've seen it mostly persistent when I was on the YouTube app
+
+---
+
+### #3,135 — **borygo77** · Aug 22, 2026 at 12:43 PM · page 157
+
+The bug is still here unfortunately. Not that often like with previous versions but I had it yesterday.
+
+---
+
+### #3,136 — **pipes80** · Aug 22, 2026 at 7:50 PM · page 157
+
+[@borygo77](https://xdaforums.com/m/8093282/) only PayPal app don't work fine after user access, get crash
+
+---
+
+### #3,137 — **borygo77** · Aug 22, 2026 at 8:21 PM · page 157
+
+Works alright for me.
+
+I have it in HMA-OSS zygisk with whitelist mode.
+
+Maybe that's why ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+
+---
+
+### #3,138 — **christopherrrg** · Aug 22, 2026 at 9:01 PM · page 157
+
+> **borygo77 said:**
+> Nice. Congrats! Now flash RKP fix to get integrity back. There is no need for any fake keyboxes or PIF modules after. You can also remove RKP after reboot and integrity stays ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I'm gonna search this today because having 10+ modules to do this is kinda overkill.
+
+---
+
+### #3,139 — **pipes80** · Aug 22, 2026 at 10:13 PM · page 157
+
+> **borygo77 said:**
+> Works alright for me.
+>
+> I have it in HMA-OSS zygisk with whitelist mode.
+>
+> Maybe that's why ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I don't know but it doesn't want work with me, it stuck at PayPal screen
+
+---
+
+### #3,140 — **pipes80** · Aug 22, 2026 at 10:31 PM · page 157
+
+> **borygo77 said:**
+> Works alright for me.
+>
+> I have it in HMA-OSS zygisk with whitelist mode.
+>
+> Maybe that's why ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+This is my problem
+
+---
+
+### #3,141 — **pipes80** · Aug 22, 2026 at 10:45 PM · page 158
+
+Another problem
+
+---
+
+### #3,142 — **christopherrrg** · Aug 23, 2026 at 1:47 AM · page 158
+
+Just followed the guide on page 79 and it removed the need for 4 total modules. Thanks again [@borygo77](https://xdaforums.com/m/8093282/) - how did you manage to make your device accept system updates again? I put back my 15.5 backup and locked up the bootloader and fully wiped but I still got error when clicking system update.
+
+(I ask because if they release anything after 15.6, I'd love to be able to grab it too.)
+
+---
+
+### #3,143 — **borygo77** · Aug 23, 2026 at 9:22 AM · page 158
+
+3 modified partitions need to be original.
+
+---
+
+### #3,144 — **underworld737** · Aug 23, 2026 at 10:32 AM · page 158
+
+> **pipes80 said:**
+> This is my problem
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Same here for me sadly
+
+---
+
+### #3,145 — **christopherrrg** · Aug 23, 2026 at 11:22 AM · page 158
+
+> **borygo77 said:**
+> 3 modified partitions need to be original.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I probably had something mixed up in there. Thanks again.
+
+---
+
+### #3,146 — **williamcll** · Aug 23, 2026 at 11:40 AM · page 158
+
+Ordered the phone, hopefully it doesn't update to a bad patch by next month when it arrives
+
+---
+
+### #3,147 — **borygo77** · Aug 23, 2026 at 11:43 AM · page 158
+
+> **underworld737 said:**
+> Same here for me sadly
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Have you added paypal to hma and white listed the settings? If so. Clear data of the app and login again.
+
+---
+
+### #3,148 — **borygo77** · Aug 23, 2026 at 11:45 AM · page 158
+
+> **williamcll said:**
+> Ordered the phone, hopefully it doesn't update to a bad patch by next month when it arrives
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Pretty sure it's permanent paradise for us! ![🌴](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f334.png)![😂](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f602.png)
+
+---
+
+### #3,149 — **borygo77** · Aug 23, 2026 at 11:47 AM · page 158
+
+> **christopherrrg said:**
+> I probably had something mixed up in there. Thanks again.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+No need to worry. I'll update my one when update is available and remake edl package with tools and patched images to obtain root quickly ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+
+---
+
+### #3,150 — **pipes80** · Aug 23, 2026 at 2:42 PM · page 158
+
+> **underworld737 said:**
+> Same here for me sadly
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I have solved with integrity guide on PIF telegram channel.
+
+My PayPal work fine now
+
+---
+
+### #3,151 — **pipes80** · Aug 23, 2026 at 2:50 PM · page 158
+
+> **borygo77 said:**
+> Have you added paypal to hma and white listed the settings? If so. Clear data of the app and login again.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Your solution is more quick
+
+---
+
+### #3,152 — **christopherrrg** · Aug 23, 2026 at 4:51 PM · page 158
+
+With the 11s pro packaged modified boot image, you still need to flash this anykernel3 zip to get full access to susfs.
+
+Easily done with kernel flasher granted root.
+
+!!!!!!!!!!!!! Edit - anykernel3 zip needs to be merged with stock kernel or RCS breaks even if it states connected and full integrity !!!!!!!!!!!
+
+So I'll leave the post here as reference so anyone can test it themselves.
+
+---
+
+### #3,153 — **pipes80** · Aug 23, 2026 at 5:52 PM · page 158
+
+> **christopherrrg said:**
+> With the 11s pro packaged modified boot image, you still need to flash this anykernel3 zip to get full access to susfs.
+>
+>
+>
+> Easily done with kernel flasher granted root.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+In what sense is it used? I.e. even in a system flashed via EDL after having done everything, is this flash OTA necessary?
+
+---
+
+### #3,154 — **christopherrrg** · Aug 23, 2026 at 5:54 PM · page 158
+
+> **pipes80 said:**
+> In what sense is it used? I.e. even in a system flashed via EDL after having done everything, is this flash OTA necessary?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I did because I wanted the hide options to show up in the Kernelsu next app.
+
+I believe the image he packaged up just has the root installer patched, after you boot you need to flash anykernel3 on top of it for the system to recognize susfs.
+
+It's for hiding root traces.
+
+I guess essentially it's flashing wild kernel.
+
+I am still reading up on all of this but when I had updated to the latest I could not get susfs to initialize, in fact it won't initialize because it technically doesn't have the patch.
+
+It just includes a patch that installs root for us. We need to match our anykernel3 zip which I already did above, that is the kernel that enables what borygo has setup for us.
+
+Now if I can figure out how to make a damn bootanimation stick, I plan on making Blue magic lol and trying to overlay mod gamespace theme.
+
+---
+
+### #3,155 — **christopherrrg** · Aug 23, 2026 at 6:09 PM · page 158
+
+> **pipes80 said:**
+> I have solved with integrity guide on PIF telegram channel.
+>
+> My PayPal work fine now
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+PIF loses keys. You guys best follow guide on page 79. It gives your own device keys, not emulated.
+
+Takes 5 ADB commands basically if you have ADB already installed.
+
+---
+
+### #3,156 — **christopherrrg** · Aug 23, 2026 at 6:11 PM · page 158
+
+> **williamcll said:**
+> Ordered the phone, hopefully it doesn't update to a bad patch by next month when it arrives
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Hahah my redmagic Astra is laughing at how fast RM drops meaningful updates ![😂](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f602.png)
+
+---
+
+### #3,157 — **pipes80** · Aug 23, 2026 at 10:12 PM · page 158
+
+> **Dimachi said:**
+> Safely restore your TEE without losing your unique keys
+>
+>
+>
+> So, let's download the three apps.
+>
+>
+>
+>
+> <details><summary>Spoiler: download the three apps.</summary>
+>
+>
+> <details><summary>Spoiler</summary>
+>
+>
+> </details>
+>
+> </details>
+>
+>
+> In the first, second, and third applications, we look, if so, then we rejoice and pass by
+>
+>
+> <details><summary>Spoiler: then we rejoice and pass by</summary>
+>
+>
+> <details><summary>Spoiler</summary>
+>
+>
+> </details>
+>
+> </details>
+>
+>
+> And if this happens in the first, second, or third app, then don't worry, it's all fixable.
+>
+>
+> <details><summary>Spoiler: don't worry, it's all fixable.</summary>
+>
+>
+> <details><summary>Spoiler: third app</summary>
+>
+>
+> <details><summary>Spoiler</summary>
+>
+>
+> </details>
+>
+> </details>
+>
+> </details>
+>
+>
+> I'm writing this while the trail is still fresh, I just restored everything.
+>
+>
+>
+>
+>
+> So, where do we begin?
+>
+> 1. Connect your phone to your computer in developer mode and enable USB debugging.
+>
+> 2. Launch the command prompt. It will look like this:
+>
+> Microsoft Windows [Version 10.0.26100.8246]
+>
+> (c) Microsoft Corporation. All rights reserved.
+>
+>
+>
+> C:\Users\xxxxxi>
+>
+> 3. Type: cd C:\platform-tools
+>
+> C:\platform-tools is the path to the adb folder.
+>
+> It should look like this:
+>
+> C:\Users\xxxxxi>cd C:\platform-tools
+>
+> Press Enter and you'll get:
+>
+> Microsoft Windows [Version 10.0.26100.8246]
+>
+> (c) Microsoft Corporation. All rights reserved.
+>
+>
+>
+> C:\Users\xxxxxi>cd C:\platform-tools
+>
+>
+>
+> C:\platform-tools>
+>
+>
+>
+> 4. Now run the command
+>
+> adb shell cmd remote_provisioning certify default
+>
+> With this command, we're trying to determine whether our TEE is alive or not, meaning it should give us keys
+>
+> but it didn't give me any
+>
+>
+>
+>
+> <details><summary>Spoiler: but he gave it to me</summary>
+>
+>
+> <details><summary>Spoiler</summary>
+>
+>
+> </details>
+>
+> </details>
+>
+>
+>
+>
+> 5. If you have the same or similar problem, then do the following.
+>
+> Get root if you don't have it and your TEE has crashed.
+>
+> Grant root rights to the shell.
+>
+> Since our firmware includes KmInstallKeybox, simply run this command.
+>
+> This command creates an empty file without keys, so we won't flash new keys.
+>
+> This way, we won't lose our unique keys.
+>
+> C:\platform-tools>adb shell su -c "touch /data/local/tmp/empty.xml"
+>
+> 6. After creating the empty file, run the second command.
+>
+> C:\platform-tools>adb shell su -c "LD_LIBRARY_PATH=/vendor/lib64/hw /vendor/bin/KmInstallKeybox /data/local/tmp/empty.xml 0 true true"
+>
+> What it does
+>
+> Argument parsing:
+>
+> /data/local/tmp/empty.xml — path to an empty file (it's not used because RKP=true).
+>
+> 0 — Device ID (you can leave it at 0; the system will automatically determine the correct one).
+>
+> true — scan the Device ID.
+>
+> true — enable RKP mode.
+>
+> This is how we get this:
+>
+> The utility will only scan the Device ID, without touching the keybox.
+>
+> will launch RKP to generate new keys, preserving the originals.
+>
+> RKP (Remote Key Provisioning.)
+>
+> 7. After executing the command, a response will appear.
+>
+>
+> <details><summary>Spoiler: After executing the command, a response will appear.</summary>
+>
+>
+> <details><summary>Spoiler</summary>
+>
+>
+> </details>
+>
+> </details>
+> 8. Reboot the device
+>
+> C:\platform-tools>adb reboot
+>
+>
+>
+> 9. After the device reboots
+>
+> Unlock it and click Allow
+>
+>
+> <details><summary>Spoiler: Unlock it and click Allow</summary>
+>
+>
+> <details><summary>Spoiler</summary>
+>
+>
+> </details>
+>
+> </details>
+> 10. Run the command
+>
+> C:\platform-tools>adb shell cmd remote_provisioning certify default
+>
+> And it will display this
+>
+>
+> <details><summary>Spoiler: it gave out the keys</summary>
+>
+>
+> <details><summary>Spoiler</summary>
+>
+>
+> </details>
+>
+> </details>
+> 11. Run the command
+>
+> C:\platform-tools>adb shell cmd remote_provisioning list
+>
+> default
+>
+> avf
+>
+>
+>
+> You'll see "default" and "avf".
+>
+>
+>
+> 12. Run the command
+>
+> C:\platform-tools>adb shell cmd remote_provisioning csr default
+>
+> xxxxxxx
+>
+> generates a base64 CSR string; I replaced it with xxxxxxx
+>
+>
+>
+> 13. Run the command to clear the Google Play Services cache
+>
+> C:\platform-tools>adb shell pm clear com.google.android.gms
+>
+> Success
+>
+>
+>
+> 14. Run the command
+>
+> C:\platform-tools>adb reboot
+>
+>
+>
+> and the result is like this
+>
+>
+> <details><summary>Spoiler: and the result is like this</summary>
+>
+>
+> <details><summary>Spoiler</summary>
+>
+>
+> </details>
+>
+> </details>
+>
+>
+> This confirms that the Remote Key Provisioning mechanism is fully functional and ready to issue new keys when needed.
+>
+>
+>
+> The device should now pass hardware attestation (strong attestation) for Play Integrity-verifying apps.
+>
+> You've restored keys without rewriting the original keybox, using only RKP via KmInstallKeybox with the true flag.
+>
+> What to do next
+>
+> Check attestation functionality
+>
+> Install any Play Integrity-verifying app (such as "Play Integrity API Checker" from Google Play) or Key Attestation. It should show that the device has hardware attestation (HARDWARE_BACKED) and a locked bootloader.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+the first command gives me my certificates and not what the guide says
+
+---
+
+### #3,158 — **Dimachi** · Aug 23, 2026 at 10:35 PM · page 158
+
+> **pipes80 said:**
+> the first command gives me my certificates and not what the guide says
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+What command exactly are you running to get the keys? What about certification? If everything is OK, skip this step.
+
+---
+
+### #3,159 — **pipes80** · Aug 23, 2026 at 10:49 PM · page 158
+
+Command number 4: adb shell cmd remote_provisioning certify default
+
+---
+
+### #3,160 — **pipes80** · Aug 23, 2026 at 10:50 PM · page 158
+
+I think kernel flasher doesn't flash nothing
+
+---
+
+### #3,161 — **christopherrrg** · Aug 23, 2026 at 10:56 PM · page 159
+
+> **pipes80 said:**
+> the first command gives me my certificates and not what the guide says
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+The first command tells you if your certificate is alive or not.
+
+---
+
+### #3,162 — **Dimachi** · Aug 23, 2026 at 10:58 PM · page 159
+
+> **pipes80 said:**
+> Command number 4: adb shell cmd remote_provisioning certify default
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+If everything is red, then just follow the instructions and you will receive new unique keys for your phone.
+
+---
+
+### #3,163 — **pipes80** · Aug 23, 2026 at 11:36 PM · page 159
+
+is my device certified
+
+---
+
+### #3,164 — **christopherrrg** · Aug 24, 2026 at 1:18 AM · page 159
+
+Hey guys I just learned the wild kernel I posted breaks RCS even though it enables susfs, I'm gonna do more research but I recommend NOT flashing the anykernel3 zip I posted and I'm going to remove it from the post.
+
+Anyone who used kernel flasher just restore your backup.
+
+Everything works perfect (I even used Google pay at the gas station prior to this post ) with wild kernel but RCS messages won't send even though integrity is good and it connects so further research is needed, found out by my wife thinking I'm ignoring her. ![😅](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f605.png)
+
+Just hide your root as best as you can. ![🤷](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f937.png)
+
+Edit - decided to leave it up in case someone wants to test it themselves. It will not break anything.
+
+---
+
+### #3,165 — **christopherrrg** · Aug 24, 2026 at 1:22 AM · page 159
+
+Broken RCS but susfs working -
+![15372.jpg](https://xdaforums.com/attachments/15372-jpg.6376802/)
+
+Working RCS but no susfs -
+![Screenshot_20260823_182013.jpg](https://xdaforums.com/attachments/screenshot_20260823_182013-jpg.6376804/)
+
+Yes I also changed metamodule because I assumed first it was something with susfsku and switched to BRENE which had a recommended list of modules to install, which still did not fix RCS so I know for sure it's kernel related.
+
+Edit #184747472 - I believe when using wild kernel you may need to hide root better then how we have it now with stock kernel rooted, I can't be bothered anymore today lol enjoy your weekend everyone.
+
+---
+
+### #3,166 — **borygo77** · Aug 24, 2026 at 2:26 AM · page 159
+
+This and only this is the reason I'm using LKM with original kernel. Your Google Wallet will stop working too  in a matter of hours/days.
+
+As I said before. I don't need susfs to hide better if everything is working.
+
+Will add you something to read. There's a guy here who compile wild without breaking anything ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+
+Here it is [>>>READ<<<](https://xdaforums.com/t/efisp-root-gbl-chainload-efisp-chainloader-for-oneplus-15.4786301/post-90613232) this thread and contact the owner ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+
+---
+
+### #3,167 — **christopherrrg** · Aug 24, 2026 at 4:51 AM · page 159
+
+> **borygo77 said:**
+> This and only this is the reason I'm using LKM with original kernel. Your Google Wallet will stop working too  in a matter of hours/days.
+>
+> As I said before. I don't need susfs to hide better if everything is working.
+>
+>
+>
+> Will add you something to read. There's a guy here who compile wild without breaking anything ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+>
+> Here it is [>>>READ<<<](https://xdaforums.com/t/efisp-root-gbl-chainload-efisp-chainloader-for-oneplus-15.4786301/post-90613232) this thread and contact the owner ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+You're 100% right. It held on until I made my first Google purchase then it crashed which is why RCS stopped.
+
+Think I am in same boat. If it works why keep making it different.
+
+We really do need a dedicated thread for our device ![😅](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f605.png)
+
+---
+
+### #3,168 — **Dimachi** · Aug 24, 2026 at 6:28 AM · page 159
+
+> **pipes80 said:**
+> is my device certified
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Yes, it's certified, but it's better to look here.
+
+![play.google.com](/proxy.php?image=https%3A%2F%2Fplay-lh.googleusercontent.com%2FP6XzYhuAFVdzfjU_d0QB2Bg496oFKVL1vUsBC7qIUDkdHzVIzy_piKM0AJ0hqDc9FwDvydlKQBsSpqKO22wa%3Ds0-br30&hash=9209ba45e0bbaa02698bd95da8053ea6&return_error=1)
+
+### Play Integrity Check - Apps on Google Play
+
+Play Integrity Check checks Android app & device security via Play Integrity API
+
+![play.google.com](/proxy.php?image=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.kblack.demo_play_integrity_api%2F&hash=da9257125819408e9fa0fe0795fdee42&return_error=1)
+
+					play.google.com
+
+---
+
+### #3,169 — **pipes80** · Aug 24, 2026 at 11:36 AM · page 159
+
+> **Dimachi said:**
+> Yes, it's certified, but it's better to look here.
+>
+>
+>
+>
+> ![play.google.com](/proxy.php?image=https%3A%2F%2Fplay-lh.googleusercontent.com%2FP6XzYhuAFVdzfjU_d0QB2Bg496oFKVL1vUsBC7qIUDkdHzVIzy_piKM0AJ0hqDc9FwDvydlKQBsSpqKO22wa%3Ds0-br30&hash=9209ba45e0bbaa02698bd95da8053ea6&return_error=1)
+>
+>
+>
+>
+> ### Play Integrity Check - Apps on Google Play
+>
+> Play Integrity Check checks Android app & device security via Play Integrity API
+>
+>
+>
+> ![play.google.com](/proxy.php?image=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.kblack.demo_play_integrity_api%2F&hash=da9257125819408e9fa0fe0795fdee42&return_error=1)
+>
+> 					play.google.com
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Verified
+
+---
+
+### #3,170 — **borygo77** · Aug 24, 2026 at 12:31 PM · page 159
+
+11.5.6MR1_GB ![🤬](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f92c.png)![😡](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f621.png)
+
+![50801.jpg](https://xdaforums.com/attachments/50801-jpg.6377047/)
+
+---
+
+### #3,171 — **joselito96** · Aug 24, 2026 at 12:43 PM · page 159
+
+A comprehensive guide for the Nubia Z80 has been published. You can adapt the guide for the RedMagic and post it on other forums; please let me know if you spot anything that could be added or improved. With this guide, you can update the device without having to perform a factory reset, although this is always recommended.
+
+https://xdaforums.com/t/guide-nubia-z80-ultra-nx741j-root-unlock-bl-play-integrity-fingerprint-safe-myos-16-0-28.4799395/
+
+---
+
+### #3,172 — **Haldi4803** · Aug 24, 2026 at 1:34 PM · page 159
+
+> **christopherrrg said:**
+> which still did not fix RCS so I know for sure it's kernel related.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+It's a shame that there is no alternative messaging app with RCS support except "google messages"
+
+---
+
+### #3,173 — **pipes80** · Aug 24, 2026 at 6:00 PM · page 159
+
+> **pipes80 said:**
+> Verified
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I have only this message, see picture
+
+---
+
+### #3,174 — **sputnik334** · Aug 24, 2026 at 6:04 PM · page 159
+
+I have rooted a pixel phone with pixelflasher before, i have also rooted an s10+ and thought they were somewhat easy to root and then i get the red magic 11s pro (NX809J) Builtnumber REDMAGICOS11.5.6MR1_EA and now i am somewhat confused, following the guide from the first post i get stuck at step "3. Type 0 Unlock BL" when pressing 0 it states that it wouldn't recommend me unlocking in qcedl but that it'll rather that i use the usb-troubleshooting apporach, i think i am reading to much in to it but i really do not know.... are there a dumbed down version of the guide (something like press 4 to backup - restart phone activate usb-troubleshoot mode - don't be to dumb put in the usb cable). do i make sense?
+
+I do not care about the Chineese google translate sorts that out for me i just dont want to **** this phone up. The noumerous warnings in the first post has me double and tripple doubting my self
+
+oh i prefer the magisk route
+
+-edit: adding the magisk line
+
+---
+
+### #3,175 — **borygo77** · Aug 24, 2026 at 8:08 PM · page 159
+
+No need to unlock bootloader.
+
+Use 4 to backup and then flash vulnerable abl.img to active slot (you can use toolbox to check which you're running) and patched eFisp.img
+
+Reboot
+
+At this stage you're good to patch your init_boot.img for magisk root.
+
+---
+
+### #3,176 — **Dimachi** · Aug 24, 2026 at 8:17 PM · page 159
+
+> **sputnik334 said:**
+> I have rooted a pixel phone with pixelflasher before, i have also rooted an s10+ and thought they were somewhat easy to root and then i get the red magic 11s pro (NX809J) Builtnumber REDMAGICOS11.5.6MR1_EA and now i am somewhat confused, following the guide from the first post i get stuck at step "3. Type 0 Unlock BL" when pressing 0 it states that it wouldn't recommend me unlocking in qcedl but that it'll rather that i use the usb-troubleshooting apporach, i think i am reading to much in to it but i really do not know.... are there a dumbed down version of the guide (something like press 4 to backup - restart phone activate usb-troubleshoot mode - don't be to dumb put in the usb cable). do i make sense?
+>
+> I do not care about the Chineese google translate sorts that out for me i just dont want to **** this phone up. The noumerous warnings in the first post has me double and tripple doubting my self
+>
+>
+>
+> oh i prefer the magisk route
+>
+>
+>
+> -edit: adding the magisk line
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+The first step is to perform a full backup. Regarding rooting, there are two options: the first involves unlocking the bootloader, flashing the `abl_a`, `abl_b`, and `efisp` partitions, restarting the Toolbox, and exploiting a vulnerability in the `efisp` partition (option 18)—which preserves fingerprint scanner functionality after unlocking the bootloader; the second option entails the same steps but without unlocking the bootloader—root access is obtained by flashing a modified `init_boot` partition (or another partition, depending on the specific rooting method).
+
+https://xdaforums.com/t/red-magic-11-pro-guide-bootloader-unlock-free-also-support-rm10-pad3pro-z70u-z80u-unlock-zte-family-toolbox.4780930/post-90699464
+
+---
+
+### #3,177 — **borygo77** · Aug 24, 2026 at 11:05 PM · page 159
+
+> **Dimachi said:**
+> The first step is to perform a full backup. Regarding rooting, there are two options: the first involves unlocking the bootloader, flashing the `abl_a`, `abl_b`, and `efisp` partitions, restarting the Toolbox, and exploiting a vulnerability in the `efisp` partition (option 18)—which preserves fingerprint scanner functionality after unlocking the bootloader; the second option entails the same steps but without unlocking the bootloader—root access is obtained by flashing a modified `init_boot` partition (or another partition, depending on the specific rooting method).
+>
+>
+>
+>
+> https://xdaforums.com/t/red-magic-11-pro-guide-bootloader-unlock-free-also-support-rm10-pad3pro-z70u-z80u-unlock-zte-family-toolbox.4780930/post-90699464
+>
+>
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+No need to use option 18 if you flash patched eFisp.img ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png) it's ready for your modified init_boot.img after this step.
+
+What 18 does is it's flashing modified eFisp from other folder in toolbox. Nothing else.
+
+No point to do 18 if you're already flashing abl ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+
+---
+
+### #3,178 — **sputnik334** · Aug 25, 2026 at 12:30 AM · page 159
+
+so i flashed the abl to the active slot (b) i flashed the eFisp.img and rebooted, well... it got really hot and just stayed at the first splash screen... i used the toolbox to unlock bootloader and then i was able to start the phone up, now the yellow "the bootloader is unlocked" message is there when booting up, there also were a your device is corrupt but adb reboot "dm-verity\ enforcing" took care of that ![:)](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7) any tips to have the yellow warning go away?
+
+---
+
+### #3,179 — **borygo77** · Aug 25, 2026 at 12:31 AM · page 159
+
+Option 18 in toolbox
+
+---
+
+### #3,180 — **Bobo9996** · Aug 26, 2026 at 3:54 AM · page 159
+
+> **borygo77 said:**
+> 11.5.6MR1_GB ![🤬](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f92c.png)![😡](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f621.png)
+>
+> [View attachment 6377047](https://xdaforums.com/attachments/6377047/)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+wifi 7 problem ? i never had this i also stream games alot with wifi 6 try seperate 2.4/5g wifi there alot bad settings isp keep on
+
+---
+
+### #3,181 — **Leif ^vv^** · Aug 26, 2026 at 4:16 AM · page 160
+
+Sorry if I'm inexperienced, but is it possible to modify the 11S pro before flashing it to the 11 pro to overclock to 4.7 ghz but keep the 24 gb RAM and 1 tb storage?
+
+---
+
+### #3,182 — **underworld737** · Aug 26, 2026 at 6:24 AM · page 160
+
+> **Leif ^vv^ said:**
+> Sorry if I'm inexperienced, but is it possible to modify the 11S pro before flashing it to the 11 pro to overclock to 4.7 ghz but keep the 24 gb RAM and 1 tb storage?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+i didn't notice the change in cpu or gpu speed when flashing over to 11s firmware
+
+---
+
+### #3,183 — **Leif ^vv^** · Aug 26, 2026 at 6:25 AM · page 160
+
+oh okay, sorry for the dumb questions
+
+---
+
+### #3,184 — **Haldi4803** · Aug 26, 2026 at 1:53 PM · page 160
+
+> **Leif ^vv^ said:**
+> but keep the 24 gb RAM and 1 tb storage?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Yes, you always keep the ram!but Storage can be modified with specific files to flash.
+
+Was talked about here a few pages back.
+
+---
+
+### #3,185 — **shaj10** · Aug 27, 2026 at 9:09 AM · page 160
+
+Hi, I flashed Android 17 version of ROM and the phone just keeps bootlooping, I tried to flash the previous version and it was bootlooping as well, will try factory flashing and trying again
+
+---
+
+### #3,186 — **Dimachi** · Aug 27, 2026 at 9:32 AM · page 160
+
+> **shaj10 said:**
+> Hi, I flashed Android 17 version of ROM and the phone just keeps bootlooping, I tried to flash the previous version and it was bootlooping as well, will try factory flashing and trying again
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Item 16. View and install the slot. Check which slot is active. If it's slot B, change it to slot A, as the slot may not have changed during the firmware update.
+
+---
+
+### #3,187 — **Jole7** · Aug 27, 2026 at 3:19 PM · page 160
+
+> **shaj10 said:**
+> Hi, I flashed Android 17 version of ROM and the phone just keeps bootlooping, I tried to flash the previous version and it was bootlooping as well, will try factory flashing and trying again
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Android 17 what rom Sir?
+
+---
+
+### #3,188 — **jolly_roger_hook** · Aug 28, 2026 at 6:38 PM · page 160
+
+Delete
+
+---
+
+### #3,189 — **jolly_roger_hook** · Aug 28, 2026 at 6:44 PM · page 160
+
+> **borygo77 said:**
+> Updated my 11.0.16MR1EA with edl provided by [@Elivizon299](https://xdaforums.com/m/12854467/) for 11Spro without clearing data at the end and I'm running newest rom available after 3 updates applied after ![😁](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f601.png)
+>
+>
+>
+> Thank you guys for your testing and solution provided! ![😊](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f60a.png)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+What guide did you follow and where did you get the firmware?
+
+I'm so confused I havent touched anything since .18gb
+
+---
+
+### #3,190 — **kravnos** · Aug 28, 2026 at 8:12 PM · page 160
+
+Red Magic 11S PRO on 11.5.5 got everything working...
+
+Unlocked Bootloader
+
+Rooted with KernelSU
+
+Restored TEE from pg 79
+
+Full strong integrity passed
+
+Banking, Google Pay, Fingerprints working
+
+Zero modules required
+
+No unlocked BL warning
+
+Only outstanding issue currently is I have debug text shown overtop of the boot logo...
+
+There is option 19 in the toolbox but that flashes an empty efisp img...
+
+Is this safe to do using the new abl & efisp flashing method? isn't efisp exploit required?
+
+How can I clear this text on the boot logo?

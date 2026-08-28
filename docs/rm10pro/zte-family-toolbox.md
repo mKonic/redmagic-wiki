@@ -75,6 +75,8 @@ This trips up nearly everyone, so, in dev-reverse's own summary [RM11 #2807 p141
 - **Option 18** applies the GBL/`efisp` exploit patch. It's what gives you root on a locked bootloader *and* what restores the fingerprint reader after an unlock. After running it the device drops into recovery — **wipe data and reboot**, and the fix takes effect.
 - **Option 19** removes that patch. You need it if the device fell into **"dumper mode"** (ZTE Memory Dump Mode), if Option 18 conflicts with your current state, or if you want to run **TWRP or `abl userdebug`** — both of which are incompatible with the Option 18 patch.
 
+**Option 18 is not magic — it flashes a file.** All it does is write a modified `efisp` image that ships inside the toolbox's own folders [RM11 #3,177 p159 borygo77]. That's why the [pre-patch `abl` + `efisp` swap](/rm10pro/bootloader-unlock-status#abl-efisp-downgrade) works: restore the partitions the patch closed and Option 18 has something to exploit again, on any firmware. It also means that if you flashed a patched `efisp` yourself, running 18 afterwards is redundant.
+
 Consequences worth knowing before you press 18:
 
 - **Option 18 on an `abl userdebug` device crashes it into dump mode** — `abl userdebug` doesn't accept the correction Option 18 makes to the GBL [RM11 #2361 p119]. Option 19 gets you back [RM11 #2448 p123].

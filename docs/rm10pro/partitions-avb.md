@@ -42,26 +42,71 @@ From Reminon's experiments [#315 p16, #263 p14]:
 
 > *"In simple terms ztecfg has to give permission to the eng-abl to allow unlocking. So the ztecfg partition is modified to allow the eng-abl, then it's signed and flashed. Followed by the eng-abl, which has all of the commands."* [#315 p16 Reminon]
 
-## vbmeta header — flag byte
+## vbmeta header — flag byte {#vbmeta-header-flag-byte}
 
-`vbmeta.img` is an AVB descriptor partition. The 4-byte flags field at **offset 0x0C** (little-endian) controls verification:
+`vbmeta.img` is an AVB descriptor partition. The 4-byte flags field lives at **offset 0x78**, and every integer in the AVB header is **big-endian**:
 
-| Value | Meaning |
+| Value at 0x78 | Meaning |
 |-------|---------|
 | `00 00 00 00` | Normal verification (stock) |
-| `02 00 00 00` | `AVB_VBMETA_IMAGE_FLAGS_HASHTREE_DISABLED` + `AVB_VBMETA_IMAGE_FLAGS_VERIFICATION_DISABLED` (both bits set) |
+| `00 00 00 01` | `AVB_VBMETA_IMAGE_FLAGS_HASHTREE_DISABLED` |
+| `00 00 00 02` | `AVB_VBMETA_IMAGE_FLAGS_VERIFICATION_DISABLED` |
+| `00 00 00 03` | Both bits set — what the no-BL root flow flashes |
+
+:::danger Offset 0x0C is not the flags field
+Older copies of this procedure (including earlier revisions of this page) said offset `0x0C`, little-endian. That is wrong and it is not a harmless error: `0x0C` is inside `authentication_data_block_size`, so writing there produces a vbmeta whose declared block sizes no longer match its contents, and the bootloader rejects it. Recovering needs [EDL](/rm10pro/edl-9008).
+:::
+
+You can confirm the layout on any image you have, without trusting this page: the `release_string` field is at offset `0x80` and reads `avbtool 1.3.0` in plain ASCII. Everything above is positioned relative to that anchor.
+
+```
+00000070: 0000 0000 0000 0000  0000 0003 0000 0000
+                               ^^^^^^^^^ flags = 0x03
+00000080: 6176 6274 6f6f 6c20  312e 332e 3000 0000
+          a v b t o o l _ 1 .  3 . 0            <- anchor
+```
 
 Patch:
 ```python
-with open('vbmeta_b_stock.img', 'rb') as f: data = bytearray(f.read())
-data[12:16] = b'\x02\x00\x00\x00'
-with open('vbmeta_b_patched.img', 'wb') as f: f.write(data)
+with open('vbmeta_stock.img', 'rb') as f: data = bytearray(f.read())
+assert data[:4] == b'AVB0' and data[0x80:0x87] == b'avbtool'
+data[0x78:0x7C] = (0x03).to_bytes(4, 'big')
+with open('vbmeta_patched.img', 'wb') as f: f.write(data)
 ```
 
-Verify with avbtool:
+Verify with `avbtool`, which parses the header properly rather than trusting a byte offset:
 ```bash
-avbtool info_image --image vbmeta_b_patched.img | grep Flags   # → Flags: 2
+avbtool info_image --image vbmeta_patched.img | grep Flags   # → Flags: 3
 ```
+
+### Observed on a live device
+
+A shipping NX789J on `RedMagicOS11.0.4MR1_GB`, rooted with a KernelSU-patched `init_boot` and a **locked** bootloader, reads:
+
+| | `_a` (active) | `_b` |
+|---|---|---|
+| `init_boot` | KernelSU-patched (`Hello, KernelSU!`, `kernelsu.ko`, `/data/adb/ksud`) | stock |
+| `vbmeta` flags @ 0x78 | `0x00` — **stock** | `0x03` |
+| `ro.boot.verifiedbootstate` | `green` | |
+| `ro.boot.flash.locked` | `1` | |
+
+This is the practical proof of the first table on this page: **`init_boot` is not covered by the enforced AVB chain on this device**, so a patched `init_boot` boots green against an *unmodified* vbmeta. You do not need to disable verification to run KernelSU here — which is also why root can persist across reboots with the bootloader locked and Play Store still seeing a green verified-boot state.
+
+## There is no `efisp` partition on the NX789J {#no-efisp}
+
+The RM11 family's headline exploits — toolbox **Option 18**, the `efisp` "modes", the [pre-patch `abl` + `efisp` downgrade](/rm10pro/bootloader-unlock-status#abl-efisp-downgrade) — all act on a partition called `efisp`. **The RM10 Pro does not have one.**
+
+A full `/dev/block/by-name/` enumeration from a shipping NX789J (`RedMagicOS11.0.4MR1_GB`, 121 entries) contains `ztecfg`, `uefi_a/b`, `uefisecapp_a/b`, `uefivarstore`, `xbl_config_a/b`, `multiimgoem_a/b` and `multiimgqti_a/b` — and no `efisp`, under that or any similar name.
+
+```bash
+adb shell su -c 'ls /dev/block/by-name/' | grep -i efisp   # no output on NX789J
+```
+
+This is a platform difference (SM8750 vs the RM11's newer SoC), not a firmware one, so it will not appear on a later RM10 build either. Practical consequences:
+
+- RM11 procedures that name `efisp` **cannot be followed verbatim** on an RM10 Pro. Whatever plays the same role here has not been identified publicly.
+- The fingerprint-after-unlock fix that Option 18 provides on the RM11 has no established RM10 equivalent — consistent with the RM10 thread never having produced one.
+- If you are adapting RM11 work, `ztecfg` and `uefivarstore` are the obvious places to start looking, but nobody has published a result. See [Reverse engineering](/rm10pro/reverse-engineering).
 
 ## Why fastboot's `--disable-verity` doesn't work here
 

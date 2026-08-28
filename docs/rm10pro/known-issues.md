@@ -28,6 +28,27 @@ The fuse is the tail risk. The thing that is **already happening** is ordinary s
 - **You lose EDL.** These phones have no write-capable fastboot on stock firmware, so firehose/EDL is the only way to put an image on the device. Patch that, and an unlocked bootloader is inert. dev-reverse: *"You don't lose the unlock; you lose access to EDL mode"* [RM11 #2855 p143]. Haldi4803: *"No more EDL. No more flashing anything, no ROMs, not even root exploit"* [RM11 #2858 p143].
 - **The GBL exploit is confirmed patched** as of RM11 `.19 MR2` [RM11 #2763 p139] — that's the one Option 18 uses for locked-bootloader root and the fingerprint fix.
 - The 5t0l3n ladder on the Z80 Ultra shows the sequencing clearly: `.16` everything works → `.20` efisp fix broken → `.27` can't unlock or root at all, *but firehose still functions* [RM11 #2476 p124]. His read: *"seems like everything is patched except firehose. You know what's next."*
+- **On the RM11 family that patch is now reversible.** Flashing a pre-patch `abl` + `efisp` back onto a current device restores the exploit, on any firmware and region [RM11 #3,055 p153] — see [the downgrade bypass](/rm10pro/bootloader-unlock-status#abl-efisp-downgrade). It has **not** been shown on the RM10 Pro, which [has no `efisp` partition](/rm10pro/partitions-avb#no-efisp).
+
+### Keep a copy of your pre-patch bootloader partitions {#keep-prepatch-images}
+
+The corollary of the bypass is that **pre-patch `abl` and `xbl_config` images are valuable** — they are what makes the exploit work again later. If you are on old firmware today, dump them while you can. With any root (including [GhostLock](/rm10pro/ghostlock-temp-root), which needs no unlock) it's a one-liner per partition and doesn't require EDL:
+
+```bash
+for p in abl_a abl_b xbl_config_a xbl_config_b init_boot_a init_boot_b \
+         vbmeta_a vbmeta_b ztecfg uefi_a uefi_b devcfg_a boot_a; do
+  adb shell su -c "dd if=/dev/block/by-name/$p" > "$p.img"
+done
+```
+
+Verify each one against the device before you trust it, since a truncated dump looks like a real file:
+
+```bash
+adb shell su -c 'sha256sum /dev/block/by-name/abl_a'
+sha256sum abl_a.img
+```
+
+Record the build these came from (`ro.build.display.id`, `ro.build.fingerprint`, `uname -r`) next to the images — an image is only useful if you know which firmware it belongs to.
 
 **Downgrading is still possible** on unfused devices [RM11 #2941 p148, #3018 p151]. Check any prospective update for anti-rollback first with [otaripper](https://github.com/syedinsaf/otaripper) or [arbscan](https://github.com/syedinsaf/arbscan) [RM11 #2595 p130, #2371 p119].
 
@@ -103,33 +124,62 @@ Two things follow if that's right, and both match reported behaviour:
 
 ### What actually restores it
 
-- **Toolbox Option 18** is the supported fix, and it works only on firmware where the GBL exploit is still open — up to `.18 MR1` on the RM11 Pro, not on `.19 MR2` or later [RM11 #2763, #2790 p139–140]. See [Options 18 and 19](/rm10pro/zte-family-toolbox#option-18-19).
+- **Toolbox Option 18** is the supported fix. It was limited to firmware where the GBL exploit is still open — up to `.18 MR1` on the RM11 Pro, not `.19 MR2` or later [RM11 #2763, #2790 p139–140] — until the [pre-patch `abl` + `efisp` swap](/rm10pro/bootloader-unlock-status#abl-efisp-downgrade) lifted that limit on the RM11 family in August 2026. See [Options 18 and 19](/rm10pro/zte-family-toolbox#option-18-19).
 - **It is incompatible with `abl userdebug` and with TWRP** — Option 19 has to strip the patch before either will run, and stripping it un-does the fingerprint fix [RM11 #2629 p132, #2807 p141].
 - Reports of Option 18 *not* working are common on newer firmware and on the 11S Pro [RM11 #2559 p128, #2714 p136]; several of those ended in a soft-brick recovered by restoring a personal backup.
 - On the **RM10S Pro**, -CNote- reports unlock + root **with a working fingerprint** on `RedMagicOS11.0.5MR_GB` [RM11 #2987 p150] — no procedure published.
 
 ## Google Wallet / Play Integrity / banking apps after root
 
-Banking apps and Google Wallet check **bootloader state**, not just the presence of root — so a normally-unlocked + rooted phone fails them even with good root hiding [RM11 #177 p9 elrey120]. What the RM11 community settled on:
+Banking apps and Google Wallet check **bootloader state**, not just the presence of root — so a normally-unlocked + rooted phone fails them even with good root hiding [RM11 #177 p9 elrey120]. The short version of what the RM11 community settled on:
 
 - Use **KernelSU**, not Magisk, for Wallet/banking — Magisk is far easier for these checks to detect; the toolbox's no-BL-root path ships a KSU build for exactly this [RM11 #117 p6 elrey120].
-- Stronger hiding comes from **KernelSU + SUSFS**, but that reportedly needs a **compilable kernel** to inject the patches cleanly — the current blocker, see [Kernel source → GPLv2 dispute](/rm10pro/kernel-source#gplv2-kernel).
-- The cleanest answer is the **`efisp` "mode 2"** approach (keep stock attestation while booting unlocked) — see [Reverse engineering → efisp modes](/rm10pro/reverse-engineering#efisp-modes). borygo77 runs stock ROM with only the `efisp` exploit applied and reports Wallet and RCS working **with no modules at all** [RM11 #3024 p152]; his warning is that touching the kernel is what breaks them [RM11 #2910 p146].
+- The cleanest answer is to never break attestation in the first place: keep the bootloader locked and root through [EDL](/rm10pro/bd-security-edl-root), or use the **`efisp` "mode 2"** approach on the RM11 [Reverse engineering → efisp modes](/rm10pro/reverse-engineering#efisp-modes). borygo77 runs stock ROM with only the `efisp` exploit applied and reports Wallet and RCS working **with no modules at all** [RM11 #3024 p152].
+- If attestation is already broken — typically after restoring an EDL backup — it can usually be **repaired with the device's own keys** rather than a fake keybox.
 
-### The module stack that people actually landed on
-
-For those who do end up needing to paper over integrity checks, the combination reported working on RM11S Pro `11.5.5_GB` — all three green, RCS restored, Google Pay working over NFC [RM11 #3031, #3033 p152 christopherrrg; corroborated #3034, #3036 p152 kravnos]:
-
-- **Play Integrity Fork**
-- **Tricky Store**
-- **Yurikey Manager**
-
-The pattern reported there is worth knowing: the **first** boot after unlock passes integrity using the device's own keys, and it's only once Magisk is actually detected that RCS and Google services drop — the modules restore what that costs you.
+**This whole topic now has its own page: [Play Integrity, attestation, and getting your keys back](/rm10pro/play-integrity-attestation)** — diagnosis, the RKP re-provisioning procedure, the module stack as a fallback, and the custom-kernel trap that silently kills RCS and Wallet days later.
 
 ## OTA / update gotchas
 
+### Taking an OTA while rooted {#ota-while-rooted}
+
+An A/B OTA writes the *inactive* slot and then switches to it, so the mechanics are friendlier than they look — but the updater still refuses to start if the partitions it intends to work from aren't the ones it expects. A KernelSU- or Magisk-patched `init_boot` is exactly such a mismatch, and `init_boot` is in this device's OTA set:
+
+```bash
+adb shell getprop ro.vendor.build.ab_ota_partitions
+# abl,aop,…,init_boot,…,vbmeta,vendor,vendor_boot,…
+```
+
+**Restore stock `init_boot` to the active slot before updating, then re-root afterwards.** The stock image you need is usually already on the phone: if you only ever patched one slot, the other slot still holds a clean copy.
+
+```bash
+# Which slot are you on?
+adb shell getprop ro.boot.slot_suffix                       # e.g. _a
+
+# Is the inactive slot's init_boot actually stock?
+adb shell su -c 'dd if=/dev/block/by-name/init_boot_b' > init_boot_b.img
+strings -a init_boot_b.img | grep -ci kernelsu               # 0 = clean, non-zero = patched
+```
+
+A clean image gives no `Hello, KernelSU!` / `kernelsu.ko` / `/data/adb/ksud` strings; a patched one gives several. Restore it to the active slot the same way you flashed root in the first place — via [EDL](/rm10pro/edl-9008) on a locked bootloader, or `fastboot flash` if you're unlocked. After the update completes, re-patch and re-flash.
+
+:::warning Don't restore across firmware versions
+`init_boot_b` is only a valid stock source if that slot holds the *same build* you are currently running. If slot B was left behind on an older firmware, its `init_boot` is the wrong image — take the stock one from a full firmware package instead.
+:::
+
+The ZTE updater (`com.zte.zdm`, the FOTA client behind Settings → System update) records what it's doing in `/data/data/com.zte.zdm/shared_prefs/zdm.xml`, which is the fastest way to see *why* an update isn't starting: `dd_description` holds the offered `<TargetVersion>`, `dd_size` the package size, and `startDownload` / `delay_dismatch_time` show whether the client got as far as downloading or bailed out on a mismatch. A download that never began leaves `download_size` and `total_size` at `0` and `/data/ota_package` empty.
+
+Note also that the ROM ships with logging suppressed (`log.tag=S`), so `logcat` shows nothing during a failed update until you lift it:
+
+```bash
+adb shell su -c 'setprop log.tag V'    # runtime only, resets on reboot
+```
+
+### Other update failures
+
 - **OTA update fails at `payload_properties.txt` (~16.38 KB)** — common when you've sideloaded patches or aren't on the exact expected predecessor version [#487 p25 Reminon]. Workaround: extract the delta payload, patch the 42 stock partitions, flash via fastboot.
 - **Renaming update.zip and dropping it in `/sdcard`** doesn't trigger the local-update prompt on this device [#487 p25].
+- **After using the RM11 `abl`/`efisp` swap, the updater refuses everything** until all modified partitions are restored to stock [RM11 #3,143 p158 borygo77].
 - **Super partition out of space** when manually flashing patched partitions back: hardcoded 16 GB, slot-A typically uses ~8.8 GB; if patched slot-B partitions need >7 GB you have to delete slot-A logical partitions first [#487 p25].
 
 ## Toolbox-specific issues
