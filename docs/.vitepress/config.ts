@@ -50,6 +50,7 @@ export default defineConfig({
           collapsed: false,
           items: [
             { text: 'ROM / firmware releases', link: '/rm10pro/rom-firmware' },
+            { text: 'Taking an OTA while rooted', link: '/rm10pro/ota-while-rooted' },
             { text: 'EDL / 9008 mode', link: '/rm10pro/edl-9008' },
             { text: 'BD_Security EDL root guide', link: '/rm10pro/bd-security-edl-root' },
           ],

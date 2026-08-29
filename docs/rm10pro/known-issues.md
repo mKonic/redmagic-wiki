@@ -143,37 +143,17 @@ Banking apps and Google Wallet check **bootloader state**, not just the presence
 
 ### Taking an OTA while rooted {#ota-while-rooted}
 
-An A/B OTA writes the *inactive* slot and then switches to it, so the mechanics are friendlier than they look — but the updater still refuses to start if the partitions it intends to work from aren't the ones it expects. A KernelSU- or Magisk-patched `init_boot` is exactly such a mismatch, and `init_boot` is in this device's OTA set:
+RedMagic OTAs are **delta** payloads: `update_engine` rebuilds the new firmware from your current slot and verifies the source bytes of every partition it reads. Any partition you have modified — a patched `init_boot`, a custom `recovery` — fails that check and aborts the whole update with `ErrorCode::kDownloadStateInitializationError`, after restarting its download from zero.
 
-```bash
-adb shell getprop ro.vendor.build.ab_ota_partitions
-# abl,aop,…,init_boot,…,vbmeta,vendor,vendor_boot,…
-```
+The fix is to restore every modified partition to stock first, and to find *all* of them in one pass rather than one failed download at a time. Full procedure, including how to re-root in the window between "update applied" and rebooting: **[Taking an OTA while rooted](/rm10pro/ota-while-rooted)**.
 
-**Restore stock `init_boot` to the active slot before updating, then re-root afterwards.** The stock image you need is usually already on the phone: if you only ever patched one slot, the other slot still holds a clean copy.
-
-```bash
-# Which slot are you on?
-adb shell getprop ro.boot.slot_suffix                       # e.g. _a
-
-# Is the inactive slot's init_boot actually stock?
-adb shell su -c 'dd if=/dev/block/by-name/init_boot_b' > init_boot_b.img
-strings -a init_boot_b.img | grep -ci kernelsu               # 0 = clean, non-zero = patched
-```
-
-A clean image gives no `Hello, KernelSU!` / `kernelsu.ko` / `/data/adb/ksud` strings; a patched one gives several. Restore it to the active slot the same way you flashed root in the first place — via [EDL](/rm10pro/edl-9008) on a locked bootloader, or `fastboot flash` if you're unlocked. After the update completes, re-patch and re-flash.
-
-:::warning Don't restore across firmware versions
-`init_boot_b` is only a valid stock source if that slot holds the *same build* you are currently running. If slot B was left behind on an older firmware, its `init_boot` is the wrong image — take the stock one from a full firmware package instead.
-:::
-
-The ZTE updater (`com.zte.zdm`, the FOTA client behind Settings → System update) records what it's doing in `/data/data/com.zte.zdm/shared_prefs/zdm.xml`, which is the fastest way to see *why* an update isn't starting: `dd_description` holds the offered `<TargetVersion>`, `dd_size` the package size, and `startDownload` / `delay_dismatch_time` show whether the client got as far as downloading or bailed out on a mismatch. A download that never began leaves `download_size` and `total_size` at `0` and `/data/ota_package` empty.
-
-Note also that the ROM ships with logging suppressed (`log.tag=S`), so `logcat` shows nothing during a failed update until you lift it:
+Note that the ROM ships with logging suppressed (`log.tag=S`), so `logcat` shows nothing at all during a failed update until you lift it:
 
 ```bash
 adb shell su -c 'setprop log.tag V'    # runtime only, resets on reboot
 ```
+
+The ZTE updater (`com.zte.zdm`, the FOTA client behind Settings → System update) also records what it is doing in `/data/data/com.zte.zdm/shared_prefs/zdm.xml`: `dd_description` holds the offered `<TargetVersion>`, `dd_size` the package size, and `startDownload` / `delay_dismatch_time` show whether the client got as far as downloading or bailed out early.
 
 ### Other update failures
 
