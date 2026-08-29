@@ -32,7 +32,9 @@ adb shell uname -r
 :::
 
 :::warning Root context alone doesn't tell you which path you're on
-Both GhostLock and a flashed KernelSU `init_boot` give you `uid=0(root) … context=u:r:ksu:s0`, and on this device family **both** can sit behind `ro.boot.flash.locked=1` with `verifiedbootstate=green` — the [no-BL EDL root](/rm10pro/bd-security-edl-root) keeps verified boot green too. To tell them apart, look at the partition rather than the shell: `strings init_boot_<active slot>.img | grep -i kernelsu` returns `Hello, KernelSU!`, `kernelsu.ko` and `/data/adb/ksud` on a *flashed* root, and nothing on a stock image being exploited at runtime. The other tell is behavioural — if root survives a normal reboot, it was never GhostLock.
+Both GhostLock and a flashed KernelSU `init_boot` give you `uid=0(root) … context=u:r:ksu:s0`, so the shell proves nothing. Nor do the boot-state properties — [they are routinely spoofed](/rm10pro/partitions-avb#boot-state-props-lie) by root-hiding modules, and a phone with an unlocked bootloader and a flashed root will happily report `flash.locked=1` and `verifiedbootstate=green`.
+
+Two checks that do work. Look at the partition: `strings init_boot_<active slot>.img | grep -i kernelsu` returns `Hello, KernelSU!`, `kernelsu.ko` and `/data/adb/ksud` on a *flashed* root, and nothing on a stock image being exploited at runtime. And look at the behaviour: if root survives a normal reboot, it was never GhostLock.
 :::
 
 The XDA crosspost advertises "REDMAGIC 10(S) PRO". The upstream table names the **10 Pro** only; the 10S Pro ships a different kernel build and is not listed. If you have a 10S, treat it as an unsupported kernel and go through the offset extraction below.

@@ -79,18 +79,28 @@ Verify with `avbtool`, which parses the header properly rather than trusting a b
 avbtool info_image --image vbmeta_patched.img | grep Flags   # → Flags: 3
 ```
 
-### Observed on a live device
+### Boot-state properties lie on a rooted device {#boot-state-props-lie}
 
-A shipping NX789J on `RedMagicOS11.0.4MR1_GB`, rooted with a KernelSU-patched `init_boot` and a **locked** bootloader, reads:
+Before you conclude anything about a device's lock state from `getprop`, know that **`ro.boot.*` is trivially spoofed**. Play Integrity Fix and similar modules `resetprop` exactly the properties you would use to check:
 
-| | `_a` (active) | `_b` |
-|---|---|---|
-| `init_boot` | KernelSU-patched (`Hello, KernelSU!`, `kernelsu.ko`, `/data/adb/ksud`) | stock |
-| `vbmeta` flags @ 0x78 | `0x00` — **stock** | `0x03` |
-| `ro.boot.verifiedbootstate` | `green` | |
-| `ro.boot.flash.locked` | `1` | |
+A shipping NX789J with an **unlocked** bootloader, rooted with a KernelSU-patched `init_boot` and running `playintegrityfix` + `teesim`, reports:
 
-This is the practical proof of the first table on this page: **`init_boot` is not covered by the enforced AVB chain on this device**, so a patched `init_boot` boots green against an *unmodified* vbmeta. You do not need to disable verification to run KernelSU here — which is also why root can persist across reboots with the bootloader locked and Play Store still seeing a green verified-boot state.
+| Source | `verifiedbootstate` | `vbmeta.device_state` | `flash.locked` |
+|---|---|---|---|
+| `getprop ro.boot.*` | `green` | `locked` | `1` |
+| **`/proc/bootconfig`** | **`orange`** | **`unlocked`** | — |
+
+The properties are the spoof; `/proc/bootconfig` is what the bootloader actually passed to the kernel. Check the real value with:
+
+```bash
+adb shell cat /proc/bootconfig | grep -E 'verifiedbootstate|device_state'
+# on older devices the same values arrive on the kernel command line instead:
+adb shell cat /proc/cmdline | tr ' ' '\n' | grep androidboot
+```
+
+`fastboot getvar unlocked` from the bootloader is the other authoritative answer. Anything read from `getprop` on a rooted phone tells you what the modules want apps to believe, which is the point of them — it is not evidence about your hardware.
+
+This matters beyond curiosity: procedures on this wiki branch on whether your bootloader is locked, and a spoofed `green` will send you down the wrong one.
 
 ## There is no `efisp` partition on the NX789J {#no-efisp}
 
