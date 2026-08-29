@@ -9,7 +9,7 @@ adb shell ls /dev/block/by-name/ | head -30
 fastboot getvar current-slot
 ```
 
-## LUN 4 GPT — known sectors (sector size 4096)
+## LUN 4 GPT — known sectors (sector size 4096) {#lun-4-gpt}
 
 From BD_Security's dump [#423 p22]:
 

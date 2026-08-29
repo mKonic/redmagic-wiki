@@ -44,4 +44,4 @@ zcink didn't mention this method explicitly — included here for completeness s
 
 ## Related: zcink's stance on unlocking
 
-He pursued unlock + root for full degoogling but found this stop-gap useful while the toolbox unlock was still RM11-only. With unlock now landed (May 2026), this path is mostly for users who deliberately want to keep the bootloader locked (banking apps, SafetyNet) — pair with [Path D: toolbox no-BL root via KernelSU](/rm10pro/root-magisk#path-d--toolbox-driven-kernelsu-no-bl-root) if you change your mind.
+He pursued unlock + root for full degoogling but found this stop-gap useful while the toolbox unlock was still RM11-only. With unlock now landed (May 2026), this path is mostly for users who deliberately want to keep the bootloader locked (banking apps, SafetyNet) — pair with [Path D: toolbox no-BL root via KernelSU](/rm10pro/root-magisk#path-d-toolbox-no-bl-root) if you change your mind.

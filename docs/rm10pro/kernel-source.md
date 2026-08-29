@@ -140,7 +140,7 @@ This works because the OnePlus 15 and RM11 Pro share GKI `6.12.23`. The RM10 Pro
 You'll need either:
 
 - **An unlocked bootloader** → `fastboot flash boot_a custom-boot.img` to the inactive slot, then `fastboot --set-active=a` and reboot. See [Bootloader unlock](/rm10pro/bootloader-unlock-status) if you haven't unlocked.
-- **EDL / 9008** → firehose-program the new boot image to the inactive slot's start sector. Partition addresses in [Partitions, AVB, vbmeta](/rm10pro/partitions-avb#lun-4-gpt--known-sectors-sector-size-4096).
+- **EDL / 9008** → firehose-program the new boot image to the inactive slot's start sector. Partition addresses in [Partitions, AVB, vbmeta](/rm10pro/partitions-avb#lun-4-gpt).
 
 :::warning AVB will reject a modified boot
 Modifying `boot` triggers AVB, which forces a factory reset on a locked device and "device is corrupt" on an unlocked one without disabled verification. You must also patch vbmeta (set `vbmeta.flags` to `0x02` at offset `0x0C`) before flashing — see [Partitions, AVB, vbmeta — vbmeta header / flag byte](/rm10pro/partitions-avb#vbmeta-header-flag-byte).
