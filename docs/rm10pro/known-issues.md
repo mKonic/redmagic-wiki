@@ -62,6 +62,8 @@ Record the build these came from (`ro.build.display.id`, `ro.build.fingerprint`,
 | Bootloader-mode loop (keeps returning to bootloader) | Tried `fastboot flash vbmeta --disable-verity` etc. | EDL restore — only path back is flashing stock `vbmeta` via firehose [#315 p16 Reminon] |
 | Boot loop after Android 16 GSI/DSU on A15 stock | `/metadata/aconfig/maps/system.flag.map` left over | `adb shell su -c 'rm /metadata/aconfig/maps/system.flag.map'` [#279 p14 Reminon] |
 | Permission controller crashes after dual-booting A16 ROM | Same A16 leftover | Same fix as above |
+| "Device is corrupt" boot loop right after a toolbox unlock on Android 16 (reported on RedMagic **Astra** NP05J) | Data left over from before the unlock | Factory reset from recovery/fastboot [RM11 #3,216–#3,217 p161] |
+| The slot you *didn't* root won't boot, or only reaches fastboot | Unknown | Asked twice by RM10 owners, never answered [#710, #716 p36]. Boot the rooted slot and keep a backup of both slots' `init_boot` |
 
 ### Hard brick — stuck in MemoryDump / no display
 
@@ -159,13 +161,16 @@ The ZTE updater (`com.zte.zdm`, the FOTA client behind Settings → System updat
 
 - **OTA update fails at `payload_properties.txt` (~16.38 KB)** — common when you've sideloaded patches or aren't on the exact expected predecessor version [#487 p25 Reminon]. Workaround: extract the delta payload, patch the 42 stock partitions, flash via fastboot.
 - **Renaming update.zip and dropping it in `/sdcard`** doesn't trigger the local-update prompt on this device [#487 p25].
-- **After using the RM11 `abl`/`efisp` swap, the updater refuses everything** until all modified partitions are restored to stock [RM11 #3,143 p158 borygo77].
+- **After using the RM11 `abl`/`efisp` swap, the updater refuses everything** until all modified partitions are restored to stock [RM11 #3,143 p158 borygo77]. The full restore → update → re-flash cycle is in [root with the bootloader locked](/rm11pro/toolbox-cross-reference#locked-bl-root).
 - **Super partition out of space** when manually flashing patched partitions back: hardcoded 16 GB, slot-A typically uses ~8.8 GB; if patched slot-B partitions need >7 GB you have to delete slot-A logical partitions first [#487 p25].
 
 ## Toolbox-specific issues
 
 - **Toolbox 1.2.4 stuck on "Backing up FRP"** on build 10.0.18_NX789J_GB → "Failed to read partition table file. Press any key to retry" [#666 p34 Enddo]. No documented fix as of mid-May; suspected driver/version mismatch.
 - **Toolbox version <1.2.3 doesn't support RM10 Pro** — gives "phone isn't supported" even though the UI lets you select it [#660 p33].
+- **Backup fails because the COM port is in use.** Change the port number in Device Manager → the 9008 port's properties → Advanced (e.g. COM4 → COM20) [RM11 #3,245 p163].
+- **Errors and warnings scroll by during Option 4.** That's normal. Some partitions it asks for don't exist on every device. If the finished backup is about 22 GB, it's fine [RM11 #3,319 p166, #3,329 p167].
+- **Backup or flash dies with a path error** (`selectpathfile`) → the toolbox folder name or location isn't plain enough. Rename it to simple ASCII words at the root of `C:` [RM11 #3,349 p168]. Full list in the [Windows checklist](/rm10pro/zte-family-toolbox#windows-gotchas).
 
 ## Custom-recovery side effects
 
@@ -191,5 +196,7 @@ GigaWrathWave [#668 p34]: rooted RM10 successfully, but `rpv` (presumably **Remo
 - Modifying `init_boot` (recovery, etc.) — warning, boots
 - Settings DB editor changes to protected settings — warning, boots
 - DSU/GSI ROM install via root — warning, boots
+
+To clear the **red** dm-verity warning after you've gone back to stock, Bobo9996's fix is `adb reboot "dm-verity\ enforcing"` [RM11 #3,197 p160]. The same post re-runs the [RKP repair](/rm10pro/play-integrity-attestation#rkp-repair) if Play then reports the device as uncertified.
 
 If you see "device is corrupt" and the phone boots through to Android within 10–20 s, you're not bricked. If it hangs on that screen forever, you have a real AVB failure and need EDL.

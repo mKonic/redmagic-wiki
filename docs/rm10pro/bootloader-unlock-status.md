@@ -25,10 +25,16 @@
 | Jul 30, 2026 | **Red Magic 10S Pro** reported unlocked **and** rooted with a **working fingerprint reader** — first such report for the 10S [RM11 #2987 p150 -CNote-] |
 | Aug 17, 2026 | **The firmware patch is bypassed.** Elivizon299 finds that flashing a *pre-patch* `abl` + `efisp` back onto a patched device restores the exploit — Option 18 works again on any firmware [RM11 #3,055 p153]. See [downgrading the bootloader](#abl-efisp-downgrade) |
 | Aug 21, 2026 | **GhostLock** published — temporary root on a **locked** bootloader via CVE-2026-43499, and the RM10 Pro's shipping kernel is a supported target [#708 p36]. See [GhostLock](/rm10pro/ghostlock-temp-root) |
+| Sep 3, 2026 | Bobo9996 relays that SYXZ is still running the **private beta of a free SM8750 unlock** (RM10 Pro / Pro+, Z70 Ultra) through Coolapk. Release not promised [RM11 #3,207 p161] |
+| Sep 8, 2026 | Mombei unlocks an RM10 Pro with toolbox 1.2.8 and roots it with Magisk 30.7. **Fingerprint keeps working** without any fix [RM11 #3,213 p161] |
+| Sep 15, 2026 | borygo77 publishes the RM11-family **locked-bootloader root**: three partitions flashed over EDL, integrity intact [RM11 #3,227 p162]. See [the cross-reference](/rm11pro/toolbox-cross-reference#locked-bl-root) |
+| Sep 24, 2026 | grmcrkrs fully unlocks an **11S Pro** through Superfastboot with the same files [RM11 #3,266 p164] |
 
 ## Which firmware can still be unlocked? {#firmware-compatibility}
 
 This is the question that dominates the newer thread, and the honest answer for the RM10 Pro is **nobody has published a version matrix**. dev-reverse, July 13: *"There is no guide for the RedMagic 10, and if I were you, I'd be careful; you need to know which ROM is compatible with the RedMagic 10 unlock — it has to be an older version, as you can't unlock it using just any version"* [RM11 #2893 p145]. He is more pointed elsewhere: RM10 owners aren't posting their working ROM versions or sharing EDL backups the way the RM11 side does [#697 p35].
+
+There are a few individual RM10 data points. Mombei unlocked with toolbox 1.2.8 and rooted with Magisk, and the fingerprint reader kept working. The firmware version wasn't posted [RM11 #3,213 p161].
 
 What *is* pinned down, on the sibling **RM11 Pro** (NX809J), and worth reading as the shape of the thing rather than as RM10 gospel [RM11 #2788, #2807 p140–141 dev-reverse]:
 

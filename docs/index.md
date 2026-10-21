@@ -55,7 +55,7 @@ Everything documented here is **at your own risk**. Bootloader unlocking, rootin
 
 ## How this wiki was assembled
 
-This wiki was bootstrapped in May 2026 by **scraping two XDA forum threads** with a Claude Code agent — extracting per-post markdown, then synthesizing the high-signal content into topical pages. Last re-scraped **August 2026**: 196 pages, 3,900 posts.
+This wiki was bootstrapped in May 2026 by **scraping two XDA forum threads** with a Claude Code agent — extracting per-post markdown, then synthesizing the high-signal content into topical pages. Last re-scraped **October 2026**: 205 pages, 4,075 posts.
 
 **Source threads:**
 
@@ -95,6 +95,8 @@ This wiki is a synthesis, not original research. **Every breakthrough documented
 | GhostLock — locked-bootloader temporary root (CVE-2026-43499) | **YuKongA**; brought to XDA by **HammadYasin** |
 | RKP key re-provisioning instead of fake keyboxes | **Dimachi**, **Bobo9996**, **christopherrrg** |
 | EDL packages and update-without-wipe testing for the RM11 family | **borygo77**, **EliteBlackKaiser** |
+| Locked-bootloader root via a three-partition EDL flash; the newcomer walkthrough | **borygo77**; guide by **marjanusz** |
+| Full unlock through Superfastboot on the 11S Pro | **grmcrkrs** |
 
 Every author named above retains credit for their original posts. If you contributed and aren't listed, or if you'd rather not be named, **open an issue or PR** — see [Contributing](/contributing).
 

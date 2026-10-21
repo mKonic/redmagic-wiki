@@ -48,7 +48,36 @@ Since August 2026 the bottom rows are no longer a dead end: flashing a **pre-pat
 
 **RM11 Pro can run 11S Pro firmware.** borygo77's `11Pro_11.5.6MR1GB.7z` EDL package bundles a KernelSU-3.3.0 `init_boot`, a vulnerable `abl` and a patched `eFisp`, flashes over anything lower including `11.0.12`, and needs no data wipe [RM11 #3,078 p154, #3,083 p155]; several users confirmed it in-thread [RM11 #3,099 p155 kcodya, #3,131 p157 christopherrrg]. RAM is unaffected by the firmware swap, storage geometry is not — see [storage reported as 512 GB](/rm10pro/known-issues#storage-halved). The 11S clock bump does **not** carry over to an NX809J [RM11 #3,119 p156].
 
+Newer firmware, as reported in-thread through October 2026: Global/EA builds reached `11.5.7MR1_EA` and `11.5.8MR1_GB`, CN reached `11.5.14` / `11.5.15MR1`. The locked-bootloader root below is confirmed on 11S Pro `11.5.5MR1_EA` [RM11 #3,329 p167], on `11.5.7MR1_EA` with fingerprint and Wallet working [RM11 #3,250 p163, #3,292 p165 williamcll], and on CN `11.5.15MR1` [RM11 #3,255 p163 Al-Dossari]. There is **no flashable package for `11.5.8MR1_EA`** — people on it can't find one [RM11 #3,333, #3,347 p167–168], and marjanusz's answer is that it's the current build, so there's nothing to flash to [RM11 #3,334].
+
+Not everyone moves forward. borygo77 tried 11.5.6, saw odd 60 Hz switching on an external display, and went back to `11.0.18MR1_GB` to stay [RM11 #3,223 p162]; Bobo9996 likewise calls `.18` the best stock build and saw random app hangs on the 11S ROM [RM11 #3,195 p160].
+
 For the RM10 Pro there is **no equivalent matrix** — see [RM10 KB → Which firmware can still be unlocked?](/rm10pro/bootloader-unlock-status#firmware-compatibility).
+
+## Root with the bootloader locked — the three-partition flash {#locked-bl-root}
+
+The `abl` + `efisp` downgrade turned into a root method that needs no unlock at all. borygo77's post ships `Patched & Vulnerable Files.zip` — a vulnerable `abl.img`, a patched `efisp.efi` and a KernelSU-patched `init_boot.img` — with these steps [RM11 #3,227 p162]:
+
+1. Connect the phone in [EDL](/rm10pro/edl-9008).
+2. Make a full backup (Option 4) if you haven't.
+3. Find the active slot (Option 16, or the DevCheck app).
+4. Flash `efisp`.
+5. Flash `abl_<slot>` for that slot.
+6. Flash `init_boot_<slot>` for that slot.
+7. Boot and install the KernelSU Next manager.
+
+All three flashes go through Option 12. Integrity stays intact because the bootloader never changes state. marjanusz's step-by-step version for newcomers covers driver installation through to the final flash [RM11 #3,329 p167]. Two points that came up repeatedly:
+
+- **Flashing `efisp` yourself *is* Option 18.** Don't run 18 or 19 on top; just flash the patched `init_boot` and install KSU Next [RM11 #3,341–#3,342 p168].
+- **Put the toolbox at a plain path** like `C:\1.2.8-beta2`, with the three images in the same folder you launch it from. A file on the Desktop or in OneDrive makes Option 12 fail with `selectpathfile,,, Press any key to retry` [RM11 #3,291 p165, #3,321 p167]. Image names don't need to match the partition.
+
+If you're already rooted this way with another manager (e.g. Resukisu) and only want to switch, reflashing `init_boot_<slot>` is enough. No wipe needed [RM11 #3,338–#3,340 p167].
+
+**Taking an OTA.** The update won't verify against modified partitions, so the cycle is: restore the three stock partitions from your backup → update → back up the *new* `init_boot_<slot>` and `abl_<slot>` → reflash the three modified ones. All of it in EDL [RM11 #3,248 p163, #3,306 p166]. On a new phone, update first and root after. Rooting first just makes the update fail verification [RM11 #3,249 p163].
+
+## Full unlock via Superfastboot (11S Pro) {#superfastboot-unlock}
+
+grmcrkrs used the same files for a **real** unlock on an 11S Pro running `11.5.6_EA` [RM11 #3,266 p164]. He wrote `efisp.efi` to `efisp` and `abl.img` to `abl_a`, entered **Superfastboot**, and ran the fastboot unlock command there. Android's properties still read locked/green afterwards, but `fastboot getvar unlocked` returned `yes` and `oem device-info` said `Device unlocked: true`. He then flashed a Magisk 30.7-patched copy of his own stock `init_boot_a` and had root, with the fingerprint reader still working. The misleading properties are the same thing the [boot-state note](/rm10pro/partitions-avb#boot-state-props-lie) warns about.
 
 ## Companion exploits referenced from RM11 OP
 
@@ -89,6 +118,8 @@ The RM11 side went from "no recovery" to a small ecosystem over June–July 2026
 | **OrangeFox** (RM11) | [Coding-BR/rm11pro-canoe-dock](https://github.com/Coding-BR/rm11pro-canoe-dock) | n00b-xda-disciple's build, with GitHub Actions CI so it can be forked and rebuilt [RM11 #2575, #2605 p129–131]. Prebuilt ZIP under `releases/recovery/orangefox/d2n-baseline/`. |
 | **TWRP 3.7.1-16** (RM11) | [thread 4791689](https://xdaforums.com/t/recovery-16-unofficial-twrp-3-7-1-16-for-red-magic-11-pro-nx809j-stable.4791689/) · [Coding-BR/android_device_zte_sm88XX-twrp](https://github.com/Coding-BR/android_device_zte_sm88XX-twrp) | Backup works, **restore is broken**, GSI install doesn't work [RM11 #2771 p139]. |
 | **LineageOS 23.2** (Android 16) | [thread 4791285](https://xdaforums.com/t/rom-nx809j-unofficial-lineageos-23-2-alpha-09-06-2026.4791285/) | IronSingh's unofficial alpha on the stock kernel; ~3 months of work, DT2W and fingerprint were the open items at release, and the build is **userdebug so not secure** [RM11 #2492–2517 p125–126]. |
+| **EvolutionX 11** (Android 16) | [thread 4797197](https://xdaforums.com/t/rom-16-0-nx809j-unofficial-evolutionx-11-10-24-08-2026.4797197/) | Flashed with the thread's `flash_edl.bat` after swapping the Qualcomm driver for WinUSB via Zadig. If the fingerprint is dead afterwards, reinstall the Qualcomm driver and write the thread's `orangestatepatch.img` to `efisp` with Option 12 [RM11 #3,195 p160 Bobo9996]. |
+| **EvolutionX 12.1** (Android 17, experimental) | [thread 4799534](https://xdaforums.com/t/rom-17-0-nx809j-unofficial-experimental-evolutionx-12-1-25-08-2026.4799534/) | Same developer, moving off A16 because A17 fixed many of its bugs. Bobo9996 calls it the best custom ROM so far but is waiting for more fixes [RM11 #3,195 p160]. |
 | **Canoe Dock guide** | [thread 4787673](https://xdaforums.com/t/redmagic-11-pro-nx809j-canoe-dock-unlock-root-kernelsu-anykernel3-gsi-recovery.4787673/) | n00b-xda-disciple's unlock / root / KernelSU / GSI / recovery walkthrough. |
 | **REDMAX** module | [kencalx/REDMAX-11](https://github.com/kencalx/REDMAX-11) | Root module re-enabling hardware/software features RedMagic OS disables [RM11 #2592, #2631 p130–132]. |
 

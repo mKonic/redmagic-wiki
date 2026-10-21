@@ -1,6 +1,6 @@
 # rm10pro
 
-_Extracted from 36 pages_
+_Extracted from 37 pages_
 
 ---
 
@@ -22863,3 +22863,163 @@ Additionally if you have the boot.img from your phone you can import it in the a
 
 ## Repository​
 https://github.com/YuKongA/ghostlock-app
+
+---
+
+### #709 — **Tomas_Ford** · Sep 11, 2026 at 4:17 AM · page 36
+
+Hi! Does anyone have an modem backup or a .qcn file?
+
+---
+
+### #710 — **imboii** · Sep 14, 2026 at 12:46 AM · page 36
+
+has anyone fixed the problem of the other slot being unbootable or only booting into fastboot?
+
+---
+
+### #711 — **uraking** · Sep 15, 2026 at 12:37 PM · page 36
+
+ayudaaa
+
+me sale error de com 9008 cuando ya tengo instalado todo bien
+
+y no se termina la copia de seguridad a la mitad da error
+
+---
+
+### #712 — **chi0** · Sep 16, 2026 at 7:50 AM · page 36
+
+Has anyone tried the package released by this developer? I'm really looking forward to seeing a ROM similar to the Red Magic 11 Pro+ in the future.
+
+---
+
+### #713 — **bpe57** · Sep 16, 2026 at 11:31 PM · page 36
+
+> **chi0 said:**
+> Has anyone tried the package released by this developer? I'm really looking forward to seeing a ROM similar to the Red Magic 11 Pro+ in the future.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Link of the post?
+
+---
+
+### #714 — **chi0** · Sep 17, 2026 at 1:09 AM · page 36
+
+> **bpe57 said:**
+> Link of the post?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+You can try flashing this ROM; if you encounter any bugs, please report them to the developer. I am truly impressed by his capabilities—he is excellent.
+
+https://xdaforums.com/t/rom-16-0-nx809j-unofficial-lineageos-23-2-24-08-2026.4791285/page-20#post-90738290
+
+---
+
+### #715 — **chi0** · Sep 17, 2026 at 1:11 AM · page 36
+
+> **bpe57 said:**
+> Link of the post?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+There is a very high probability that the Red Magic 10 Pro will also support custom ROMs, just like the Red Magic 11 Pro+.
+
+---
+
+### #716 — **hyty** · Sep 17, 2026 at 10:40 PM · page 36
+
+has anyone fixed the issue of slot a or b being unbootable depending on which slot you've rooted?
+
+---
+
+### #717 — **Sterben@** · Sep 26, 2026 at 3:49 PM · page 36
+
+Hello friends, there is a redmagic 10 pro 24/1, I want to update from 16 android to 15th, how can this be done without support, the phone was not new.
+
+---
+
+### #718 — **aleopho** · Oct 8, 2026 at 11:36 PM · page 36
+
+right now i am using project infinity x gsi on my red magic 10 pro and everything works. got everything to work using magisk modules, some of them i wrote myself and i am using it as a stable daily driver. even banking apps and everything work.
+
+i even got the rgb and the fans to work, i've build a small apk including a nice widget for that. will upload some of the modules and the apk to github soon.
+
+---
+
+### #719 — **chi0** · Oct 8, 2026 at 11:40 PM · page 36
+
+> **aleopho said:**
+> right now i am using project infinity x gsi on my red magic 10 pro and everything works. got everything to work using magisk modules, some of them i wrote myself and i am using it as a stable daily driver. even banking apps and everything work.
+>
+>
+>
+> i even got the rgb and the fans to work, i've build a small apk including a nice widget for that. will upload some of the modules and the apk to github soon.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Is it possible to use a custom ROM now? How is it done? I’ve been looking for a long time but haven't found anything. Could you provide the ROM package and the flashing instructions? Thanks. Also, are there any known bugs with this ROM?
+
+---
+
+### #720 — **chi0** · Oct 8, 2026 at 11:40 PM · page 36
+
+> **aleopho said:**
+> right now i am using project infinity x gsi on my red magic 10 pro and everything works. got everything to work using magisk modules, some of them i wrote myself and i am using it as a stable daily driver. even banking apps and everything work.
+>
+>
+>
+> i even got the rgb and the fans to work, i've build a small apk including a nice widget for that. will upload some of the modules and the apk to github soon.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Is there an Android 17 ROM available to flash?
+
+---
+
+### #721 — **aleopho** · Oct 8, 2026 at 11:59 PM · page 37
+
+> **chi0 said:**
+> Is there an Android 17 ROM available to flash?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+you can flash a gsi and some magisk modules to fix device specific things. it is absolutely possible to make any gsi very usable on the rm10p. that's what i did. for now i don't have a fitting pc to compile a rom, but i will definetly give it a shot.
+
+---
+
+### #722 — **chi0** · Oct 9, 2026 at 12:10 AM · page 37
+
+> **aleopho said:**
+> you can flash a gsi and some magisk modules to fix device specific things. it is absolutely possible to make any gsi very usable on the rm10p. that's what i did. for now i don't have a fitting pc to compile a rom, but i will definetly give it a shot.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Could you please provide the download link for the GSI that is currently being used for testing?
+
+If the reported issues have already been resolved, could you also let me know which firmware versions are compatible and safe to flash at this point? If possible, I would greatly appreciate it if you could provide the corresponding firmware download links as well.
+
+Thank you very much for your work and for taking the time to help.

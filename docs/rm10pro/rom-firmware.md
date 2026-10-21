@@ -56,7 +56,8 @@ Fragmentary, but these are the only first-hand RM10 accounts in the newer posts:
 ## Third-party ROMs
 
 - **HyperOS port for the RM10 and RM11 series** — a Chinese developer's build, shared on Coolapk ([feed](https://www.coolapk.com/feed/71480823)) and hosted on `yun.139.com`, which **requires a Chinese phone number to download** [#700, #704 p35–36 HammadYasin; RM11 #2930 p147]. Multiple RM10 owners have asked for a mirror; none has appeared [#702 p36].
-- **LineageOS 23.2 (Android 16)** exists for the **RM11 Pro** (NX809J) only — IronSingh's unofficial alpha, [thread 4791285](https://xdaforums.com/t/rom-nx809j-unofficial-lineageos-23-2-alpha-09-06-2026.4791285/), built on the stock kernel [RM11 #2496 p125]. No RM10 Pro equivalent; nobody has answered chi0's *"Has anyone created an AOSP build yet?"* [#699 p35].
+- **LineageOS 23.2 (Android 16)** exists for the **RM11 Pro** (NX809J) only — IronSingh's unofficial alpha, [thread 4791285](https://xdaforums.com/t/rom-nx809j-unofficial-lineageos-23-2-alpha-09-06-2026.4791285/), built on the stock kernel [RM11 #2496 p125]. EvolutionX for the NX809J followed, for Android 16 and as an experimental Android 17 build. See [custom ROMs (RM11 Pro)](/rm11pro/toolbox-cross-reference#custom-recoveries-and-roms-rm11-pro). No RM10 Pro equivalent; nobody has answered chi0's *"Has anyone created an AOSP build yet?"* [#699 p35].
+- **GSIs are the RM10 Pro's custom-ROM route for now.** aleopho daily-drives a **Project Infinity X** GSI, with his own Magisk modules covering the device-specific parts and a small APK + widget driving the RGB and fans. He says banking apps work too [#718 p36]. He promised a GitHub upload of the modules and APK. Nothing was published as of Oct 21 2026, and chi0's request for the GSI link and safe firmware versions is unanswered [#721–#722 p37].
 
 ## Region notes
 

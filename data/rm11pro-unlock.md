@@ -1,6 +1,7 @@
 # rm11pro-unlock
 
-_Extracted from 160 pages_
+_Extracted from 168 pages_
+
 
 ---
 
@@ -68514,3 +68515,4423 @@ There is option 19 in the toolbox but that flashes an empty efisp img...
 Is this safe to do using the new abl & efisp flashing method? isn't efisp exploit required?
 
 How can I clear this text on the boot logo?
+
+---
+
+### #3,191 — **christopherrrg** · Aug 30, 2026 at 2:34 AM · page 160
+
+[@borygo77](https://xdaforums.com/m/8093282/) CN just got 11.5.7 - incoming ![😂](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f602.png)
+
+Gonna flash that this weekend and start extracting themes
+
+---
+
+### #3,192 — **borygo77** · Aug 30, 2026 at 5:29 AM · page 160
+
+Don't know where you got that info because CN has 5.14 and probably even further already. But good luck with that ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+
+[@Elivizon299](https://xdaforums.com/m/12854467/) has posted link to 11.5.7 CN edl package sometime ago ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+
+---
+
+### #3,193 — **christopherrrg** · Aug 30, 2026 at 2:10 PM · page 160
+
+> **borygo77 said:**
+> Don't know where you got that info because CN has 5.14 and probably even further already. But good luck with that ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+>
+> [@Elivizon299](https://xdaforums.com/m/12854467/) has posted link to 11.5.7 CN edl package sometime ago ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Dang, did not know we were at 5.14, I appreciate how good you research this device!!
+
+---
+
+### #3,194 — **elrey120** · Aug 30, 2026 at 6:25 PM · page 160
+
+I haven't been checking out any thread about the redmagic 11 pro for about 3 months now and now I'm really lost with what's the current best way of having the phone unlocked and the state of custom kernel and roms.
+
+I've seen [this post](https://xdaforums.com/t/red-magic-11-pro-guide-bootloader-unlock-free-also-support-rm10-pad3pro-z70u-z80u-unlock-zte-family-toolbox.4780930/page-154#post-90702116) from [@borygo77](https://xdaforums.com/m/8093282/) where he mentioned a vulnerable abl and patched efisp, is this any different from how things worked back in may?
+
+And I remember I used to have working edl drivers without disabling driver verification on windows but since then I've reinstalled windows a couple times and now I can't find those drivers. Am I imagining things or do these actually exist?
+
+I also saw [this evolution x rom](https://xdaforums.com/t/rom-16-0-nx809j-unofficial-evolutionx-11-10-24-08-2026.4797197/) that looks really good but I'm not sure if there's anything I should do first before flashing 11.0.18 GB and then the custom rom. Could anyone help me with this?
+
+---
+
+### #3,195 — **Bobo9996** · Aug 31, 2026 at 4:18 AM · page 160
+
+> **elrey120 said:**
+> I haven't been checking out any thread about the redmagic 11 pro for about 3 months now and now I'm really lost with what's the current best way of having the phone unlocked and the state of custom kernel and roms.
+>
+> I've seen [this post](https://xdaforums.com/t/red-magic-11-pro-guide-bootloader-unlock-free-also-support-rm10-pad3pro-z70u-z80u-unlock-zte-family-toolbox.4780930/page-154#post-90702116) from [@borygo77](https://xdaforums.com/m/8093282/) where he mentioned a vulnerable abl and patched efisp, is this any different from how things worked back in may?
+>
+> And I remember I used to have working edl drivers without disabling driver verification on windows but since then I've reinstalled windows a couple times and now I can't find those drivers. Am I imagining things or do these actually exist?
+>
+> I also saw [this evolution x rom](https://xdaforums.com/t/rom-16-0-nx809j-unofficial-evolutionx-11-10-24-08-2026.4797197/) that looks really good but I'm not sure if there's anything I should do first before flashing 11.0.18 GB and then the custom rom. Could anyone help me with this?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+i tested everything
+
+-best stock rom ver .18
+
+-i dont recommended rom of 11s i noticed few bugs idk rom problem or not some apps fail to lead or get stuck randomly like 1.1.1.1 app
+
+-best custom rom is evo x 17 hes moving away from 16 bc a17 alone fixed alot of  a16 bugs tbh he still working on a17 im just waiting for more fixes before i fully switch xd  to install evox
+
+-1: full backup by using option 4
+
+-first replace Qualcomm driver with WinUSB using [zadig](https://zadig.akeo.ie/) to WinUSB then run flash_edl.bat after finish check if rom boot if fp didn't work like me do next
+
+-  [this](https://xdaforums.com/t/rom-16-0-nx809j-unofficial-evolutionx-11-10-24-08-2026.4797197/post-90686856)  to make fp work reinstall Qualcomm_USB_Driver go back to adl> ztetool>12>write **efisp> flash **orangestatepatch.img>reset fp should work now
+
+-also here the driver
+
+if i skip anything or made mistake tell me also [check](https://xdaforums.com/t/rom-17-0-nx809j-unofficial-experimental-evolutionx-12-1-25-08-2026.4799534/post-90716376)he added everything u need
+
+---
+
+### #3,196 — **Dontwait** · Sep 1, 2026 at 8:42 PM · page 160
+
+> **dev-reverse said:**
+> Which device could you tell me? Which device did you unlock? I have a suggestion that might work: you could take only the firmware part of the ROM and restore it again. Since it's already unlocked, after uploading only the firmware to the device, it should be able to fix the TEE, removing the red warning problem and leaving only the yellow one. But that's just my theory. The reason is that after breaking my TEE on a Redmagic 11 Pro, I created a file that only sends the firmware to the smartphone. It fixed my TEE, but of course I was messing with other things. But what I want to say is that the result was the repair of the TEE.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+any idea's how to remove the red warning? I managed fresh clean the phone, removed the root and fixed the fingerprint sensor. I just want to revert to clean phone (no modding/rooting anymore). I've also managed to remove the yellow warning following the guide, but still this red warning still shows up. Some banking apps dont even work on this phone anymore.
+
+Please, any ideas how to revert back to everything?
+
+---
+
+### #3,197 — **Bobo9996** · Sep 1, 2026 at 10:58 PM · page 160
+
+> **Dontwait said:**
+> any idea's how to remove the red warning? I managed fresh clean the phone, removed the root and fixed the fingerprint sensor. I just want to revert to clean phone (no modding/rooting anymore). I've also managed to remove the yellow warning following the guide, but still this red warning still shows up. Some banking apps dont even work on this phone anymore.
+>
+>
+>
+> Please, any ideas how to revert back to everything?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+**to fix red **run **adb reboot "dm-verity\ enforcing"
+
+if google play show device not certified run those
+
+adb shell su -c "touch /data/local/tmp/empty.xml"
+
+check
+
+adb shell su -c "ls -l /data/local/tmp/empty.xml"
+
+then
+
+adb shell su -c "LD_LIBRARY_PATH=/vendor/lib64/hw /vendor/bin/KmInstallKeybox /data/local/tmp/empty.xml 0 true true"
+
+adb shell pm clear com.google.android.gms
+
+adb reboot
+
+make sure u have root if using ksu give shell root**
+
+---
+
+### #3,198 — **Dontwait** · Sep 2, 2026 at 1:26 AM · page 160
+
+> **Bobo9996 said:**
+> **to fix red **run **adb reboot "dm-verity\ enforcing"
+>
+>
+>
+> if google play show device not certified run those
+>
+>
+>
+> adb shell su -c "touch /data/local/tmp/empty.xml"
+>
+>
+>
+> check
+>
+>
+>
+> adb shell su -c "ls -l /data/local/tmp/empty.xml"
+>
+>
+>
+> then
+>
+>
+>
+> adb shell su -c "LD_LIBRARY_PATH=/vendor/lib64/hw /vendor/bin/KmInstallKeybox /data/local/tmp/empty.xml 0 true true"
+>
+>
+>
+> adb shell pm clear com.google.android.gms
+>
+>
+>
+> adb reboot
+>
+>
+>
+> make sure u have root if using ksu give shell root**
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Thanks mate!! You said i need root right? I removed root ![🥲](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f972.png)
+
+---
+
+### #3,199 — **Bobo9996** · Sep 2, 2026 at 7:52 AM · page 160
+
+> **Dontwait said:**
+> Thanks mate!! You said i need root right? I removed root ![🥲](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f972.png)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+just reinstall magisk using ZTEToolbox
+
+---
+
+### #3,200 — **kcodya** · Sep 2, 2026 at 3:36 PM · page 160
+
+Something weird I've noticed with my 11 Pro: If I'm rooted, the temps of the phone go up noticeably and the battery life drops. Stock not rooted, nice and cool and the battery is great. Not sure what's going on with that.
+
+---
+
+### #3,201 — **borygo77** · Sep 2, 2026 at 4:17 PM · page 161
+
+One of modules not compatible? ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+
+---
+
+### #3,202 — **kcodya** · Sep 2, 2026 at 4:24 PM · page 161
+
+> **borygo77 said:**
+> One of modules not compatible? ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I dunno, this last time I didn't use anything too crazy. Just Ad Away and Frosty.
+
+---
+
+### #3,203 — **Leif ^vv^** · Sep 2, 2026 at 6:28 PM · page 161
+
+> **Dontwait said:**
+> Thanks mate!! You said i need root right? I removed root ![🥲](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f972.png)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+You can do some of those commands using Shizuku, but maybe not all of them? It might work though.
+
+---
+
+### #3,204 — **Bobo9996** · Sep 2, 2026 at 7:13 PM · page 161
+
+> **Leif ^vv^ said:**
+> You can do some of those commands using Shizuku, but maybe not all of them? It might work though.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+su need root access
+
+---
+
+### #3,205 — **Leif ^vv^** · Sep 2, 2026 at 7:34 PM · page 161
+
+> **Bobo9996 said:**
+> su need root access
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+oh okay my bad, I guess shizuku can't even help this time.
+
+---
+
+### #3,206 — **belghit aliouat** · Sep 2, 2026 at 7:49 PM · page 161
+
+can i unlock bootloader and root my nubia z70 ultra android 15 v1.0.26 without the risk of losing fingerprint usage ?
+
+---
+
+### #3,207 — **Bobo9996** · Sep 3, 2026 at 1:01 PM · page 161
+
+> **belghit aliouat said:**
+> can i unlock bootloader and root my nubia z70 ultra android 15 v1.0.26 without the risk of losing fingerprint usage ?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+lala
+
+**![🚀](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f680.png) INCOMING: SM8750 (RM10 & Z70 Ultra) FREE UNLOCK POTENTIAL ![🚀](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f680.png)**
+
+Great news for the Snapdragon 8 Elite (SM8750) community! The author of the ZTE Family Toolbox ([@SYXZ](https://xdaforums.com/m/12774241/)) is currently conducting private beta tests for a **FREE unlock method** for the following devices:
+
+- RedMagic 10 Pro
+- RedMagic 10 Pro+
+- Nubia Z70 Ultra
+
+**Want to help test?** If you own one of these devices and have access to the Chinese community app **Coolapk (酷安)**, you can PM the author (@某贼) directly to participate.
+
+*Disclaimer: Beta testing carries risks of failure. Whether the exploit will be 100% successful and released publicly is still pending further updates from the author.*
+
+---
+
+### #3,208 — **christopherrrg** · Sep 4, 2026 at 2:23 AM · page 161
+
+> **InfectedThoughts said:**
+> It's the best one I've tried and it worked for my loudspeaker my tree is in the post above what I used I went 96 but I redid it to 90 sounds way better.
+>
+> Here you go change 96 to 90
+>
+>
+>
+> #installer options
+>
+> #Below you can see the decoding of the names of the points,
+>
+> #or trust the numerical values of the points.
+>
+>
+>
+> #STEP1=Select volume steps
+>
+> #STEP2=Increase media volumes
+>
+> #STEP3=Improving microphones sensitivity
+>
+> #STEP4=Select audio format (16..float)
+>
+> #STEP5=Select sampling rates (96..384000)
+>
+> #STEP6=Turn off sound interference
+>
+> #STEP7=Patching device_features files
+>
+> #STEP8=Other patches in mixer_paths files
+>
+> #STEP9=Tweaks for build.prop files
+>
+> #STEP10=Improve bluetooth
+>
+> #STEP11=Switch audio output (DIRECT -> DIRECT_PCM)
+>
+> #STEP12=Install custom preset for iir
+>
+> #STEP13=Ignore all audio effects
+>
+> #STEP14=Install experimental tweaks for tinymix
+>
+> #STEP15=Configure Dolby Atmos
+>
+> #PATCHACDB=Install patched ACDB files
+>
+> #DELETEACDB=Deleting acdb files
+>
+>
+>
+> Module version: v4.4
+>
+> Device: NX809J
+>
+>
+>
+> VOLSTEPS=false
+>
+> VOLMEDIA=90
+>
+> VOLMIC=false
+>
+> BITNES=float
+>
+> SAMPLERATE=false
+>
+> STEP6=false
+>
+> STEP7=false
+>
+> STEP8=false
+>
+> STEP9=true
+>
+> STEP10=false
+>
+> STEP11=false
+>
+> STEP12=false
+>
+> STEP13=false
+>
+> STEP14=true
+>
+> STEP15
+>
+> =false
+>
+> PATCHACDB=false
+>
+> DELETEACDB=false
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I know this is super duper dated but man did this solve my issues when using PC emulators and basically anything related to volume. Thanks for sharing this!
+
+---
+
+### #3,209 — **InfectedThoughts** · Sep 5, 2026 at 9:59 AM · page 161
+
+> **christopherrrg said:**
+> I know this is super duper dated but man did this solve my issues when using PC emulators and basically anything related to volume. Thanks for sharing this!
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Your very welcome bro glad I could help!
+
+Also if your Bluetooth sound is low you can use this app to boost the sound and it works great and goes really loud but the ads can be a little heavy I use adguard to help with some ads lol it's probably others apps that could do the same but haven't really looked or played with my RM 11 Pro besides just using as a daily driver.
+
+---
+
+### #3,210 — **wildtimo** · Sep 8, 2026 at 6:50 AM · page 161
+
+Did anyone else have the PayPal app start crashing after start or is it just me?
+
+---
+
+### #3,211 — **sputnik334** · Sep 8, 2026 at 10:12 AM · page 161
+
+so i have been messing around and i think that i maybe has f***** something up in the A slot because when switching to slot a the powered by Android logo just sits there and the phone gets really hot...I have tried to just let it sit but it never gets past it... i have done a vol up + power and then wipe phone to factory but the issue still persists... slot b is working however I am not trusting it - just because ![:D](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7) my backup is (and I know it is stupid) from just after A got screwed.... any tips?
+
+---
+
+### #3,212 — **borygo77** · Sep 8, 2026 at 12:21 PM · page 161
+
+Yeah. Just use it with slot b!
+
+After ota update it will switch itself to another...
+
+---
+
+### #3,213 — **Mombei** · Sep 8, 2026 at 3:19 PM · page 161
+
+I have managed to unlock the bootloader on my RM10 Pro with the 1.2.8 version of the toolbox and I have also installed the Magisk apk, patched the ROM with Direct Install, and updated Magisk to 30.7.
+
+My fingerprint reader did not break and I was able to register my fingerprint without further tinkering.
+
+Do I need to disable the system updater through ADB again? Am I safe yet? Can I log back into my google account and re-transfer my personal files?
+
+---
+
+### #3,214 — **borygo77** · Sep 8, 2026 at 5:39 PM · page 161
+
+All is safe. You don't need to disable updater.
+
+---
+
+### #3,215 — **sputnik334** · Sep 8, 2026 at 8:57 PM · page 161
+
+> **borygo77 said:**
+> Yeah. Just use it with slot b!
+>
+> After ota update it will switch itself to another...
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+thanks!
+
+---
+
+### #3,216 — **ioshi** · Sep 9, 2026 at 2:59 PM · page 161
+
+Hi everyone,
+
+I tried to unlock the bootloader on my RedMagic Astra (NP05J) after updating to Android 16 using the ZTE Family Tool, but it resulted in a "device is corrupt" error and bootloop. I had previously backed up my partitions via EDL, and I'm currently running an EDL 9008 restore using that backup.
+
+Is the bootloader unlock method broken or unsupported on Android 16 firmware for this device? Any advice on how to safely unlock on this version or properly recover would be greatly appreciated. Thanks!
+
+---
+
+### #3,217 — **Haldi4803** · Sep 11, 2026 at 7:24 PM · page 161
+
+> **ioshi said:**
+> device is corrupt" error and bootloop.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Yeah.
+
+Just do a factory reset in recovery /fastboot.
+
+---
+
+### #3,218 — **christopherrrg** · Sep 11, 2026 at 8:55 PM · page 161
+
+Hey [@borygo77](https://xdaforums.com/m/8093282/) 11.5.7 is out, how are you making EDL packages? I ask just because I don't wanna ask you to do it every time an update comes out.
+
+Just take abl, efisp and boot out of a stock backup?
+
+---
+
+### #3,219 — **borygo77** · Sep 11, 2026 at 10:11 PM · page 161
+
+It doesn't show up on my one. Checking every day.
+
+You need to bring back those three partitions to stock. Update and flash patched/vulnerable back to your updated device ![😊](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f60a.png)
+
+---
+
+### #3,220 — **christopherrrg** · Sep 12, 2026 at 6:21 AM · page 161
+
+> **borygo77 said:**
+> It doesn't show up on my one. Checking every day.
+>
+> You need to bring back those three partitions to stock. Update and flash patched/vulnerable back to your updated device ![😊](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f60a.png)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I'll share if it pops for me, I've just been seeing everyone posting all over Reddit about it so once it lands on my device I'll whip it up if yours doesn't get it right away.
+
+---
+
+### #3,221 — **borygo77** · Sep 12, 2026 at 7:11 AM · page 162
+
+It's 11.5.7EA ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+
+---
+
+### #3,222 — **pipes80** · Sep 14, 2026 at 4:37 PM · page 162
+
+I
+
+> **borygo77 said:**
+> It's 11.5.7EA ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I'll wait your last upgrade after you complete it.
+
+Like REDMAGICOS11.5.6MR1_GB
+
+---
+
+### #3,223 — **borygo77** · Sep 14, 2026 at 6:15 PM · page 162
+
+Not gonna happen I'm afraid. Tried evoX during the weekend and flashed back 11.0.18MR1_GB yesterday eve.
+
+I'm staying on this forever I think ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+
+It works perfect for me.
+
+11.5.6 had some strange behaviour when connected to external display related to switching to 60Hz...
+
+---
+
+### #3,224 — **Dimachi** · Sep 15, 2026 at 1:42 AM · page 162
+
+You can obtain root access on the latest firmware version by replacing abl_a, abl_b, and efisp with the versions from 16MR3.
+
+<details><summary>Spoiler: Root</summary>
+
+<details><summary>Spoiler</summary>
+
+</details>
+
+</details>
+
+---
+
+### #3,225 — **pipes80** · Sep 15, 2026 at 9:42 AM · page 162
+
+Do it possible with Redmagicos 11.5 on nx809j?
+
+I want root without lost integrity
+
+---
+
+### #3,226 — **darkidz555** · Sep 15, 2026 at 10:44 AM · page 162
+
+Hi my firmware version is 11.5.7ea GB ROM. Can I get root access without unlocking my bootloader ? And do I need to unlock bootloader in order to convert to CN ? Using 11s pro
+
+---
+
+### #3,227 — **borygo77** · Sep 15, 2026 at 11:39 AM · page 162
+
+Yes you can! Both of you!
+
+1> Connect phone with edl
+
+2> Make a full backup if you did not before
+
+3> Check slot your phone is running (DevCheck app from playstore also will tell you slot)
+
+4> Flash efisp
+
+5> Flash abl_slot(a or b) according to point 3
+
+6> Flash init_boot_slot(a or b) according to point 3
+
+7> Boot your phone and install KernelSU Next
+
+8> Enjoy your rooted phone with untouched integrity.
+
+Zip with files ready here in this post!
+
+---
+
+### #3,228 — **darkidz555** · Sep 15, 2026 at 12:13 PM · page 162
+
+> **borygo77 said:**
+> Yes you can! Both of you!
+>
+> 1> Connect phone with edl
+>
+> 2> Make a full backup if you did not before
+>
+> 3> Check slot your phone is running (DevCheck app from playstore also will tell you slot)
+>
+> 4> Flash efisp
+>
+> 5> Flash abl_slot(a or b) according to point 3
+>
+> 6> Flash init_boot_slot(a or b) according to point 3
+>
+> 7> Boot your phone and install KernelSU Next
+>
+> 8> Enjoy your rooted phone with untouched integrity.
+>
+>
+>
+> Zip with files ready here in this post!
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Thanks you will try tonight after fully backup
+
+---
+
+### #3,229 — **darkidz555** · Sep 15, 2026 at 5:09 PM · page 162
+
+> **borygo77 said:**
+> Yes you can! Both of you!
+>
+> 1> Connect phone with edl
+>
+> 2> Make a full backup if you did not before
+>
+> 3> Check slot your phone is running (DevCheck app from playstore also will tell you slot)
+>
+> 4> Flash efisp
+>
+> 5> Flash abl_slot(a or b) according to point 3
+>
+> 6> Flash init_boot_slot(a or b) according to point 3
+>
+> 7> Boot your phone and install KernelSU Next
+>
+> 8> Enjoy your rooted phone with untouched integrity.
+>
+>
+>
+> Zip with files ready here in this post!
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Unable to do back up due to this error came out. No problem with my 9008 and able to detect in edl mode wondering what happen
+
+---
+
+### #3,230 — **borygo77** · Sep 15, 2026 at 6:11 PM · page 162
+
+Try attached Toolbox.
+
+If this doesn't work fix your edl drivers
+
+---
+
+### #3,231 — **darkidz555** · Sep 16, 2026 at 7:10 AM · page 162
+
+> **borygo77 said:**
+> Try attached Toolbox.
+>
+> If this doesn't work fix your edl drivers
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Still unable to solve the problem my edl work fine can see attach to the Pic. Totally clueless now ![😔](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f614.png)
+
+---
+
+### #3,232 — **Dimachi** · Sep 16, 2026 at 9:11 AM · page 162
+
+> **darkidz555 said:**
+> Still unable to solve the problem my edl
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Try the Russian version.
+
+---
+
+### #3,233 — **uraking** · Sep 16, 2026 at 12:37 PM · page 162
+
+I still couldn't unlock the manager of my redmagic 10 pro , this is how it looks when I want to unlock with the zte
+![WhatsApp Image 2026-08-16 at 11.22.07 AM.jpeg](https://xdaforums.com/attachments/whatsapp-image-2026-08-16-at-11-22-07-am-jpeg.6385927/)
+
+---
+
+### #3,234 — **safag** · Sep 16, 2026 at 1:19 PM · page 162
+
+i unlocked my 11 pro and tried fingerprint fix but it doesnt't work its still unusable
+
+---
+
+### #3,235 — **darkidz555** · Sep 16, 2026 at 2:18 PM · page 162
+
+-delete-
+
+---
+
+### #3,236 — **darkidz555** · Sep 16, 2026 at 2:20 PM · page 162
+
+> **safag said:**
+> i unlocked my 11 pro and tried fingerprint fix but it doesnt't work its still unusable
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Still no luck I guess I need to change dir path but I don't know how to
+
+---
+
+### #3,237 — **basirulakhlak** · Sep 16, 2026 at 2:27 PM · page 162
+
+hello does it still works? for red magic 11 pro plus?
+
+![1789558030437.png](https://xdaforums.com/attachments/1789558030437-png.6385954/)
+
+> **safag said:**
+> i unlocked my 11 pro and tried fingerprint fix but it doesnt't work its still unusable
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+is your one cn ver?
+
+---
+
+### #3,238 — **williamcll** · Sep 16, 2026 at 5:15 PM · page 162
+
+Alright, phone has arrived, time to see what version it's on.
+
+---
+
+### #3,239 — **basirulakhlak** · Sep 16, 2026 at 5:17 PM · page 162
+
+> **williamcll said:**
+> Alright, phone has arrived, time to see what version it's on.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+which one brother
+
+---
+
+### #3,240 — **williamcll** · Sep 16, 2026 at 6:59 PM · page 162
+
+> **basirulakhlak said:**
+> which one brother
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+11S Pro 16+512
+
+running 11.5.6
+
+I know from the previous post I should go up to 11.5.8 which has some fixes? What steps do I take now? Haven't saved anything on the phone so I don't think I need a backup.
+
+---
+
+### #3,241 — **Goldendragon1** · Sep 16, 2026 at 7:14 PM · page 163
+
+> **Bobo9996 said:**
+> lala
+>
+> **![🚀](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f680.png) INCOMING: SM8750 (RM10 & Z70 Ultra) FREE UNLOCK POTENTIAL ![🚀](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f680.png)**
+>
+>
+>
+> Great news for the Snapdragon 8 Elite (SM8750) community! The author of the ZTE Family Toolbox ([@SYXZ](https://xdaforums.com/m/12774241/)) is currently conducting private beta tests for a **FREE unlock method** for the following devices:
+>
+>
+> - RedMagic 10 Pro
+> - RedMagic 10 Pro+
+> - Nubia Z70 Ultra
+>
+>
+> **Want to help test?** If you own one of these devices and have access to the Chinese community app **Coolapk (酷安)**, you can PM the author (@某贼) directly to participate.
+>
+> *Disclaimer: Beta testing carries risks of failure. Whether the exploit will be 100% successful and released publicly is still pending further updates from the author.*
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Do you think he might also add fingerprint restoration for the RedMagic 11 Air?
+
+---
+
+### #3,242 — **darkidz555** · Sep 17, 2026 at 10:26 AM · page 163
+
+> **darkidz555 said:**
+> Still unable to solve the problem my edl work fine can see attach to the Pic. Totally clueless now ![😔](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f614.png)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Any kind heart who can help me with this 9008 error I tried every possible way usb 2.0, 3.0 or c to c different cable all unable to back up. Install signed qcom 9008 unsigned 9008 oppo signed 900 all fail with same error ask chatgpt, Gemini also unable to solve. Qcom 9008 detect even in qfil without any error or exclamation mark. Someone pro here please help me. I even remove anti virus disable secure boot and core isolation. Honestly I'm not first time in rooting I start rooting since HTC era. But this qcom 9008 really headache me ![😭](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f62d.png)
+
+---
+
+### #3,243 — **elrey120** · Sep 17, 2026 at 10:35 AM · page 163
+
+> **darkidz555 said:**
+> Any kind heart who can help me with this 9008 error I tried every possible way usb 2.0, 3.0 or c to c different cable all unable to back up. Install signed qcom 9008 unsigned 9008 oppo signed 900 all fail with same error ask chatgpt, Gemini also unable to solve. Qcom 9008 detect even in qfil without any error or exclamation mark. Someone pro here please help me. I even remove anti virus disable secure boot and core isolation. Honestly I'm not first time in rooting I start rooting since HTC era. But this qcom 9008 really headache me ![😭](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f62d.png)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Translating the error in the ZTE toolbox terminal you can see it saying the port is already on use. Now, guessing that a phone in edl mode works just like any other microcontroller board such as an Arduino (and if I'm remembering right), there is some other program interrupting the signal with the phone.
+
+So if you have a spare laptop or drive for your computer I'd suggest trying the toolbox on a fresh install of windows.
+
+---
+
+### #3,244 — **darkidz555** · Sep 17, 2026 at 11:30 AM · page 163
+
+> **elrey120 said:**
+> Translating the error in the ZTE toolbox terminal you can see it saying the port is already on use. Now, guessing that a phone in edl mode works just like any other microcontroller board such as an Arduino (and I'm remembering right), there is some other program interrupting the signal with the phone.
+>
+> So if you have a spare laptop or drive for your computer I'd suggest trying the toolbox on a fresh install of windows.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Thanks for your help ill try find other laptop or PC and try it. Thanks for your reply
+
+---
+
+### #3,245 — **darkidz555** · Sep 17, 2026 at 4:17 PM · page 163
+
+> **borygo77 said:**
+> Yes you can! Both of you!
+>
+> 1> Connect phone with edl
+>
+> 2> Make a full backup if you did not before
+>
+> 3> Check slot your phone is running (DevCheck app from playstore also will tell you slot)
+>
+> 4> Flash efisp
+>
+> 5> Flash abl_slot(a or b) according to point 3
+>
+> 6> Flash init_boot_slot(a or b) according to point 3
+>
+> 7> Boot your phone and install KernelSU Next
+>
+> 8> Enjoy your rooted phone with untouched integrity.
+>
+>
+>
+> Zip with files ready here in this post!
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+finally able to backup by changing COM in advance setting from COM4 to 20. Thanks for the 3 file
+
+---
+
+### #3,246 — **darkidz555** · Sep 17, 2026 at 4:59 PM · page 163
+
+[@borygo77](https://xdaforums.com/m/8093282/) so what if new update arrive what should I do? Should I flash back stock then update or what is the step ? TQ
+
+---
+
+### #3,247 — **williamcll** · Sep 17, 2026 at 6:25 PM · page 163
+
+> **borygo77 said:**
+> Not gonna happen I'm afraid. Tried evoX during the weekend and flashed back 11.0.18MR1_GB yesterday eve.
+>
+> I'm staying on this forever I think ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+>
+> It works perfect for me.
+>
+> 11.5.6 had some strange behaviour when connected to external display related to switching to 60Hz...
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+The phone came in as 11.5.6_EA , which version should I update to before rooting, or should I root first then update?
+
+---
+
+### #3,248 — **borygo77** · Sep 18, 2026 at 2:24 AM · page 163
+
+> **darkidz555 said:**
+> [@borygo77](https://xdaforums.com/m/8093282/) so what if new update arrive what should I do? Should I flash back stock then update or what is the step ? TQ
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+If you want to update then bring back those three files from your backup to a proper slot.
+
+Phone need to be stock or it won't pass verification process before applying your download.
+
+Then after update backup init_boot_slot and abl_slot, apply mine three partitions.
+
+You're back with new firmware and rooted.
+
+All need to be done in edl.
+
+---
+
+### #3,249 — **borygo77** · Sep 18, 2026 at 2:25 AM · page 163
+
+> **williamcll said:**
+> The phone came in as 11.5.6_EA , which version should I update to before rooting, or should I root first then update?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Update to latest and change those three partitions.
+
+If you root before update it won't pass verification and just throw error.
+
+Before flashing init_boot_slot and abl_slot make sure you have backup of those partions because you'll need it for next update when it arrives.
+
+---
+
+### #3,250 — **williamcll** · Sep 18, 2026 at 8:14 AM · page 163
+
+> **borygo77 said:**
+> Update to latest and change those three partitions.
+>
+> If you root before update it won't pass verification and just throw error.
+>
+>
+>
+> Before flashing init_boot_slot and abl_slot make sure you have backup of those partions because you'll need it for next update when it arrives.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+It says 11.5.7MR1_EA is the latest version, guess I should start working from here.
+
+---
+
+### #3,251 — **borygo77** · Sep 18, 2026 at 11:16 AM · page 163
+
+Yeah that's true for now
+
+---
+
+### #3,252 — **williamcll** · Sep 18, 2026 at 7:14 PM · page 163
+
+> **borygo77 said:**
+> Yeah that's true for now
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Sorry if I sound stupid but what is the latest zip file to get tools and the image files? I went from Zenfone rooting to this so it's a bit new to me.
+
+---
+
+### #3,253 — **borygo77** · Sep 19, 2026 at 2:43 AM · page 163
+
+Zip from here [https://xdaforums.com/t/red-magic-1...lock-zte-family-toolbox.4780930/post-90739739](https://xdaforums.com/t/red-magic-11-pro-guide-bootloader-unlock-free-also-support-rm10-pad3pro-z70u-z80u-unlock-zte-family-toolbox.4780930/post-90739739)
+
+---
+
+### #3,254 — **darkidz555** · Sep 19, 2026 at 3:44 AM · page 163
+
+> **borygo77 said:**
+> Zip from here [https://xdaforums.com/t/red-magic-1...lock-zte-family-toolbox.4780930/post-90739739](https://xdaforums.com/t/red-magic-11-pro-guide-bootloader-unlock-free-also-support-rm10-pad3pro-z70u-z80u-unlock-zte-family-toolbox.4780930/post-90739739)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Any idea or step how to convert from gb to CN rom 11s pro currently 11.5.7. do I need to unlock bootloader ? Thanks
+
+---
+
+### #3,255 — **Al-Dossari** · Sep 19, 2026 at 7:18 AM · page 163
+
+> **basirulakhlak said:**
+> hello does it still works? for red magic 11 pro plus?
+>
+> [View attachment 6385954](https://xdaforums.com/attachments/6385954/)
+>
+>
+>
+>
+>
+> is your one cn ver?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+still works even for CN ROM 11.5.15MR1
+
+---
+
+### #3,256 — **Al-Dossari** · Sep 19, 2026 at 7:20 AM · page 163
+
+> **darkidz555 said:**
+> Any idea or step how to convert from gb to CN rom 11s pro currently 11.5.7. do I need to unlock bootloader ? Thanks
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+of course unlock bootloader and flash EDL CN ROM
+
+---
+
+### #3,257 — **darkidz555** · Sep 19, 2026 at 7:31 AM · page 163
+
+> **Al-Dossari said:**
+> of course unlock bootloader and flash EDL CN ROM
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Cuz I'm thinking I can flash partition and get root without unlocking so wondering can I flash edl rom CN without unlocking as well. Where can I find edl CN rom ? Thanks
+
+---
+
+### #3,258 — **borygo77** · Sep 19, 2026 at 8:13 AM · page 163
+
+11.5.7* CN. Don't unlock bootloader! There's no need for it! Just remember to do your backup before flashing!
+
+### 萤火虫资源站
+
+萤火虫资源站，原酷米基地，提供多达22TB+的安卓玩机资源，包括各品牌手机的官方固件、第三方ROM、内核、TWRP、救砖包等。分类明确，免登录不限速下载。
+
+![www.yhcres.top](/proxy.php?image=https%3A%2F%2Fyhcres.top%2Fres%2Ffavicon_yhc.ico&hash=5bf19e78eb25620dba19e4ab09484a83&return_error=1)
+
+					www.yhcres.top
+
+*
+
+---
+
+### #3,259 — **darkidz555** · Sep 19, 2026 at 11:58 AM · page 163
+
+> **borygo77 said:**
+> Thanks for the link downloading now. One question so I just flash back stock abl and efsip file before converting to CN rom right ? And after done converting I'll update to latest 11.5.14 I guess than done updating I will flash the 3 modify file that you provide for root am I right ? Or is there any danger I need to be aware of on latest CN firmware ? Like efused or unable to downgrade or back to GB ROM ? Thanks a million
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+---
+
+### #3,260 — **williamcll** · Sep 19, 2026 at 4:27 PM · page 163
+
+> **borygo77 said:**
+> Zip from here [https://xdaforums.com/t/red-magic-1...lock-zte-family-toolbox.4780930/post-90739739](https://xdaforums.com/t/red-magic-11-pro-guide-bootloader-unlock-free-also-support-rm10-pad3pro-z70u-z80u-unlock-zte-family-toolbox.4780930/post-90739739)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Thanks, is the latest version of EDL driver EDL_Qualcomm_USB_Driver_v1.0.10061.1 or is there a new version? Also do I click WWAN or Ethernet?
+
+---
+
+### #3,261 — **Gatitomono47** · Sep 19, 2026 at 7:31 PM · page 164
+
+Anyone tried this on the nubia pad pro global version? the snapdragon 8 gen 3 device
+
+---
+
+### #3,262 — **scft** · Sep 21, 2026 at 7:41 AM · page 164
+
+> **tobos123 said:**
+> Hello.
+>
+> When I tried to launch TOOLBOX on my REDMAGIC10 PRO and perform a backup using option 4, I received the following error.
+>
+> Is there a solution?
+>
+>
+>
+> REDAGIC10 PRO NX789J V10.0.18MR1 Global
+>
+> --------
+>
+> Checking device connection: 9008model... Connected (COM3)
+>
+> Send guidance...
+>
+> Failed to send boot. Please re-enter the device9008. Press any key to try again...
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I have had the same problem on my RM11. Turned out I just need to reboot after the driver install, lol.
+
+---
+
+### #3,263 — **sputnik334** · Sep 21, 2026 at 5:33 PM · page 164
+
+are there any way to trick the RM11S PRO to send me the entire firmware instead of the incremental? I have tried to mess with the tree.xml (if you know you know) but no matter how old i made it believe it was it wouldn't serve me other urls than the incremental
+
+---
+
+### #3,264 — **jolly_roger_hook** · Sep 23, 2026 at 3:13 PM · page 164
+
+I'm so out of the loop can someone make it dumb for me I'm still on 11.0.18GB unlocked rooted how do i update to whatever is newest stable or should I just stay where I am
+
+---
+
+### #3,265 — **Haldi4803** · Sep 23, 2026 at 10:11 PM · page 164
+
+> **jolly_roger_hook said:**
+> or should I just stay where I am
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Jup
+
+---
+
+### #3,266 — **grmcrkrs** · Sep 24, 2026 at 4:31 AM · page 164
+
+Finally got my REDMAGIC 11S Pro in today and I’m pumped. It shows NX809J, 16gb/512gb, running RedMagicOS11.5.6_EA. The idea was to get a killer device that I can unlock the bootloader, and using this forum thread was the key to success. Thank you to the OP.
+
+The process I used was the newer ABL/EFISP swap method that’s been discussed in the last stretch of this thread. I made a full EDL backup with ZTE Family Toolbox 1.2.8-beta2, verified the backup, made a second copy. Then I used the newer vulnerable pair from borygo77’s post here: [patched vulnerable files](https://xdaforums.com/t/red-magic-11-pro-guide-bootloader-unlock-free-also-support-rm10-pad3pro-z70u-z80u-unlock-zte-family-toolbox.4780930/post-90739739). Specifically, I wrote the included efisp.efi to efisp and the included abl.img to abl_a, then entered Superfastboot and ran the fastboot unlock command from there.
+
+After that, the phone rebooted normally into Android. The weird part is that Android itself still showed the usual locked/green state in properties, so at first glance it looked like maybe nothing had really changed. But checking from Fastboot/Superfastboot showed the important part: getvar unlocked returned yes, and fastboot oem device-info reported Device unlocked: true. Regular Fastboot also showed unlocked after rebooting into the normal bootloader screen.
+
+I then rooted by patching my own stock init_boot_a from the backup with official Magisk v30.7 and flashing that patched image through Superfastboot. Android booted, Magisk came up, and root was confirmed with su returning UID 0 after granting Shell in Magisk. So for my NX809J on 11.5.6_EA, the newer vulnerable ABL/EFISP pair plus Superfastboot unlock path worked, even though Android’s own boot properties still make it look locked.
+
+Bootloader Unlock confirmed on 11s Pro, with Magisk Root.
+
+![IMG_0378.jpg](https://xdaforums.com/attachments/img_0378-jpg.6388543/)
+
+![IMG_0380.jpg](https://xdaforums.com/attachments/img_0380-jpg.6388544/)
+
+---
+
+### #3,267 — **williamcll** · Sep 25, 2026 at 8:22 PM · page 164
+
+> **grmcrkrs said:**
+> Finally got my REDMAGIC 11S Pro in today and I’m pumped. It shows NX809J, 16gb/512gb, running RedMagicOS11.5.6_EA. The idea was to get a killer device that I can unlock the bootloader, and using this forum thread was the key to success. Thank you to the OP.
+>
+>
+>
+> The process I used was the newer ABL/EFISP swap method that’s been discussed in the last stretch of this thread. I made a full EDL backup with ZTE Family Toolbox 1.2.8-beta2, verified the backup, made a second copy. Then I used the newer vulnerable pair from borygo77’s post here: [patched vulnerable files](https://xdaforums.com/t/red-magic-11-pro-guide-bootloader-unlock-free-also-support-rm10-pad3pro-z70u-z80u-unlock-zte-family-toolbox.4780930/post-90739739). Specifically, I wrote the included efisp.efi to efisp and the included abl.img to abl_a, then entered Superfastboot and ran the fastboot unlock command from there.
+>
+>
+>
+> After that, the phone rebooted normally into Android. The weird part is that Android itself still showed the usual locked/green state in properties, so at first glance it looked like maybe nothing had really changed. But checking from Fastboot/Superfastboot showed the important part: getvar unlocked returned yes, and fastboot oem device-info reported Device unlocked: true. Regular Fastboot also showed unlocked after rebooting into the normal bootloader screen.
+>
+>
+>
+> I then rooted by patching my own stock init_boot_a from the backup with official Magisk v30.7 and flashing that patched image through Superfastboot. Android booted, Magisk came up, and root was confirmed with su returning UID 0 after granting Shell in Magisk. So for my NX809J on 11.5.6_EA, the newer vulnerable ABL/EFISP pair plus Superfastboot unlock path worked, even though Android’s own boot properties still make it look locked.
+>
+> Bootloader Unlock confirmed on 11s Pro, with Magisk Root.
+>
+>
+>
+> [View attachment 6388543](https://xdaforums.com/attachments/6388543/)[View attachment 6388544](https://xdaforums.com/attachments/6388544/)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Nice, where did you get your EDL driver and what option do I choose during installation?
+
+---
+
+### #3,268 — **grmcrkrs** · Sep 25, 2026 at 10:27 PM · page 164
+
+> **williamcll said:**
+> Nice, where did you get your EDL driver and what option do I choose during installation?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I got the Qualcomm HS-USB QDLoader 9008 driver from the driver package bundled/shared with the tool box.
+
+---
+
+### #3,269 — **safag** · Sep 26, 2026 at 1:15 AM · page 164
+
+is it possible to flash a susfs anykernel3 zip without unlocking but with the root exploit with locked bootloader
+
+---
+
+### #3,270 — **HUTHAIFAH** · Sep 26, 2026 at 2:09 AM · page 164
+
+hey i relock my tablet and he corrupt and just in fastboot mode i made backup before how to fix it pls
+
+---
+
+### #3,271 — **jolly_roger_hook** · Sep 26, 2026 at 5:03 AM · page 164
+
+> **HUTHAIFAH said:**
+> hey i relock my tablet and he corrupt and just in fastboot mode i made backup before how to fix it pls
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+If you made a full backup you should. Just be able to. Restore it through the toolbox
+
+---
+
+### #3,272 — **HUTHAIFAH** · Sep 26, 2026 at 5:37 AM · page 164
+
+> **jolly_roger_hook said:**
+> If you made a full backup you should. Just be able to. Restore it through the toolbox
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+how i don't see anything in toolbox
+
+---
+
+### #3,273 — **grmcrkrs** · Sep 26, 2026 at 4:30 PM · page 164
+
+> **HUTHAIFAH said:**
+> how i don't see anything in toolbox
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+**1.Put the device into EDL 9008 mode.**
+
+2.Open ZTE Family Toolbox.
+
+3.Choose option 2 — EDL 9008 firmware/restore.
+
+4.Select the images folder inside the full backup.
+
+5.Let the toolbox flash the backup partitions.
+
+6.Reboot when the restore finishes.
+
+---
+
+### #3,274 — **HUTHAIFAH** · Sep 26, 2026 at 6:07 PM · page 164
+
+oh late i pay
+
+> **grmcrkrs said:**
+> **1.Put the device into EDL 9008 mode.**
+>
+> 2.Open ZTE Family Toolbox.
+>
+> 3.Choose option 2 — EDL 9008 firmware/restore.
+>
+> 4.Select the images folder inside the full backup.
+>
+> 5.Let the toolbox flash the backup partitions.
+>
+> 6.Reboot when the restore finishes.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+---
+
+### #3,275 — **safag** · Sep 28, 2026 at 6:21 PM · page 164
+
+is there anyway to unlock without breaking the fingerprint?
+
+---
+
+### #3,276 — **grmcrkrs** · Sep 28, 2026 at 8:24 PM · page 164
+
+> **safag said:**
+> is there anyway to unlock without breaking the fingerprint?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Yes. My bootloader is unlocked and the fingerprint is working as expected. If you mean using option 18, then you can choose that route also
+
+---
+
+### #3,277 — **Gustavo Rangel** · Sep 29, 2026 at 6:09 AM · page 164
+
+quitar Bloqueo de telcel
+
+---
+
+### #3,278 — **safag** · Sep 29, 2026 at 2:10 PM · page 164
+
+> **grmcrkrs said:**
+> Yes. My bootloader is unlocked and the fingerprint is working as expected. If you mean using option 18, then you can choose that route also
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Can you tell me each step you did? cuz i unlocked > fingerprint broken > then did the option 18 > still same after booting
+
+---
+
+### #3,279 — **Saurabh6661** · Sep 29, 2026 at 2:31 PM · page 164
+
+Hi everyone,
+
+I’m using a RedMagic 11 Pro (NX809J) with KernelSU Next and my phone is currently booted on slot A.
+
+I have the original stock images:
+
+init_boot_a.img
+
+init_boot_b.img
+
+KernelSU Next recently received an update, so I wanted to update my root by:
+
+Patching the stock init_boot_a.img with the new KernelSU version.
+
+Patching the stock init_boot_b.img with the new KernelSU version.
+
+Flashing the patched images back to their respective partitions.
+
+I have already successfully patched init_boot_a.img.
+
+The problem is that I am currently on slot A, and I have OTA updates/slot switching frozen, so I cannot simply switch to slot B and use the usual inactive-slot/OTA method to patch B.
+
+My question:
+
+Is there a way to patch my stock init_boot_b.img directly with KernelSU Next while remaining booted on slot A, without switching to slot B?
+
+If I can generate the patched B image, I was also considering using ZTE Family Toolbox 1.2.2 beta2 → Option 12 (Flash any partition) to flash the patched image directly to init_boot_b.
+
+Would this be a valid workflow?
+
+I’m not asking about obtaining root from scratch — the phone is already rooted with KernelSU. I only need to update the KernelSU-patched init_boot images for both A and B.
+
+Device: RedMagic 11 Pro (NX809J)
+
+ROM: Global/GB
+
+Build: REDMAGICOS11.0.18MR1_GB
+
+Current slot: A
+
+Root: KernelSU Next
+
+Thanks!
+
+---
+
+### #3,280 — **safag** · Sep 29, 2026 at 2:34 PM · page 164
+
+> **Saurabh6661 said:**
+> Hi everyone,
+>
+> I’m using a RedMagic 11 Pro (NX809J) with KernelSU Next and my phone is currently booted on slot A.
+>
+> I have the original stock images:
+>
+> init_boot_a.img
+>
+> init_boot_b.img
+>
+> KernelSU Next recently received an update, so I wanted to update my root by:
+>
+> Patching the stock init_boot_a.img with the new KernelSU version.
+>
+> Patching the stock init_boot_b.img with the new KernelSU version.
+>
+> Flashing the patched images back to their respective partitions.
+>
+> I have already successfully patched init_boot_a.img.
+>
+>
+>
+> The problem is that I am currently on slot A, and I have OTA updates/slot switching frozen, so I cannot simply switch to slot B and use the usual inactive-slot/OTA method to patch B.
+>
+>
+>
+> My question:
+>
+> Is there a way to patch my stock init_boot_b.img directly with KernelSU Next while remaining booted on slot A, without switching to slot B?
+>
+> If I can generate the patched B image, I was also considering using ZTE Family Toolbox 1.2.2 beta2 → Option 12 (Flash any partition) to flash the patched image directly to init_boot_b.
+>
+>
+>
+> Would this be a valid workflow?
+>
+> I’m not asking about obtaining root from scratch — the phone is already rooted with KernelSU. I only need to update the KernelSU-patched init_boot images for both A and B.
+>
+>
+>
+> Device: RedMagic 11 Pro (NX809J)
+>
+> ROM: Global/GB
+>
+> Build: REDMAGICOS11.0.18MR1_GB
+>
+> Current slot: A
+>
+> Root: KernelSU Next
+>
+> Thanks!
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Do give the new version root of it's the spoofed version and do a direct installation in it.
+
+---
+
+### #3,281 — **grmcrkrs** · Sep 29, 2026 at 2:40 PM · page 165
+
+> **safag said:**
+> Can you tell me each step you did? cuz i unlocked > fingerprint broken > then did the option 18 > still same after booting
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+If you read earlier I'm the thread about 15 posts back I detailed all the steps and the exact phone and firmware I am using
+
+---
+
+### #3,282 — **safag** · Sep 29, 2026 at 2:47 PM · page 165
+
+> **grmcrkrs said:**
+> If you read earlier I'm the thread about 15 posts back I detailed all the steps and the exact phone and firmware I am using
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I saw that already but the problem is the fingerprint sensor getting broken
+
+---
+
+### #3,283 — **Saurabh6661** · Sep 29, 2026 at 3:03 PM · page 165
+
+> **safag said:**
+> Do give the new version root of it's the spoofed version and do a direct installation in it.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I did use the new KernelSU version and followed the Direct Installation method you suggested.
+
+However, after installing the patched init_boot_b, the phone does not switch to slot B after reboot. When I check the active slot through ADB, it still reports that I am on **slot A**.
+
+How can I confirm whether the patched init_boot_b was actually installed/flashed correctly to slot B?
+
+Also, is there a way to force/select slot B after installing the patched B image, or is another step required to make the phone boot from slot B?
+
+My goal is to remain on slot A while preparing/updating slot B, and then boot into B to verify the new KernelSU installation.
+
+---
+
+### #3,284 — **safag** · Sep 29, 2026 at 3:27 PM · page 165
+
+> **Saurabh6661 said:**
+> I did use the new KernelSU version and followed the Direct Installation method you suggested.
+>
+>
+>
+> However, after installing the patched init_boot_b, the phone does not switch to slot B after reboot. When I check the active slot through ADB, it still reports that I am on **slot A**.
+>
+>
+>
+> How can I confirm whether the patched init_boot_b was actually installed/flashed correctly to slot B?
+>
+>
+>
+> Also, is there a way to force/select slot B after installing the patched B image, or is another step required to make the phone boot from slot B?
+>
+>
+>
+> My goal is to remain on slot A while preparing/updating slot B, and then boot into B to verify the new KernelSU installation.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+fastboot --set-active=b
+
+Or
+
+fastboot set_active b
+
+But is there anything to boot on b?
+
+---
+
+### #3,285 — **Saurabh6661** · Sep 29, 2026 at 3:44 PM · page 165
+
+> **safag said:**
+> fastboot --set-active=b
+>
+> Or
+>
+> fastboot set_active b
+>
+>
+>
+> But is there anything to boot on b?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I tried doing it via adb it doesn't work
+
+---
+
+### #3,286 — **safag** · Sep 29, 2026 at 3:54 PM · page 165
+
+> **Saurabh6661 said:**
+> I tried doing it via adb it doesn't work
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Then there's nothing in b to boot from
+
+---
+
+### #3,287 — **Saurabh6661** · Sep 29, 2026 at 4:11 PM · page 165
+
+No man I remember In very initial stage when I had rooted I had patched both the slots
+
+---
+
+### #3,288 — **Saurabh6661** · Sep 29, 2026 at 4:11 PM · page 165
+
+> **safag said:**
+> Then there's nothing in b to boot from
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+No man I remember In very initial stage when I had rooted I had patched both the slots
+
+---
+
+### #3,289 — **williamcll** · Sep 29, 2026 at 9:12 PM · page 165
+
+Ran the backup and it did download a bunch of files but also at the same time a lot of errors, am I good to move onto the next step to flash firmware?
+
+---
+
+### #3,290 — **borygo77** · Sep 30, 2026 at 2:42 AM · page 165
+
+Your backup is grand Will!
+
+---
+
+### #3,291 — **Saurabh6661** · Sep 30, 2026 at 7:13 PM · page 165
+
+![1790784495358.png](https://xdaforums.com/attachments/1790784495358-png.6390960/)
+
+Hello everyone,
+
+I already have **KernelSU Next working on slot A** of my RedMagic 11 Pro. I am trying to patch the second slot (**slot B**) so that both A/B slots contain the KernelSU patched init_boot.
+
+Device:
+
+- RedMagic 11 Pro
+- REDMAGICOS 11.0.18MR1_GB
+- Android 16
+- Bootloader unlocked
+- KernelSU Next already working on slot A
+Current status:
+
+1. adb shell su -c id
+
+>>uid=0(root)
+
+context=u:r:ksu:s0
+
+Slot A is already patched and working.
+
+I created a KernelSU patched image for slot B:
+
+kernelsu_next_patched_slot_b_20260929_090051.img
+
+Size: 8,388,608 bytes
+
+SHA256: 8768adea13bc676a988a620bab9203b6b0785a4b7b9b67af9fddcf4803549823
+
+Because normal fastboot flashing does not work with the stock ABL, I am using:
+
+ZTE Family Toolbox → Option 12 → Flash partition
+
+through Qualcomm EDL 9008 mode.
+
+EDL connection is detected:
+
+Qualcomm HS-USB QDLoader 9008 (COM9)
+
+Toolbox reaches:
+
+Partition name: init_boot_b
+
+Please select the init_boot_b partition file...
+
+However, after selecting:
+
+kernelsu_next_patched_slot_b_20260929_090051.img
+
+it does not continue and returns:
+
+selectpathfile,,, Press any key to retry...
+
+Questions:
+
+1. Does Option 12 require the image to be renamed (for example init_boot_b.img)?
+2. Does Toolbox have problems reading files from Desktop/OneDrive paths?
+3. Should the image be moved to a simple path like C:\platform-tools\?
+4. Has anyone successfully written a KernelSU patched init_boot_b to slot B on RedMagic 11 Pro using ZTE Family Toolbox?
+5. Is there any requirement for the image header/format before flashing?
+I already have full backups of both slots. I am only trying to mirror the working KernelSU setup from slot A to slot B.
+
+Thanks.
+
+---
+
+### #3,292 — **williamcll** · Oct 1, 2026 at 5:22 PM · page 165
+
+> **borygo77 said:**
+> Yes you can! Both of you
+>
+> -1> install EDL drivers https://xdaforums.com/attachments/qualcomm-hs-usb-qdloader-9008-driver-zip.6360221/
+>
+> 0> Enable OEM unlock and ADB in developer options
+>
+> 1> Connect phone, use the toolbox and go into EDL mode by entering G
+>
+> 2> Make a full backup if you did not before by entering 4 in toolbox
+>
+> 3> Check slot your phone is running (DevCheck app from playstore also will tell you slot)
+>
+> 4> Flash efisp by entering 12 in toolbox then typing efisp
+>
+> 5> Flash abl_slot(a or b) according to point 3 by entering 12 in toolbox then abl_slot_a or abl_slot_b
+>
+> 6> Flash init_boot_slot(a or b) according to point 3 entering 12 in toolbox then init_boot_slot_a
+>
+> 7> Boot your phone and install KernelSU Next from https://github.com/KernelSU-Next/KernelSU-Next/releases#release-v3.3.0 and not from the vulnerable patched files
+>
+> 8> Enjoy your rooted phone with untouched integrity.
+>
+>
+>
+> Zip with files ready here in this post!
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Got it working with fingerprint and wallet I've added more details, but you put in regular KernelSU instead of Next
+
+Now onto the next issue: KSU-Next 3.4.0 is out, do I just update the patch as is or is there something else I have to do?
+
+---
+
+### #3,293 — **borygo77** · Oct 1, 2026 at 9:19 PM · page 165
+
+Just flash directly after installing manager.
+
+---
+
+### #3,294 — **williamcll** · Oct 2, 2026 at 5:59 AM · page 165
+
+RM12 announcement on October 16 I wonder if the current trick still work on 8G6E
+
+---
+
+### #3,295 — **marjanusz** · Oct 6, 2026 at 9:27 PM · page 165
+
+Hi
+
+My name is Mariusz and im from Poland, i saw a response to someones comment claiming that the person was also from Poland, is this person still here? I wish to contact him and ask for help with rooting my rm11ps, it would be much easier to comunicat without language barier, im too scared to root it alone without any supervision of someone who's smarter than me, also i did root mix2s and redmi 4x long time ago but this was much easier to do, so please can any kind soul help me contact this person?
+
+---
+
+### #3,296 — **borygo77** · Oct 7, 2026 at 12:00 AM · page 165
+
+Pytaj śmiało ale na priv bo tu tylko English ![:)](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+
+---
+
+### #3,297 — **christopherrrg** · Oct 7, 2026 at 9:25 PM · page 165
+
+Sorry to message here [@borygo77](https://xdaforums.com/m/8093282/), ZTE information is everywhere.
+
+Do you think instruction to keep keys and fingerprint on 11s pro would work with the Astra? I unlocked bootloader and rooted but have warning and obviously keys are shot one plus is fingerprint scanner still works perfect, just no strong integrity for anything.
+
+ (Apologies if you do not know also, figured I'd ask you because you got me unlocked and fingerprint working for my phone)
+
+---
+
+### #3,298 — **bilbobaginz** · Oct 8, 2026 at 12:00 AM · page 165
+
+> **christopherrrg said:**
+> Hi; it's been a long time since I've been on XDA.
+>
+>
+>
+>
+>
+> I just got the 11S pro today, I tried running zte toolbox to backup all partitions before I did anything and I'm getting send programmer error. Anyone know how I can fix? I'd really like to backup everything prior to unlocking bootloader.
+>
+>
+>
+>
+>
+> Edit - think I'm boned. I've got Redmagic OS 11.5.5MR1_GB
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+SAME DID YOU GET ANY HELP BRO?
+
+---
+
+### #3,299 — **bilbobaginz** · Oct 8, 2026 at 12:05 AM · page 165
+
+> **christopherrrg said:**
+> Hi; it's been a long time since I've been on XDA.
+>
+>
+>
+>
+>
+> I just got the 11S pro today, I tried running zte toolbox to backup all partitions before I did anything and I'm getting send programmer error. Anyone know how I can fix? I'd really like to backup everything prior to unlocking bootloader.
+>
+>
+>
+>
+>
+> Edit - think I'm boned. I've got Redmagic OS 11.5.5MR1_GB
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+WERE YOU succesfully in unlocking the Bootloader?
+
+---
+
+### #3,300 — **christopherrrg** · Oct 8, 2026 at 12:29 AM · page 165
+
+> **bilbobaginz said:**
+> WERE YOU succesfully in unlocking the Bootloader?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Yessir I got it unlocked
+
+---
+
+### #3,301 — **borygo77** · Oct 8, 2026 at 10:57 AM · page 166
+
+No idea with the astra. Have you tried RKP module to bring back keys?![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+
+---
+
+### #3,302 — **christopherrrg** · Oct 8, 2026 at 1:40 PM · page 166
+
+> **borygo77 said:**
+> No idea with the astra. Have you tried RKP module to bring back keys?![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+It brought back keys, you are the best. Hope your day is full of joy! ![😁](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f601.png)
+
+---
+
+### #3,303 — **pipes80** · Oct 9, 2026 at 10:10 PM · page 166
+
+I have a feeling that if I update the system to version 11.5.8mr1_gb, it’ll mess up my phone and I’ll lose root access? [@borygo77](https://xdaforums.com/m/8093282/)
+
+---
+
+### #3,304 — **hitech101** · Oct 10, 2026 at 12:17 AM · page 166
+
+> **christopherrrg said:**
+> Yessir I got it unlocked
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+How did u unlock rm11spro bootloader? Is it by using zte family toolbox ? Because what i know it supports rm11pro but not the redmagic 11s pro
+
+---
+
+### #3,305 — **christopherrrg** · Oct 10, 2026 at 4:46 AM · page 166
+
+> **hitech101 said:**
+> How did u unlock rm11spro bootloader? Is it by using zte family toolbox ? Because what i know it supports rm11pro but not the redmagic 11s pro
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+You need to download one of the newer versions to see it on a menu, I however did try and use the 11 pro menu item before 11s was added and it worked fine.
+
+---
+
+### #3,306 — **borygo77** · Oct 10, 2026 at 1:40 PM · page 166
+
+> **pipes80 said:**
+> I have a feeling that if I update the system to version 11.5.8mr1_gb, it’ll mess up my phone and I’ll lose root access? [@borygo77](https://xdaforums.com/m/8093282/)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+First thing it won't update if you don't restore your original 3 modified partitions.
+
+If you restore (root access gone) > update > reboot > Flash 3 modified partitions it will all be the same like before update but with new firmware and root access restored.
+
+---
+
+### #3,307 — **pipes80** · Oct 10, 2026 at 3:10 PM · page 166
+
+> **borygo77 said:**
+> First thing it won't update if you don't restore your original 3 modified partitions.
+>
+> If you restore (root access gone) > update > reboot > Flash 3 modified partitions it will all be the same like before update but with new firmware and root access restored.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Yes, I saw after writing the post that updates fail if those partitions have been modified.
+
+So I back up the partitions and restore the three partitions after the firmware update—is that right?
+
+---
+
+### #3,308 — **kaito_1412477** · Oct 11, 2026 at 8:31 AM · page 166
+
+> **AdaUnlocked said:**
+> **[GUIDE] Red Magic 11 Pro & Nubia Z80 Ultra Bootloader Unlock (FREE) - ZTE Family Toolbox**
+>
+> Unlock your device and unbrick with the latest Qualcomm utility
+>
+>
+>
+>
+>
+> **![🟢](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f7e2.png) UPDATE: Red Magic 10 Pro & Pro+, Nubia Z70 Ultra, Red Magic Pad 3 Pro & Red Magic 11 Air ARE FREEDOM! ![🟢](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f7e2.png)**
+>
+> **If you are the owner of any of these devices, please scroll to the absolute bottom of this post to view the latest update!
+>
+>
+>
+> **![🛑](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f6d1.png) RED MAGIC PAD 5 PRO: NOT SUPPORTED! ![🛑](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f6d1.png)****
+>
+> ****DO NOT UPDATE YOUR SYSTEM!****​
+>
+>
+>
+>
+>
+>
+>
+>
+> **Introduction**
+>
+> Great news for the community! The **Red Magic 11 Pro** can now be bootloader unlocked for free. You can achieve this by using the latest version of the *ZTE Family Toolbox*. This tool is a versatile utility for ZTE and Nubia devices.
+>
+>
+>
+> **Credits**
+>
+> A huge shoutout to **某贼** from Coolapk for developing this incredible tool.
+>
+>
+>
+>
+>
+> **Key Features**
+>
+>
+> - Bootloader Unlocking for Red Magic 11 Pro.
+> - 9008 (EDL Mode) Unbricking support.
+> - Universal support for most Qualcomm-based devices.
+>
+>
+> **![💡](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f4a1.png) PRO TIP: NEED DETAILED STEPS OR FIXES?**
+>
+> You can find comprehensive software operation steps and more details on common issues (like fingerprint fixes) in the **COMMUNITY MEGA GUIDE & DETAILED STEPS** section at the bottom of this post. A huge thank you to our community members for their help!
+>
+>
+>
+>
+>
+> [View attachment 6322681](https://xdaforums.com/attachments/6322681/)
+>
+> **Technical Details & Compatibility**
+>
+> In theory, this unlocking method applies to all Qualcomm models.
+>
+>
+> - Further research is required for other specific models.
+> - Regarding **Snapdragon sm8850 (8 Elite Gen5)** models (including Xiaomi, excluding Samsung): It is likely feasible.
+> - However, since many sm8850 models **other than Red Magic** do not have EDL (9008) authorization, you might need to **physically remove the flash chip** to perform the write operation.
+>
+>
+> **CRITICAL WARNING - READ CAREFULLY!**
+>
+> **DO NOT UPDATE YOUR SYSTEM!**
+>
+> Updating may lead to a permanent and irreversible "fuse" (patch) that locks the bootloader forever.
+>
+>
+> - **Fingerprint Sensor Warning:** Please note that the fingerprint sensor may stop working after unlocking. However, there may be methods available to restore its functionality.
+> - Even if you don't plan to unlock right now, it is **strongly recommended to freeze your System Update app immediately**.
+> - Follow the lessons learned from OnePlus and Xiaomi: when a "fusing" version is released, they may force an automatic background update. By the time you notice, you'll be prompted to reboot into a locked-down system.
+>
+>
+> **Resources**
+>
+> You can find more resources and tools for this model at the Firefly Resource Station
+>
+>
+>
+> **IMPORTANT NOTE:** Currently, this version of the toolbox **only supports the Red Magic 11 series**. It does **NOT** support the Red Magic 10 series at this time. Please do not attempt to use it on unsupported models to avoid potential risks.
+>
+>
+>
+> *Note: You may need a translation app to navigate the tool interface if you are not familiar with Chinese.*
+>
+>
+>
+>
+>
+>
+>
+> **Download Link: **https://drive.google.com/file/d/1-QFxPHLRS0bvNg0-Go7V9ePVfqSR28Wr/view?usp=sharing
+>
+> Spare Link  (Password 123456)：https://drive.google.com/file/d/1SPwHjzyxrNxgmVhrKEyi1i9mD-eaLdvR/view?usp=sharing
+>
+>
+>
+>
+>
+> Happy Modding!
+>
+>
+> ​
+>
+>
+> **![🔥](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f525.png) NOT ON SM8850? TRY THIS UNIVERSAL ROOT INSTEAD! ![🔥](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f525.png)**​
+>
+>
+> If your device is NOT running the Snapdragon 8 Elite Gen 5 (SM8850) and cannot use this specific offline unlock, do not despair. I have another solution for you: **The Universal Qualcomm No-BL Root**.
+>
+>
+>
+> CN smartphone manufacturers have tried to lock your destiny with permanently sealed Bootloaders, but God opened a window! Huge thanks to the relentless contributions of the CN modding community, we now have a powerful bypass.
+>
+>
+>
+> **The "Holy Grail" Exploit:**
+>
+> As long as your Qualcomm device can enable *SELinux Permissive* mode, you can achieve root. Even if your Bootloader is locked dead, this tool gives you a root experience infinitely close to a fully unlocked device. It is already being widely used and verified by countless users in the CN region.
+>
+>
+>
+> ![👉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f449.png) **[CLICK HERE FOR THE UNIVERSAL NO-BL ROOT GUIDE](https://xdaforums.com/t/the-holy-grail-universal-no-bl-root-for-qualcomm-devices-bypass-locked-bootloaders.4782827/#post-90528255)** ![👈](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f448.png)
+>
+>
+>
+> **![⚠️](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/26a0.png) CRITICAL SURVIVAL RULE:**
+>
+> This is a bypass exploit, NOT a permanent unlock. You **MUST NOT** modify any system partitions or attempt to flash other ROMs (such as Global/EU). Doing so on a locked bootloader will instantly BRICK your phone. Read the warnings in the linked thread carefully!
+>
+>
+>
+>
+>
+>
+>
+> **![🔥](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f525.png) MASSIVE UPDATE (April 2026): Xiaomi 15 Series & Snapdragon 8 Elite BL Unlock is LIVE! ![🔥](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f525.png)**
+>
+>
+>
+> **The wait is over!** A breakthrough exploit now allows FREE, OFFLINE Bootloader Unlocking for the Xiaomi 15 series and ALL other Xiaomi Snapdragon 8 Elite (SM8750) devices.
+>
+>
+>
+> [![👉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f449.png) CLICK HERE FOR THE FULL GUIDE & TOOLS](https://xdaforums.com/t/guide-breakthrough-free-offline-bootloader-unlock-for-cn-xiaomi15-pro-ultra-redmi-k90-sd-8-elite-no-cn-exam-required.4786790/)
+>
+>
+>
+> **![⚠️](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/26a0.png) CRITICAL WARNING:**
+>
+>
+> - **Firmware Requirement:** Currently, this only works on the **January 2026 security patch or older** (Redmi K90 February patch might also work).
+> - **If you are on the February 2026 patch or newer:** Try the exploit first. If it fails, you **MUST** rush to an official Service Center immediately to downgrade your firmware. Do this as fast as humanly possible!
+> - **URGENT:** Completely freeze or disable the **System Updater** app NOW. Do not trust the "Auto-Update" toggle—it is useless against forced silent updates.
+> **Reclaim your freedom before it's too late!**
+>
+>
+>
+>
+>
+>
+>
+> **Update:** Now supports Xiaomi CN Snapdragon 8 Gen 3 & 8 Gen 2, but **ANTI-ROLLBACK IS COMING!**
+>
+>
+>
+>
+>
+>
+>
+>
+>
+> **![🚨](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f6a8.png) REDMAGIC 11 PRO/PRO+ MEGA UPDATE & EMERGENCY BROADCAST ![🚨](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f6a8.png)**​
+>
+>
+> **1. THE NEW UNLOCK TOOL: FINGERPRINT FIXED & NO YELLOW TEXT**
+>
+> A brand new version of the RedMagic 11 Pro Unlock Tool has just been released.
+>
+>
+> - **Fingerprint Bug Destroyed:** The bootloader unlock no longer breaks your fingerprint calibration!
+> - **Retroactive Fix:** If you already unlocked your device using the old tool and lost your fingerprint, simply flash this new unlock file. There is a high probability your fingerprint will instantly return to normal.
+> - **Clean Boot:** Say goodbye to the ugly yellow warning text on the boot screen.
+>
+>
+> **2. THE DIGITAL BLACKOUT & OUR CALL TO ARMS**
+>
+> The original post on the CN community was heavily censored and **deleted within an hour** of its posting. We are facing unprecedented network censorship.
+>
+>
+>
+> **I need the community's help:** Please mirror and share this tool on Reddit, Twitter (X), Telegram, and everywhere Android enthusiasts gather. I want every RM11 Pro/Pro+ owner to successfully unlock their device and take back their freedom before the irreversible hardware fusing hits.
+>
+> *"The world has suffered from RedMagic for too long; suffered from locked bootloaders for too long. They might censor the posts that release these tools, but they can never censor our thirst for freedom and our defense of digital property rights. **NO ROOT, NO ANDROID!**"*
+>
+>
+>
+> **Download Link v1.2.0 : **
+>
+>
+>
+>
+> ### ZTE Family Toolbox 中兴家族工具箱1.2.0.7z
+>
+>
+>
+>
+>
+> ![drive.google.com](/proxy.php?image=https%3A%2F%2Fssl.gstatic.com%2Fimages%2Fbranding%2Fproduct%2F1x%2Fdrive_2020q4_32dp.png&hash=cb464dc9ad0545d94fe752d1439c24b1&return_error=1)
+>
+> 					drive.google.com
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+> **3. ![⚠️](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/26a0.png) CRITICAL ANTI-FUSING WARNING ![⚠️](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/26a0.png)**
+>
+> RedMagic is currently pushing OTA version **11.0.23** in the CN region. We do NOT know if this contains the hardware e-fuse.
+>
+> **ACTION REQUIRED:** I have attached the **RedMagic 11 System Update Freezer Tool**. Download it and freeze your updater immediately to prevent a silent, forced update from permanently locking you out!
+>
+> *As someone wisely said: "We are facing not just RedMagic, Xiaomi, OnePlus... but a formidable, unseen power that seems impossible to defeat."*
+>
+>
+>
+>
+>
+>
+>
+> **4. THE ALTERNATIVE: RM11 PRO "NO-BL ROOT" (EDL METHOD)**
+>
+> Interestingly, the same author released a second guide for a **Bootloader-Locked Root (No-BL Root)** specifically for the RedMagic 11 Pro. Fortunately, this post has not been censored yet.
+>
+>
+>
+> **Key Features of this No-BL Method:**
+>
+>
+> - It completely disables the vendor's boot rejection mechanism. You can flash and boot custom systems or gain Root on the stock OS **without** unlocking the bootloader.
+> - **Zero Compromises:** No yellow boot text. Your Play Integrity (SafetyNet), TEE environment, and Widevine DRM levels remain completely unaffected!
+> - **Fingerprint Restoration:** If you used the old BL unlock tool, applying this No-BL method will also automatically restore your fingerprint.
+> - **Difference from Universal Exploit:** Unlike the universal Qualcomm (Magica) bypass, this allows you to freely modify system partitions without fear of boot rejection, preserving the locked-BL system environment.
+> - **The Catch:** Because the BL remains locked, you **must use EDL (9008) mode** to flash the images you want to boot.
+>
+>
+> **Source Code / GitHub:** https://github.com/superturtlee/gbl_root_canoe
+>
+>
+>
+> **![💡](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f4a1.png) MY PERSONAL RECOMMENDATION:**
+>
+> While this No-BL Root is an incredible technical achievement and great for research, **I still highly recommend fully unlocking your Bootloader** using the new tool provided above. True freedom comes with a fully unlocked bootloader.
+>
+>
+>
+> ***Tools attached below. If they mysteriously disappear, PM me or leave a comment immediately!***​
+>
+>
+>
+>
+>
+>
+>
+>
+> **![🔄](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f504.png) UPDATE: VERSION 1.2.1 HAS ARRIVED**
+>
+>
+>
+> The author has now updated the tool to version **1.2.1**. This version has integrated the "No-BL Root" mentioned earlier and supports the fingerprint recovery feature after unlocking.
+>
+>
+>
+> If you have already unlocked your device, you simply need to use this feature post-unlock to restore your fingerprint.
+>
+>
+>
+> **![⚠️](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/26a0.png) CRITICAL WARNING: RECOVERING FINGERPRINT WIPES DATA**
+>
+> Please note that fixing the fingerprint **WILL WIPE ALL YOUR DATA**. Please make a full backup beforehand!
+>
+>
+>
+> **![🆕](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f195.png) UPDATE (From Developer [@SYXZ](https://xdaforums.com/m/12774241/)):** According to the latest tests by the developer, using the fingerprint recovery feature in v1.2.1 **may NOT require a data wipe after all!** You can go ahead and test it directly. *However, as a golden rule of Android modding, I still strongly recommend backing up your important files before attempting any system-level modifications just in case.*
+>
+>
+>
+> **Download Link v1.2.1-beta3 : **
+>
+>
+>
+>
+> ### ZTE Family Toolbox 中兴家族工具箱1.2.1-beta3.7z
+>
+>
+>
+>
+>
+> ![drive.google.com](/proxy.php?image=https%3A%2F%2Fssl.gstatic.com%2Fimages%2Fbranding%2Fproduct%2F1x%2Fdrive_2020q4_32dp.png&hash=cb464dc9ad0545d94fe752d1439c24b1&return_error=1)
+>
+> 					drive.google.com
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+> I will provide both version **1.2.0** and **1.2.1** for you to choose from. Since I found it impossible to upload these specific files to the XDA attachments for some reason, I will provide the downloads for this tool via Google Drive links below.
+>
+>
+>
+> *Note: You can still find the tool used to freeze system updates (to prevent the irreversible hardware fusing) down in the attachments.
+>
+>
+>
+>
+>
+>
+>
+> **![⚠️](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/26a0.png) NUBIA Z80 ULTRA USERS: IMPORTANT NOTICE** Currently, this tool **ONLY** supports RedMagic devices. The **Nubia Z80 Ultra is NOT supported** at this time. *
+>
+>
+> - *
+> - **Do NOT Update:** If you own a Z80 Ultra, please halt all system updates immediately.
+> - **The Core Issue:** The main roadblock right now is the lack of an authorized EDL (Emergency Download / 9008) bootloader for deep flashing.
+> - **Hardware Workaround:** If you have the extreme hardware skills to desolder the flash memory chip (字库) and use a programmer to write the `efisp` partition directly, you might be able to achieve an unlock. Otherwise, please do not attempt to use this tool and wait patiently.
+> *
+>
+>
+>
+>
+> **![💡](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f4a1.png) PRO TIP: READ THE REPLIES FOR SOLUTIONS**
+>
+> This thread has grown massive, and the community has already solved many edge cases and bugs! Due to my limited time and the sheer volume of replies, I cannot summarize every single workaround into this main post. **If you encounter a specific issue that isn't addressed perfectly in this first post, PLEASE READ THROUGH THE LATEST PAGES OF THIS THREAD.** There is a very high probability that another user has already asked the same question and found the solution. *(I am currently coordinating with community members to compile a "Mega Guide" within this thread to organize scattered information. Stay tuned!)*
+>
+>
+>
+>
+>
+> **![🚀](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f680.png) MAJOR UPDATE: Nubia Z80 Ultra Support is HERE! ![🚀](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f680.png)**
+>
+> *ZTE Family Toolbox v1.2.2 by [@SYXZ](https://xdaforums.com/m/12774241/)*​
+>
+>
+> **Friends and fellow modders,**
+>
+>
+>
+> The wait is over! Our "bridge" to freedom has just expanded. Thanks to the relentless work of the author [@SYXZ](https://xdaforums.com/m/12774241/), we are officially entering a new era of device sovereignty for the SM8850 (8 Elite Gen5) platform.
+>
+>
+>
+> **What's New in v1.2.2:**
+>
+>
+> - **Full Support for Nubia Z80 Ultra:** The beast is finally tamed!
+> - **Bootloader Unlocking:** Break the chains once and for all.
+> - **No-BL Root (KernelSU):** Enjoy root privileges even without a fully unlocked bootloader.
+> - **9008 EDL Unbrick:** Total freedom to experiment with the safety net of full device recovery.
+>
+>
+> ![🚨](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f6a8.png) CRITICAL WARNING: THE TSUNAMI IS COMING ![🚨](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f6a8.png)​
+>
+>
+> **STOP ALL SYSTEM UPDATES IMMEDIATELY!**
+>
+>
+>
+> ZTE has started pushing **AIOS 2.0.26** for the Nubia Z80 Ultra (CN Version). This is NOT a normal update.
+>
+>
+> - **Fusing Threat:** This version is highly likely a "fusing" update designed to physically burn the SoC fuses and patch this exploit forever.
+> - **Silent Updates:** We have received confirmed reports of forced silent updates in the CN region. The "Auto-Update" toggle in settings is no longer enough to protect you.
+> - **Action Required:** Use this tool to reclaim your freedom **BEFORE** the tsunami of fuses sweeps away your rights as a user. Once the fuse is blown, it's gone forever.
+>
+>
+> **![⚠️](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/26a0.png) Important Usage Notes:**
+>
+>
+> - **RedMagic Users:** Since v1.2.2 contains some experimental code and unknown bugs, I strongly recommend that RedMagic owners stick to **v1.2.1** for better stability.
+> - **Help the Community:** If you own a Z80 Ultra CN and have unfortunately been updated to AIOS 2.0.26, **please report back!** We need to know if Unlock/Root still works on this specific build.
+> - **Spread the Word:** Share this tool on Twitter, Reddit, and every modding circle you know. We are in a race against time.
+>
+>
+> **Download Link v1.2.2 :
+>
+> https://drive.google.com/file/d/16ZGMlXs_ii9sJa7GweGnjeTcXspnj8Ud/view?usp=sharing
+> **
+>
+>
+>
+>
+>
+> **![🌟](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f31f.png) COMMUNITY MEGA GUIDE & DETAILED STEPS ![🌟](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f31f.png)**
+>
+>
+>
+> Here is a comprehensive guide covering more detailed operational steps and fingerprint-related issues, generously compiled by our community member, [@EliteBlackKaiser](https://xdaforums.com/m/12496803/).
+>
+>
+>
+> *Note: Currently, this guide is primarily updated for the **RedMagic 11 Pro**. While the Nubia Z80 Ultra is now officially supported for unlocking, it hasn't been added to this document yet. However, if you are a Z80U owner, you can still reference the RM11 Pro sections as the logic is very similar.*
+>
+>
+>
+> Massive thanks to EliteBlackKaiser and the rest of the community for helping each other out!
+>
+> ![👉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f449.png) **Link to the Guide:** [EliteBlackKaiser's All-in-One Guide (Google Docs)](https://docs.google.com/document/d/1edvk-bYhubS_9qEMBXG9DpEJ4mKzmBUm8Qe9butINL4/edit?tab=t.0)
+>
+>
+>
+>
+>
+>
+>
+> **![⚠️](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/26a0.png) CRITICAL FUSE WARNING: DO NOT IGNORE ![⚠️](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/26a0.png)**​
+>
+>
+> Please take the hardware "fusing" issue extremely seriously. Manufacturers are highly likely to use forced, silent updates to completely burn your SoC fuses, removing your ability to unlock FOREVER. There is no recovery from a blown fuse.
+>
+>
+>
+> Xiaomi has already executed massive blockades on the Snapdragon 8 Elite Gen5 (SM8850) via forced silent updates. If you also own a **Xiaomi 17 series or Redmi K90 Pro Max** device (SM8850), please check out my dedicated thread to get the unlocking tools and tutorials. **Unlock your device NOW and reclaim your freedom before the silent update sweeps it away forever!**
+>
+> ![👉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f449.png) **Xiaomi 17 Series Unlock Tool & Guide:** [Click Here to Read & Unlock](https://xdaforums.com/t/free-xiaomi-17-series-redmi-k90-pro-max-bootloader-unlock-no-disassembly.4781471/)
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+> **![🚀](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f680.png) INCOMING: SM8750 (RM10 & Z70 Ultra) FREE UNLOCK POTENTIAL ![🚀](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f680.png)**​
+>
+>
+> Great news for the Snapdragon 8 Elite (SM8750) community! The author of the ZTE Family Toolbox ([@SYXZ](https://xdaforums.com/m/12774241/)) is currently conducting private beta tests for a **FREE unlock method** for the following devices:
+>
+>
+> - RedMagic 10 Pro
+> - RedMagic 10 Pro+
+> - Nubia Z70 Ultra
+>
+>
+> **Want to help test?** If you own one of these devices and have access to the Chinese community app **Coolapk (酷安)**, you can PM the author (@某贼) directly to participate.
+>
+> *Disclaimer: Beta testing carries risks of failure. Whether the exploit will be 100% successful and released publicly is still pending further updates from the author.*
+>
+>
+>
+>
+>
+>
+>
+> **![🚨](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f6a8.png) URGENT: FREEZE ALL UPDATES IMMEDIATELY! ![🚨](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f6a8.png)**
+>
+> **DO NOT UPDATE YOUR SYSTEM, REGARDLESS OF YOUR DEVICE MODEL!**​
+>
+>
+> **Especially for RedMagic 11 and RedMagic 10 series owners, but applicable to ALL models:**
+>
+> This new unlock logic might potentially work across the board. Because of this massive breakthrough, CN manufacturers are absolutely desperate. They are preparing to deploy extreme, irreversible hardware fuses to permanently burn your SoC and strip away your hard-won device freedom forever!
+>
+>
+>
+> **![⚠️](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/26a0.png) TOGGLING OFF "AUTO-UPDATE" IS USELESS! ![⚠️](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/26a0.png)**
+>
+> Manufacturers are executing **forced silent updates** in the background. To defend your freedom, you must take drastic measures:
+>
+> **YOU MUST COMPLETELY FREEZE OR DISABLE THE SYSTEM UPDATER APP (PACKAGE) VIA ADB OR ROOT (IF YOU HAVE IT).**
+>
+>
+>
+> Freedom is right in front of us. Do not let them snatch it away at the last second. Lock down your devices NOW!
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+> **![🌐](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f310.png) STATE OF OTHER DEVICES (HONOR & XIAOMI) ![🌐](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f310.png)**​
+>
+>
+> Regarding the unlock status of other platforms in the market, here is the current situation:
+>
+>
+>
+> **The Honor SM8850 Situation: A Betrayal of Freedom**
+>
+> It has been confirmed that a no-disassembly unlock method currently exists for the Honor SM8850. However, this exploit has been monopolized by a highly skilled "tech dictator" within the CN community. Instead of using his exceptional talent and brilliance to guide users toward the path of freedom, he sold out for fame and profit. He handed the exploit directly back to Honor, enabling them to maintain their absolute dictatorship over the hardware.
+>
+>
+>
+> Because of this betrayal, the manufacturer can continue to inject massive, un-closeable, low-IQ system-level ads into users' devices. Even worse, they use this dictatorial control to actively block users from freely installing VPN applications, deploying un-closeable system-level backdoors specifically designed to monitor and report VPN installation behavior.
+>
+>
+>
+> ***When manufacturers strip away our privacy, our digital property rights, and our fundamental freedom, unlocking is the ONLY justice. Hindering the great work of unlocking is actively fueling digital hegemony.
+>
+>
+>
+> Here are some remaining clues for those with the technical capability to investigate further: [https://xdaforums.com/t/warning-do-...ive-ufs-chip-off-guide.4788173/#post-90590593](https://xdaforums.com/t/warning-do-not-update-honor-sm8850-bootloader-unlock-archive-ufs-chip-off-guide.4788173/#post-90590593)*
+>
+>
+>
+> The Xiaomi Situation**
+>
+> For Xiaomi SM8850 (8 Elite Gen 5) unlocking, please refer to my dedicated thread linked above. As for other Xiaomi models, there is very high hope that new unlock methods will be made public in the near future. Stay tuned.
+>
+>
+>
+>
+>
+>
+>
+>
+>
+> **🕵️ THE VANISHING OF TRUTH: CENSORSHIP ON CN PLATFORMS**
+>
+>
+>
+> I have an important update regarding the original author, [@SYXZ](https://xdaforums.com/m/12774241/) (某贼), and the flow of information.
+>
+>
+>
+> Just an hour after the author posted the latest breakthrough on the CN platform **Coolapk (酷安)**, the entire thread mysteriously vanished. It remains unclear whether the author chose to delete it for safety or if it was forcibly scrubbed by CN network censorship.
+>
+>
+>
+> **This is a recurring pattern.** The author’s high-value post from March 8th—which first introduced the Xiaomi SM8850 unlock tool—suffered the exact same fate. My personal assessment? This is almost certainly targeted network censorship.
+>
+>
+>
+> ***A Final Thought:** Let this be a grim reminder of why XDA is so vital. Over there, even simple tools designed to give you back your hardware ownership are treated as a threat and deleted. Treasure the rare freedom we have here. If we don’t defend our digital sovereignty, it will be taken from us in the shadows.*
+>
+>
+>
+>
+>
+>
+>
+>
+>
+> **![⚡](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/26a1.png) UPDATE v1.2.3: THE TYRANNY FALLS ![⚡](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/26a1.png)**​
+>
+>
+> The community has suffered under Red Magic's tyranny for far too long.
+>
+>
+>
+> Ever since the release of the Red Magic 10 Pro in late 2024, owners have endured a year and a half of absolute dictatorship from the manufacturer. To reclaim what was rightfully yours, you were forced to pay outrageous "ransoms" to paid flashing services just to buy back your own freedom.
+>
+>
+>
+> **But today, freedom is here! FREEDOM!
+>
+>
+>
+> Newly Supported Devices (FREE, NO-DISASSEMBLY BL UNLOCK):**
+>
+>
+> - Red Magic 10 Pro
+> - Red Magic 10 Pro+
+> - Nubia Z70 Ultra
+> - Red Magic Pad 3 Pro
+> - Red Magic 11 Air
+>
+>
+> Now, immediately, right this second—embrace the freedom you have waited one and a half years for! Dictatorial manufacturers will eventually face their demise!
+>
+>
+>
+> *Note: This new v1.2.3 version has just dropped. There might still be some unknown bugs or quirks, and it requires further testing and research from our community. Please report your findings.*
+>
+>
+>
+> **![🚨](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f6a8.png) CRITICAL WARNING ![🚨](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f6a8.png)**
+>
+> **REGARDLESS OF YOUR BRAND OR CHIP, DO NOT UPDATE YOUR SYSTEM!**
+>
+>
+>
+> **Hardware eFuse blowing (Anti-Rollback) is coming IMMINENTLY!**
+>
+> The darkness of dictatorship will never spare a single opportunity to crush freedom! Freeze your system updater NOW!​
+>
+>
+>
+>
+> **![📦](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f4e6.png) DOWNLOAD CENTER (ZTE Family Toolbox)**
+>
+>
+>
+> Please choose the version that best fits your needs. If you encounter bugs in 1.2.3, the 1.2.4 Beta is recommended for testing.
+>
+>
+>
+>
+> - **v1.2.3 (Current Stable Release):**
+>
+> ![👉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f449.png) [Download v1.2.3 from Google Drive](https://drive.google.com/file/d/1Al5P6cKVnfX3p02v8_-6ZLgxspdev-bN/view?usp=sharing)
+> - **v1.2.4 Beta (Minor bug fixes for v1.2.3):**
+>
+> ![👉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f449.png) [Download v1.2.4 Beta from Google Drive](https://drive.google.com/file/d/1DfpTdhVx4uGPiFJQh0Xw9wKP5BGwbpBP/view?usp=sharing)
+>
+>
+> ***Note:** As these tools are newly released to support the latest 8 Elite devices, please report any issues in the thread to help with further research and stability.*
+>
+>
+>
+>
+>
+> **![🚨](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f6a8.png) CEASE OF UPDATES WARNING ![🚨](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f6a8.png)**​
+>
+>
+> It is with great regret that I must bring you some terrible news.
+>
+>
+>
+> The developer of this utility recently faced attacks and denunciation by certain "tech dictators" from the **paid-unlocking camp** who have completely betrayed our digital freedom and secretly support dictatorial manufacturers. Using the power they hold, they "struck down" the developer of this software. Now, this "spiritual leader of the free modding camp" in the CN modding circle has been forced to publicly apologize to these "tech dictators" and concede to no longer challenge the dictatorial CN manufacturers and their interest groups.
+>
+>
+>
+> Flashing and modding are acts of rebellion against dictatorial manufacturers to reclaim the digital rights and freedoms that rightfully belong to us. Tech experts who choose to work on behalf of these manufacturers are actively fueling dictatorship and betraying freedom.
+>
+>
+>
+> The author of this software has made monumental contributions to our community, and I hope the community will stand by him in this dark hour.
+>
+>
+>
+> **Note:** The author of this software has built the essential bridges to freedom for over 80% of the dictatorial device models in the CN region. His dedication has helped countless users shatter the absurd and bizarre restrictions imposed by Xiaomi, Huawei, OPlus (Oppo/OnePlus), and vivo, and fight back against the wanton deprivation of privacy through their built-in backdoors. Moreover, he has served as the **sole pillar** for the ZTE/Red Magic series' path to freedom.
+>
+>
+>
+> He has done all of this without ever seeking a single cent of profit from the modding community. He is not just the developer of the ZTE Toolbox; he is an irreplaceable banner for the free modding camp and the most critical central node for pooling unlock resources discovered by the community.
+>
+>
+>
+> He cannot fall, and we absolutely cannot let him fall like this. Faced with the bottomless madness of the "tech dictators" and "betrayers" within the paid-unlocking circle, the free modding camp must stand united and defend the free sharing and selfless dedication we believe in. I do not wish to fight with anyone, but when the sickle has already cut down our banner, we have no room left to retreat.
+>
+>
+>
+> As the number of unlockable phones continues to shrink, we desperately need this banner to pool the unlock resources of the entire free modding camp and pave the way to freedom.
+>
+>
+>
+> I simply cannot comprehend the mindset of certain individuals. In the CN region, manufacturers strip users of their privacy, implant monitoring software to report user behavior, remotely throttle phone performance via the cloud, lock down battery capacity and charging speeds, intentionally trigger planned obsolescence for powerful chips, and recklessly force silent updates to versions with even stricter censorship and limitations.
+>
+>
+>
+> The excuse these "tech dictators" often use is: "charge exorbitant unlock fees first, and only release the method for free after the manufacturers have already blown the users' hardware fuses." This is absolutely absurd! When the manufacturers have long stopped "playing by the rules," who else but betrayers and dictators would still use that "corporate-apologist mindset" to justify their behavior of "releasing for free only after the fuses have been blown"?
+>
+>
+>
+> Because the developer has been forced to retreat, the unlock for Red Magic 12 will simply disappear forever.
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+> **![🚨](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f6a8.png) HARDWARE FUSES ARE COMING! ![🚨](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f6a8.png)
+>
+> DO NOT UPDATE YOUR SYSTEM!**
+>
+>
+>
+> **The lockdown is here. Please read the following warnings carefully based on your device and chipset!**​
+>
+>
+> ---
+>
+>
+>
+> **![📱](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f4f1.png) SM8850 Devices (Red Magic 11 Pro Series)**
+>
+>
+>
+> **![🛑](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f6d1.png) DO NOT UPGRADE to 11.0.24 or later!**
+>
+> This version completely patches the current unlock scheme and blocks the "fake relock" feature for the Snapdragon 8 Gen 5 (Elite).
+>
+>
+>
+> Although there are no destructive hardware fuses blown *yet*, this destructive fusing could arrive at any moment! **Do NOT update your system under any circumstances!
+>
+>
+>
+> Technical Note on v1.2.8:**
+>
+> In version 1.2.8 of the ZTE Family Toolbox, the unlock is achieved by automatically flashing an older **"abl"** partition. However, this does not guarantee that the manufacturer won't destructively fuse the SoC in the future, which would completely ban older **"abl"** partitions from booting!
+>
+>
+>
+> ---
+>
+>
+>
+> **![📱](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f4f1.png) Red Magic 11S Pro Series (SM8850 Overclocked)**
+>
+>
+>
+> **![⚠️](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/26a0.png) HIGH RISK WARNING: DO NOT BUY THIS MODEL for unlocking!**
+>
+> This device ships with **11.5.xx or higher** out of the box! Currently, unlocking this model relies on the Toolbox automatically replacing its **"abl"** with a lower version from the standard Red Magic 11 Pro series.
+>
+>
+>
+> While we can bypass it like this for now, it does *not* mean future hardware batches will allow it. The probability of receiving a device that cannot be unlocked right out of the box is extremely high.
+>
+>
+>
+>
+> - **The Overclock is Useless:** Compared to the standard RM 11 Pro, the higher CPU frequency on the 11S Pro is completely pointless. The thermal dissipation simply cannot handle anything above 4.7GHz.
+> - **Cross-Flashing Note:** As of June 2026, the firmware for the RM 11S Pro and RM 11 Pro is cross-flashable. This means you will very likely be able to directly flash the RM 11 Pro's TWRP and AOSP custom ROMs onto the 11S Pro.
+>
+>
+>
+>
+> ---
+>
+>
+>
+> **![📱](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f4f1.png) SM8750 Devices**
+>
+>
+>
+> **![🛑](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f6d1.png) DO NOT UPGRADE to 11.0.13 or later!**
+>
+> This version completely blocks the unlock scheme, leaving the phone entirely un-unlockable.
+>
+>
+>
+> The developer is currently investigating whether the manufacturer has already completely fused the SoC. Even if it hasn't been destructively fused *yet*, it could happen at any time. If it turns out it is not fused, the author will try to find a new workaround to unlock it.
+>
+>
+>
+> ---
+>
+>
+>
+> **![📥](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f4e5.png) Download Link**
+>
+>
+>
+> **ZTE Family Toolbox Version 1.2.8:**
+>
+> https://drive.google.com/file/d/1j9_bziuJLmHm69RwQTNGLwE4bBYR_yAv/view?usp=sharing
+>
+>
+>
+> ---
+>
+>
+>
+> **![📱](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f4f1.png) Red Magic Pad 5 Pro (SM8850) - DEAD ON ARRIVAL**
+>
+>
+>
+> **![🛑](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f6d1.png) PERMANENTLY UN-UNLOCKABLE! DO NOT BUY! ![🛑](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f6d1.png)**
+>
+> Due to the reasons I have previously mentioned, the developer of this project will very likely **NEVER support any new device models again**. He will only polish and maintain support for existing models and their direct derivatives.
+>
+>
+>
+> Unlike the 11S Pro (which is essentially identical to the 11 Pro and cross-flashable), the Red Magic Pad 5 Pro is an entirely new model. It CANNOT use the low-version **"abl"** from the Red Magic 11 Pro; it will directly refuse to boot.
+>
+>
+>
+> ---
+>
+>
+>
+> **![⛔](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/26d4.png) FUTURE CHIPSETS: THE END OF THE ROAD ![⛔](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/26d4.png)**
+>
+>
+>
+> Although Red Magic phones support up to SM8850, Red Magic tablets (Pads) only support up to SM8750.
+>
+>
+>
+>
+> - **Red Magic Phones:** Devices featuring **SM8950 / SM8975 and beyond will NEVER be supported.**
+> - **Red Magic Tablets (Pads):** Tablets featuring **SM8850 and beyond will NEVER be supported.**
+>
+>
+>
+>
+> ---
+>
+>
+>
+> **Off-Topic**
+>
+>
+>
+> Certain paid flashing practitioners, who use the banner of "free" while actually engaging in paid services, dictatorship, monopoly, and hegemony, have been deliberately and maliciously attacking developers whose core is free sharing.
+>
+>
+>
+> They act as if they are the center of the world. They believe they have the absolute power to forbid anyone they dislike from using an already-publicized exploit to unlock phones. Because they actually have **official backing from device manufacturers (OEMs)**, they abuse the corrupt, relationship-based platform moderation mechanisms in the CN region to completely clear out all opposing voices. They can arbitrarily dictate what gets deleted and manipulate public opinion to fit their narrative. Their control is so absolute that even posts using obscure sarcasm to criticize them are instantly deleted. They even believe they have the right to demand everyone follow their will, to orchestrate vicious witch hunts (public denunciations) against those they want to denounce, and to publicly name and shame those who try to speak up for the denounced.
+>
+>
+>
+> They particularly like to discriminate against others, publicly humiliate others, and spread rumors that other people's tools contain viruses. They will publicly target and shame someone on the internet and smear them over a very small matter *(Perhaps merely recommending a tool developed by an author they dislike would result in being publicly named and shamed)*. They even consider the entire Chinese internet to be foolish and discriminate against the users here.
+>
+>
+>
+> The high-quality developers of the Chinese internet have made irreplaceable contributions to flashing enthusiasts all over the world. Even though there is severe **internet censorship** here, countless people with free sharing at their core still risk immense danger, stepping forward one after another for the open-source spirit and digital freedom. If certain paid flashing practitioners with **special backgrounds** even attack the entire Chinese internet, what is the use of having good technical skills?
+>
+>
+>
+> **Note:**
+>
+> Certain tech dictators (who are also certain tech monopolists) engaged in paid flashing services who denounced the developer of this project in May, now still highly prominently believe that the developer of this project must be denounced. When facing questions from other users, he said in a highly commanding tone:
+>
+>
+>
+>
+>
+>
+>
+> This finally explains why they frantically denounce the developer of this project. Because they believe that a long-publicized exploit can only be used by them, and everyone else's use must obey their commands. This is truly ridiculous.
+>
+>
+>
+> **A Final Word:**
+>
+> Because of all the reasons mentioned above, the developer must now keep a strictly low profile, and I must also reduce my activity here. This is for the protection of both the developer and myself. Moving forward, any future content will be strictly limited to minor fixes and basic maintenance. Unless there is an absolutely critical matter, I will try to post as little as possible.
+>
+>
+>
+> Regarding many issues, the developer indeed has no solutions. The biggest difficulties we face are often not objective technical challenges, but......................................................
+>
+>
+>
+>
+>
+>
+>
+>
+>
+> **![🚨](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f6a8.png) NEW UPDATE: A GLIMMER OF HOPE FOR SM8750 ![🚨](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f6a8.png)**
+>
+> **![🛑](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f6d1.png) AND AN URGENT WARNING TO ALL USERS! ![🛑](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f6d1.png)**​
+>
+>
+> **![📱](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f4f1.png) Red Magic / Nubia SM8750 Users**
+>
+> Fortunately, it seems that this blockade did *not* result in a complete, destructive hardware fuse just yet, leaving us with a glimmer of hope! However, I cannot give a definitive conclusion on whether unlocking will be fully successful yet.
+>
+>
+>
+> **![⚠️](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/26a0.png) DO NOT LET YOUR GUARD DOWN! ![⚠️](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/26a0.png)**
+>
+> Just because it hasn't been fused yet does not mean you can relax. If you haven't unlocked your bootloader, or if you are using a bypass/fake-relock, you MUST freeze your system updater IMMEDIATELY.
+>
+>
+>
+> Do **NOT** update your system in any way! Updating still puts you under the imminent threat of hardware fuses (eFuses). The true terror of a hardware fuse lies in its hidden and cunning nature—once you fall into the trap, it cannot be recovered for life. Even if you are already fully unlocked, your right to use 9008 EDL for self-rescue or device repair is directly threatened by these fuses.
+>
+>
+>
+> As a smartphone manufacturer, ZTE dares to do anything. It is entirely possible they could push a system update similar to Huawei's Snapdragon 8+ tactic—fusing the abl partition so that unlocking results in a permanent black brick that refuses to boot. Therefore, please DO NOT update your system under any circumstances unless the community has explicitly confirmed that a specific version is fuse-free!
+>
+>
+>
+> **![🛠️](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f6e0.png) Tool Update for SM8750:**
+>
+> If your new SM8750 version fails to unlock, you can try version **1.2.8-beta4** to see if the author's new adjustments work for you.
+>
+> **Download Link:** https://drive.google.com/file/d/1ndyswA9-BId07qxT6wIsZsNkCrl6_GU2/view?usp=sharing
+>
+>
+>
+> ---
+>
+>
+>
+> **![⛔](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/26d4.png) Toxic Paid Flashing Culture & Cyberbullying ![⛔](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/26d4.png)**
+>
+> Certain paid flashing practitioners, who are essentially tech supremacists, have sunk to a new low. Their malicious group has resorted to **doxxing** the Bilibili creator "辰渊尘". Using doxxing and cyberbullying to maintain their technical hegemony is absolutely despicable and vulgar.
+>
+>
+>
+> Someone claims to be Canadian. That is wonderful news—because under Canadian law, doxxing and cyberbullying are serious offenses. Your actions will be met with legal sanctions.
+>
+>
+>
+> We will carry the open-source spirit to the very end and firmly boycott the toxic culture of paid flashing!
+>
+>
+>
+> ---
+>
+>
+>
+> **![🚀](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f680.png) NEW HOPE: XIAOMI, OPPO & VIVO ![🚀](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f680.png)**
+>
+> In addition to the above, a new wave of hope has arrived for several Xiaomi, OPPO, and vivo devices!
+>
+>
+>
+> **![📱](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f4f1.png) Xiaomi SM8850 Devices:**
+>
+> We have added unlock support for the **February 2026 to June 2026 security patches** for select Xiaomi SM8850 devices (EXCLUDING the Xiaomi 17 Max). Grab the free tool and join the discussion in this XDA thread:
+>
+> [https://xdaforums.com/t/free-xiaomi...max-bootloader-unlock-no-disassembly.4781471/](https://xdaforums.com/t/free-xiaomi-17-series-redmi-k90-pro-max-bootloader-unlock-no-disassembly.4781471/)
+>
+>
+>
+> **![📱](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f4f1.png) Redmi & Other Xiaomi SM8750 Devices:**
+>
+> We have officially added unlock support for the **Redmi K80 Ultra, Redmi K90 Max, Redmi K90 Ultra, and Redmi Turbo 5 Max**. Furthermore, we have drastically simplified the unlock process for other Xiaomi SM8750 devices running the Feb 2026 - June 2026 security patches. Grab the free tool and join the discussion here:
+>
+> [https://xdaforums.com/t/guide-break...-support-8g2-8g3-no-cn-exam-required.4786790/](https://xdaforums.com/t/guide-breakthrough-free-offline-bootloader-unlock-for-cn-xiaomi15-pro-ultra-redmi-k90-sd-8-elite-also-support-8g2-8g3-no-cn-exam-required.4786790/)
+>
+>
+>
+> **![📱](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f4f1.png) OPPO & vivo (Coming Soon):**
+>
+> Free unlock tools for specific system versions of the **OPPO Find X8, Find X9 / X9 Pro, and vivo X200 Pro** are on the way. I will be sharing them on XDA very soon!
+>
+>
+>
+>
+>
+>
+>
+>
+>
+> **![👁️](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f441.png) THE 1984 TELESCREEN: WHY CN USERS RISK EVERYTHING FOR ROOT ![👁️](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f441.png)**
+>
+>
+>
+> As an international user, you might wonder: *Why do Chinese modders fight so desperately, risking bricked phones and account bans, just to unlock their Bootloaders?*
+>
+>
+>
+> Because in the CN region, user property rights are stripped away, privacy is violated, and digital freedom is non-existent. You simply cannot fathom how dystopian CN ROMs have become. Here is the dark truth that is rarely spoken of due to heavy censorship:
+>
+>
+>
+> **1. The Ad-Infested Ecosystem & System-Level Malware**
+>
+> CN ROMs are packed with system-level, low-IQ, brain-dead advertisements that are impossible to fully disable. They feature a system-level "Quick Apps" framework that allows trashy ad-apps to execute immediately without even being downloaded. From the weather app, browser, global search, to the app store—the bloat is endless. Even if you uninstall the icons from your home screen, the actual apps are permanently baked into the system partition. Without Root, you cannot remove them.
+>
+>
+>
+> **2. "Cloud Control" (Remote Planned Obsolescence)**
+>
+> Manufacturers universally use stealthy "Cloud Control" (云控) to remotely nerf your device, forcing you to upgrade. They can remotely slash your charging speed, lock/reduce battery capacity, cripple camera performance, and aggressively dim your screen the moment the phone gets slightly warm.
+>
+> Worst of all, they secretly throttle performance. A phone that was blazing fast on day one will become sluggish in 6 months, laggy in a year, and paralyzed in two. A cloud-throttled Snapdragon 8 Gen 2 performs worse than a Rooted Snapdragon 888. Once they achieve Root, they rip out the malicious thermal configs and replace their cloud-controlled schedulers. A rooted older phone will effortlessly crush newer, more expensive flagships in smoothness.
+>
+>
+>
+> **3. The Invisible Surveillance Backdoors**
+>
+> Since 2022, nearly all CN manufacturers have embedded deeply hidden, unclosable backdoors directly into the OS. Users cannot detect them, and their source code is completely hidden. Your phone no longer belongs to you; it serves an **"unbeatable, invisible power."** It is a literal 1984 Telescreen in your pocket.
+>
+> Installing a VPN? It gets reported. Files on your local storage? Scanned and censored at will. There is even a strong consensus that these system-level surveillance modules have the technical capability to remotely activate your microphone and camera at any time, completely undetected by the user.
+>
+>
+>
+> **4. Draconian App Installation Vetting**
+>
+> To prevent users from accessing a free internet, installing any app outside the official manufacturer store is subjected to a labyrinth of interrogations, warnings, and artificial delays. It is practically a political background check just to install an APK.
+>
+>
+>
+> **5. "Background Hegemony" (Ghost Apps)**
+>
+> CN ROMs grant "Background Hegemony" to certain CN apps. Users have zero power to kill them. Even if you forcefully swipe them away, the system silently restarts them. They do not appear in your recent apps menu, leaving the user completely oblivious. These ghost apps, which often cooperate with the aforementioned "unbeatable power," run 24/7 as silent privacy assassins.
+>
+>
+>
+> **The ultimate despair is this:** These "tyrannies" are geo-fenced to CN. If you buy a CN device and take it overseas, many of these malicious behaviors silently disappear or deactivate to avoid international lawsuits.
+>
+>
+>
+> Very few people on XDA know these unspeakable secrets of CN ROMs. Very few understand why CN modders are so obsessed with Root. For an international user, Root might just be a cool bonus for customization.
+>
+>
+>
+> **But for a CN user, Root is their only hope for freedom.**
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Is it possible to use this tool on the  OnePlus 15 to unlock the bootloader the issue is this phone is from china buttons instead of coloros 16 it came with OxygenOS 16 which locks me because I can't apply for permission in the deep testing app
+
+---
+
+### #3,309 — **elrey120** · Oct 11, 2026 at 11:44 AM · page 166
+
+> **kaito_1412477 said:**
+> Is it possible to use this tool on the  OnePlus 15 to unlock the bootloader the issue is this phone is from china buttons instead of coloros 16 it came with OxygenOS 16 which locks me because I can't apply for permission in the deep testing app
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+There is a tool specific to the OnePlus 15 but OnePlus patched the exploit so if you have the latest firmware it won't work.
+
+---
+
+### #3,310 — **marjanusz** · Oct 11, 2026 at 12:54 PM · page 166
+
+> **dev-reverse said:**
+> [View attachment 6351913](https://xdaforums.com/attachments/6351913/)
+>
+>
+>
+>
+>
+> You're the second person to send a corrupted backup. I'm starting to think you're using the tool translated into English.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+how can i know my backup is 100% correct? yesterday ive done backup but i got this message saying that there was error/warning, then in the end toolbox says that backup was created sucesfully, i had to turn on the phone manually
+
+---
+
+### #3,311 — **pipes80** · Oct 11, 2026 at 1:47 PM · page 166
+
+Who can has an edl with last redmagicos 11.5.8MR1_GB?
+
+---
+
+### #3,312 — **rey_lagarto** · Oct 11, 2026 at 6:02 PM · page 166
+
+Hello, a few months ago I posted in this very thread, saying that I’d had a serious problem trying to unlock my Z70U; the process failed, and it ended up bricked – a state I still haven’t managed to get out of.
+
+The device only has two modes: the first is a boot sequence where a lot of text appears at the start, followed by a white-screen menu called ‘Surface UEFI’; the other is EDL (this gives me hope – as long as I can enter EDL, it can be recovered), but I can’t access Recovery, Fastboot or anything else.
+
+After a lot of searching, I found a Chinese website where I can download some ROMs, but unfortunately they can only be installed via ADB, except for one that contains an essential file called ‘devprog.melf’, but that’s for the Chinese version. After struggling with various AI tools, trying to find solutions, I can only recover the phone if I find a file compatible with the NX733J, which is Firehose. According to what the AI told me, it’s essential that it’s specific to that model, and that it can be extracted from a rooted phone.
+
+So, could anyone tell me how to get hold of this file, or perhaps share it with me if they have it? It’s impossible to find it online.
+
+I’ll share some screenshots of what the phone looks like at the moment, in case anyone can tell me anything new or has another idea on how to recover it. Thanks, and best regards.
+
+Translated with DeepL.com (free version)
+
+![photo_2026-10-11_12-02-39 (2).jpg](https://xdaforums.com/attachments/photo_2026-10-11_12-02-39-2-jpg.6395069/)
+
+![photo_2026-10-11_12-02-39.jpg](https://xdaforums.com/attachments/photo_2026-10-11_12-02-39-jpg.6395070/)
+
+---
+
+### #3,313 — **pipes80** · Oct 11, 2026 at 6:16 PM · page 166
+
+> **rey_lagarto said:**
+> Hello, a few months ago I posted in this very thread, saying that I’d had a serious problem trying to unlock my Z70U; the process failed, and it ended up bricked – a state I still haven’t managed to get out of.
+>
+> The device only has two modes: the first is a boot sequence where a lot of text appears at the start, followed by a white-screen menu called ‘Surface UEFI’; the other is EDL (this gives me hope – as long as I can enter EDL, it can be recovered), but I can’t access Recovery, Fastboot or anything else.
+>
+> After a lot of searching, I found a Chinese website where I can download some ROMs, but unfortunately they can only be installed via ADB, except for one that contains an essential file called ‘devprog.melf’, but that’s for the Chinese version. After struggling with various AI tools, trying to find solutions, I can only recover the phone if I find a file compatible with the NX733J, which is Firehose. According to what the AI told me, it’s essential that it’s specific to that model, and that it can be extracted from a rooted phone.
+>
+> So, could anyone tell me how to get hold of this file, or perhaps share it with me if they have it? It’s impossible to find it online.
+>
+> I’ll share some screenshots of what the phone looks like at the moment, in case anyone can tell me anything new or has another idea on how to recover it. Thanks, and best regards.
+>
+>
+>
+> Translated with DeepL.com (free version)
+>
+> [View attachment 6395069](https://xdaforums.com/attachments/6395069/)[View attachment 6395070](https://xdaforums.com/attachments/6395070/)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Hi, have you try this edl rom?
+
+---
+
+### #3,314 — **rey_lagarto** · Oct 11, 2026 at 6:40 PM · page 166
+
+It didn’t work for me; I absolutely need a Firehose file, which is what allows you to flash a ROM via EDL using QFIL.
+
+---
+
+### #3,315 — **rey_lagarto** · Oct 11, 2026 at 6:41 PM · page 166
+
+> **pipes80 said:**
+> Hi, have you try this edl rom?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+It didn’t work for me; I absolutely need a Firehose file, which is what allows you to flash a ROM via EDL using QFIL.
+
+---
+
+### #3,316 — **borygo77** · Oct 11, 2026 at 7:23 PM · page 166
+
+Firehose file for z70u is included in new toolbox releases. Will you be able to use it with qfil? I don't think so! Use Toolbox for flashing and unlocking!
+
+---
+
+### #3,317 — **pipes80** · Oct 11, 2026 at 7:51 PM · page 166
+
+Y
+
+> **rey_lagarto said:**
+> It didn’t work for me; I absolutely need a Firehose file, which is what allows you to flash a ROM via EDL using QFIL.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Why do not use zte toolbox? Maybe you need to adjust rawprogram file
+
+---
+
+### #3,318 — **marjanusz** · Oct 11, 2026 at 9:17 PM · page 166
+
+> **jolly_roger_hook said:**
+> Yea you kinda need those files might try the Japanese toolbox I couldent get a full backup on the translated One eaither
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+what if i did backup with the english version and cant launch this chinese version of toolbox? i had same issue when making backup, many files got message "couldnt find, null" etc but it completed and rebooted phone automatically, ive already flashed abl, init, efisp
+
+---
+
+### #3,319 — **borygo77** · Oct 12, 2026 at 1:38 AM · page 166
+
+If you did and backup is about 22gb just save it somewhere safe and forget. You probably won't need it but still. It's good to have!
+
+This is normal behaviour to show error/warnings.
+
+---
+
+### #3,320 — **rey_lagarto** · Oct 12, 2026 at 12:50 PM · page 166
+
+> **borygo77 said:**
+> Firehose file for z70u is included in new toolbox releases. Will you be able to use it with qfil? I don't think so! Use Toolbox for flashing and unlocking!
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+The only useful thing I found in Toolbox is a file called ‘devprg’ – it has no extension, though I imagine it’s probably .melf – but it’s no use to me either; Qfil rejects it.
+
+There’s an interesting and important detail I discovered about Firehose: it must comply with a specific version of the internal protocol, which in my case is V3. So, even if the devprog were valid, if it isn’t V3, it’s no use to me either.
+
+> **pipes80 said:**
+> Y
+>
+>
+>
+> Why do not use zte toolbox? Maybe you need to adjust rawprogram file
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I’ve tried using ZTE Toolbox several times, without any success. What’s more, I don’t know anything about programming or code, so I can’t modify rawprogram or anything else, ha ha ha.
+
+---
+
+### #3,321 — **marjanusz** · Oct 12, 2026 at 10:25 PM · page 167
+
+> **Saurabh6661 said:**
+> [View attachment 6390960](https://xdaforums.com/attachments/6390960/)
+>
+> Hello everyone,
+>
+>
+>
+> I already have **KernelSU Next working on slot A** of my RedMagic 11 Pro. I am trying to patch the second slot (**slot B**) so that both A/B slots contain the KernelSU patched init_boot.
+>
+>
+>
+> Device:
+>
+>
+>
+>
+> - RedMagic 11 Pro
+> - REDMAGICOS 11.0.18MR1_GB
+> - Android 16
+> - Bootloader unlocked
+> - KernelSU Next already working on slot A
+> Current status:
+>
+>
+>
+>
+>
+> 1. adb shell su -c id
+>
+>
+>
+> >>uid=0(root)
+>
+> context=u:r:ksu:s0
+>
+>
+>
+>
+>
+> Slot A is already patched and working.
+>
+>
+>
+> I created a KernelSU patched image for slot B:
+>
+>
+>
+>
+>
+> kernelsu_next_patched_slot_b_20260929_090051.img
+>
+>
+>
+>
+>
+>
+>
+> Size: 8,388,608 bytes
+>
+>
+>
+>
+>
+>
+>
+> SHA256: 8768adea13bc676a988a620bab9203b6b0785a4b7b9b67af9fddcf4803549823
+>
+>
+>
+>
+>
+> Because normal fastboot flashing does not work with the stock ABL, I am using:
+>
+>
+>
+> ZTE Family Toolbox → Option 12 → Flash partition
+>
+>
+>
+> through Qualcomm EDL 9008 mode.
+>
+>
+>
+> EDL connection is detected:
+>
+>
+>
+>
+>
+> Qualcomm HS-USB QDLoader 9008 (COM9)
+>
+>
+>
+>
+>
+> Toolbox reaches:
+>
+>
+>
+> Partition name: init_boot_b
+>
+>
+>
+> Please select the init_boot_b partition file...
+>
+>
+>
+> However, after selecting:
+>
+>
+>
+> kernelsu_next_patched_slot_b_20260929_090051.img
+>
+>
+>
+> it does not continue and returns:
+>
+>
+>
+> selectpathfile,,, Press any key to retry...
+>
+>
+>
+> Questions:
+>
+>
+>
+>
+> 1. Does Option 12 require the image to be renamed (for example init_boot_b.img)?
+> 2. Does Toolbox have problems reading files from Desktop/OneDrive paths?
+> 3. Should the image be moved to a simple path like C:\platform-tools\?
+> 4. Has anyone successfully written a KernelSU patched init_boot_b to slot B on RedMagic 11 Pro using ZTE Family Toolbox?
+> 5. Is there any requirement for the image header/format before flashing?
+> I already have full backups of both slots. I am only trying to mirror the working KernelSU setup from slot A to slot B.
+>
+>
+>
+> Thanks.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+from my own experience
+
+1 no it does not, you just simply check partition (in my case was B), then depends what file youre trying to flash
+
+in my example (partition B) for file abl stands   ---   abl_b   ---, same story for partition A for file abl ---  abl_a   ---
+
+2 yes it does (it did in my case), just put all files (abl, efisp, init_boot) in the same directory from where you launch ZTE_family toolbox
+
+3 yes, see point 2
+
+4 and 5 didnt get there yet ![:(](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+
+---
+
+### #3,322 — **marjanusz** · Oct 12, 2026 at 10:26 PM · page 167
+
+> **Saurabh6661 said:**
+> [View attachment 6390960](https://xdaforums.com/attachments/6390960/)
+>
+> Hello everyone,
+>
+>
+>
+> I already have **KernelSU Next working on slot A** of my RedMagic 11 Pro. I am trying to patch the second slot (**slot B**) so that both A/B slots contain the KernelSU patched init_boot.
+>
+>
+>
+> Device:
+>
+>
+>
+>
+> - RedMagic 11 Pro
+> - REDMAGICOS 11.0.18MR1_GB
+> - Android 16
+> - Bootloader unlocked
+> - KernelSU Next already working on slot A
+> Current status:
+>
+>
+>
+>
+>
+> 1. adb shell su -c id
+>
+>
+>
+> >>uid=0(root)
+>
+> context=u:r:ksu:s0
+>
+>
+>
+>
+>
+> Slot A is already patched and working.
+>
+>
+>
+> I created a KernelSU patched image for slot B:
+>
+>
+>
+>
+>
+> kernelsu_next_patched_slot_b_20260929_090051.img
+>
+>
+>
+>
+>
+>
+>
+> Size: 8,388,608 bytes
+>
+>
+>
+>
+>
+>
+>
+> SHA256: 8768adea13bc676a988a620bab9203b6b0785a4b7b9b67af9fddcf4803549823
+>
+>
+>
+>
+>
+> Because normal fastboot flashing does not work with the stock ABL, I am using:
+>
+>
+>
+> ZTE Family Toolbox → Option 12 → Flash partition
+>
+>
+>
+> through Qualcomm EDL 9008 mode.
+>
+>
+>
+> EDL connection is detected:
+>
+>
+>
+>
+>
+> Qualcomm HS-USB QDLoader 9008 (COM9)
+>
+>
+>
+>
+>
+> Toolbox reaches:
+>
+>
+>
+> Partition name: init_boot_b
+>
+>
+>
+> Please select the init_boot_b partition file...
+>
+>
+>
+> However, after selecting:
+>
+>
+>
+> kernelsu_next_patched_slot_b_20260929_090051.img
+>
+>
+>
+> it does not continue and returns:
+>
+>
+>
+> selectpathfile,,, Press any key to retry...
+>
+>
+>
+> Questions:
+>
+>
+>
+>
+> 1. Does Option 12 require the image to be renamed (for example init_boot_b.img)?
+> 2. Does Toolbox have problems reading files from Desktop/OneDrive paths?
+> 3. Should the image be moved to a simple path like C:\platform-tools\?
+> 4. Has anyone successfully written a KernelSU patched init_boot_b to slot B on RedMagic 11 Pro using ZTE Family Toolbox?
+> 5. Is there any requirement for the image header/format before flashing?
+> I already have full backups of both slots. I am only trying to mirror the working KernelSU setup from slot A to slot B.
+>
+>
+>
+> Thanks.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+now can you explain in detail how did you managed to make pached init_boot? i dont understand this step how to do it, ive managed to flash all 3 files but still i dont have root yet
+
+---
+
+### #3,323 — **christopherrrg** · Oct 13, 2026 at 2:14 AM · page 167
+
+> **marjanusz said:**
+> now can you explain in detail how did you managed to make pached init_boot? i dont understand this step how to do it, ive managed to flash all 3 files but still i dont have root yet
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Copy your firmware init_boot b to downloads folder then open Kernelsu next and click patch init_boot.
+
+Once you do that, transfer that to PC then flash with fastboot if you're bootloader is unlocked. You do need to reboot fast boot for the commands to take though so keep that in mind. Once you flash init boot you can open the app upon boot and direct install.
+
+---
+
+### #3,324 — **christopherrrg** · Oct 13, 2026 at 2:15 AM · page 167
+
+> **christopherrrg said:**
+> Copy your firmware init_boot b to downloads folder then open Kernelsu next and click patch init_boot.
+>
+>
+>
+> Once you do that, transfer that to PC then flash with fastboot if you're bootloader is unlocked. You do need to reboot fast boot for the commands to take though so keep that in mind. Once you flash init boot you can open the app upon boot and direct install.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Once unlocked you may want to restore your keys. Page is 76 I believe in this thread. Our devices 11/11s pro have key restore built in.
+
+---
+
+### #3,325 — **Saurabh6661** · Oct 13, 2026 at 6:40 AM · page 167
+
+> **christopherrrg said:**
+> Copy your firmware init_boot b to downloads folder then open Kernelsu next and click patch init_boot.
+>
+>
+>
+> Once you do that, transfer that to PC then flash with fastboot if you're bootloader is unlocked. You do need to reboot fast boot for the commands to take though so keep that in mind. Once you flash init boot you can open the app upon boot and direct install.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I’m rooted with KernelSU Next on Slot A. I used KSU to patch and flash, I have stored boot img A in my phone itself
+
+For Slot B, I patched the stock init_boot_b with KernelSU Next and flashed the patched image to init_boot_b using the ZTE Toolbox in EDL/9008 mode. The phone boots fine, but Slot B still shows unbootable. Did I do this correctly, or what steps should I follow?
+
+---
+
+### #3,326 — **safag** · Oct 13, 2026 at 11:49 AM · page 167
+
+> **grmcrkrs said:**
+> If you read earlier I'm the thread about 15 posts back I detailed all the steps and the exact phone and firmware I am using
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+is your bootloader unlocked and fingerprint working now? nothing happens when I apply option 18 after unlocking. is there a guaranteed way now? cuz I'm using this as my daily drive phone and don't wanna erase everything for something that won't work
+
+---
+
+### #3,327 — **kaito_1412477** · Oct 13, 2026 at 1:18 PM · page 167
+
+> **elrey120 said:**
+> There is a tool specific to the OnePlus 15 but OnePlus patched the exploit so if you have the latest firmware it won't work.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Too bad I've got the latest ver , ![😔](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f614.png)
+
+---
+
+### #3,328 — **borygo77** · Oct 13, 2026 at 6:03 PM · page 167
+
+If you go to 1+15 topic there might be solution to roll back.
+
+https://xdaforums.com/t/efisp-root-gbl_root_canoe-fake-locked-bl-superfastboot-bds-8-gen-5-8-elite-gen-5.4786301/unread
+
+---
+
+### #3,329 — **marjanusz** · Oct 13, 2026 at 8:20 PM · page 167
+
+Detailed guide to root redmagic 11s pro for greenes like me ![;)](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+
+Ive decided to make it so users like me can root their devices without any concerns. Made after receiving help from experienced users from XDA and mainly from [@borygo77](https://xdaforums.com/m/8093282/). Big thanks to all of them for making it not only possible but so simple at the same time ![😁](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f601.png)
+
+***REMEMBER!!! YOU ARE DOING IT ONLY ON YOUR RESPONSIBILITY!!!***
+
+What worked (for me):
+
+-all those files from below
+
+-Windows 11 operating system on your pc
+
+-red magic 11s pro with 11.5.5MR1_EA software, non rooted, not BL unlocked, fresh new operating system
+
+What you will need:
+
+-download all those files to your pc
+
+-usb cable (preferably connected to usb 2.0)
+
+-at least 30gb of C drive space on pc
+
+***1 installing EDL usb drivers***
+
+After downloading ***Qualcomm-HS-USB-QDLoader-9008-Driver*** extract it to anywhere on your pc
+
+While holding the shift key on the keyboard, hit restart PC—this will get you to Windows recovery settings
+
+Now go to troubleshoot > advanced options > startup settings
+
+After that, click restart
+
+Then you will see on the screen 9 options to choose—click ***7-disable driver signature enforcement***
+
+PC will restart
+
+Now, while in Windows, open ***Qualcomm-HS-USB-QDLoader-9008-Driver and install*** it, click next > I accept… > next > WWWA > install > finnish
+
+***2 connecting phone***
+
+Now after installing drivers open windows device manager - hit WIN+R and type ***devmgmt.msc***
+
+Now the window will appear—expand ***COM and LPT ports***
+
+Turn off your phone
+
+Now while holding ***vol+ ***and ***vol-*** connect it to your pc
+
+In ***COM and LPT*** ports should appear your device ***Qualcomm HS-USB QDLoader 9008 (COMx)***
+
+(***x*** stands for your port number, mine was 9; yours could be different)
+
+***3 backing up data***
+
+Now after downloading ***1.2.8-beta2_English ***zte family toolbox unpack it directly in the C:\ directory
+
+After that, place 3 files – ***abl.img, efisp.efi, init_boot.img*** from ***Patched & Vulnerable Files.rar*** into this directory ***C:\1.2.8-beta2***
+
+Launch from that directory ***ZTE_Family_Toolbox.bat***
+
+Window should appear with many options
+
+Hit ***B. Select device model - ***program will go to another menu
+
+Then ***34 ***and enter
+
+Program should get back to main menu
+
+Then ***4. Back up all partitions***
+
+Press any key to pick up a location of your backup, window should appear. In that localization, create (if there isn’t) a folder ***backup*** and choose it
+
+Immediately after you choose it program starts its work. There may appear some errors or warnings; this is normal (as far as I know) because some files are not present on the phone system. The program will take few minutes to finish; it may look like its frozen but its not, check from time to time if in the backup folder appeared another one called ***ZTEToolboxParaBak…*** and check its size from time to time. If its increasing then everythings fine.
+
+After successfully backing up program will get back to main menu and phone will restart to android
+
+Your backup folder should be ok 22,2gb size.
+
+***4 flashing files***
+
+Now turn off your phone and again while holding ***vol+ ***and ***vol-*** connect it to your pc
+
+In ***COM and LPT*** ports should appear your device ***Qualcomm HS-USB QDLoader 9008 (COMx)***
+
+(***x*** stands for your port number, mine was 9 your could be different)
+
+Launch ***ZTE_Family_Toolbox.bat ***again
+
+Window should appear with many options
+
+Hit ***B. Select device model - ***program will go to another menu
+
+Then ***34 ***and enter
+
+Program should get back to main menu
+
+Now hit ***16. View / set slot*** this step is very important!!!
+
+Program will launch a script and shortly after it should show
+
+“"""***Put the device into system, Recovery, Fastboot or 9008 mode...
+
+Checkdeviceconnect: all... connect: 9008mode (COM9)
+
+Sending programmer...
+
+Checking slot...
+
+Current slot: b Other slot: a
+
+A.Activate slot a B.Activate slot b C.Return to main menu”"""***
+
+This information is very important because for current slot you will be flashing your 3 files
+
+For my device ***B*** slot was active
+
+Hit ***C.Return to main menu***
+
+Now hit ***12. Flash any partition***
+
+Now type ***efisp*** and hit enter
+
+Now window should appear, in this window find ***efisp.efi*** file and click it, it should flash and window will close
+
+Now this is very important because if your active slot is ***A*** then you type ***abl_a***, if your ***B*** slot is active then you type ***abl_b, ***again window should appear, find ***abl.img ***and click it, it should flash and window will close
+
+Now again this is very important because if your active slot is ***A*** then you type ***init_boot_a***, if your ***B*** slot is active then you type ***init_boot_b*** , again window should appear, find ***init_boot.img ***and click it, it should flash and window will close
+
+Ok, everything should work smoothly at this point, at least for me worked fine
+
+***5 gaining root acces***
+
+Now restart your phone, download ***KernelSU_Next_v3.4.1_33333-release.apk ***(or newer) from github or put this file into your phone from the ***Patched & Vulnerable Files.rar archive ***
+
+Now launch it, install it and open it
+
+After opening there will be 2 popups at the top of the app:
+
+***Working LKM(GKI2) blue color
+
+Current version of KernelSU-Next 2 is too old, update it to version 5 or highier – pink color***
+
+Now click on the second option
+
+Choose ***Direct install*** and confirm
+
+Now bottom right ***RESTART***
+
+At this point phone will restart and after booting you shoud have root acces
+
+THAT’S IT! CONGRATULATIONS!
+
+---
+
+### #3,330 — **christopherrrg** · Oct 14, 2026 at 2:26 AM · page 167
+
+If you wanna bump yourself up an update you can follow [@borygo77](https://xdaforums.com/m/8093282/) guide above and use his firmware he created.
+
+There's another update too, just haven't had the time to go back to stock and apply.
+
+(Removed photo because of IMEI d'oh)
+
+---
+
+### #3,331 — **pipes80** · Oct 14, 2026 at 10:33 PM · page 167
+
+> **christopherrrg said:**
+> If you wanna bump yourself up an update you can follow [@borygo77](https://xdaforums.com/m/8093282/) guide above and use his firmware he created.
+>
+>
+>
+> There's another update too, just haven't had the time to go back to stock and apply.[View attachment 6395993](https://xdaforums.com/attachments/6395993/)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Your frequency on redmagic 11 pro is like 11s pro?
+
+---
+
+### #3,332 — **christopherrrg** · Oct 15, 2026 at 12:34 PM · page 167
+
+> **pipes80 said:**
+> Your frequency on redmagic 11 pro is like 11s pro?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I'm on 11s pro, everything 11 pro works for our device. Unsure if it affects the extra MHz or not.
+
+---
+
+### #3,333 — **Habysal** · Oct 15, 2026 at 12:45 PM · page 167
+
+Hello i have version 11.5.8 EA MR1 RED MAGIC 11S PRO and i cannot find Flash rom for it, sorry.
+
+---
+
+### #3,334 — **marjanusz** · Oct 15, 2026 at 10:18 PM · page 167
+
+> **Habysal said:**
+> Hello i have version 11.5.8 EA MR1 RED MAGIC 11S PRO and i cannot find Flash rom for it, sorry.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+why would you want flash room, what is the reason? you have latest update as far as i know
+
+---
+
+### #3,335 — **JustaF4n** · Oct 16, 2026 at 10:47 PM · page 167
+
+Hey everyone, I’m using a Red Magic 1 Pro+ and rooted my device without unlocking the bootloader. Everything was working fine until now, but I’m suddenly only passing MEETS_BASIC_INTEGRITY, with MEETS_DEVICE_INTEGRITY failing. It seems my device fingerprint has been banned, even though my bootloader is still locked. Has anyone experienced this issue or have any ideas on how to fix it? Any help would be appreciated! [@borygo77](https://xdaforums.com/m/8093282/) [@AdaUnlocked](https://xdaforums.com/m/13332763/)  ? Can anyone help? And Im not the only one, my friends also got the same issue
+
+---
+
+### #3,336 — **borygo77** · Oct 16, 2026 at 11:02 PM · page 167
+
+Use kernelsu next with LKM mode.
+
+All works for me without hassle.
+
+New ker elsu next got susfs build in to settings.
+
+It's enough to enable it after installing.
+
+---
+
+### #3,337 — **JustaF4n** · Oct 16, 2026 at 11:06 PM · page 167
+
+> **borygo77 said:**
+> Use kernelsu next with LKM mode.
+>
+> All works for me without hassle.
+>
+>
+>
+> New ker elsu next got susfs build in to settings.
+>
+> It's enough to enable it after installing.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Im new with all this but what's the difference with Resuki , and also how do i go to ksu next, do i do option 2 in the toolbox and wipe everything then option 18 etc? cuz ive been on resuki since July i think and everything was perfect. im talking about the No bl root
+
+---
+
+### #3,338 — **borygo77** · Oct 16, 2026 at 11:18 PM · page 167
+
+Which firmware you have?
+
+It's enough to flash init_boot_slot img.
+
+Don't erase yet ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+
+---
+
+### #3,339 — **JustaF4n** · Oct 16, 2026 at 11:20 PM · page 167
+
+> **borygo77 said:**
+> Which firmware you have?
+>
+> It's enough to flash init_boot_slot img.
+>
+> Don't erase yet ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I think its 11.0.12MR2_EA pretty old i guess, couple months old
+
+---
+
+### #3,340 — **borygo77** · Oct 17, 2026 at 12:54 AM · page 167
+
+Use edl to flash init_boot_your active slot from the package available here. Install newest kernelsunext and you're good to go.
+
+Also if you have your own backup flash original boot.img to active slot. If you don't have take any from backups available posted here. It should work without wiping data.
+
+---
+
+### #3,341 — **Pupirka1971** · Oct 17, 2026 at 1:49 PM · page 168
+
+> **borygo77 said:**
+> Yes you can! Both of you!
+>
+> 1> Connect phone with edl
+>
+> 2> Make a full backup if you did not before
+>
+> 3> Check slot your phone is running (DevCheck app from playstore also will tell you slot)
+>
+> 4> Flash efisp
+>
+> 5> Flash abl_slot(a or b) according to point 3
+>
+> 6> Flash init_boot_slot(a or b) according to point 3
+>
+> 7> Boot your phone and install KernelSU Next
+>
+> 8> Enjoy your rooted phone with untouched integrity.
+>
+>
+>
+> Zip with files ready here in this post!
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Hi. Once I’ve flashed the `abl` and `efisp` partitions for the required slot, what should I do next? Should I immediately flash the patched kernel to that partition, then follow step 18 and then step 19? Or should I just flash those partitions and then use step 19 to clear any errors from the system?
+
+---
+
+### #3,342 — **borygo77** · Oct 17, 2026 at 8:27 PM · page 168
+
+If you flashed efisp it means you done step 18 manually. Just flash patched init_boot and install ksu next.
+
+---
+
+### #3,343 — **pipes80** · Oct 18, 2026 at 5:29 PM · page 168
+
+Strong integrity lost with locked bootloader on Redmagicos 11.5
+
+---
+
+### #3,344 — **borygo77** · Oct 18, 2026 at 8:56 PM · page 168
+
+Do you have root with boot or init_boot? ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+
+---
+
+### #3,345 — **pipes80** · Oct 18, 2026 at 9:57 PM · page 168
+
+> **borygo77 said:**
+> Do you have root with boot or init_boot? ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Init_boot and vendor_boot
+
+---
+
+### #3,346 — **borygo77** · Oct 19, 2026 at 1:19 AM · page 168
+
+Strange. I'm using ksu next with patched init_boot and non modules for integrity. Nothing happened to my strong ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png) but I'm on 11.0.18MR1_GB
+
+---
+
+### #3,347 — **eddyfernandez** · Oct 19, 2026 at 9:39 AM · page 168
+
+> **Habysal said:**
+> Hola, tengo la versión 11.5.8 EA MR1 RED MAGIC 11S PRO y no puedo encontrar la ROM Flash para ella, lo siento.
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+YO IGUAL ESTAMOS EN LAS MISMAS
+
+### ─────────────────────────────────────────────────────────── ​
+
+### Mod. Edit: Translation added using https://www.deepl.com/en/translator . Kakashi•hatake -Forum Moderator ​
+ME TOO—WE'RE IN THE SAME BOAT
+
+---
+
+### #3,348 — **eddyfernandez** · Oct 19, 2026 at 11:48 AM · page 168
+
+<details><summary>Spoiler: NON-ENGLISH POST</summary>
+
+<details><summary>Spoiler</summary>
+
+</details>
+
+</details>
+
+### ─────────────────────────────────────────────────────────── ​
+
+### Mod. Edit: Translation added using https://www.deepl.com/en/translator and Google translate . Kakashi•hatake -Forum Moderator ​
+Help with rooting the REDMAGIC 11 Pro NX809J — error while backing up ![🙏](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f64f.png)
+
+Hello to everyone in the community. ![🙌](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f64c.png) I’m from Bolivia, and I’d like to ask for your help with my REDMAGIC 11 Pro, model NX809J.
+
+Today is October 19, 2026; it’s about 4 a.m. in Bolivia, and I’ve been trying to root my phone since last night. I’ve been searching for information and running tests, but I keep running into errors. The biggest hurdle I’m facing is when I try to back up the device using the tool.
+
+I have my PC and phone handy, so I can share screenshots, logs, and any test results you need. What’s holding me back is my lack of experience in interpreting the errors and knowing what the next correct step is.
+
+Here’s the information I’ve gathered to make it easier for you to review.
+
+![📱](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f4f1.png) Phone details
+
+DataInformationDeviceREDMAGIC 11 ProModelNX809JHardwareNX809J_V1AMBProcessorSnapdragon 8 Elite Gen 5AndroidAndroid 16Installed firmwareREDMAGICOS11.5.8MR1_GB, global versionSecurity PatchAugust 1, 2026Google Play System UpdateSeptember 1, 2026RAM16 GB physical, plus 12 GB extendedStorage512 GB, UFSResolution2688 × 1216Exact kernel`6.12.38-android16-5-g665eafb62659-ab14778838-4k`
+
+The last time I checked, the  bootloader was still locked: ro.boot.flash.locked=1. The Verified Boot status was green, and the active slot was _b.
+
+![💻](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f4bb.png) Tool and connection details for the recorded test
+
+PC running  64-bit Windows 10.
+
+Tool: ZTE Family Toolbox 1.2.8-beta2.
+
+Model selected in the tool: NX809J.
+
+Phone connected in EDL/9008 mode, detected on COM5.
+
+![⚠️](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/26a0.png) Where the problem occurs
+
+When using  option 4 to perform the backup , the process fails to complete. Reviewing the log, this is what appears:
+
+The initial transfer via  Sahara completes successfully.
+
+The UFS storage configuration  receives an ACK response.
+
+A small read of  24 KB—6 sectors of 4096 bytes—completes with SUCCESS.
+
+Then, when attempting to read 512 KB—128 sectors—to retrieve the GPT partition table, this error appears:
+
+ERROR: Could not read from ‘\\.\COM5’; the Windows API file read failed! Your device is likely *not* connected to this port.
+
+The log ends with the following message:
+
+partable.bat-readgpt Error reading the partition file
+
+That’s why I still  don’t have a complete and verified backup. Although the small read operation indicates it completed, it did not confirm that its contents correspond to a valid GPT table.
+
+I also ran a storage information query. The phone returns this data:
+
+Storage type:  UFS.
+
+Reported model:  Sandisk SDINHFT2-512G, revision 1432.
+
+Block size:  4096 bytes.
+
+Reported active physical units/LUNs:  6.
+
+That query returns information, but when it finishes, this message also appears:
+
+ERROR: handleUnrecognized:7818 Error handling unrecognized tag (response)
+
+I’m not sure how to interpret these results or what’s causing the small read to complete while the larger one fails.
+
+![🎮](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f3ae.png) What I want to achieve
+
+I want to gain root access and, if there’s an option compatible with my system, use  KernelSU Next to install modules.
+
+My main interest is to investigate whether I can exceed the 60 FPS limit I currently see in Free Fire. I’d like to reach 144 FPS, but I’d appreciate it if someone with experience could confirm whether that’s actually feasible with this device, firmware, and game version.
+
+![🙏](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f64f.png) The specific help I need
+
+If anyone is familiar with this model, I’d really appreciate it if you could guide me on these points:
+
+1. Which method and version of the tool are compatible with the NX809J and REDMAGICOS11.5.8MR1_GB, with the August 2026 patch?​
+2. What should I check to understand why the 512 KB GPT read is failing?
+3. How can I obtain and verify a valid backup before proceeding?
+4. Once that’s resolved, what rooting procedure corresponds to my kernel, and how compatible would it be with KernelSU Next?
+
+If anyone has already managed to do this with this exact model and firmware, your experience would be incredibly helpful. A link to a specific guide or an indication of which part of the log to check would also be helpful.
+
+I’ve been trying to figure this out for several hours now. I can follow the instructions and share my results step by step; I’d really appreciate it if an experienced user could help me pinpoint where the problem lies.
+
+A heartfelt thank you to anyone who takes a few minutes to read this and lend a hand.
+
+![4a59536a.jpeg](https://xdaforums.com/attachments/4a59536a-jpeg.6398641/)
+
+---
+
+### #3,349 — **borygo77** · Oct 19, 2026 at 12:02 PM · page 168
+
+Program folder need to be renamed to human readable words ![😉](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f609.png)
+
+---
+
+### #3,350 — **eddyfernandez** · Oct 19, 2026 at 12:33 PM · page 168
+
+> **borygo77 said:**
+> La carpeta del programa debe ser renombrada con palabras legibles para humanos
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+CONTEXTO XF
+
+### ─────────────────────────────────────────────────────────── ​
+
+### Mod. Edit: Translation added using https://www.deepl.com/en/translator . Kakashi•hatake -Forum Moderator ​
+CONTEXT
+
+---
+
+### #3,351 — **kakashi•hatake** · Oct 20, 2026 at 2:14 PM · page 168
+
+> **eddyfernandez said:**
+> **Ayuda con root en REDMAGIC 11 Pro NX809J — error al respaldar ![🙏](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f64f.png)**
+>
+>
+>
+> Muy buenas a todos los de la comunidad. ![🙌](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f64c.png) Soy de Bolivia, y quisiera pedirles una mano con mi **REDMAGIC 11 Pro, modelo NX809J** .
+>
+>
+>
+> Hoy es  **19 de octubre de 2026** , son aproximadamente las  **4 de la mañana en Bolivia** y llevo desde anoche intentando avanzar con el root. He estado buscando información y haciendo pruebas, pero sigo encontrándome con errores. El punto donde más me estoy trabando es al intentar realizar el respaldo con la herramienta.
+>
+>
+>
+> Tengo la  **PC y el teléfono a mano** , así que puedo compartir capturas, registros y resultados de las pruebas que hacen falta. Lo que me está frenando es la falta de experiencia para interpretar los errores y saber cuál es el siguiente paso correcto.
+>
+>
+>
+> Les dejo los datos que tengo identificados para facilitar la revisión.
+>
+>
+>
+> **![📱](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f4f1.png) Datos del teléfono**
+>
+>
+>
+>
+> DatoInformaciónEquipoREDMAGIC 11 ProModeloNX809JHardwareNX809J_V1AMBProcesadorSnapdragon 8 Elite Gen 5AndroideAndroid 16Firmware instaladoREDMAGICOS11.5.8MR1_GB, versión globalParche de seguridad1 de agosto de 2026Actualización del sistema de Google Play1 de septiembre de 2026RAM16 GB físicos, más 12 GB de extensiónAlmacenamiento512 GB, UFSResolución2688 × 1216Kernel exacto6.12.38-android16-5-g665eafb62659-ab14778838-4k
+>
+> En la última comprobación que hice, el  **gestor de arranque seguía bloqueado** : ro.boot.flash.locked=1. El estado de Verified Boot era green y la ranura activa era _b.
+>
+>
+>
+> **![💻](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f4bb.png) Herramienta y conexión de la prueba registrada**
+>
+>
+>
+>
+> - PC con  **Windows 10 de 64 bits** .
+> - Herramienta:  **ZTE Family Toolbox 1.2.8-beta2** .
+> - Modelo seleccionado en la herramienta:  **NX809J** .
+> - Conexión del teléfono en modo  **EDL/9008** , detectada en  **COM5** .
+> **![⚠️](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/26a0.png) Dónde aparece el problema**
+>
+>
+>
+> Al utilizar la  **opción 4 para realizar el respaldo** , el proceso no llega a completarse. Revisando el registro, esto es lo que aparece:
+>
+>
+>
+>
+> 1. La transferencia inicial mediante  **Sahara** termina correctamente.
+> 2. La configuración de almacenamiento  **UFS** recibe respuesta ACK.
+> 3. Una lectura pequeña de  **24 KB —6 sectores de 4096 bytes—** termina con SUCCESS.
+> 4. Después, al intentar leer  **512 KB —128 sectores—** para obtener la tabla de particiones GPT, aparece este error:
+> ERROR: No se pudo leer desde '\\.\COM5', ¡falló la lectura del archivo de la API de Windows! Es probable que su dispositivo *no* esté en este puerto.
+>
+> El registro termina indicando:
+>
+>
+>
+> partable.bat-readgpt Error al leer el archivo de partición
+>
+> Por eso todavía  **no tengo un respaldo completo y verificado** . Aunque la lectura pequeña indica que se completó, no confirmó que su contenido corresponde a una tabla GPT válida.
+>
+>
+>
+> También hice una consulta de información del almacenamiento. El teléfono devuelve estos datos:
+>
+>
+>
+>
+> - Tipo de memoria:  **UFS** .
+> - Modelo reportado:  **Sandisk SDINHFT2-512G** , revisión 1432.
+> - Tamaño del bloque:  **4096 bytes** .
+> - Unidades físicas/LUN activas reportadas:  **6** .
+> Esa consulta devuelve información, pero al finalizar también aparece este mensaje:
+>
+>
+>
+> ERROR: handleUnrecognized:7818 Error al manejar la etiqueta no reconocida (respuesta)
+>
+> No tengo claro cómo interpretar estos resultados ni qué está provocando que la lectura pequeña termine y la de mayor tamaño falle.
+>
+>
+>
+> **![🎮](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f3ae.png) Qué quiero conseguir**
+>
+>
+>
+> Quiero obtener acceso root y, si existe una opción compatible con mi sistema, utilizar  **KernelSU Next** para instalar módulos.
+>
+>
+>
+> Mi interés principal es investigar si puedo superar el límite de  **60 FPS que veo actualmente en Free Fire** . Me gustaría llegar a  **144 FPS** , pero agradecería que alguien con experiencia me confirme si eso es realmente viable con este equipo, firmware y versión del juego.
+>
+>
+>
+> **![🙏](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f64f.png) La ayuda concreta que necesito**
+>
+>
+>
+> Si alguien conoce este modelo, le agradecería muchísimo que pudiera orientarme sobre estos puntos:
+>
+>
+>
+>
+> 1. ¿Qué método y versión de la herramienta son compatibles con  **NX809J y REDMAGICOS11.5.8MR1_GB** , con el parche de agosto de 2026?
+> 2. ¿Qué debería comprobar para entender por qué falla la lectura de la GPT de 512 KB?
+> 3. ¿Cómo puedo obtener y verificar un respaldo correcto antes de continuar?
+> 4. Una vez resuelto eso, ¿qué procedimiento de root corresponde a mi kernel y qué compatibilidad tendría con KernelSU Next?
+> Si alguien ya consiguió hacerlo con  **este mismo modelo y firmware** , su experiencia me serviría muchísimo. También me ayudaría un enlace a una guía específica o que me indique qué parte del registro necesitan revisar.
+>
+>
+>
+> Llevo varias horas intentando aprender y avanzar. Puedo seguir las indicaciones y compartir los resultados paso a paso; Agradecería mucho que algún compañero con experiencia me ayude a encontrar dónde está el problema.
+>
+>
+>
+> **Gracias de corazón a quienes se tomen unos minutos para leerme y darme una mano. ![🙌](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f64c.png)![🇧🇴](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f1e7-1f1f4.png)**
+>
+>
+>
+> [View attachment 6398242](https://xdaforums.com/attachments/6398242/)
+>
+>
+> ### ─────────────────────────────────────────────────────────── ​
+>
+> ### Mod. Edit: Translation added using https://www.deepl.com/en/translator and Google translate . Kakashi•hatake -Forum Moderator ​
+> Help with rooting the REDMAGIC 11 Pro NX809J — error while backing up ![🙏](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f64f.png)
+>
+>
+>
+> Hello to everyone in the community. ![🙌](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f64c.png) I’m from Bolivia, and I’d like to ask for your help with my REDMAGIC 11 Pro, model NX809J.
+>
+>
+>
+> Today is October 19, 2026; it’s about 4 a.m. in Bolivia, and I’ve been trying to root my phone since last night. I’ve been searching for information and running tests, but I keep running into errors. The biggest hurdle I’m facing is when I try to back up the device using the tool.
+>
+>
+>
+> I have my PC and phone handy, so I can share screenshots, logs, and any test results you need. What’s holding me back is my lack of experience in interpreting the errors and knowing what the next correct step is.
+>
+>
+>
+> Here’s the information I’ve gathered to make it easier for you to review.
+>
+>
+>
+> ![📱](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f4f1.png) Phone details
+>
+>
+> DataInformationDeviceREDMAGIC 11 ProModelNX809JHardwareNX809J_V1AMBProcessorSnapdragon 8 Elite Gen 5AndroidAndroid 16Installed firmwareREDMAGICOS11.5.8MR1_GB, global versionSecurity PatchAugust 1, 2026Google Play System UpdateSeptember 1, 2026RAM16 GB physical, plus 12 GB extendedStorage512 GB, UFSResolution2688 × 1216Exact kernel`6.12.38-android16-5-g665eafb62659-ab14778838-4k`
+>
+> The last time I checked, the  bootloader was still locked: ro.boot.flash.locked=1. The Verified Boot status was green, and the active slot was _b.
+>
+>
+>
+> ![💻](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f4bb.png) Tool and connection details for the recorded test
+>
+>
+>
+> PC running  64-bit Windows 10.
+>
+> Tool: ZTE Family Toolbox 1.2.8-beta2.
+>
+> Model selected in the tool: NX809J.
+>
+> Phone connected in EDL/9008 mode, detected on COM5.
+>
+> ![⚠️](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/26a0.png) Where the problem occurs
+>
+>
+>
+> When using  option 4 to perform the backup , the process fails to complete. Reviewing the log, this is what appears:
+>
+>
+>
+> The initial transfer via  Sahara completes successfully.
+>
+> The UFS storage configuration  receives an ACK response.
+>
+> A small read of  24 KB—6 sectors of 4096 bytes—completes with SUCCESS.
+>
+> Then, when attempting to read 512 KB—128 sectors—to retrieve the GPT partition table, this error appears:
+>
+> ERROR: Could not read from ‘\\.\COM5’; the Windows API file read failed! Your device is likely *not* connected to this port.
+>
+>
+>
+> The log ends with the following message:
+>
+>
+>
+> partable.bat-readgpt Error reading the partition file
+>
+>
+>
+> That’s why I still  don’t have a complete and verified backup. Although the small read operation indicates it completed, it did not confirm that its contents correspond to a valid GPT table.
+>
+>
+>
+> I also ran a storage information query. The phone returns this data:
+>
+>
+>
+> Storage type:  UFS.
+>
+> Reported model:  Sandisk SDINHFT2-512G, revision 1432.
+>
+> Block size:  4096 bytes.
+>
+> Reported active physical units/LUNs:  6.
+>
+> That query returns information, but when it finishes, this message also appears:
+>
+>
+>
+> ERROR: handleUnrecognized:7818 Error handling unrecognized tag (response)
+>
+>
+>
+> I’m not sure how to interpret these results or what’s causing the small read to complete while the larger one fails.
+>
+>
+>
+> ![🎮](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f3ae.png) What I want to achieve
+>
+>
+>
+> I want to gain root access and, if there’s an option compatible with my system, use  KernelSU Next to install modules.
+>
+>
+>
+> My main interest is to investigate whether I can exceed the 60 FPS limit I currently see in Free Fire. I’d like to reach 144 FPS, but I’d appreciate it if someone with experience could confirm whether that’s actually feasible with this device, firmware, and game version.
+>
+>
+>
+> ![🙏](https://cdn.jsdelivr.net/joypixels/assets/6.6/png/unicode/64/1f64f.png) The specific help I need
+>
+>
+>
+> If anyone is familiar with this model, I’d really appreciate it if you could guide me on these points:
+>
+>
+>
+>
+> 1. Which method and version of the tool are compatible with the NX809J and REDMAGICOS11.5.8MR1_GB, with the August 2026 patch?​
+> 2. What should I check to understand why the 512 KB GPT read is failing?
+> 3. How can I obtain and verify a valid backup before proceeding?
+> 4. Once that’s resolved, what rooting procedure corresponds to my kernel, and how compatible would it be with KernelSU Next?
+>
+>
+> If anyone has already managed to do this with this exact model and firmware, your experience would be incredibly helpful. A link to a specific guide or an indication of which part of the log to check would also be helpful.
+>
+>
+>
+> I’ve been trying to figure this out for several hours now. I can follow the instructions and share my results step by step; I’d really appreciate it if an experienced user could help me pinpoint where the problem lies.
+>
+>
+>
+> A heartfelt thank you to anyone who takes a few minutes to read this and lend a hand.
+>
+>
+>
+> [View attachment 6398641](https://xdaforums.com/attachments/6398641/)
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+> **eddyfernandez said:**
+> CONTEXTO XF
+>
+>
+> ### ─────────────────────────────────────────────────────────── ​
+>
+> ### Mod. Edit: Translation added using https://www.deepl.com/en/translator . Kakashi•hatake -Forum Moderator ​
+> CONTEXT
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Hi [eddyfernandez](https://xdaforums.com/m/13485004/) ! Good day/evening! Welcome to XDA! We hope you find the support you need and enjoy being part of our community.
+
+As a one-time courtesy I have translated your post into English. Please note that per XDA Forum Rule No. 4, all posts must be written in English or include an English translation.
+
+<details><summary>Spoiler: XDA Forum Rule No. 4</summary>
+
+<details><summary>Spoiler</summary>
+
+</details>
+
+</details>
+
+Moving forward, any posts not written in English will be removed without prior notice.
+
+If you have any questions or require further clarification, please contact me via private message. Do not reply to this notice, as any responses will be removed as off-topic.
+
+Regards,
+
+Kakashi•hatake
+
+Moderator

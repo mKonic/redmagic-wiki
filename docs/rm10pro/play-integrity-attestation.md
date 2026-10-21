@@ -91,6 +91,7 @@ Because the certificates come from Google's own provisioning backend, signed aga
 - **Nothing happens and `certify` still throws** — the RKP root key itself may be gone rather than just the issued certs, which is the unrecoverable case. That is the point at which the thread falls back to the module stack below.
 - **`su` not found** — you aren't rooted, or the shell doesn't have root granted in your manager's list [RM11 #3,041 p153].
 - **You're on a custom ROM** — see above; this path is stock-only.
+- **There's also a module for it.** When christopherrrg's RedMagic Astra lost its keys, borygo77 pointed him to "the RKP module", and that brought them back [RM11 #3,301–#3,302 p166]. The module wasn't named or linked.
 
 ## The module stack, if you need it anyway {#module-stack}
 
@@ -111,3 +112,10 @@ christopherrrg flashed an AnyKernel3 SUSFS build, got working SUSFS, and then fo
 :::
 
 borygo77's summary is the standing advice on both threads: run **LKM root on the stock kernel**, and don't reach for SUSFS unless something is actually failing without it — *"I don't need susfs to hide better if everything is working"* [RM11 #3,166 p159]. The failure is delayed by hours or days, which is what makes it so easy to misattribute to something else.
+
+Locked bootloaders aren't immune either. In October 2026 two users rooted on a **locked** bootloader reported integrity dropping with no change on their side:
+
+- JustaF4n, on `11.0.12MR2_EA` with Resukisu, fell to `MEETS_BASIC_INTEGRITY` only, and says friends saw the same [RM11 #3,335, #3,339 p167].
+- pipes80 lost STRONG on RedMagic OS 11.5, rooted through both `init_boot` and `vendor_boot` [RM11 #3,343, #3,345 p168].
+
+borygo77, on `11.0.18MR1_GB` with KSU Next on a patched `init_boot` and no integrity modules, saw nothing change. His advice is **KernelSU Next in LKM mode**, whose newer builds include a SUSFS toggle in settings that you only have to turn on [RM11 #3,336, #3,346 p167–168]. That SUSFS lives in the root manager and needs no custom kernel, so it isn't the same as the warning above. Neither report was resolved in-thread.

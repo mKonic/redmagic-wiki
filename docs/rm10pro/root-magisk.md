@@ -60,6 +60,8 @@ This works without ever touching the bootloader. Trade-off: every kernel/init_bo
 
 The ZTE Family Toolbox 1.2.3+ offers a "no-BL root via KernelSU" feature for users who want root without unlocking. Internally this is the same EDL/firehose flow as Path C, automated. Use this if you want the bootloader locked for SafetyNet / banking-app reasons. See [ZTE Family Toolbox](/rm10pro/zte-family-toolbox).
 
+On the RM11 family this has since been reduced to flashing three partitions by hand (`efisp`, `abl_<slot>`, KSU-patched `init_boot_<slot>`), and integrity stays intact. See [root with the bootloader locked](/rm11pro/toolbox-cross-reference#locked-bl-root). It relies on `efisp`, which the RM10 Pro [doesn't have](/rm10pro/partitions-avb#no-efisp), so it doesn't carry over as written.
+
 ## Path E — locked bootloader, no flashing at all (GhostLock)
 
 A userspace kernel exploit (CVE-2026-43499) that grants uid 0 on a completely stock device — no EDL, no Windows, no partition written, verified boot stays green. The catch is that the root is **temporary**: it dies on the next normal reboot. The RM10 Pro's shipping kernel is a supported target.
