@@ -86,3 +86,7 @@ n00b-xda-disciple's take after shipping an RM11 build: *"To be honest people don
 ## Why bother with custom recovery if EDL works?
 
 EDL flashing is reliable but cumbersome — every change to `init_boot` / `vbmeta` requires the volume-button dance and a Python script. Custom recovery makes routine work (Magisk updates, kernel swaps, ROM-zip installs) one-step. Pairs well with [the kernel build workflow](/rm10pro/kernel-source) for iterating on kernel changes.
+
+## Other recovery's 
+there is a orange fox recovery build with decryption that is yet to be posted on GitHub, as soon as its posted ill put the link in here
+
