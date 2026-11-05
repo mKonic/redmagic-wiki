@@ -55,7 +55,7 @@ These drive the RM11 Pro / toolbox work, and several touch the RM10 Pro directly
 | **-CNote-** | First reported **Red Magic 10S Pro** unlock + root with a **working fingerprint** [RM11 #2987 p150]; uploaded a full 10S Pro partition backup [RM11 #2966 p149]. |
 | **kcodya** | Author of the [REDMAX](https://github.com/kencalx/REDMAX-11) root module (re-enables features RedMagic OS disables). |
 | **Haldi4803** | The clearest voice on *why* not to update — the EDL-loss consequence chain [RM11 #2858, #2881 p143–145]. |
-| **elrey120** | English-translation work on the toolbox; early "banking/Wallet check bootloader state, not just root" insight. |
+| **elrey120** | English-translation work on the toolbox; early "banking/Wallet check bootloader state, not just root" insight. Brought up **mainline Linux** on the RM11 Pro, with efisp-based dual boot — [Reixo0/nx809j-mainline](https://github.com/Reixo0/nx809j-mainline), see [Mainline Linux](/rm11pro/toolbox-cross-reference#mainline-linux) [RM11 #3,360 p168, #3,409 p171]. |
 | **EliteBlackKaiser** | Maintains the community mega-guide Google Doc; documents the `efisp` "modes". |
 | **superturtlee** | Author of `gbl_root_canoe` (the open-sourced modded-`efisp` / no-BL-root reference codebase). |
 | **Grimish2280** | Drafting a native-Linux (`bkerler/edl`) NX789J unlock writeup [#676 p34, RM10 thread] — WIP, "do not use yet". |

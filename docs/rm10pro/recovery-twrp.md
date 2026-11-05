@@ -47,7 +47,7 @@ Touch firmware and config on RM10 Pro load from **`/data/vendor`**, which is FBE
 - Self-generated device trees: would not produce a `recovery.img` [#279 p14].
 - Adapted DarkestSpawn's RM9 Pro device tree: with FBE + other encryption flags disabled, OFRP boots; ADB and fastboot work; HW navigation works; touch doesn't; finds all partitions but can't mount [#279 p14] — superseded by Reminon's repo.
 
-## Recovery + slot interaction
+## Recovery + slot interaction {#recovery-slot-interaction}
 
 > *"If the stock recovery is present, then the fastboot in bootloader mode doesn't allow me to switch slots or flash partitions that I've tried. It forces me to use fastbootd in the stock recovery. If I have a custom recovery installed, then the fastboot in bootloader mode seems to have full functionality."* [#257 p13 Reminon]
 

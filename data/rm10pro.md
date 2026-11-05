@@ -2,6 +2,7 @@
 
 _Extracted from 37 pages_
 
+
 ---
 
 ### #1 — **Ssmiles** · Jan 1, 2025 at 3:10 PM · page 1
@@ -23023,3 +23024,73 @@ Could you please provide the download link for the GSI that is currently being u
 If the reported issues have already been resolved, could you also let me know which firmware versions are compatible and safe to flash at this point? If possible, I would greatly appreciate it if you could provide the corresponding firmware download links as well.
 
 Thank you very much for your work and for taking the time to help.
+
+---
+
+### #723 — **hyty** · Oct 22, 2026 at 3:04 AM · page 37
+
+has anybody noticed fastboot commands like fastboot flash work again? at least on my phone they work
+
+---
+
+### #724 — **zcink** · Nov 2, 2026 at 3:57 AM · page 37
+
+I never did succeed in unlocking my bootloader.  Too afraid to brick this 10 Pro.
+
+Very little support.
+
+I see they just released a new update:  RedMagicOS11.0.6_GB
+
+So I updated it.
+
+I don't know if that prevents unlocking the bootloader or not?
+
+Or does RedMagic now allow unlocking it with fastboot?
+
+---
+
+### #725 — **hyty** · Nov 2, 2026 at 9:18 PM · page 37
+
+> **zcink said:**
+> I never did succeed in unlocking my bootloader.  Too afraid to brick this 10 Pro.
+>
+> Very little support.
+>
+>
+>
+> I see they just released a new update:  RedMagicOS11.0.6_GB
+>
+> So I updated it.
+>
+>
+>
+> I don't know if that prevents unlocking the bootloader or not?
+>
+> Or does RedMagic now allow unlocking it with fastboot?
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+I remember they on a updated fixed the bug used too unlock the boot loader but there's a temp root now called ghost lock you can try
+
+---
+
+### #726 — **zcink** · Nov 3, 2026 at 1:05 AM · page 37
+
+> **hyty said:**
+> I remember they on a updated fixed the bug used too unlock the boot loader but there's a temp root now called ghost lock you can try
+>
+>
+> Click to expand...
+>
+> Click to collapse
+
+Yes.  I tried the ghost temp root.  It does work but it's of limited use.
+
+I'm able to deGoogle the phone with adb commands but all comes back after hard reset.
+
+I've pretty much given up on this phone.  I use it for wifi, and as a media player and games.
+
+I went back to a flip phone for phone calls.  Sonim xp3 with 5G.

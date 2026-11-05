@@ -91,7 +91,8 @@ Because the certificates come from Google's own provisioning backend, signed aga
 - **Nothing happens and `certify` still throws** — the RKP root key itself may be gone rather than just the issued certs, which is the unrecoverable case. That is the point at which the thread falls back to the module stack below.
 - **`su` not found** — you aren't rooted, or the shell doesn't have root granted in your manager's list [RM11 #3,041 p153].
 - **You're on a custom ROM** — see above; this path is stock-only.
-- **There's also a module for it.** When christopherrrg's RedMagic Astra lost its keys, borygo77 pointed him to "the RKP module", and that brought them back [RM11 #3,301–#3,302 p166]. The module wasn't named or linked.
+- **There's also a module for it.** When christopherrrg's RedMagic Astra lost its keys, borygo77 pointed him to "the RKP module", and that brought them back [RM11 #3,301–#3,302 p166]. The module wasn't named or linked. borygo77 later added that you can delete it after the reboot, because the certificate it brings back is permanent. Compared with "Always Strong"-type modules, which stop working once Google bans the keybox they use [RM11 #3,386 p170]. It doesn't always work: pipes80 lost integrity and no RKP method brought it back at first [RM11 #3,394, #3,404 p170–171], though integrity returned a day later by a method they didn't say [RM11 #3,398].
+- **Installing someone else's `attestation` file** with `KmInstallKeybox /data/local/tmp/attestation attestation true` is offered in-thread as a last resort [RM11 #3,384 p170]. That's a shared keybox, so it has the same revocation problem as the fake keyboxes [below](#module-stack).
 
 ## The module stack, if you need it anyway {#module-stack}
 

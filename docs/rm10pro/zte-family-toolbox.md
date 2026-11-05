@@ -120,6 +120,8 @@ Toolbox also supports rooting without unlocked bootloader using KernelSU patched
 
 On stock firmware these devices have **no working fastboot**. `adb reboot bootloader` gets you a fastboot prompt that answers `getvar` queries but rejects writes with `remote: 'unknown command'` — it's query/download-capable, not write-capable [RM11 #2454 p123]. Everything is done through EDL instead.
 
+One exception on the RM10 Pro: hyty reports that `fastboot flash` works again on his phone [#723 p37], without saying which firmware. He builds the RM10 OrangeFox recovery, and a custom recovery in place is known to unlock full bootloader fastboot on this phone. See [recovery and slot interaction](/rm10pro/recovery-twrp#recovery-slot-interaction).
+
 The workaround the RM11 side uses is flashing an **engineering / userdebug `abl`**, which does implement the write commands [RM11 #2434 p122, #2760 p138]. Procedure [RM11 #2538 p127, #2610 p131 dev-reverse]:
 
 1. Toolbox **Option 12** → write the userdebug `abl` to **both** `abl_a` and `abl_b`.

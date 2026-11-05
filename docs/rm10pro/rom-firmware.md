@@ -52,6 +52,7 @@ Fragmentary, but these are the only first-hand RM10 accounts in the newer posts:
 
 - **EEA → EU → Android 16.** SansQuartier's route: flash **V10.0.14** from [RedMagic's own support page](https://help.redmagic.gg/hc/en-us/articles/42689608796057-REDMAGIC-10-Pro), which then offers an OTA to the EU build, which in turn offers the Android 16 update [#688 p35].
 - **Unexplained `11.0.4` / `11.0.5` builds.** GigaWrathWave has one rooted RM10 Pro on `11.0.4` being offered `11.0.5` (which crashes on install) while his stock unit sits on `10.0.18mr1` with no OTA available — and neither 11.x build appears on RedMagic's Global ROM page [#687 p35]. Unresolved in-thread.
+- **`RedMagicOS11.0.6_GB`** was offered as an OTA by early November 2026. zcink installed it without knowing whether it closes the unlock [#724 p37]. Nobody has reported unlocking on it. hyty remembers an earlier update patching the bug the unlock used, and points to [GhostLock](/rm10pro/ghostlock-temp-root) instead [#725 p37].
 
 ## Third-party ROMs
 

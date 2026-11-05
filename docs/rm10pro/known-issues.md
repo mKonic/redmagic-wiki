@@ -127,6 +127,7 @@ Two things follow if that's right, and both match reported behaviour:
 ### What actually restores it
 
 - **Toolbox Option 18** is the supported fix. It was limited to firmware where the GBL exploit is still open — up to `.18 MR1` on the RM11 Pro, not `.19 MR2` or later [RM11 #2763, #2790 p139–140] — until the [pre-patch `abl` + `efisp` swap](/rm10pro/bootloader-unlock-status#abl-efisp-downgrade) lifted that limit on the RM11 family in August 2026. See [Options 18 and 19](/rm10pro/zte-family-toolbox#option-18-19).
+- **The fix lives in the `abl`.** dev-reverse says only the `abl` from RM11 `11.0.18MR1_GB` still has the hole; newer ROMs fixed it. On newer firmware, flash that `abl` and then run the fingerprint fix [RM11 #3,381 p170]. pipes80 rooted the newest 11.5 build with patched files and had no fingerprint until going back to borygo77's `11.5.6MR1_GB` package [RM11 #3,376, #3,380 p169].
 - **It is incompatible with `abl userdebug` and with TWRP** — Option 19 has to strip the patch before either will run, and stripping it un-does the fingerprint fix [RM11 #2629 p132, #2807 p141].
 - Reports of Option 18 *not* working are common on newer firmware and on the 11S Pro [RM11 #2559 p128, #2714 p136]; several of those ended in a soft-brick recovered by restoring a personal backup.
 - On the **RM10S Pro**, -CNote- reports unlock + root **with a working fingerprint** on `RedMagicOS11.0.5MR_GB` [RM11 #2987 p150] — no procedure published.
@@ -162,6 +163,7 @@ The ZTE updater (`com.zte.zdm`, the FOTA client behind Settings → System updat
 - **OTA update fails at `payload_properties.txt` (~16.38 KB)** — common when you've sideloaded patches or aren't on the exact expected predecessor version [#487 p25 Reminon]. Workaround: extract the delta payload, patch the 42 stock partitions, flash via fastboot.
 - **Renaming update.zip and dropping it in `/sdcard`** doesn't trigger the local-update prompt on this device [#487 p25].
 - **After using the RM11 `abl`/`efisp` swap, the updater refuses everything** until all modified partitions are restored to stock [RM11 #3,143 p158 borygo77]. The full restore → update → re-flash cycle is in [root with the bootloader locked](/rm11pro/toolbox-cross-reference#locked-bl-root).
+- **Taking the official update with an unlocked bootloader can force a factory reset.** InfectedThoughts updated an unlocked RM11 Pro past `11.0.18MR1_GB`. The update wouldn't install, forced a factory reset, and then showed "your device can't be trusted". Fixing it took restoring the backup made before unlocking, then rooting again [RM11 #3,378 p169]. borygo77 expects newer builds to add only security patches plus a fix for the efisp exploit [RM11 #3,379].
 - **Super partition out of space** when manually flashing patched partitions back: hardcoded 16 GB, slot-A typically uses ~8.8 GB; if patched slot-B partitions need >7 GB you have to delete slot-A logical partitions first [#487 p25].
 
 ## Toolbox-specific issues

@@ -50,6 +50,12 @@ Since August 2026 the bottom rows are no longer a dead end: flashing a **pre-pat
 
 Newer firmware, as reported in-thread through October 2026: Global/EA builds reached `11.5.7MR1_EA` and `11.5.8MR1_GB`, CN reached `11.5.14` / `11.5.15MR1`. The locked-bootloader root below is confirmed on 11S Pro `11.5.5MR1_EA` [RM11 #3,329 p167], on `11.5.7MR1_EA` with fingerprint and Wallet working [RM11 #3,250 p163, #3,292 p165 williamcll], and on CN `11.5.15MR1` [RM11 #3,255 p163 Al-Dossari]. There is **no flashable package for `11.5.8MR1_EA`** — people on it can't find one [RM11 #3,333, #3,347 p167–168], and marjanusz's answer is that it's the current build, so there's nothing to flash to [RM11 #3,334].
 
+`11.5.8` is still open. neko_senpai unlocked a Japanese-market RM11 Pro on `11.5.8` with toolbox 1.2.8, and says locked-bootloader root works on it too [RM11 #3,356 p168]. They add that `11.5.8` doesn't seem to carry the locks people feared, and that owners should unlock soon in case a later build does [RM11 #3,403 p171].
+
+The fingerprint fix is the part that depends on version. pipes80 rooted the newest 11.5 build with borygo77's patched files, but the fingerprint reader stayed dead [RM11 #3,376 p169]. It only came back after reflashing borygo77's `11.5.6MR1_GB` package [RM11 #3,380]. dev-reverse's explanation: the `abl` does the fingerprint fix, and only the `abl` from `11.0.18MR1_GB` still has the hole. Later ROMs fixed it, so take the `abl` from that build, put it on the newer ROM and run the toolbox's fingerprint fix [RM11 #3,381 p170].
+
+Firmware sources posted in-thread: CN `11.5.7` on the yhcres.top mirror [RM11 #3,369 p169], and pipes80's EDL backup of `RedMagiOS11.5.15MR1_CN` on Google Drive [RM11 #3,375].
+
 Not everyone moves forward. borygo77 tried 11.5.6, saw odd 60 Hz switching on an external display, and went back to `11.0.18MR1_GB` to stay [RM11 #3,223 p162]; Bobo9996 likewise calls `.18` the best stock build and saw random app hangs on the 11S ROM [RM11 #3,195 p160].
 
 For the RM10 Pro there is **no equivalent matrix** — see [RM10 KB → Which firmware can still be unlocked?](/rm10pro/bootloader-unlock-status#firmware-compatibility).
@@ -134,6 +140,21 @@ A large and fast-moving side thread, listed here because it's where much of the 
 - Requires a **SUSFS-patched kernel** — the stock kernel is unsupported [RM11 #2422, #2430 p122]. The WildKernels OnePlus 15 `android16-6.12.23` builds work, and Coding-BR ships an NX809J-tested fork plus a Droidspaces daemon KernelSU module [RM11 #2484 p125].
 - Progress reported: Adreno 840 with dma-buf, Wayland commits, GBM dma-buf import into Android Vulkan, gamescope [RM11 #2615 p131, #2621 p132]. Qualcomm's own [prebuilt Adreno UMD Linux driver with Vulkan 1.4](https://qartifactory-edge.qualcomm.com/ui/native/qsc_releases/software/chip/component/gfx-adreno.linux.1.0/251009/prebuilt_debian/qcom-adreno-0.1_arm64.deb) is the key piece, and needed heavy patching plus a DRI3 patch for Wayland [RM11 #2622 p132].
 - Reality check: SteamOS proper is off the table — it would need to boot before Android and requires the full kernel and drivers [RM11 #2866 p144].
+
+## Mainline Linux on the RM11 Pro {#mainline-linux}
+
+A separate effort from Droidspaces: elrey120 boots a **mainline** Linux kernel directly on the NX809J instead of running Linux inside Android. Source: [Reixo0/nx809j-mainline](https://github.com/Reixo0/nx809j-mainline) [RM11 #3,360 p168].
+
+It started as postmarketOS with Plasma Mobile, booted from a PC so nothing was installed and Android kept working [RM11 #3,359]. elrey120 has since dropped postmarketOS for Arch, possibly Debian later, with the [Denial](https://denialwm.org/mobile) shell [RM11 #3,389, #3,395 p170].
+
+| Status (early Nov 2026) | |
+|---|---|
+| Working | UFS, USB (full speed, role switching, USB-DP display out with audio), GPU (headless vkmark ≈ 48,000), touchscreen, display at 60/90/120/144 Hz, Wi-Fi, Bluetooth, both speakers, mic, headphone jack, USB audio, fan and liquid cooling with automatic temperature control, buttons, battery, RTC, suspend [RM11 #3,360 p168, #3,363 p169, #3,389 p170] |
+| Not yet | Modem and IPA each start but crash the phone when run together, so no calls, SMS or mobile data [RM11 #3,363]. No deep sleep yet, and no wake-on-network, so messages wait until you wake the phone [RM11 #3,360, #3,407 p171]. Cameras and haptics untested or not working [RM11 #3,360] |
+
+**Dual boot** uses the efisp exploit. elrey120 got [`gbl_root_canoe`](https://xdaforums.com/t/efisp-root-gbl_root_canoe-fake-locked-bl-superfastboot-bds-8-gen-5-8-elite-gen-5.4786301/) working on the phone and writes a one-time boot into `misc`. That loads [Mu-Silicium](https://github.com/Project-Silicium/Mu-Silicium) through efisp, and from there it can boot any installed system "through systemd" [RM11 #3,409 p171]. One limit: the fingerprint can't be used by both systems at once [RM11 #3,407]. The test install currently lives inside EvolutionX 12.3's `super` partition [RM11 #3,363].
+
+There's no public install guide yet. elrey120 plans a release with guides in its own thread [RM11 #3,395, #3,401 p171].
 
 ## Reverse-engineered kernel & the GPLv2 dispute
 
