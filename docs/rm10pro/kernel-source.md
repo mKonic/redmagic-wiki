@@ -4,13 +4,23 @@
 
 **Official ZTE open-source release:** [opensource.ztedevices.com](https://opensource.ztedevices.com/) — search for code **`NX789S`**.
 
-The release is named for the Chinese (NX789S) variant, but the tree ships build configurations for **both NX789J (Global) and NX789S (China)**. They share the same kernel — variant selection is config-flag-driven [#672 p34 MrKonic]. Available as a tarball; ~2 GB compressed.
+The release is named for the Chinese (NX789S) variant, but it covers the Global NX789J too [#672 p34 MrKonic]. There is no build target named after either model. The RM10 Pro's board is `aston`, and its device-tree overlay is `vendor/qcom/proprietary/zte-devicetree/aston/` (labelled NX789J in the file). Available as a tarball; ~2 GB compressed, ~6 GB unpacked.
 
 ## What's in the tree
 
-- **Linux 6.6.30** base (Android 15 era)
-- **GKI 2.0** compatible — boot image is the Google-signed generic kernel; vendor / OEM bits live in `vendor_boot` and `init_boot`
-- Build system: **[Kleaf](https://android.googlesource.com/kernel/build/+/refs/heads/main/kleaf/)** (Bazel-based, the path Google standardized for Android 13+)
+| Path | What it is | Version |
+|------|-----------|---------|
+| `kernel_platform/common` | Google's generic kernel (GKI) | **6.6.92**, android15-6.6 |
+| `kernel_platform/msm-kernel` | Qualcomm's platform drivers for the SM8750 (`sun`) | labelled **6.6.30** |
+| `vendor/qcom/opensource/*` | Qualcomm driver projects: display, GPU, audio, camera, video, Bluetooth, touch, IPA, NFC/eSE device trees | — |
+| `vendor/qcom/proprietary/zte-devicetree` | ZTE board device trees | — |
+| `vendor/zte` | `charger`, `exfat`, `fuse`, `ntfs-3g` | — |
+
+The two version numbers aren't a mismatch. The stock vendor modules on a shipping phone are stamped `6.6.30-android15-8` too, while the running kernel reports `6.6.92-android15-8`. Qualcomm's layer keeps its own label, and the modules only have to match the GKI's frozen driver interface (KMI).
+
+The GKI copy in the tarball isn't the exact build phones run, though. An `11.0.6_GB` phone runs `6.6.92-android15-8-g3637f4904cf5`, which is Google's tag `android15-6.6-2025-07_r10`. ZTE's `common` has the same version number but differs from that tag in about 7,700 files. For the kernel image itself, build from Google's tag. Use ZTE's tree for the vendor modules.
+
+Build system: **[Kleaf](https://android.googlesource.com/kernel/build/+/refs/heads/main/kleaf/)** (Bazel-based, the path Google standardized for Android 13+).
 
 ## What you need to build
 
@@ -26,17 +36,37 @@ The tarball is self-contained — no `repo sync` needed.
 
 ## What's *not* in the tree
 
-ZTE's public release covers the kernel proper, but some on-device binaries are not source-released:
+### Missing kernel modules {#missing-modules}
+
+The release is **not complete**. Checked against an `11.0.6_GB` phone, 28 of its 375 vendor and system modules have no source anywhere in the tarball. Most of them are Qualcomm drivers that Qualcomm publishes itself on [CodeLinaro](https://git.codelinaro.org/clo/la/platform/vendor), so they can be filled in from there:
+
+| Missing modules | What they do | Public source |
+|-----------------|--------------|---------------|
+| `qca_cld3_peach`, `qca_cld3_peach_v2` | Wi-Fi driver | `qcom-opensource/wlan/qcacld-3.0` |
+| `cnss2`, `cnss_nl`, `cnss_plat_ipc_qmi_svc`, `cnss_prealloc`, `cnss_utils`, `wlan_firmware_service` | Wi-Fi platform layer | `qcom-opensource/wlan/platform` |
+| `rmnet_core`, `rmnet_ctl` | Mobile data | `qcom/opensource/datarmnet` |
+| `rmnet_aps`, `rmnet_mem`, `rmnet_offload`, `rmnet_perf`, `rmnet_perf_tether`, `rmnet_sch`, `rmnet_shs`, `rmnet_wlan` | Mobile data extensions | `qcom/opensource/datarmnet-ext` |
+| `frpc_adsprpc` | FastRPC to the DSPs | `qcom/opensource/dsp-kernel` (has a `sun` config) |
+| `ipclite`, `ipclite_test` | Inter-processor messaging | `opensource/synx-kernel` |
+| `msm_eva` | Computer-vision engine (the tarball has only its device tree) | `opensource/eva-kernel` |
+| `qbt_handler` | Fingerprint interrupt handler | `qcom-opensource/fingerprint` |
+| `spcom`, `spss_utils` | Secure processor (SPSS) | `qcom/opensource/spu-kernel` |
+| `smem_mailbox` | Shared-memory mailbox | not located yet |
+| `ftmmod`, `gpio_keys_nubia` | ZTE's factory-test module and button driver | none — ZTE's own code |
+
+The CodeLinaro repos have many release branches, and the right one has to match the build ZTE shipped. Until that's worked out, or for ZTE's own modules, a self-built kernel can keep using the phone's stock `.ko` files. They load against any GKI with the same KMI.
+
+### Other parts that aren't source-released
 
 | Component | Source available | Workaround |
 |-----------|------------------|------------|
-| Kernel proper (defconfig, drivers) | ✅ Yes | Build directly. |
+| Kernel proper (defconfig, drivers) | ⚠️ Mostly | Build directly; see [missing modules](#missing-modules). |
 | `init_boot` ramdisk | ❌ Stock images only | Magisk-patch the stock image — see [Root with Magisk / KernelSU](/rm10pro/root-magisk). |
 | `vendor_boot` ramdisk | ⚠️ Partial | Extract vendor blobs from stock dumps. |
 | `abl_eng` (engineering bootloader) | ❌ Closed, RSA-signed | See [Reverse engineering](/rm10pro/reverse-engineering). |
 | `ztecfg` | ❌ Per-device blob | See [Reverse engineering](/rm10pro/reverse-engineering). |
 
-For a kernel-only project (custom kernel for an unlocked or EDL-rooted device), the open source is enough. For anything that touches `abl` or `ztecfg`, you're on the reverse-engineering path.
+For a kernel-only project (custom kernel for an unlocked or EDL-rooted device), the open source plus Qualcomm's public drivers and a handful of stock modules is enough. For anything that touches `abl` or `ztecfg`, you're on the reverse-engineering path.
 
 ## Why this matters
 
@@ -46,7 +76,7 @@ Public release of the kernel source happened relatively recently — announced i
 2. Bolting on vendor modules extracted from stock partition dumps.
 3. Patching anything that needed to differ for the Snapdragon 8 Elite + Nubia hardware.
 
-With NX789S sources public, a fully self-built kernel is feasible without that scaffolding.
+With NX789S sources public, most of the kernel can be self-built. The modules ZTE left out still have to come from CodeLinaro or from the stock image.
 
 ## GPLv2 dispute & the reverse-engineered kernel {#gplv2-kernel}
 
@@ -79,7 +109,7 @@ On Jul 7 2026 **n00b-xda-disciple** claimed to have closed the gap himself: *"BR
 :::
 
 :::warning Scope check for RM10 owners
-All of the above is **NX809J (RM11 Pro)**. The RM10 Pro's own `NX789S` tree is public and buildable — see the top of this page. The reason it's documented here is that the two devices share a kernel family and the RM11 fight is the leading indicator for what ZTE does with the next RM10 release. dev-reverse re-sent an RM10 kernel-source request separately [#674 p34].
+All of the above is **NX809J (RM11 Pro)**. The RM10 Pro's own `NX789S` tree is public and mostly buildable. It is missing 28 modules, most of which Qualcomm publishes itself — see [missing modules](#missing-modules). The reason it's documented here is that the two devices share a kernel family and the RM11 fight is the leading indicator for what ZTE does with the next RM10 release. dev-reverse re-sent an RM10 kernel-source request separately [#674 p34].
 :::
 - On the RM10 side, **dev-reverse** re-sent a kernel-source request to ZTE [#674 p34].
 
@@ -91,7 +121,7 @@ Repo state below was checked directly against GitHub on **2026-08-09**, not take
 
 | Device | Source situation | Buildable today? |
 |--------|------------------|------------------|
-| **RM10 Pro** (NX789J / NX789S) | ZTE's release is **public and complete** | ✅ Yes — from the official tarball, as described above |
+| **RM10 Pro** (NX789J / NX789S) | ZTE's release is **public but missing 28 modules** (Wi-Fi, mobile data, FastRPC, SPSS, a few ZTE drivers) | ⚠️ Mostly — the gaps are filled from Qualcomm's CodeLinaro repos or the stock `.ko` files ([details](#missing-modules)) |
 | **RM11 Pro** (NX809J) | ZTE's release is **incomplete / uncompilable** | ❌ Not from ZTE source; reconstruction ongoing |
 
 ### RM10 Pro — Reminon's build scaffolding (published, but hollow) {#reminon-kernel}

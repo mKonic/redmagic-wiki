@@ -34,7 +34,7 @@ features:
     linkText: Crypto & signing
   - icon: 🧠
     title: Kernel source
-    details: NX789S/NX789J Linux 6.6.30 sources are public. The sibling RM11 Pro turned into a GPLv2 fight over incomplete sources — community RE'd a bootable kernel anyway.
+    details: NX789S/NX789J sources are public but missing 28 modules (Wi-Fi, mobile data, FastRPC), most of them available from Qualcomm. The sibling RM11 Pro turned into a GPLv2 fight over incomplete sources — community RE'd a bootable kernel anyway.
     link: /rm10pro/kernel-source
     linkText: Kernel notes
 ---
